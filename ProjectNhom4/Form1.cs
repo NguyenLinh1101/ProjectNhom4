@@ -16,5 +16,10 @@ namespace ProjectNhom4
         {
             InitializeComponent();
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
