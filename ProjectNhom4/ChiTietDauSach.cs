@@ -10,16 +10,14 @@ using System.Windows.Forms;
 
 namespace ProjectNhom4
 {
-    public partial class Form1 : Form
+    public partial class ChiTietDauSach : Form
     {
-        public Form1()
+        public ChiTietDauSach()
         {
             InitializeComponent();
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
 
-        }
+
     }
 }
