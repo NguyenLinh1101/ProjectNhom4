@@ -135,7 +135,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDauSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDauSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDauSach.ColumnHeadersHeight = 27;
+            this.dgvDauSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvDauSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaDauSach,
             this.colTenDauSach,
@@ -149,7 +150,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDauSach.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDauSach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDauSach.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvDauSach.GridColor = System.Drawing.Color.DarkGray;
             this.dgvDauSach.Location = new System.Drawing.Point(0, 40);
             this.dgvDauSach.Name = "dgvDauSach";
             this.dgvDauSach.RowHeadersVisible = false;
@@ -163,12 +164,12 @@
             this.dgvDauSach.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.dgvDauSach.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.dgvDauSach.ThemeStyle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvDauSach.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvDauSach.ThemeStyle.GridColor = System.Drawing.Color.DarkGray;
             this.dgvDauSach.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dgvDauSach.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvDauSach.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dgvDauSach.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvDauSach.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDauSach.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvDauSach.ThemeStyle.HeaderStyle.Height = 27;
             this.dgvDauSach.ThemeStyle.ReadOnly = false;
             this.dgvDauSach.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
@@ -386,7 +387,6 @@
         private System.Windows.Forms.Label lblTieude;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2GroupBox grpDauSach;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvDauSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaDauSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenDauSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn colKhosach;
@@ -399,5 +399,6 @@
         private Guna.UI2.WinForms.Guna2Button btnSua;
         private Guna.UI2.WinForms.Guna2Button btnXoa;
         private Guna.UI2.WinForms.Guna2Button btnChitiet;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvDauSach;
     }
 }
