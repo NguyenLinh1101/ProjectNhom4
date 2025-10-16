@@ -33,22 +33,22 @@
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.lblChiTietDauSach = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtMaDauSach = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtTenDauSach = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtTenTacGia = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtNamXuatBan = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtGiaBia = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtSoTrang = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSoLuong = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtSoTrang = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtGiaBia = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtNamXuatBan = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtTenTacGia = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtTenDauSach = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtMaDauSach = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +66,7 @@
             this.lblChiTietDauSach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
             this.lblChiTietDauSach.Location = new System.Drawing.Point(642, 55);
             this.lblChiTietDauSach.Name = "lblChiTietDauSach";
-            this.lblChiTietDauSach.Size = new System.Drawing.Size(323, 45);
+            this.lblChiTietDauSach.Size = new System.Drawing.Size(271, 37);
             this.lblChiTietDauSach.TabIndex = 0;
             this.lblChiTietDauSach.Text = "CHI TIẾT ĐẦU SÁCH";
             // 
@@ -95,195 +95,25 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // label1
+            // txtSoLuong
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(35, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã đầu sách";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(35, 122);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Tên đầu sách";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(35, 337);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(132, 25);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Năm xuất bản";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(35, 409);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 25);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Giá bìa";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(35, 481);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 25);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Số trang";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(35, 194);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 25);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Tác giả";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.Location = new System.Drawing.Point(833, 127);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 25);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Số lượng";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label8.Location = new System.Drawing.Point(833, 199);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 25);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Loại sách";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label9.Location = new System.Drawing.Point(833, 274);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 25);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Chủ đề";
-            // 
-            // txtMaDauSach
-            // 
-            this.txtMaDauSach.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaDauSach.DefaultText = "";
-            this.txtMaDauSach.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMaDauSach.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMaDauSach.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaDauSach.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaDauSach.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaDauSach.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtMaDauSach.ForeColor = System.Drawing.Color.Black;
-            this.txtMaDauSach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaDauSach.Location = new System.Drawing.Point(215, 38);
-            this.txtMaDauSach.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtMaDauSach.Name = "txtMaDauSach";
-            this.txtMaDauSach.PlaceholderText = "";
-            this.txtMaDauSach.SelectedText = "";
-            this.txtMaDauSach.Size = new System.Drawing.Size(528, 60);
-            this.txtMaDauSach.TabIndex = 0;
-            // 
-            // txtTenDauSach
-            // 
-            this.txtTenDauSach.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTenDauSach.DefaultText = "";
-            this.txtTenDauSach.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTenDauSach.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTenDauSach.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTenDauSach.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTenDauSach.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenDauSach.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTenDauSach.ForeColor = System.Drawing.Color.Black;
-            this.txtTenDauSach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenDauSach.Location = new System.Drawing.Point(215, 110);
-            this.txtTenDauSach.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtTenDauSach.Name = "txtTenDauSach";
-            this.txtTenDauSach.PlaceholderText = "";
-            this.txtTenDauSach.SelectedText = "";
-            this.txtTenDauSach.Size = new System.Drawing.Size(528, 60);
-            this.txtTenDauSach.TabIndex = 1;
-            // 
-            // txtTenTacGia
-            // 
-            this.txtTenTacGia.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTenTacGia.DefaultText = "";
-            this.txtTenTacGia.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTenTacGia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTenTacGia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTenTacGia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTenTacGia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenTacGia.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTenTacGia.ForeColor = System.Drawing.Color.Black;
-            this.txtTenTacGia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenTacGia.Location = new System.Drawing.Point(215, 182);
-            this.txtTenTacGia.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtTenTacGia.Name = "txtTenTacGia";
-            this.txtTenTacGia.PlaceholderText = "";
-            this.txtTenTacGia.SelectedText = "";
-            this.txtTenTacGia.Size = new System.Drawing.Size(528, 60);
-            this.txtTenTacGia.TabIndex = 2;
-            // 
-            // txtNamXuatBan
-            // 
-            this.txtNamXuatBan.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNamXuatBan.DefaultText = "";
-            this.txtNamXuatBan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtNamXuatBan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtNamXuatBan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNamXuatBan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNamXuatBan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNamXuatBan.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtNamXuatBan.ForeColor = System.Drawing.Color.Black;
-            this.txtNamXuatBan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNamXuatBan.Location = new System.Drawing.Point(215, 323);
-            this.txtNamXuatBan.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtNamXuatBan.Name = "txtNamXuatBan";
-            this.txtNamXuatBan.PlaceholderText = "";
-            this.txtNamXuatBan.SelectedText = "";
-            this.txtNamXuatBan.Size = new System.Drawing.Size(528, 60);
-            this.txtNamXuatBan.TabIndex = 3;
-            // 
-            // txtGiaBia
-            // 
-            this.txtGiaBia.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGiaBia.DefaultText = "";
-            this.txtGiaBia.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtGiaBia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtGiaBia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtGiaBia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtGiaBia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGiaBia.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtGiaBia.ForeColor = System.Drawing.Color.Black;
-            this.txtGiaBia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGiaBia.Location = new System.Drawing.Point(215, 395);
-            this.txtGiaBia.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtGiaBia.Name = "txtGiaBia";
-            this.txtGiaBia.PlaceholderText = "";
-            this.txtGiaBia.SelectedText = "";
-            this.txtGiaBia.Size = new System.Drawing.Size(528, 60);
-            this.txtGiaBia.TabIndex = 4;
+            this.txtSoLuong.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSoLuong.DefaultText = "";
+            this.txtSoLuong.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSoLuong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSoLuong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSoLuong.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSoLuong.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSoLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSoLuong.ForeColor = System.Drawing.Color.Black;
+            this.txtSoLuong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSoLuong.Location = new System.Drawing.Point(970, 109);
+            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.PlaceholderText = "";
+            this.txtSoLuong.SelectedText = "";
+            this.txtSoLuong.Size = new System.Drawing.Size(465, 60);
+            this.txtSoLuong.TabIndex = 6;
             // 
             // txtSoTrang
             // 
@@ -305,29 +135,199 @@
             this.txtSoTrang.Size = new System.Drawing.Size(528, 60);
             this.txtSoTrang.TabIndex = 5;
             // 
-            // txtSoLuong
+            // txtGiaBia
             // 
-            this.txtSoLuong.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSoLuong.DefaultText = "";
-            this.txtSoLuong.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSoLuong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSoLuong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSoLuong.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSoLuong.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSoLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSoLuong.ForeColor = System.Drawing.Color.Black;
-            this.txtSoLuong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSoLuong.Location = new System.Drawing.Point(970, 109);
-            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.PlaceholderText = "";
-            this.txtSoLuong.SelectedText = "";
-            this.txtSoLuong.Size = new System.Drawing.Size(465, 60);
-            this.txtSoLuong.TabIndex = 6;
+            this.txtGiaBia.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGiaBia.DefaultText = "";
+            this.txtGiaBia.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtGiaBia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtGiaBia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGiaBia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGiaBia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGiaBia.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtGiaBia.ForeColor = System.Drawing.Color.Black;
+            this.txtGiaBia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGiaBia.Location = new System.Drawing.Point(215, 395);
+            this.txtGiaBia.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtGiaBia.Name = "txtGiaBia";
+            this.txtGiaBia.PlaceholderText = "";
+            this.txtGiaBia.SelectedText = "";
+            this.txtGiaBia.Size = new System.Drawing.Size(528, 60);
+            this.txtGiaBia.TabIndex = 4;
+            // 
+            // txtNamXuatBan
+            // 
+            this.txtNamXuatBan.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNamXuatBan.DefaultText = "";
+            this.txtNamXuatBan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNamXuatBan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNamXuatBan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNamXuatBan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNamXuatBan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNamXuatBan.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtNamXuatBan.ForeColor = System.Drawing.Color.Black;
+            this.txtNamXuatBan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNamXuatBan.Location = new System.Drawing.Point(215, 323);
+            this.txtNamXuatBan.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtNamXuatBan.Name = "txtNamXuatBan";
+            this.txtNamXuatBan.PlaceholderText = "";
+            this.txtNamXuatBan.SelectedText = "";
+            this.txtNamXuatBan.Size = new System.Drawing.Size(528, 60);
+            this.txtNamXuatBan.TabIndex = 3;
+            // 
+            // txtTenTacGia
+            // 
+            this.txtTenTacGia.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTenTacGia.DefaultText = "";
+            this.txtTenTacGia.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTenTacGia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTenTacGia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenTacGia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenTacGia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenTacGia.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTenTacGia.ForeColor = System.Drawing.Color.Black;
+            this.txtTenTacGia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenTacGia.Location = new System.Drawing.Point(215, 182);
+            this.txtTenTacGia.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtTenTacGia.Name = "txtTenTacGia";
+            this.txtTenTacGia.PlaceholderText = "";
+            this.txtTenTacGia.SelectedText = "";
+            this.txtTenTacGia.Size = new System.Drawing.Size(528, 60);
+            this.txtTenTacGia.TabIndex = 2;
+            // 
+            // txtTenDauSach
+            // 
+            this.txtTenDauSach.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTenDauSach.DefaultText = "";
+            this.txtTenDauSach.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTenDauSach.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTenDauSach.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenDauSach.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenDauSach.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenDauSach.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTenDauSach.ForeColor = System.Drawing.Color.Black;
+            this.txtTenDauSach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenDauSach.Location = new System.Drawing.Point(215, 110);
+            this.txtTenDauSach.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtTenDauSach.Name = "txtTenDauSach";
+            this.txtTenDauSach.PlaceholderText = "";
+            this.txtTenDauSach.SelectedText = "";
+            this.txtTenDauSach.Size = new System.Drawing.Size(528, 60);
+            this.txtTenDauSach.TabIndex = 1;
+            // 
+            // txtMaDauSach
+            // 
+            this.txtMaDauSach.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaDauSach.DefaultText = "";
+            this.txtMaDauSach.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMaDauSach.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMaDauSach.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaDauSach.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaDauSach.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaDauSach.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtMaDauSach.ForeColor = System.Drawing.Color.Black;
+            this.txtMaDauSach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaDauSach.Location = new System.Drawing.Point(215, 38);
+            this.txtMaDauSach.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtMaDauSach.Name = "txtMaDauSach";
+            this.txtMaDauSach.PlaceholderText = "";
+            this.txtMaDauSach.SelectedText = "";
+            this.txtMaDauSach.Size = new System.Drawing.Size(528, 60);
+            this.txtMaDauSach.TabIndex = 0;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label9.Location = new System.Drawing.Point(833, 274);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(57, 20);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Chủ đề";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label8.Location = new System.Drawing.Point(833, 199);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(73, 20);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Loại sách";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label7.Location = new System.Drawing.Point(833, 127);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 20);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Số lượng";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.Location = new System.Drawing.Point(35, 194);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 20);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Tác giả";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Location = new System.Drawing.Point(35, 481);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 20);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Số trang";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.Location = new System.Drawing.Point(35, 409);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Giá bìa";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(35, 337);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(108, 20);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Năm xuất bản";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(35, 122);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Tên đầu sách";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(35, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Mã đầu sách";
             // 
             // ChiTietDauSach
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1524, 704);
@@ -335,6 +335,7 @@
             this.Controls.Add(this.lblChiTietDauSach);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ChiTietDauSach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

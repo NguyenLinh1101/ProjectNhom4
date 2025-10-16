@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ProjectNhom4
 {
-    public partial class QL_DauSach : UserControl
+    public partial class Form1 : Form
     {
-        public QL_DauSach()
+        public Form1()
         {
             InitializeComponent();
-        }
-
-        private void QL_DauSach_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

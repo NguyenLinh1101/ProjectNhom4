@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace ProjectNhom4
 {
-    public partial class QLcuonsach : Form
+    public partial class frmMenu : Form
     {
-        public QLcuonsach()
+        public frmMenu()
         {
             InitializeComponent();
         }
 
-        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
