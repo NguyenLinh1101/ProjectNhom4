@@ -88,6 +88,12 @@
     <Compile Include="QL_DauSach.Designer.cs">
       <DependentUpon>QL_DauSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanlyCuonsach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanlyCuonsach.Designer.cs">
+      <DependentUpon>QuanlyCuonsach.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ChiTietDauSach.resx">
       <DependentUpon>ChiTietDauSach.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +118,9 @@
     </Compile>
     <EmbeddedResource Include="QL_DauSach.resx">
       <DependentUpon>QL_DauSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanlyCuonsach.resx">
+      <DependentUpon>QuanlyCuonsach.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
