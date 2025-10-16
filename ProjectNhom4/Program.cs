@@ -16,7 +16,7 @@ namespace ProjectNhom4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ChiTietDauSach());
+            Application.Run(new frmLoaiSach());
         }
     }
 }
