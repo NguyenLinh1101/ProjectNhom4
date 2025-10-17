@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjectNhom4
 {
-    public partial class frmQuanlyCuonsach : Form
+    public partial class frmpanelMenu : Form
     {
-        public frmQuanlyCuonsach()
+        public frmpanelMenu()
         {
             InitializeComponent();
         }

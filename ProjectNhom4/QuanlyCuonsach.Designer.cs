@@ -1,6 +1,6 @@
 ﻿namespace ProjectNhom4
 {
-    partial class frmQuanlyCuonsach
+    partial class frmpanelMenu
     {
         /// <summary>
         /// Required designer variable.
