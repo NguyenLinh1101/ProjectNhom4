@@ -45,5 +45,10 @@ namespace ProjectNhom4
         {
 
         }
+        // Add this method to handle the SelectedIndexChanged event for cboLoaiSach
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // You can implement logic here if needed, or leave it empty if not required
+        }
     }
 }
