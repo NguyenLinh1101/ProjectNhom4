@@ -39,8 +39,6 @@
             this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.grbTTDS = new System.Windows.Forms.GroupBox();
             this.txtTacGia = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtChuDe = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtMaLoaiSach = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSoTrang = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtGiaBia = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtNamXB = new Guna.UI2.WinForms.Guna2TextBox();
@@ -70,6 +68,8 @@
             this.btnSua = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnXemChiTiet = new Guna.UI2.WinForms.Guna2Button();
+            this.cboLoaiSach = new System.Windows.Forms.ComboBox();
+            this.cboChuDe = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.grbTTDS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSDauSach)).BeginInit();
@@ -134,9 +134,9 @@
             // 
             // grbTTDS
             // 
+            this.grbTTDS.Controls.Add(this.cboChuDe);
             this.grbTTDS.Controls.Add(this.txtTacGia);
-            this.grbTTDS.Controls.Add(this.txtChuDe);
-            this.grbTTDS.Controls.Add(this.txtMaLoaiSach);
+            this.grbTTDS.Controls.Add(this.cboLoaiSach);
             this.grbTTDS.Controls.Add(this.txtSoTrang);
             this.grbTTDS.Controls.Add(this.txtGiaBia);
             this.grbTTDS.Controls.Add(this.txtNamXB);
@@ -179,46 +179,6 @@
             this.txtTacGia.SelectedText = "";
             this.txtTacGia.Size = new System.Drawing.Size(372, 53);
             this.txtTacGia.TabIndex = 7;
-            // 
-            // txtChuDe
-            // 
-            this.txtChuDe.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtChuDe.DefaultText = "";
-            this.txtChuDe.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtChuDe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtChuDe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtChuDe.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtChuDe.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtChuDe.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtChuDe.ForeColor = System.Drawing.Color.Black;
-            this.txtChuDe.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtChuDe.Location = new System.Drawing.Point(1372, 115);
-            this.txtChuDe.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtChuDe.Name = "txtChuDe";
-            this.txtChuDe.PlaceholderText = "";
-            this.txtChuDe.SelectedText = "";
-            this.txtChuDe.Size = new System.Drawing.Size(372, 53);
-            this.txtChuDe.TabIndex = 6;
-            // 
-            // txtMaLoaiSach
-            // 
-            this.txtMaLoaiSach.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaLoaiSach.DefaultText = "";
-            this.txtMaLoaiSach.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMaLoaiSach.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMaLoaiSach.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaLoaiSach.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaLoaiSach.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaLoaiSach.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMaLoaiSach.ForeColor = System.Drawing.Color.Black;
-            this.txtMaLoaiSach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaLoaiSach.Location = new System.Drawing.Point(1372, 50);
-            this.txtMaLoaiSach.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtMaLoaiSach.Name = "txtMaLoaiSach";
-            this.txtMaLoaiSach.PlaceholderText = "";
-            this.txtMaLoaiSach.SelectedText = "";
-            this.txtMaLoaiSach.Size = new System.Drawing.Size(372, 53);
-            this.txtMaLoaiSach.TabIndex = 5;
             // 
             // txtSoTrang
             // 
@@ -635,6 +595,33 @@
             this.btnXemChiTiet.TabIndex = 13;
             this.btnXemChiTiet.Text = "Xem chi tiết";
             // 
+            // cboLoaiSach
+            // 
+            this.cboLoaiSach.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboLoaiSach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboLoaiSach.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboLoaiSach.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.cboLoaiSach.FormattingEnabled = true;
+            this.cboLoaiSach.Location = new System.Drawing.Point(1372, 60);
+            this.cboLoaiSach.Name = "cboLoaiSach";
+            this.cboLoaiSach.Size = new System.Drawing.Size(372, 36);
+            this.cboLoaiSach.TabIndex = 5;
+            this.cboLoaiSach.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // cboChuDe
+            // 
+            this.cboChuDe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboChuDe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboChuDe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboChuDe.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.cboChuDe.FormattingEnabled = true;
+            this.cboChuDe.Location = new System.Drawing.Point(1372, 119);
+            this.cboChuDe.Name = "cboChuDe";
+            this.cboChuDe.Size = new System.Drawing.Size(372, 36);
+            this.cboChuDe.TabIndex = 6;
+            // 
             // QL_DauSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -684,8 +671,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtGiaBia;
         private Guna.UI2.WinForms.Guna2TextBox txtNamXB;
         private Guna.UI2.WinForms.Guna2TextBox txtTacGia;
-        private Guna.UI2.WinForms.Guna2TextBox txtChuDe;
-        private Guna.UI2.WinForms.Guna2TextBox txtMaLoaiSach;
         private System.Windows.Forms.DataGridView dgvDSDauSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDauSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDauSach;
@@ -700,5 +685,7 @@
         private Guna.UI2.WinForms.Guna2Button btnXoa;
         private Guna.UI2.WinForms.Guna2Button btnSua;
         private Guna.UI2.WinForms.Guna2Button btnThem;
+        private System.Windows.Forms.ComboBox cboLoaiSach;
+        private System.Windows.Forms.ComboBox cboChuDe;
     }
 }
