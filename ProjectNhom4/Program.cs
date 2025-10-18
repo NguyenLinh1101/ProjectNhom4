@@ -16,20 +16,20 @@ namespace ProjectNhom4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new frmChuDe());
         }
     }
-    public class MainForm : Form
-    {
-        private QL_DauSach qlDauSach;
+    //public class MainForm : Form
+    //{
+     //   private QL_DauSach qlDauSach;
 
-        public MainForm()
-        {
-            qlDauSach = new QL_DauSach();
-            qlDauSach.Dock = DockStyle.Fill;
-            this.Controls.Add(qlDauSach);
-            this.Text = "Quản Lý Đầu Sách";
-            this.WindowState = FormWindowState.Maximized;
-        }
-    }
+       // public MainForm()
+       // {
+         //   qlDauSach = new QL_DauSach();
+           // qlDauSach.Dock = DockStyle.Fill;
+            //this.Controls.Add(qlDauSach);
+            //this.Text = "Quản Lý Đầu Sách";
+            //this.WindowState = FormWindowState.Maximized;
+       //}
+    //}
 }
