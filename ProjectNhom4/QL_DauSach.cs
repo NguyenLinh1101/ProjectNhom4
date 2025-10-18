@@ -13,17 +13,14 @@ namespace ProjectNhom4
 {
     public partial class QL_DauSach : UserControl
     {
-        string strCon = @"Data Source=DESKTOP-HPGDAGQ\SQLEXPRESS;Initial Catalog=QuanLyThuVien3;Integrated Security=True;Encrypt=False";
+        string strCon = @"Data Source=DESKTOP-ST1KSE3\SQLEXPRESS;Initial Catalog=QL_THU_VIEN;Integrated Security=True;Trust Server Certificate=True";
         SqlConnection con;
         SqlCommand cmd;
         SqlDataAdapter adapter;
         DataTable dt;
         DataView dv;
         bool addNewFlag = false;
-        public QL_DauSach()
-        {
-            InitializeComponent();
-        }
+        public QL_DauSach() => InitializeComponent();
 
         private void grbTTDS_Enter(object sender, EventArgs e)
         {
@@ -48,7 +45,7 @@ namespace ProjectNhom4
         // Add this method to handle the SelectedIndexChanged event for cboLoaiSach
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // You can implement logic here if needed, or leave it empty if not required
+            DataRowView selectedRow = cboLoaiSach.SelectedItem as DataRowView;
         }
     }
 }
