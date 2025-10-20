@@ -70,6 +70,12 @@
     <Compile Include="QuanlyCuonsach.Designer.cs">
       <DependentUpon>QuanlyCuonsach.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanlyDocGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanlyDocGia.Designer.cs">
+      <DependentUpon>QuanlyDocGia.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="panelMenu.resx">
       <DependentUpon>panelMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,6 +91,9 @@
     </Compile>
     <EmbeddedResource Include="QuanlyCuonsach.resx">
       <DependentUpon>QuanlyCuonsach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanlyDocGia.resx">
+      <DependentUpon>QuanlyDocGia.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -104,6 +113,8 @@
     <None Include="Resources\search.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\user.png" />
+    <None Include="Resources\profile.png" />
     <None Include="Resources\notepad.png" />
     <None Include="Resources\man_8661663.png" />
     <None Include="Resources\write_16791610.png" />
