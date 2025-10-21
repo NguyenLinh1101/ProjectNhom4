@@ -71,7 +71,7 @@
       <DependentUpon>QuanlyCuonsach.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanlyDocGia.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="QuanlyDocGia.Designer.cs">
       <DependentUpon>QuanlyDocGia.cs</DependentUpon>

@@ -10,24 +10,19 @@ using System.Windows.Forms;
 
 namespace ProjectNhom4
 {
-    public partial class QuanlyDocGia : Form
+    public partial class UC_QuanlyDocGia : UserControl
     {
-        public QuanlyDocGia()
+        public UC_QuanlyDocGia()
         {
             InitializeComponent();
         }
 
-        private void lblMaPhieu_Click(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void lblSDT_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
