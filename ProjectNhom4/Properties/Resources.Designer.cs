@@ -103,6 +103,46 @@ namespace ProjectNhom4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_21_233502 {
+            get {
+                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-21 233502", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_21_233742 {
+            get {
+                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-21 233742", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_21_233940 {
+            get {
+                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-21 233940", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_21_234137 {
+            get {
+                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-21 234137", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arrow_down_sign_to_navigate {
             get {
                 object obj = ResourceManager.GetObject("arrow-down-sign-to-navigate", resourceCulture);
