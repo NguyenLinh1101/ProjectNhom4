@@ -182,14 +182,14 @@ namespace ProjectNhom4
 
         private void QL_DauSach_Load(object sender, EventArgs e)
         {
-            // 1. Tải danh sách Đầu sách
+            
             ShowDauSach();
 
-            // 2. Tải dữ liệu cho các ComboBox (với tên bảng và cột chính xác)
+            
             LoadComboBox(cboLoaiSach, "THE_LOAI", "Ma_TL", "Ten_TL");
             LoadComboBox(cboChuDe, "CHU_DE", "Ma_Chu_De", "Ten_Chu_De");
 
-            // 3. Đặt trạng thái ban đầu
+            
             SetControls(false);
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
@@ -203,7 +203,7 @@ namespace ProjectNhom4
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             string searchText = txtSearch.Text;
-            dv.RowFilter = $"[TenDauSach] like '%{searchText}%'";
+            dv.RowFilter = $"[Ten_Dau_Sach] like '%{searchText}%'";
         }
 
         private void btnThem_Click(object sender, EventArgs e)
