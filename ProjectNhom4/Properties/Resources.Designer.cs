@@ -103,6 +103,16 @@ namespace ProjectNhom4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hustthuvien {
+            get {
+                object obj = ResourceManager.GetObject("hustthuvien", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logohust {
             get {
                 object obj = ResourceManager.GetObject("logohust", resourceCulture);
@@ -146,6 +156,16 @@ namespace ProjectNhom4.Properties {
         internal static System.Drawing.Bitmap search {
             get {
                 object obj = ResourceManager.GetObject("search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thuvienhust {
+            get {
+                object obj = ResourceManager.GetObject("thuvienhust", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

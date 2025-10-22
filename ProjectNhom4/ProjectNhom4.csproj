@@ -76,6 +76,12 @@
     <Compile Include="QuanlyDocGia.Designer.cs">
       <DependentUpon>QuanlyDocGia.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_TrangChu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_TrangChu.Designer.cs">
+      <DependentUpon>UC_TrangChu.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="panelMenu.resx">
       <DependentUpon>panelMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +101,9 @@
     <EmbeddedResource Include="QuanlyDocGia.resx">
       <DependentUpon>QuanlyDocGia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_TrangChu.resx">
+      <DependentUpon>UC_TrangChu.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -113,6 +122,7 @@
     <None Include="Resources\search.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\thuvienhust.jpg" />
     <None Include="Resources\user.png" />
     <None Include="Resources\profile.png" />
     <None Include="Resources\notepad.png" />
@@ -123,6 +133,7 @@
     <None Include="Resources\analytics.png" />
     <None Include="Resources\cogwheel.png" />
     <None Include="Resources\logohust.png" />
+    <None Include="Resources\hustthuvien.png" />
     <Content Include="Resources\logoneu.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
