@@ -32,14 +32,18 @@
             this.txtMatKhau = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSignIn = new Guna.UI2.WinForms.Guna2Button();
             this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelImage = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelImage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // txtEmail
@@ -126,6 +130,16 @@
             this.btnThoat.TabIndex = 11;
             this.btnThoat.Text = "Thoát";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::ProjectNhom4.Properties.Resources.user;
+            this.pictureBox2.Location = new System.Drawing.Point(83, 360);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(35, 36);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ProjectNhom4.Properties.Resources.Ảnh_chụp_màn_hình_2025_10_22_000119;
@@ -197,11 +211,23 @@
             this.label6.Text = "HUST";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::ProjectNhom4.Properties.Resources.padlock;
+            this.pictureBox3.Location = new System.Drawing.Point(83, 450);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(35, 36);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 14;
+            this.pictureBox3.TabStop = false;
+            // 
             // frmDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1165, 816);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnSignIn);
@@ -213,9 +239,11 @@
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDangNhap";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelImage.ResumeLayout(false);
             this.panelImage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -232,5 +260,6 @@
         private Guna.UI2.WinForms.Guna2Button btnSignIn;
         private Guna.UI2.WinForms.Guna2Button btnThoat;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
