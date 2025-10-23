@@ -344,7 +344,7 @@
             this.dgvTacGia.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTacGia.EnableHeadersVisualStyles = false;
             this.dgvTacGia.GridColor = System.Drawing.Color.Black;
-            this.dgvTacGia.Location = new System.Drawing.Point(65, 486);
+            this.dgvTacGia.Location = new System.Drawing.Point(65, 497);
             this.dgvTacGia.Name = "dgvTacGia";
             this.dgvTacGia.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -358,7 +358,7 @@
             this.dgvTacGia.RowHeadersWidth = 72;
             this.dgvTacGia.RowTemplate.Height = 28;
             this.dgvTacGia.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvTacGia.Size = new System.Drawing.Size(1190, 371);
+            this.dgvTacGia.Size = new System.Drawing.Size(1190, 405);
             this.dgvTacGia.TabIndex = 11;
             // 
             // Ma_Tac_Gia
@@ -403,9 +403,9 @@
             this.guna2Panel1.Controls.Add(this.btnHuy);
             this.guna2Panel1.Controls.Add(this.btnThem);
             this.guna2Panel1.Controls.Add(this.btnXoa);
-            this.guna2Panel1.Location = new System.Drawing.Point(65, 882);
+            this.guna2Panel1.Location = new System.Drawing.Point(65, 924);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1190, 100);
+            this.guna2Panel1.Size = new System.Drawing.Size(1190, 70);
             this.guna2Panel1.TabIndex = 21;
             // 
             // btnLuu
