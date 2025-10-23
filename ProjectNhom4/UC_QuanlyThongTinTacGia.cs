@@ -15,9 +15,15 @@ namespace ProjectNhom4
         public UC_QuanlyThongTinTacGia()
         {
             InitializeComponent();
+           
         }
 
         private void lblDauSach_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
         {
 
         }

@@ -44,6 +44,7 @@
             this.btnqltacgia = new Guna.UI2.WinForms.Guna2Button();
             this.btnqlsach = new Guna.UI2.WinForms.Guna2Button();
             this.btnTrangChu = new Guna.UI2.WinForms.Guna2Button();
+            this.panelHienthiUC = new Guna.UI2.WinForms.Guna2Panel();
             this.panelMenu.SuspendLayout();
             this.pnlSubCaiDat.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -69,7 +70,7 @@
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(398, 810);
+            this.panelMenu.Size = new System.Drawing.Size(370, 810);
             this.panelMenu.TabIndex = 0;
             // 
             // pnlSubCaiDat
@@ -153,7 +154,7 @@
             this.panelLogo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(398, 120);
+            this.panelLogo.Size = new System.Drawing.Size(370, 120);
             this.panelLogo.TabIndex = 10;
             // 
             // picLogo
@@ -277,6 +278,7 @@
             this.btnqltacgia.Size = new System.Drawing.Size(230, 50);
             this.btnqltacgia.TabIndex = 4;
             this.btnqltacgia.Text = "Quản lý tác giả";
+            this.btnqltacgia.Click += new System.EventHandler(this.btnqltacgia_Click_1);
             // 
             // btnqlsach
             // 
@@ -316,11 +318,20 @@
             this.btnTrangChu.TabIndex = 2;
             this.btnTrangChu.Text = "Trang chủ";
             // 
+            // panelHienthiUC
+            // 
+            this.panelHienthiUC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelHienthiUC.Location = new System.Drawing.Point(370, 0);
+            this.panelHienthiUC.Name = "panelHienthiUC";
+            this.panelHienthiUC.Size = new System.Drawing.Size(1000, 810);
+            this.panelHienthiUC.TabIndex = 2;
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 810);
+            this.Controls.Add(this.panelHienthiUC);
             this.Controls.Add(this.panelMenu);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -359,5 +370,6 @@
         private Guna.UI2.WinForms.Guna2Panel pnlSubCaiDat;
         private Guna.UI2.WinForms.Guna2Button btnHuongDan;
         private Guna.UI2.WinForms.Guna2Button btnQLTaiKhoan;
+        private Guna.UI2.WinForms.Guna2Panel panelHienthiUC;
     }
 }

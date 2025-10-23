@@ -48,6 +48,22 @@ namespace ProjectNhom4
                 btnDangXuat.Top = pnlSubCaiDat.Top + pnlSubCaiDat.Height + 10;
             }
         }
+
+        private void LoadUserControl(UserControl uc)
+        {
+           panelHienthiUC.Controls.Clear(); // Xóa UC cũ (nếu có)
+            uc.Dock = DockStyle.Fill;   // Cho UC full panel
+           panelHienthiUC.Controls.Add(uc); // Thêm UC vào panel
+        }
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+            LoadUserControl(new UC_QuanlyThongTinTacGia());
+        }
+      
+        private void btnqltacgia_Click_1(object sender, EventArgs e)
+        {
+            LoadUserControl(new UC_QuanlyThongTinTacGia());
+        }
     }
-    }
+}
 
