@@ -108,6 +108,12 @@
     <Compile Include="QLSach_Ribbon.Designer.cs">
       <DependentUpon>QLSach_Ribbon.cs</DependentUpon>
     </Compile>
+    <Compile Include="QLTacGia_Ribbon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTacGia_Ribbon.Designer.cs">
+      <DependentUpon>QLTacGia_Ribbon.cs</DependentUpon>
+    </Compile>
     <Compile Include="QL_DauSach.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </Compile>
     <EmbeddedResource Include="QLSach_Ribbon.resx">
       <DependentUpon>QLSach_Ribbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLTacGia_Ribbon.resx">
+      <DependentUpon>QLTacGia_Ribbon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QL_DauSach.resx">
       <DependentUpon>QL_DauSach.cs</DependentUpon>
