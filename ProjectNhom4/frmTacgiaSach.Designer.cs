@@ -35,18 +35,19 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvDauSach = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.TenTacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaTacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenTacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpDauSach = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.btnBack = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnChitiet = new Guna.UI2.WinForms.Guna2Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btnBack = new Guna.UI2.WinForms.Guna2CircleButton();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.lblDauSach = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDauSach)).BeginInit();
             this.grpDauSach.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -110,17 +111,17 @@
             this.dgvDauSach.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDauSach.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // TenTacGia
-            // 
-            this.TenTacGia.HeaderText = "Tên tác giả";
-            this.TenTacGia.MinimumWidth = 6;
-            this.TenTacGia.Name = "TenTacGia";
-            // 
             // MaTacGia
             // 
             this.MaTacGia.HeaderText = "Mã tác giả";
             this.MaTacGia.MinimumWidth = 6;
             this.MaTacGia.Name = "MaTacGia";
+            // 
+            // TenTacGia
+            // 
+            this.TenTacGia.HeaderText = "Tên tác giả";
+            this.TenTacGia.MinimumWidth = 6;
+            this.TenTacGia.Name = "TenTacGia";
             // 
             // grpDauSach
             // 
@@ -139,6 +140,23 @@
             this.grpDauSach.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.grpDauSach.Click += new System.EventHandler(this.grpDauSach_Click);
             // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Silver;
+            this.btnBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBack.FillColor = System.Drawing.Color.OrangeRed;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Image = global::ProjectNhom4.Properties.Resources.go_back_arrow;
+            this.btnBack.Location = new System.Drawing.Point(473, 0);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnBack.Size = new System.Drawing.Size(37, 36);
+            this.btnBack.TabIndex = 18;
+            // 
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -154,6 +172,23 @@
             this.guna2GroupBox1.TabIndex = 10;
             this.guna2GroupBox1.Text = "THÔNG TIN ĐẦU SÁCH";
             this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // guna2CircleButton1
+            // 
+            this.guna2CircleButton1.BackColor = System.Drawing.Color.Silver;
+            this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2CircleButton1.FillColor = System.Drawing.Color.OrangeRed;
+            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton1.Image = global::ProjectNhom4.Properties.Resources.go_back_arrow;
+            this.guna2CircleButton1.Location = new System.Drawing.Point(489, 0);
+            this.guna2CircleButton1.Name = "guna2CircleButton1";
+            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton1.Size = new System.Drawing.Size(37, 36);
+            this.guna2CircleButton1.TabIndex = 19;
             // 
             // guna2DataGridView1
             // 
@@ -242,23 +277,6 @@
             this.btnChitiet.TabIndex = 17;
             this.btnChitiet.Text = "Xem chi tiết";
             // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Silver;
-            this.btnBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnBack.FillColor = System.Drawing.Color.OrangeRed;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Image = global::ProjectNhom4.Properties.Resources.go_back_arrow;
-            this.btnBack.Location = new System.Drawing.Point(473, 0);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnBack.Size = new System.Drawing.Size(37, 36);
-            this.btnBack.TabIndex = 18;
-            // 
             // txtSearch
             // 
             this.txtSearch.AcceptsTab = true;
@@ -287,28 +305,23 @@
             this.txtSearch.TabIndex = 8;
             this.txtSearch.TextOffset = new System.Drawing.Point(10, 0);
             // 
-            // guna2CircleButton1
+            // lblDauSach
             // 
-            this.guna2CircleButton1.BackColor = System.Drawing.Color.Silver;
-            this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton1.FillColor = System.Drawing.Color.OrangeRed;
-            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton1.Image = global::ProjectNhom4.Properties.Resources.go_back_arrow;
-            this.guna2CircleButton1.Location = new System.Drawing.Point(489, 0);
-            this.guna2CircleButton1.Name = "guna2CircleButton1";
-            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton1.Size = new System.Drawing.Size(37, 36);
-            this.guna2CircleButton1.TabIndex = 19;
+            this.lblDauSach.AutoSize = true;
+            this.lblDauSach.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblDauSach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.lblDauSach.Location = new System.Drawing.Point(460, 9);
+            this.lblDauSach.Name = "lblDauSach";
+            this.lblDauSach.Size = new System.Drawing.Size(575, 65);
+            this.lblDauSach.TabIndex = 18;
+            this.lblDauSach.Text = "QUẢN LÝ TÁC GIẢ SÁCH";
             // 
             // frmTacgiaSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1478, 844);
+            this.Controls.Add(this.lblDauSach);
             this.Controls.Add(this.btnChitiet);
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.grpDauSach);
@@ -322,6 +335,7 @@
             this.guna2GroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -340,5 +354,6 @@
         private Guna.UI2.WinForms.Guna2Button btnChitiet;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
+        private System.Windows.Forms.Label lblDauSach;
     }
 }
