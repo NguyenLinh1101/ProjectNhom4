@@ -82,6 +82,12 @@
     <Compile Include="QuanlyDocGia.Designer.cs">
       <DependentUpon>QuanlyDocGia.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_QuanlyThongTinTacGia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QuanlyThongTinTacGia.Designer.cs">
+      <DependentUpon>UC_QuanlyThongTinTacGia.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_TrangChu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanlyDocGia.resx">
       <DependentUpon>QuanlyDocGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QuanlyThongTinTacGia.resx">
+      <DependentUpon>UC_QuanlyThongTinTacGia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_TrangChu.resx">
       <DependentUpon>UC_TrangChu.cs</DependentUpon>
