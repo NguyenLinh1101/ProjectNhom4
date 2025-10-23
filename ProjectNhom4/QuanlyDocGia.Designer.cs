@@ -408,7 +408,7 @@
             this.dgvDocGia.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -425,7 +425,7 @@
             this.dgvDocGia.ContextMenuStrip = this.contextMenuDocGia;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
@@ -433,12 +433,12 @@
             this.dgvDocGia.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDocGia.EnableHeadersVisualStyles = false;
             this.dgvDocGia.GridColor = System.Drawing.Color.Black;
-            this.dgvDocGia.Location = new System.Drawing.Point(40, 490);
+            this.dgvDocGia.Location = new System.Drawing.Point(40, 480);
             this.dgvDocGia.Name = "dgvDocGia";
             this.dgvDocGia.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -447,7 +447,7 @@
             this.dgvDocGia.RowHeadersWidth = 72;
             this.dgvDocGia.RowTemplate.Height = 28;
             this.dgvDocGia.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvDocGia.Size = new System.Drawing.Size(1307, 429);
+            this.dgvDocGia.Size = new System.Drawing.Size(1307, 379);
             this.dgvDocGia.TabIndex = 10;
             // 
             // Ma_Doc_Gia
@@ -582,9 +582,9 @@
             this.guna2Panel1.Controls.Add(this.btnHuy);
             this.guna2Panel1.Controls.Add(this.btnThem);
             this.guna2Panel1.Controls.Add(this.btnXoa);
-            this.guna2Panel1.Location = new System.Drawing.Point(40, 829);
+            this.guna2Panel1.Location = new System.Drawing.Point(40, 900);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1307, 72);
+            this.guna2Panel1.Size = new System.Drawing.Size(1321, 72);
             this.guna2Panel1.TabIndex = 22;
             // 
             // btnLuu
@@ -603,7 +603,7 @@
             this.btnLuu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnLuu.HoverState.FillColor = System.Drawing.Color.White;
             this.btnLuu.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnLuu.Location = new System.Drawing.Point(838, 3);
+            this.btnLuu.Location = new System.Drawing.Point(845, 3);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(149, 53);
             this.btnLuu.TabIndex = 20;
@@ -625,7 +625,7 @@
             this.btnSua.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnSua.HoverState.FillColor = System.Drawing.Color.White;
             this.btnSua.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnSua.Location = new System.Drawing.Point(313, 0);
+            this.btnSua.Location = new System.Drawing.Point(320, 0);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(149, 53);
             this.btnSua.TabIndex = 16;
@@ -647,7 +647,7 @@
             this.btnHuy.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnHuy.HoverState.FillColor = System.Drawing.Color.White;
             this.btnHuy.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnHuy.Location = new System.Drawing.Point(1099, 3);
+            this.btnHuy.Location = new System.Drawing.Point(1106, 3);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(149, 53);
             this.btnHuy.TabIndex = 19;
@@ -670,7 +670,7 @@
             this.btnThem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnThem.HoverState.FillColor = System.Drawing.Color.White;
             this.btnThem.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnThem.Location = new System.Drawing.Point(61, 0);
+            this.btnThem.Location = new System.Drawing.Point(68, 0);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(149, 53);
             this.btnThem.TabIndex = 15;
@@ -692,7 +692,7 @@
             this.btnXoa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnXoa.HoverState.FillColor = System.Drawing.Color.White;
             this.btnXoa.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnXoa.Location = new System.Drawing.Point(573, 3);
+            this.btnXoa.Location = new System.Drawing.Point(601, 3);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(149, 53);
             this.btnXoa.TabIndex = 17;
@@ -710,7 +710,7 @@
             this.Controls.Add(this.txtSearch);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_QuanlyDocGia";
-            this.Size = new System.Drawing.Size(1396, 891);
+            this.Size = new System.Drawing.Size(1396, 988);
             this.grbTTDG.ResumeLayout(false);
             this.grbTTDG.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDocGia)).EndInit();
