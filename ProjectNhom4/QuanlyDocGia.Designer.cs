@@ -74,6 +74,8 @@
             this.btnHuy = new Guna.UI2.WinForms.Guna2Button();
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
+            this.cbbqldg = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.lblTencbbox = new System.Windows.Forms.Label();
             this.grbTTDG.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDocGia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocGia)).BeginInit();
@@ -89,7 +91,7 @@
             this.lblQLDG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.lblQLDG.Location = new System.Drawing.Point(453, 13);
             this.lblQLDG.Name = "lblQLDG";
-            this.lblQLDG.Size = new System.Drawing.Size(316, 46);
+            this.lblQLDG.Size = new System.Drawing.Size(306, 45);
             this.lblQLDG.TabIndex = 7;
             this.lblQLDG.Text = "QUẢN LÝ ĐỘC GIẢ";
             // 
@@ -565,7 +567,7 @@
             this.txtSearch.IconLeft = global::ProjectNhom4.Properties.Resources.search;
             this.txtSearch.IconLeftOffset = new System.Drawing.Point(20, 0);
             this.txtSearch.IconLeftSize = new System.Drawing.Size(25, 25);
-            this.txtSearch.Location = new System.Drawing.Point(101, 79);
+            this.txtSearch.Location = new System.Drawing.Point(211, 76);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(6);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -574,6 +576,7 @@
             this.txtSearch.Size = new System.Drawing.Size(1084, 54);
             this.txtSearch.TabIndex = 8;
             this.txtSearch.TextOffset = new System.Drawing.Point(10, 0);
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // guna2Panel1
             // 
@@ -698,11 +701,41 @@
             this.btnXoa.TabIndex = 17;
             this.btnXoa.Text = "Xóa";
             // 
+            // cbbqldg
+            // 
+            this.cbbqldg.BackColor = System.Drawing.Color.Transparent;
+            this.cbbqldg.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbqldg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbqldg.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbqldg.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbqldg.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbqldg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbqldg.ItemHeight = 30;
+            this.cbbqldg.Items.AddRange(new object[] {
+            "Mã độc giả",
+            "Họ tên"});
+            this.cbbqldg.Location = new System.Drawing.Point(50, 94);
+            this.cbbqldg.Name = "cbbqldg";
+            this.cbbqldg.Size = new System.Drawing.Size(140, 36);
+            this.cbbqldg.TabIndex = 24;
+            // 
+            // lblTencbbox
+            // 
+            this.lblTencbbox.AutoSize = true;
+            this.lblTencbbox.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblTencbbox.Location = new System.Drawing.Point(47, 63);
+            this.lblTencbbox.Name = "lblTencbbox";
+            this.lblTencbbox.Size = new System.Drawing.Size(83, 23);
+            this.lblTencbbox.TabIndex = 26;
+            this.lblTencbbox.Text = "Lọc theo:";
+            // 
             // UC_QuanlyDocGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Controls.Add(this.lblTencbbox);
+            this.Controls.Add(this.cbbqldg);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.dgvDocGia);
             this.Controls.Add(this.grbTTDG);
@@ -766,5 +799,7 @@
         private Guna.UI2.WinForms.Guna2Button btnHuy;
         private Guna.UI2.WinForms.Guna2Button btnThem;
         private Guna.UI2.WinForms.Guna2Button btnXoa;
+        private Guna.UI2.WinForms.Guna2ComboBox cbbqldg;
+        private System.Windows.Forms.Label lblTencbbox;
     }
 }
