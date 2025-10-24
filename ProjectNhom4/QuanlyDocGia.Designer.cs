@@ -55,12 +55,6 @@
             this.lblMaDocGia = new System.Windows.Forms.Label();
             this.openFileAnh = new System.Windows.Forms.OpenFileDialog();
             this.dgvDocGia = new System.Windows.Forms.DataGridView();
-            this.Ma_Doc_Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ho_Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngay_Sinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngay_Cap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngay_Het_Han = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuDocGia = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.menuThem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSua = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,6 +70,16 @@
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.cbbqldg = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblTencbbox = new System.Windows.Forms.Label();
+            this.lblSDT = new System.Windows.Forms.Label();
+            this.txtsodienthoai = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Ma_Doc_Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ho_Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngay_Sinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nghe_nghiep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngay_Cap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngay_Het_Han = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbTTDG.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDocGia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocGia)).BeginInit();
@@ -98,6 +102,8 @@
             // grbTTDG
             // 
             this.grbTTDG.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.grbTTDG.Controls.Add(this.txtsodienthoai);
+            this.grbTTDG.Controls.Add(this.lblSDT);
             this.grbTTDG.Controls.Add(this.txtSDT);
             this.grbTTDG.Controls.Add(this.txtLoaiDocGia);
             this.grbTTDG.Controls.Add(this.dtpNgayHetHan);
@@ -120,7 +126,7 @@
             this.grbTTDG.ForeColor = System.Drawing.Color.Black;
             this.grbTTDG.Location = new System.Drawing.Point(40, 156);
             this.grbTTDG.Name = "grbTTDG";
-            this.grbTTDG.Size = new System.Drawing.Size(1307, 303);
+            this.grbTTDG.Size = new System.Drawing.Size(1307, 389);
             this.grbTTDG.TabIndex = 9;
             this.grbTTDG.TabStop = false;
             this.grbTTDG.Text = "Thông Tin Độc Giả";
@@ -212,7 +218,7 @@
             this.dtpNgaySinh.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpNgaySinh.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(315, 43);
+            this.dtpNgaySinh.Size = new System.Drawing.Size(314, 43);
             this.dtpNgaySinh.TabIndex = 15;
             this.dtpNgaySinh.Value = new System.DateTime(2025, 10, 21, 13, 49, 34, 0);
             // 
@@ -286,7 +292,7 @@
             this.txtHoTen.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtHoTen.ForeColor = System.Drawing.Color.Black;
             this.txtHoTen.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtHoTen.Location = new System.Drawing.Point(405, 104);
+            this.txtHoTen.Location = new System.Drawing.Point(405, 115);
             this.txtHoTen.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.PlaceholderText = "";
@@ -369,7 +375,7 @@
             // 
             this.lblHoTen.AutoSize = true;
             this.lblHoTen.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblHoTen.Location = new System.Drawing.Point(286, 115);
+            this.lblHoTen.Location = new System.Drawing.Point(286, 127);
             this.lblHoTen.Name = "lblHoTen";
             this.lblHoTen.Size = new System.Drawing.Size(64, 23);
             this.lblHoTen.TabIndex = 4;
@@ -420,7 +426,9 @@
             this.dgvDocGia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Ma_Doc_Gia,
             this.Ho_Ten,
+            this.SDT,
             this.Ngay_Sinh,
+            this.Nghe_nghiep,
             this.Email,
             this.Ngay_Cap,
             this.Ngay_Het_Han});
@@ -435,7 +443,7 @@
             this.dgvDocGia.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDocGia.EnableHeadersVisualStyles = false;
             this.dgvDocGia.GridColor = System.Drawing.Color.Black;
-            this.dgvDocGia.Location = new System.Drawing.Point(40, 480);
+            this.dgvDocGia.Location = new System.Drawing.Point(40, 560);
             this.dgvDocGia.Name = "dgvDocGia";
             this.dgvDocGia.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -449,50 +457,8 @@
             this.dgvDocGia.RowHeadersWidth = 72;
             this.dgvDocGia.RowTemplate.Height = 28;
             this.dgvDocGia.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvDocGia.Size = new System.Drawing.Size(1307, 379);
+            this.dgvDocGia.Size = new System.Drawing.Size(1307, 299);
             this.dgvDocGia.TabIndex = 10;
-            // 
-            // Ma_Doc_Gia
-            // 
-            this.Ma_Doc_Gia.DataPropertyName = "Ma_Doc_Gia";
-            this.Ma_Doc_Gia.HeaderText = "Mã độc giả";
-            this.Ma_Doc_Gia.MinimumWidth = 9;
-            this.Ma_Doc_Gia.Name = "Ma_Doc_Gia";
-            // 
-            // Ho_Ten
-            // 
-            this.Ho_Ten.DataPropertyName = "Ho_Ten";
-            this.Ho_Ten.HeaderText = "Họ tên";
-            this.Ho_Ten.MinimumWidth = 9;
-            this.Ho_Ten.Name = "Ho_Ten";
-            // 
-            // Ngay_Sinh
-            // 
-            this.Ngay_Sinh.DataPropertyName = "Ngay_Sinh";
-            this.Ngay_Sinh.HeaderText = "Ngày sinh";
-            this.Ngay_Sinh.MinimumWidth = 9;
-            this.Ngay_Sinh.Name = "Ngay_Sinh";
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = " Email";
-            this.Email.MinimumWidth = 9;
-            this.Email.Name = "Email";
-            // 
-            // Ngay_Cap
-            // 
-            this.Ngay_Cap.DataPropertyName = "Ngay_Cap";
-            this.Ngay_Cap.HeaderText = "Ngày cấp";
-            this.Ngay_Cap.MinimumWidth = 9;
-            this.Ngay_Cap.Name = "Ngay_Cap";
-            // 
-            // Ngay_Het_Han
-            // 
-            this.Ngay_Het_Han.DataPropertyName = "Ngay_Het_Han";
-            this.Ngay_Het_Han.HeaderText = "Ngày hết hạn";
-            this.Ngay_Het_Han.MinimumWidth = 9;
-            this.Ngay_Het_Han.Name = "Ngay_Het_Han";
             // 
             // contextMenuDocGia
             // 
@@ -729,6 +695,92 @@
             this.lblTencbbox.TabIndex = 26;
             this.lblTencbbox.Text = "Lọc theo:";
             // 
+            // lblSDT
+            // 
+            this.lblSDT.AutoSize = true;
+            this.lblSDT.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblSDT.Location = new System.Drawing.Point(286, 330);
+            this.lblSDT.Name = "lblSDT";
+            this.lblSDT.Size = new System.Drawing.Size(116, 23);
+            this.lblSDT.TabIndex = 20;
+            this.lblSDT.Text = "Số điện thoại";
+            // 
+            // txtsodienthoai
+            // 
+            this.txtsodienthoai.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtsodienthoai.DefaultText = "";
+            this.txtsodienthoai.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtsodienthoai.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtsodienthoai.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtsodienthoai.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtsodienthoai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtsodienthoai.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtsodienthoai.ForeColor = System.Drawing.Color.Black;
+            this.txtsodienthoai.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtsodienthoai.Location = new System.Drawing.Point(405, 309);
+            this.txtsodienthoai.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtsodienthoai.Name = "txtsodienthoai";
+            this.txtsodienthoai.PlaceholderText = "";
+            this.txtsodienthoai.SelectedText = "";
+            this.txtsodienthoai.Size = new System.Drawing.Size(315, 57);
+            this.txtsodienthoai.TabIndex = 21;
+            // 
+            // Ma_Doc_Gia
+            // 
+            this.Ma_Doc_Gia.DataPropertyName = "Ma_Doc_Gia";
+            this.Ma_Doc_Gia.HeaderText = "Mã độc giả";
+            this.Ma_Doc_Gia.MinimumWidth = 9;
+            this.Ma_Doc_Gia.Name = "Ma_Doc_Gia";
+            // 
+            // Ho_Ten
+            // 
+            this.Ho_Ten.DataPropertyName = "Ho_Ten";
+            this.Ho_Ten.HeaderText = "Họ tên";
+            this.Ho_Ten.MinimumWidth = 9;
+            this.Ho_Ten.Name = "Ho_Ten";
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "SDT";
+            this.SDT.MinimumWidth = 6;
+            this.SDT.Name = "SDT";
+            // 
+            // Ngay_Sinh
+            // 
+            this.Ngay_Sinh.DataPropertyName = "Ngay_Sinh";
+            this.Ngay_Sinh.HeaderText = "Ngày sinh";
+            this.Ngay_Sinh.MinimumWidth = 9;
+            this.Ngay_Sinh.Name = "Ngay_Sinh";
+            // 
+            // Nghe_nghiep
+            // 
+            this.Nghe_nghiep.DataPropertyName = "Nghe_nghiep";
+            this.Nghe_nghiep.HeaderText = "Nghề nghiệp";
+            this.Nghe_nghiep.MinimumWidth = 6;
+            this.Nghe_nghiep.Name = "Nghe_nghiep";
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = " Email";
+            this.Email.MinimumWidth = 9;
+            this.Email.Name = "Email";
+            // 
+            // Ngay_Cap
+            // 
+            this.Ngay_Cap.DataPropertyName = "Ngay_Cap";
+            this.Ngay_Cap.HeaderText = "Ngày cấp";
+            this.Ngay_Cap.MinimumWidth = 9;
+            this.Ngay_Cap.Name = "Ngay_Cap";
+            // 
+            // Ngay_Het_Han
+            // 
+            this.Ngay_Het_Han.DataPropertyName = "Ngay_Het_Han";
+            this.Ngay_Het_Han.HeaderText = "Ngày hết hạn";
+            this.Ngay_Het_Han.MinimumWidth = 9;
+            this.Ngay_Het_Han.Name = "Ngay_Het_Han";
+            // 
             // UC_QuanlyDocGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -787,12 +839,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuXoa;
         private Guna.UI2.WinForms.Guna2ContextMenuStrip guna2ContextMenuStrip1;
         private System.Windows.Forms.ErrorProvider errorDocGia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ma_Doc_Gia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ho_Ten;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ngay_Sinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ngay_Cap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ngay_Het_Han;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Button btnLuu;
         private Guna.UI2.WinForms.Guna2Button btnSua;
@@ -801,5 +847,15 @@
         private Guna.UI2.WinForms.Guna2Button btnXoa;
         private Guna.UI2.WinForms.Guna2ComboBox cbbqldg;
         private System.Windows.Forms.Label lblTencbbox;
+        private System.Windows.Forms.Label lblSDT;
+        private Guna.UI2.WinForms.Guna2TextBox txtsodienthoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ma_Doc_Gia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ho_Ten;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ngay_Sinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nghe_nghiep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ngay_Cap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ngay_Het_Han;
     }
 }
