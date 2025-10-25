@@ -35,6 +35,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblQLDG = new System.Windows.Forms.Label();
             this.grbTTDG = new System.Windows.Forms.GroupBox();
+            this.txtsodienthoai = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblSDT = new System.Windows.Forms.Label();
             this.txtSDT = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtLoaiDocGia = new Guna.UI2.WinForms.Guna2TextBox();
             this.dtpNgayHetHan = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -55,6 +57,14 @@
             this.lblMaDocGia = new System.Windows.Forms.Label();
             this.openFileAnh = new System.Windows.Forms.OpenFileDialog();
             this.dgvDocGia = new System.Windows.Forms.DataGridView();
+            this.Ma_Doc_Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ho_Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngay_Sinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nghe_nghiep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngay_Cap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngay_Het_Han = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuDocGia = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.menuThem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSua = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,16 +80,6 @@
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.cbbqldg = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblTencbbox = new System.Windows.Forms.Label();
-            this.lblSDT = new System.Windows.Forms.Label();
-            this.txtsodienthoai = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Ma_Doc_Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ho_Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngay_Sinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nghe_nghiep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngay_Cap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngay_Het_Han = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbTTDG.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDocGia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocGia)).BeginInit();
@@ -130,6 +130,36 @@
             this.grbTTDG.TabIndex = 9;
             this.grbTTDG.TabStop = false;
             this.grbTTDG.Text = "Thông Tin Độc Giả";
+            // 
+            // txtsodienthoai
+            // 
+            this.txtsodienthoai.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtsodienthoai.DefaultText = "";
+            this.txtsodienthoai.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtsodienthoai.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtsodienthoai.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtsodienthoai.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtsodienthoai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtsodienthoai.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtsodienthoai.ForeColor = System.Drawing.Color.Black;
+            this.txtsodienthoai.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtsodienthoai.Location = new System.Drawing.Point(405, 309);
+            this.txtsodienthoai.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtsodienthoai.Name = "txtsodienthoai";
+            this.txtsodienthoai.PlaceholderText = "";
+            this.txtsodienthoai.SelectedText = "";
+            this.txtsodienthoai.Size = new System.Drawing.Size(315, 57);
+            this.txtsodienthoai.TabIndex = 21;
+            // 
+            // lblSDT
+            // 
+            this.lblSDT.AutoSize = true;
+            this.lblSDT.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblSDT.Location = new System.Drawing.Point(286, 330);
+            this.lblSDT.Name = "lblSDT";
+            this.lblSDT.Size = new System.Drawing.Size(116, 23);
+            this.lblSDT.TabIndex = 20;
+            this.lblSDT.Text = "Số điện thoại";
             // 
             // txtSDT
             // 
@@ -460,6 +490,62 @@
             this.dgvDocGia.Size = new System.Drawing.Size(1307, 299);
             this.dgvDocGia.TabIndex = 10;
             // 
+            // Ma_Doc_Gia
+            // 
+            this.Ma_Doc_Gia.DataPropertyName = "Ma_Doc_Gia";
+            this.Ma_Doc_Gia.HeaderText = "Mã độc giả";
+            this.Ma_Doc_Gia.MinimumWidth = 9;
+            this.Ma_Doc_Gia.Name = "Ma_Doc_Gia";
+            // 
+            // Ho_Ten
+            // 
+            this.Ho_Ten.DataPropertyName = "Ho_Ten";
+            this.Ho_Ten.HeaderText = "Họ tên";
+            this.Ho_Ten.MinimumWidth = 9;
+            this.Ho_Ten.Name = "Ho_Ten";
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "SDT";
+            this.SDT.MinimumWidth = 6;
+            this.SDT.Name = "SDT";
+            // 
+            // Ngay_Sinh
+            // 
+            this.Ngay_Sinh.DataPropertyName = "Ngay_Sinh";
+            this.Ngay_Sinh.HeaderText = "Ngày sinh";
+            this.Ngay_Sinh.MinimumWidth = 9;
+            this.Ngay_Sinh.Name = "Ngay_Sinh";
+            // 
+            // Nghe_nghiep
+            // 
+            this.Nghe_nghiep.DataPropertyName = "Nghe_nghiep";
+            this.Nghe_nghiep.HeaderText = "Nghề nghiệp";
+            this.Nghe_nghiep.MinimumWidth = 6;
+            this.Nghe_nghiep.Name = "Nghe_nghiep";
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = " Email";
+            this.Email.MinimumWidth = 9;
+            this.Email.Name = "Email";
+            // 
+            // Ngay_Cap
+            // 
+            this.Ngay_Cap.DataPropertyName = "Ngay_Cap";
+            this.Ngay_Cap.HeaderText = "Ngày cấp";
+            this.Ngay_Cap.MinimumWidth = 9;
+            this.Ngay_Cap.Name = "Ngay_Cap";
+            // 
+            // Ngay_Het_Han
+            // 
+            this.Ngay_Het_Han.DataPropertyName = "Ngay_Het_Han";
+            this.Ngay_Het_Han.HeaderText = "Ngày hết hạn";
+            this.Ngay_Het_Han.MinimumWidth = 9;
+            this.Ngay_Het_Han.Name = "Ngay_Het_Han";
+            // 
             // contextMenuDocGia
             // 
             this.contextMenuDocGia.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -694,92 +780,6 @@
             this.lblTencbbox.Size = new System.Drawing.Size(83, 23);
             this.lblTencbbox.TabIndex = 26;
             this.lblTencbbox.Text = "Lọc theo:";
-            // 
-            // lblSDT
-            // 
-            this.lblSDT.AutoSize = true;
-            this.lblSDT.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblSDT.Location = new System.Drawing.Point(286, 330);
-            this.lblSDT.Name = "lblSDT";
-            this.lblSDT.Size = new System.Drawing.Size(116, 23);
-            this.lblSDT.TabIndex = 20;
-            this.lblSDT.Text = "Số điện thoại";
-            // 
-            // txtsodienthoai
-            // 
-            this.txtsodienthoai.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtsodienthoai.DefaultText = "";
-            this.txtsodienthoai.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtsodienthoai.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtsodienthoai.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtsodienthoai.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtsodienthoai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtsodienthoai.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtsodienthoai.ForeColor = System.Drawing.Color.Black;
-            this.txtsodienthoai.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtsodienthoai.Location = new System.Drawing.Point(405, 309);
-            this.txtsodienthoai.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtsodienthoai.Name = "txtsodienthoai";
-            this.txtsodienthoai.PlaceholderText = "";
-            this.txtsodienthoai.SelectedText = "";
-            this.txtsodienthoai.Size = new System.Drawing.Size(315, 57);
-            this.txtsodienthoai.TabIndex = 21;
-            // 
-            // Ma_Doc_Gia
-            // 
-            this.Ma_Doc_Gia.DataPropertyName = "Ma_Doc_Gia";
-            this.Ma_Doc_Gia.HeaderText = "Mã độc giả";
-            this.Ma_Doc_Gia.MinimumWidth = 9;
-            this.Ma_Doc_Gia.Name = "Ma_Doc_Gia";
-            // 
-            // Ho_Ten
-            // 
-            this.Ho_Ten.DataPropertyName = "Ho_Ten";
-            this.Ho_Ten.HeaderText = "Họ tên";
-            this.Ho_Ten.MinimumWidth = 9;
-            this.Ho_Ten.Name = "Ho_Ten";
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "SDT";
-            this.SDT.MinimumWidth = 6;
-            this.SDT.Name = "SDT";
-            // 
-            // Ngay_Sinh
-            // 
-            this.Ngay_Sinh.DataPropertyName = "Ngay_Sinh";
-            this.Ngay_Sinh.HeaderText = "Ngày sinh";
-            this.Ngay_Sinh.MinimumWidth = 9;
-            this.Ngay_Sinh.Name = "Ngay_Sinh";
-            // 
-            // Nghe_nghiep
-            // 
-            this.Nghe_nghiep.DataPropertyName = "Nghe_nghiep";
-            this.Nghe_nghiep.HeaderText = "Nghề nghiệp";
-            this.Nghe_nghiep.MinimumWidth = 6;
-            this.Nghe_nghiep.Name = "Nghe_nghiep";
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = " Email";
-            this.Email.MinimumWidth = 9;
-            this.Email.Name = "Email";
-            // 
-            // Ngay_Cap
-            // 
-            this.Ngay_Cap.DataPropertyName = "Ngay_Cap";
-            this.Ngay_Cap.HeaderText = "Ngày cấp";
-            this.Ngay_Cap.MinimumWidth = 9;
-            this.Ngay_Cap.Name = "Ngay_Cap";
-            // 
-            // Ngay_Het_Han
-            // 
-            this.Ngay_Het_Han.DataPropertyName = "Ngay_Het_Han";
-            this.Ngay_Het_Han.HeaderText = "Ngày hết hạn";
-            this.Ngay_Het_Han.MinimumWidth = 9;
-            this.Ngay_Het_Han.Name = "Ngay_Het_Han";
             // 
             // UC_QuanlyDocGia
             // 
