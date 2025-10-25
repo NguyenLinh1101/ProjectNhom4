@@ -64,6 +64,11 @@ namespace ProjectNhom4
         {
             LoadUserControl(new UC_QuanlyThongTinTacGia());
         }
+
+        private void btnqldocgia_Click(object sender, EventArgs e)
+        {
+            LoadUserControl(new UC_QuanlyDocGia());
+        }
     }
 }
 
