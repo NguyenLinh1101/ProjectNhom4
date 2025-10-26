@@ -21,15 +21,15 @@ namespace ProjectNhom4
     }
     public class MainForm : Form
     {
-        private QL_DauSach qlDauSach;
+        private QLSach_Ribbon qlSach;
 
         public MainForm()
         {
-            qlDauSach = new QL_DauSach();
-            qlDauSach.Dock = DockStyle.Fill;
-            this.Controls.Add(qlDauSach);
-            this.Text = "Quản Lý Đầu Sách";
-            this.WindowState = FormWindowState.Maximized;
-        }
+           qlSach = new QLSach_Ribbon();
+           qlSach.Dock = DockStyle.Fill;
+           this.Controls.Add(qlSach);
+           this.Text = "Quản Lý Sách";
+           this.WindowState = FormWindowState.Maximized;
+       }
     }
 }
