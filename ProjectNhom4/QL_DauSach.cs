@@ -202,8 +202,7 @@ namespace ProjectNhom4
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            string searchText = txtSearch.Text;
-            dv.RowFilter = $"[Ten_Dau_Sach] like '%{searchText}%'";
+            
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -476,6 +475,12 @@ namespace ProjectNhom4
             {
                 MessageBox.Show("Lỗi mở form: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void txtSearch_TextChanged_1(object sender, EventArgs e)
+        {
+            string searchText = txtSearch.Text;
+            dv.RowFilter = $"[Ten_Dau_Sach] like '%{searchText}%'";
         }
     }
 }
