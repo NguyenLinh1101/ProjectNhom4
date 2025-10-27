@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace ProjectNhom4
 {
-    public partial class Form2 : Form
+    public partial class frmQuanlyCuonSach : Form
     {
-        public Form2()
+        public frmQuanlyCuonSach()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -35,7 +35,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblDauSach = new System.Windows.Forms.Label();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.guna2ContextMenuStrip2 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
@@ -93,7 +92,7 @@
             this.lblDauSach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.lblDauSach.Location = new System.Drawing.Point(785, 2);
             this.lblDauSach.Name = "lblDauSach";
-            this.lblDauSach.Size = new System.Drawing.Size(494, 65);
+            this.lblDauSach.Size = new System.Drawing.Size(410, 54);
             this.lblDauSach.TabIndex = 5;
             this.lblDauSach.Text = "QUẢN LÝ ĐẦU SÁCH";
             // 
@@ -365,75 +364,152 @@
             this.grbTTDS.Text = "Thông tin đầu sách";
             this.grbTTDS.Enter += new System.EventHandler(this.grbTTDS_Enter);
             // 
-            // label1
+            // cboChuDe
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(182, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 28);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Mã đầu sách";
+            this.cboChuDe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboChuDe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboChuDe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboChuDe.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.cboChuDe.FormattingEnabled = true;
+            this.cboChuDe.Location = new System.Drawing.Point(1372, 119);
+            this.cboChuDe.Name = "cboChuDe";
+            this.cboChuDe.Size = new System.Drawing.Size(372, 31);
+            this.cboChuDe.TabIndex = 6;
             // 
-            // label2
+            // txtTacGia
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(182, 127);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 28);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Tên đầu sách";
+            this.txtTacGia.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTacGia.DefaultText = "";
+            this.txtTacGia.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTacGia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTacGia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTacGia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTacGia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTacGia.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTacGia.ForeColor = System.Drawing.Color.Black;
+            this.txtTacGia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTacGia.Location = new System.Drawing.Point(1372, 180);
+            this.txtTacGia.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtTacGia.Name = "txtTacGia";
+            this.txtTacGia.PlaceholderText = "";
+            this.txtTacGia.SelectedText = "";
+            this.txtTacGia.Size = new System.Drawing.Size(372, 53);
+            this.txtTacGia.TabIndex = 7;
             // 
-            // label3
+            // cboLoaiSach
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(182, 194);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 28);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Năm XB";
+            this.cboLoaiSach.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboLoaiSach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboLoaiSach.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboLoaiSach.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.cboLoaiSach.FormattingEnabled = true;
+            this.cboLoaiSach.Location = new System.Drawing.Point(1372, 60);
+            this.cboLoaiSach.Name = "cboLoaiSach";
+            this.cboLoaiSach.Size = new System.Drawing.Size(372, 31);
+            this.cboLoaiSach.TabIndex = 5;
+            this.cboLoaiSach.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // label4
+            // txtSoTrang
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(182, 261);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 28);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Giá bìa";
+            this.txtSoTrang.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSoTrang.DefaultText = "";
+            this.txtSoTrang.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSoTrang.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSoTrang.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSoTrang.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSoTrang.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSoTrang.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtSoTrang.ForeColor = System.Drawing.Color.Black;
+            this.txtSoTrang.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSoTrang.Location = new System.Drawing.Point(780, 249);
+            this.txtSoTrang.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtSoTrang.Name = "txtSoTrang";
+            this.txtSoTrang.PlaceholderText = "";
+            this.txtSoTrang.SelectedText = "";
+            this.txtSoTrang.Size = new System.Drawing.Size(205, 55);
+            this.txtSoTrang.TabIndex = 4;
             // 
-            // label5
+            // txtGiaBia
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(632, 261);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 28);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Số trang";
+            this.txtGiaBia.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGiaBia.DefaultText = "";
+            this.txtGiaBia.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtGiaBia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtGiaBia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGiaBia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGiaBia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGiaBia.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtGiaBia.ForeColor = System.Drawing.Color.Black;
+            this.txtGiaBia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGiaBia.Location = new System.Drawing.Point(362, 249);
+            this.txtGiaBia.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtGiaBia.Name = "txtGiaBia";
+            this.txtGiaBia.PlaceholderText = "";
+            this.txtGiaBia.SelectedText = "";
+            this.txtGiaBia.Size = new System.Drawing.Size(205, 55);
+            this.txtGiaBia.TabIndex = 3;
             // 
-            // label6
+            // txtNamXB
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(1213, 60);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(99, 28);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Loại sách";
+            this.txtNamXB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNamXB.DefaultText = "";
+            this.txtNamXB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNamXB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNamXB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNamXB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNamXB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNamXB.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtNamXB.ForeColor = System.Drawing.Color.Black;
+            this.txtNamXB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNamXB.Location = new System.Drawing.Point(362, 182);
+            this.txtNamXB.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtNamXB.Name = "txtNamXB";
+            this.txtNamXB.PlaceholderText = "";
+            this.txtNamXB.SelectedText = "";
+            this.txtNamXB.Size = new System.Drawing.Size(623, 55);
+            this.txtNamXB.TabIndex = 2;
             // 
-            // label7
+            // txtTenDauSach
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.Location = new System.Drawing.Point(1213, 127);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 28);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Chủ đề";
+            this.txtTenDauSach.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTenDauSach.DefaultText = "";
+            this.txtTenDauSach.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTenDauSach.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTenDauSach.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenDauSach.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenDauSach.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenDauSach.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTenDauSach.ForeColor = System.Drawing.Color.Black;
+            this.txtTenDauSach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenDauSach.Location = new System.Drawing.Point(362, 115);
+            this.txtTenDauSach.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtTenDauSach.Name = "txtTenDauSach";
+            this.txtTenDauSach.PlaceholderText = "";
+            this.txtTenDauSach.SelectedText = "";
+            this.txtTenDauSach.Size = new System.Drawing.Size(623, 55);
+            this.txtTenDauSach.TabIndex = 1;
+            // 
+            // txtMaDauSach
+            // 
+            this.txtMaDauSach.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaDauSach.DefaultText = "";
+            this.txtMaDauSach.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMaDauSach.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMaDauSach.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaDauSach.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaDauSach.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaDauSach.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMaDauSach.ForeColor = System.Drawing.Color.Black;
+            this.txtMaDauSach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaDauSach.Location = new System.Drawing.Point(362, 48);
+            this.txtMaDauSach.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtMaDauSach.Name = "txtMaDauSach";
+            this.txtMaDauSach.PlaceholderText = "";
+            this.txtMaDauSach.SelectedText = "";
+            this.txtMaDauSach.Size = new System.Drawing.Size(623, 55);
+            this.txtMaDauSach.TabIndex = 0;
             // 
             // label8
             // 
@@ -441,9 +517,106 @@
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label8.Location = new System.Drawing.Point(1213, 194);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 28);
+            this.label8.Size = new System.Drawing.Size(66, 23);
             this.label8.TabIndex = 10;
             this.label8.Text = "Tác giả";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label7.Location = new System.Drawing.Point(1213, 127);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(66, 23);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Chủ đề";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.Location = new System.Drawing.Point(1213, 60);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 23);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Loại sách";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Location = new System.Drawing.Point(632, 261);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 23);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Số trang";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.Location = new System.Drawing.Point(182, 261);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 23);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Giá bìa";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(182, 194);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 23);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Năm XB";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(182, 127);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(111, 23);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Tên đầu sách";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(182, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 23);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Mã đầu sách";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BorderRadius = 35;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSearch.ForeColor = System.Drawing.Color.DimGray;
+            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.IconLeft = global::ProjectNhom4.Properties.Resources.search;
+            this.txtSearch.IconLeftOffset = new System.Drawing.Point(20, 0);
+            this.txtSearch.IconLeftSize = new System.Drawing.Size(25, 25);
+            this.txtSearch.Location = new System.Drawing.Point(299, 84);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(6);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtSearch.PlaceholderText = "Nhập để tìm kiếm đầu sách ";
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.Size = new System.Drawing.Size(1447, 72);
+            this.txtSearch.TabIndex = 6;
+            this.txtSearch.TextOffset = new System.Drawing.Point(10, 0);
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // txtMaDauSach
             // 
@@ -681,7 +854,7 @@
             // 
             // QL_DauSach
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
