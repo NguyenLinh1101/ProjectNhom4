@@ -21,11 +21,11 @@ namespace ProjectNhom4
     }
     public class MainForm : Form
     {
-        private QLSach_Ribbon qlSach;
+        private UC_QuanlyDocGia qlSach;
 
         public MainForm()
         {
-           qlSach = new QLSach_Ribbon();
+           qlSach = new UC_QuanlyDocGia();
            qlSach.Dock = DockStyle.Fill;
            this.Controls.Add(qlSach);
            this.Text = "Quản Lý Sách";

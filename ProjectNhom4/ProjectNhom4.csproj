@@ -67,6 +67,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Baocao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Baocao.Designer.cs">
+      <DependentUpon>Baocao.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChiTietDauSach.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     <Compile Include="UC_TrangChu.Designer.cs">
       <DependentUpon>UC_TrangChu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Baocao.resx">
+      <DependentUpon>Baocao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChiTietDauSach.resx">
       <DependentUpon>ChiTietDauSach.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +202,7 @@
     <None Include="Resources\search.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\message-alert.png" />
     <None Include="Resources\thuvienhust.jpg" />
     <None Include="Resources\user.png" />
     <None Include="Resources\profile.png" />
@@ -205,6 +215,7 @@
     <None Include="Resources\cogwheel.png" />
     <None Include="Resources\logohust.png" />
     <None Include="Resources\hustthuvien.png" />
+    <None Include="Resources\employee-handbook.png" />
     <Content Include="Resources\logoneu.png" />
   </ItemGroup>
   <ItemGroup>
