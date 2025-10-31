@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.SqlServer.Types;
 
 namespace ProjectNhom4
 {
@@ -14,6 +15,8 @@ namespace ProjectNhom4
         [STAThread]
         static void Main()
         {
+            SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
@@ -21,11 +24,11 @@ namespace ProjectNhom4
     }
     public class MainForm : Form
     {
-        private UC_QuanlyDocGia qlSach;
+        private Baocao qlSach;
 
         public MainForm()
         {
-           qlSach = new UC_QuanlyDocGia();
+           qlSach = new Baocao(  );
            qlSach.Dock = DockStyle.Fill;
            this.Controls.Add(qlSach);
            this.Text = "Quản Lý Sách";
