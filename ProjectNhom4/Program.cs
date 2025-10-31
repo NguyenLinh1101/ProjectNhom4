@@ -15,24 +15,23 @@ namespace ProjectNhom4
         [STAThread]
         static void Main()
         {
-            SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new Baocaosachhong());
         }
     }
-    public class MainForm : Form
-    {
-        private Baocao qlSach;
+    //public class MainForm : Form
+    //{
+    //    private Baocao qlSach;
 
-        public MainForm()
-        {
-           qlSach = new Baocao(  );
-           qlSach.Dock = DockStyle.Fill;
-           this.Controls.Add(qlSach);
-           this.Text = "Quản Lý Sách";
-           this.WindowState = FormWindowState.Maximized;
-       }
-    }
+    //    public MainForm()
+    //    {
+    //       qlSach = new Baocao(  );
+    //       qlSach.Dock = DockStyle.Fill;
+    //       this.Controls.Add(qlSach);
+    //       this.Text = "Quản Lý Sách";
+    //       this.WindowState = FormWindowState.Maximized;
+    //   }
+    //}
 }

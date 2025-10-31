@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using ProjectNhom4.Reports;
 using DevExpress.XtraReports.UI;
 
 namespace ProjectNhom4
@@ -34,6 +33,11 @@ namespace ProjectNhom4
         private void btnSachHong_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void Baocao_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
