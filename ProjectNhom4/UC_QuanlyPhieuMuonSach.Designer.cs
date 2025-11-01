@@ -34,7 +34,6 @@
             this.lblDSPhieuMuon = new System.Windows.Forms.Label();
             this.pnlTitle = new Guna.UI2.WinForms.Guna2Panel();
             this.cbTruong = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.MaThuThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KieuMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,6 +75,7 @@
             this.TenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TienCocSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TinhTrangMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuMuon)).BeginInit();
             this.grbThongTinPhieuMuon.SuspendLayout();
@@ -123,30 +123,6 @@
             this.cbTruong.Name = "cbTruong";
             this.cbTruong.Size = new System.Drawing.Size(130, 36);
             this.cbTruong.TabIndex = 12;
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.AcceptsTab = true;
-            this.txtTimKiem.BorderColor = System.Drawing.Color.Silver;
-            this.txtTimKiem.BorderRadius = 8;
-            this.txtTimKiem.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTimKiem.DefaultText = "";
-            this.txtTimKiem.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTimKiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTimKiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTimKiem.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTimKiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTimKiem.IconLeft = global::ProjectNhom4.Properties.Resources.search;
-            this.txtTimKiem.Location = new System.Drawing.Point(168, 86);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtTimKiem.PlaceholderText = "Nhập để tìm kiếm ";
-            this.txtTimKiem.SelectedText = "";
-            this.txtTimKiem.Size = new System.Drawing.Size(452, 36);
-            this.txtTimKiem.TabIndex = 13;
             // 
             // label1
             // 
@@ -692,7 +668,7 @@
             this.dgvSachDangMuon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -712,6 +688,7 @@
             this.dgvSachDangMuon.RowTemplate.Height = 24;
             this.dgvSachDangMuon.Size = new System.Drawing.Size(658, 257);
             this.dgvSachDangMuon.TabIndex = 0;
+            this.dgvSachDangMuon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSachDangMuon_CellContentClick);
             // 
             // MaSach
             // 
@@ -736,6 +713,30 @@
             this.TinhTrangMuon.HeaderText = "Tình Trạng Mượn";
             this.TinhTrangMuon.MinimumWidth = 6;
             this.TinhTrangMuon.Name = "TinhTrangMuon";
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.AcceptsTab = true;
+            this.txtTimKiem.BorderColor = System.Drawing.Color.Silver;
+            this.txtTimKiem.BorderRadius = 8;
+            this.txtTimKiem.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTimKiem.DefaultText = "";
+            this.txtTimKiem.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTimKiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTimKiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTimKiem.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTimKiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTimKiem.IconLeft = global::ProjectNhom4.Properties.Resources.search;
+            this.txtTimKiem.Location = new System.Drawing.Point(168, 86);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtTimKiem.PlaceholderText = "Nhập để tìm kiếm ";
+            this.txtTimKiem.SelectedText = "";
+            this.txtTimKiem.Size = new System.Drawing.Size(452, 36);
+            this.txtTimKiem.TabIndex = 13;
             // 
             // UC_QuanlyPhieuMuonSach
             // 

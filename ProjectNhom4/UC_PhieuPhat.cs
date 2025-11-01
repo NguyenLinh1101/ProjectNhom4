@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace ProjectNhom4
 {
-    public partial class UC_QuanlyPhieuMuonSach : UserControl
+    public partial class UC_PhieuPhat : UserControl
     {
-        public UC_QuanlyPhieuMuonSach()
+        public UC_PhieuPhat()
         {
             InitializeComponent();
         }
 
-        private void guna2DateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvSachDangMuon_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void lblNgayLap_Click(object sender, EventArgs e)
         {
 
         }
