@@ -57,6 +57,14 @@
             this.lblMaDocGia = new System.Windows.Forms.Label();
             this.openFileAnh = new System.Windows.Forms.OpenFileDialog();
             this.dgvDocGia = new System.Windows.Forms.DataGridView();
+            this.Ma_Doc_Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ho_Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngay_Sinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nghe_nghiep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngay_Cap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngay_Het_Han = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuDocGia = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.menuThem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSua = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,14 +80,6 @@
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.cbbqldg = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblTencbbox = new System.Windows.Forms.Label();
-            this.Ma_Doc_Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ho_Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngay_Sinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nghe_nghiep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngay_Cap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngay_Het_Han = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbTTDG.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDocGia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocGia)).BeginInit();
@@ -95,7 +95,7 @@
             this.lblQLDG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.lblQLDG.Location = new System.Drawing.Point(510, 16);
             this.lblQLDG.Name = "lblQLDG";
-            this.lblQLDG.Size = new System.Drawing.Size(371, 54);
+            this.lblQLDG.Size = new System.Drawing.Size(306, 45);
             this.lblQLDG.TabIndex = 7;
             this.lblQLDG.Text = "QUẢN LÝ ĐỘC GIẢ";
             // 
@@ -161,7 +161,7 @@
             this.lblSDT.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblSDT.Location = new System.Drawing.Point(286, 395);
             this.lblSDT.Name = "lblSDT";
-            this.lblSDT.Size = new System.Drawing.Size(138, 28);
+            this.lblSDT.Size = new System.Drawing.Size(116, 23);
             this.lblSDT.TabIndex = 20;
             this.lblSDT.Text = "Số điện thoại";
             this.lblSDT.Click += new System.EventHandler(this.lblSDT_Click);
@@ -266,7 +266,7 @@
             this.lblNgayHetHan.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblNgayHetHan.Location = new System.Drawing.Point(922, 330);
             this.lblNgayHetHan.Name = "lblNgayHetHan";
-            this.lblNgayHetHan.Size = new System.Drawing.Size(140, 28);
+            this.lblNgayHetHan.Size = new System.Drawing.Size(117, 23);
             this.lblNgayHetHan.TabIndex = 13;
             this.lblNgayHetHan.Text = "Ngày hết hạn";
             // 
@@ -368,7 +368,7 @@
             this.lblNgayCapThe.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblNgayCapThe.Location = new System.Drawing.Point(920, 242);
             this.lblNgayCapThe.Name = "lblNgayCapThe";
-            this.lblNgayCapThe.Size = new System.Drawing.Size(138, 28);
+            this.lblNgayCapThe.Size = new System.Drawing.Size(116, 23);
             this.lblNgayCapThe.TabIndex = 10;
             this.lblNgayCapThe.Text = "Ngày cấp thẻ";
             // 
@@ -378,7 +378,7 @@
             this.lblNghenghiep.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblNghenghiep.Location = new System.Drawing.Point(922, 159);
             this.lblNghenghiep.Name = "lblNghenghiep";
-            this.lblNghenghiep.Size = new System.Drawing.Size(134, 28);
+            this.lblNghenghiep.Size = new System.Drawing.Size(114, 23);
             this.lblNghenghiep.TabIndex = 9;
             this.lblNghenghiep.Text = "Nghề nghiệp";
             // 
@@ -388,7 +388,7 @@
             this.lblMaThe.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblMaThe.Location = new System.Drawing.Point(922, 60);
             this.lblMaThe.Name = "lblMaThe";
-            this.lblMaThe.Size = new System.Drawing.Size(155, 28);
+            this.lblMaThe.Size = new System.Drawing.Size(130, 23);
             this.lblMaThe.TabIndex = 9;
             this.lblMaThe.Text = "Mã thẻ độc giả";
             // 
@@ -398,7 +398,7 @@
             this.lblNgaySinh.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblNgaySinh.Location = new System.Drawing.Point(306, 320);
             this.lblNgaySinh.Name = "lblNgaySinh";
-            this.lblNgaySinh.Size = new System.Drawing.Size(107, 28);
+            this.lblNgaySinh.Size = new System.Drawing.Size(89, 23);
             this.lblNgaySinh.TabIndex = 6;
             this.lblNgaySinh.Text = "Ngày sinh";
             // 
@@ -408,7 +408,7 @@
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblEmail.Location = new System.Drawing.Point(306, 238);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(64, 28);
+            this.lblEmail.Size = new System.Drawing.Size(54, 23);
             this.lblEmail.TabIndex = 4;
             this.lblEmail.Text = "Email";
             this.lblEmail.Click += new System.EventHandler(this.label3_Click);
@@ -419,7 +419,7 @@
             this.lblHoTen.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblHoTen.Location = new System.Drawing.Point(306, 144);
             this.lblHoTen.Name = "lblHoTen";
-            this.lblHoTen.Size = new System.Drawing.Size(76, 28);
+            this.lblHoTen.Size = new System.Drawing.Size(64, 23);
             this.lblHoTen.TabIndex = 4;
             this.lblHoTen.Text = "Họ tên";
             // 
@@ -429,7 +429,7 @@
             this.lblMaDocGia.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblMaDocGia.Location = new System.Drawing.Point(306, 60);
             this.lblMaDocGia.Name = "lblMaDocGia";
-            this.lblMaDocGia.Size = new System.Drawing.Size(118, 28);
+            this.lblMaDocGia.Size = new System.Drawing.Size(99, 23);
             this.lblMaDocGia.TabIndex = 4;
             this.lblMaDocGia.Text = "Mã độc giả";
             this.lblMaDocGia.Click += new System.EventHandler(this.label1_Click);
@@ -503,6 +503,70 @@
             this.dgvDocGia.TabIndex = 10;
             this.dgvDocGia.SelectionChanged += new System.EventHandler(this.dgvDocGia_SelectionChanged);
             // 
+            // Ma_Doc_Gia
+            // 
+            this.Ma_Doc_Gia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ma_Doc_Gia.DataPropertyName = "Ma_Doc_Gia";
+            this.Ma_Doc_Gia.HeaderText = "Mã độc giả";
+            this.Ma_Doc_Gia.MinimumWidth = 9;
+            this.Ma_Doc_Gia.Name = "Ma_Doc_Gia";
+            // 
+            // Ho_Ten
+            // 
+            this.Ho_Ten.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ho_Ten.DataPropertyName = "Ho_Ten";
+            this.Ho_Ten.HeaderText = "Họ tên";
+            this.Ho_Ten.MinimumWidth = 9;
+            this.Ho_Ten.Name = "Ho_Ten";
+            // 
+            // SDT
+            // 
+            this.SDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "SDT";
+            this.SDT.MinimumWidth = 6;
+            this.SDT.Name = "SDT";
+            // 
+            // Ngay_Sinh
+            // 
+            this.Ngay_Sinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ngay_Sinh.DataPropertyName = "Ngay_Sinh";
+            this.Ngay_Sinh.HeaderText = "Ngày sinh";
+            this.Ngay_Sinh.MinimumWidth = 9;
+            this.Ngay_Sinh.Name = "Ngay_Sinh";
+            // 
+            // Nghe_nghiep
+            // 
+            this.Nghe_nghiep.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nghe_nghiep.DataPropertyName = "Loai_Doc_Gia";
+            this.Nghe_nghiep.HeaderText = "Nghề nghiệp";
+            this.Nghe_nghiep.MinimumWidth = 6;
+            this.Nghe_nghiep.Name = "Nghe_nghiep";
+            // 
+            // Email
+            // 
+            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = " Email";
+            this.Email.MinimumWidth = 9;
+            this.Email.Name = "Email";
+            // 
+            // Ngay_Cap
+            // 
+            this.Ngay_Cap.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ngay_Cap.DataPropertyName = "Ngay_Cap";
+            this.Ngay_Cap.HeaderText = "Ngày cấp";
+            this.Ngay_Cap.MinimumWidth = 9;
+            this.Ngay_Cap.Name = "Ngay_Cap";
+            // 
+            // Ngay_Het_Han
+            // 
+            this.Ngay_Het_Han.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ngay_Het_Han.DataPropertyName = "Ngay_Het_Han";
+            this.Ngay_Het_Han.HeaderText = "Ngày hết hạn";
+            this.Ngay_Het_Han.MinimumWidth = 9;
+            this.Ngay_Het_Han.Name = "Ngay_Het_Han";
+            // 
             // contextMenuDocGia
             // 
             this.contextMenuDocGia.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -520,24 +584,24 @@
             this.contextMenuDocGia.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.contextMenuDocGia.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.contextMenuDocGia.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.contextMenuDocGia.Size = new System.Drawing.Size(129, 100);
+            this.contextMenuDocGia.Size = new System.Drawing.Size(116, 76);
             // 
             // menuThem
             // 
             this.menuThem.Name = "menuThem";
-            this.menuThem.Size = new System.Drawing.Size(128, 32);
+            this.menuThem.Size = new System.Drawing.Size(115, 24);
             this.menuThem.Text = "Thêm";
             // 
             // menuSua
             // 
             this.menuSua.Name = "menuSua";
-            this.menuSua.Size = new System.Drawing.Size(128, 32);
+            this.menuSua.Size = new System.Drawing.Size(115, 24);
             this.menuSua.Text = "Sửa";
             // 
             // menuXoa
             // 
             this.menuXoa.Name = "menuXoa";
-            this.menuXoa.Size = new System.Drawing.Size(128, 32);
+            this.menuXoa.Size = new System.Drawing.Size(115, 24);
             this.menuXoa.Text = "Xóa";
             // 
             // guna2ContextMenuStrip1
@@ -616,7 +680,7 @@
             this.btnLuu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnLuu.HoverState.FillColor = System.Drawing.Color.White;
             this.btnLuu.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnLuu.Location = new System.Drawing.Point(951, 4);
+            this.btnLuu.Location = new System.Drawing.Point(952, 0);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(168, 66);
@@ -664,7 +728,7 @@
             this.btnHuy.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnHuy.HoverState.FillColor = System.Drawing.Color.White;
             this.btnHuy.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnHuy.Location = new System.Drawing.Point(1244, 4);
+            this.btnHuy.Location = new System.Drawing.Point(1235, 0);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(168, 66);
@@ -712,7 +776,7 @@
             this.btnXoa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnXoa.HoverState.FillColor = System.Drawing.Color.White;
             this.btnXoa.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnXoa.Location = new System.Drawing.Point(676, 4);
+            this.btnXoa.Location = new System.Drawing.Point(676, 0);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(168, 66);
@@ -744,73 +808,9 @@
             this.lblTencbbox.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblTencbbox.Location = new System.Drawing.Point(47, 63);
             this.lblTencbbox.Name = "lblTencbbox";
-            this.lblTencbbox.Size = new System.Drawing.Size(104, 30);
+            this.lblTencbbox.Size = new System.Drawing.Size(83, 23);
             this.lblTencbbox.TabIndex = 26;
             this.lblTencbbox.Text = "Lọc theo:";
-            // 
-            // Ma_Doc_Gia
-            // 
-            this.Ma_Doc_Gia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Ma_Doc_Gia.DataPropertyName = "Ma_Doc_Gia";
-            this.Ma_Doc_Gia.HeaderText = "Mã độc giả";
-            this.Ma_Doc_Gia.MinimumWidth = 9;
-            this.Ma_Doc_Gia.Name = "Ma_Doc_Gia";
-            // 
-            // Ho_Ten
-            // 
-            this.Ho_Ten.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Ho_Ten.DataPropertyName = "Ho_Ten";
-            this.Ho_Ten.HeaderText = "Họ tên";
-            this.Ho_Ten.MinimumWidth = 9;
-            this.Ho_Ten.Name = "Ho_Ten";
-            // 
-            // SDT
-            // 
-            this.SDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "SDT";
-            this.SDT.MinimumWidth = 6;
-            this.SDT.Name = "SDT";
-            // 
-            // Ngay_Sinh
-            // 
-            this.Ngay_Sinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Ngay_Sinh.DataPropertyName = "Ngay_Sinh";
-            this.Ngay_Sinh.HeaderText = "Ngày sinh";
-            this.Ngay_Sinh.MinimumWidth = 9;
-            this.Ngay_Sinh.Name = "Ngay_Sinh";
-            // 
-            // Nghe_nghiep
-            // 
-            this.Nghe_nghiep.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nghe_nghiep.DataPropertyName = "Loai_Doc_Gia";
-            this.Nghe_nghiep.HeaderText = "Nghề nghiệp";
-            this.Nghe_nghiep.MinimumWidth = 6;
-            this.Nghe_nghiep.Name = "Nghe_nghiep";
-            // 
-            // Email
-            // 
-            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = " Email";
-            this.Email.MinimumWidth = 9;
-            this.Email.Name = "Email";
-            // 
-            // Ngay_Cap
-            // 
-            this.Ngay_Cap.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Ngay_Cap.DataPropertyName = "Ngay_Cap";
-            this.Ngay_Cap.HeaderText = "Ngày cấp";
-            this.Ngay_Cap.MinimumWidth = 9;
-            this.Ngay_Cap.Name = "Ngay_Cap";
-            // 
-            // Ngay_Het_Han
-            // 
-            this.Ngay_Het_Han.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Ngay_Het_Han.DataPropertyName = "Ngay_Het_Han";
-            this.Ngay_Het_Han.HeaderText = "Ngày hết hạn";
-            this.Ngay_Het_Han.MinimumWidth = 9;
-            this.Ngay_Het_Han.Name = "Ngay_Het_Han";
             // 
             // UC_QuanlyDocGia
             // 
