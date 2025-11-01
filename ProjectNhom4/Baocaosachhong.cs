@@ -56,10 +56,13 @@ namespace ProjectNhom4
                     JOIN CT_PHIEU_MUON AS CTPM ON PM.Ma_Phieu_Muon = CTPM.Ma_Phieu_Muon
                     JOIN SACH AS S ON CTPM.Ma_Sach = S.Ma_Sach
                     JOIN DAU_SACH AS DS ON S.Ma_Dau_Sach = DS.Ma_Dau_Sach
+                    JOIN CT_PHIEU_PHAT AS CTPP ON PM.Ma_Phieu_Phat = CTPP.Ma_Phieu_Phat
+                    JOIN PHIEU_PHAT AS PP ON PM.Ma_Phieu_Muon = PP.Ma_Phieu_Muon
+                    JOIN VP AS VP ON VP.Ma_Vi_Pham = PP.Ma_Vi_Pham
                     WHERE
                         (PM.Ngay_Thuc_Tra BETWEEN @TuNgay AND @DenNgay)
                         AND (@MaKieuMuon = 'TATCA' OR PM.Ma_Kieu_Muon = @MaKieuMuon)
-                        AND (CTPM.Mo_Ta LIKE N'%hỏng%' OR CTPM.Mo_Ta LIKE N'%rách%' OR CTPM.Mo_Ta LIKE N'%ướt%' OR CTPM.Mo_Ta LIKE N'%hư%')
+                        AND (VP.Mo_Ta LIKE N'%hỏng%' OR CTPM.Mo_Ta LIKE N'%rách%' OR CTPM.Mo_Ta LIKE N'%ướt%' OR CTPM.Mo_Ta LIKE N'%hư%')
                     ORDER BY
                         KM.Ten_Kieu_Muon"; 
 

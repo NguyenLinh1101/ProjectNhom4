@@ -142,6 +142,7 @@
             this.btnSachMat.Text = "Báo cáo sách bị mất ";
             this.btnSachMat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSachMat.TextOffset = new System.Drawing.Point(50, 0);
+            this.btnSachMat.Click += new System.EventHandler(this.btnSachMat_Click);
             // 
             // btnSachmuon
             // 

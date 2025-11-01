@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using DevExpress.XtraReports.UI;
+using DevExpress.XtraReports.Design;
 
 namespace ProjectNhom4
 {
@@ -32,12 +33,19 @@ namespace ProjectNhom4
 
         private void btnSachHong_Click(object sender, EventArgs e)
         {
-            
+            Form f = new Baocaosachhong();
+            f.ShowDialog();
         }
 
         private void Baocao_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSachMat_Click(object sender, EventArgs e)
+        {
+            Form f = new frmBaocaosachmat();
+            f.ShowDialog();
         }
     }
 }

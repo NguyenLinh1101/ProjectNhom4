@@ -18,7 +18,7 @@ namespace ProjectNhom4
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Baocaosachhong());
+            Application.Run(new frmBaocaosachmat());
         }
     }
     //public class MainForm : Form
