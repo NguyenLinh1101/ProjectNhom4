@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.SqlServer.Types;
+using ProjectNhom4.Reports;
 
 namespace ProjectNhom4
 {
@@ -18,7 +19,7 @@ namespace ProjectNhom4
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmBaocaosachmat());
+            Application.Run(new frmSachmuonnhieunhat());
         }
     }
     //public class MainForm : Form

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using DevExpress.XtraReports.UI;
 using DevExpress.XtraReports.Design;
+using ProjectNhom4.Reports;
 
 namespace ProjectNhom4
 {
@@ -45,6 +46,12 @@ namespace ProjectNhom4
         private void btnSachMat_Click(object sender, EventArgs e)
         {
             Form f = new frmBaocaosachmat();
+            f.ShowDialog();
+        }
+
+        private void btnSachmuon_Click(object sender, EventArgs e)
+        {
+            Form f = new frmSachmuonnhieunhat();
             f.ShowDialog();
         }
     }

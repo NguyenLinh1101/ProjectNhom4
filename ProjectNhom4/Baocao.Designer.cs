@@ -160,6 +160,7 @@
             this.btnSachmuon.Text = "Báo cáo sách được mượn nhiều nhất";
             this.btnSachmuon.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSachmuon.TextOffset = new System.Drawing.Point(50, 0);
+            this.btnSachmuon.Click += new System.EventHandler(this.btnSachmuon_Click);
             // 
             // label1
             // 

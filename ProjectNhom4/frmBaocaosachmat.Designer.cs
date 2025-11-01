@@ -85,7 +85,7 @@
             this.btnExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnExit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnExit.FillColor = System.Drawing.Color.Red;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Location = new System.Drawing.Point(953, 786);
             this.btnExit.Name = "btnExit";
@@ -100,7 +100,7 @@
             this.btnXem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnXem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnXem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnXem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnXem.ForeColor = System.Drawing.Color.White;
             this.btnXem.Location = new System.Drawing.Point(953, 260);
             this.btnXem.Name = "btnXem";
@@ -121,7 +121,7 @@
             this.cboKieuMuon.ItemHeight = 30;
             this.cboKieuMuon.Location = new System.Drawing.Point(872, 186);
             this.cboKieuMuon.Name = "cboKieuMuon";
-            this.cboKieuMuon.Size = new System.Drawing.Size(191, 36);
+            this.cboKieuMuon.Size = new System.Drawing.Size(258, 36);
             this.cboKieuMuon.TabIndex = 8;
             // 
             // label4

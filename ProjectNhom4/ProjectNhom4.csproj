@@ -146,6 +146,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsBCsachmat.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dssachmuonnhieunhat.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dssachmuonnhieunhat.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmBaocaosachmat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +206,12 @@
     <Compile Include="QuanlyDocGia.Designer.cs">
       <DependentUpon>QuanlyDocGia.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSachmuonnhieunhat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSachmuonnhieunhat.Designer.cs">
+      <DependentUpon>frmSachmuonnhieunhat.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_QuanlyThongTinTacGia.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -251,11 +262,17 @@
     <EmbeddedResource Include="QuanlyDocGia.resx">
       <DependentUpon>QuanlyDocGia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\BCsachmat.rdlc">
+    <EmbeddedResource Include="Reports\BCsachmat - Copy.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BCsachmuonnhieunhat.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\BCsachhong.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSachmuonnhieunhat.resx">
+      <DependentUpon>frmSachmuonnhieunhat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_QuanlyThongTinTacGia.resx">
       <DependentUpon>UC_QuanlyThongTinTacGia.cs</DependentUpon>
@@ -290,6 +307,17 @@
     </None>
     <None Include="dsBCsachmat.xss">
       <DependentUpon>dsBCsachmat.xsd</DependentUpon>
+    </None>
+    <None Include="dssachmuonnhieunhat.xsc">
+      <DependentUpon>dssachmuonnhieunhat.xsd</DependentUpon>
+    </None>
+    <None Include="dssachmuonnhieunhat.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dssachmuonnhieunhat.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dssachmuonnhieunhat.xss">
+      <DependentUpon>dssachmuonnhieunhat.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
