@@ -54,5 +54,17 @@ namespace ProjectNhom4
             Form f = new frmSachmuonnhieunhat();
             f.ShowDialog();
         }
+
+        private void btnSachquahan_Click(object sender, EventArgs e)
+        {
+            Form f = new frmBCsachquahan();
+            f.ShowDialog();
+        }
+
+        private void btnDocGiaVP_Click(object sender, EventArgs e)
+        {
+            Form f = new frmBCdocgiavipham();
+            f.ShowDialog();
+        }
     }
 }

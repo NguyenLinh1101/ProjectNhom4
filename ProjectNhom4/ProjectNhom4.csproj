@@ -130,6 +130,12 @@
     <Compile Include="Baocaosachhong.Designer.cs">
       <DependentUpon>Baocaosachhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="BCdocgiamuonsach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BCdocgiamuonsach.Designer.cs">
+      <DependentUpon>BCdocgiamuonsach.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChiTietDauSach.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,21 +147,59 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsBaoCao.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dsbaocaodocgiamuonsach.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsbaocaodocgiamuonsach.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsBCsachmat.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsBCsachmat.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsBCsachquahan.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsBCsachquahan.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsdocgiavipham.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsdocgiavipham.xsd</DependentUpon>
     </Compile>
     <Compile Include="dssachmuonnhieunhat.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dssachmuonnhieunhat.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dsviphamtheoloai.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsviphamtheoloai.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmBaocaosachmat.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmBaocaosachmat.Designer.cs">
       <DependentUpon>frmBaocaosachmat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBCdocgiavipham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBCdocgiavipham.Designer.cs">
+      <DependentUpon>frmBCdocgiavipham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBCsachquahan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBCsachquahan.Designer.cs">
+      <DependentUpon>frmBCsachquahan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBCviphamtheoloai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBCviphamtheoloai.Designer.cs">
+      <DependentUpon>frmBCviphamtheoloai.cs</DependentUpon>
     </Compile>
     <Compile Include="panelMenu.cs">
       <SubType>Form</SubType>
@@ -230,11 +274,23 @@
     <EmbeddedResource Include="Baocaosachhong.resx">
       <DependentUpon>Baocaosachhong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BCdocgiamuonsach.resx">
+      <DependentUpon>BCdocgiamuonsach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChiTietDauSach.resx">
       <DependentUpon>ChiTietDauSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBaocaosachmat.resx">
       <DependentUpon>frmBaocaosachmat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBCdocgiavipham.resx">
+      <DependentUpon>frmBCdocgiavipham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBCsachquahan.resx">
+      <DependentUpon>frmBCsachquahan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBCviphamtheoloai.resx">
+      <DependentUpon>frmBCviphamtheoloai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="panelMenu.resx">
       <DependentUpon>panelMenu.cs</DependentUpon>
@@ -262,7 +318,19 @@
     <EmbeddedResource Include="QuanlyDocGia.resx">
       <DependentUpon>QuanlyDocGia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\BCsachmat - Copy.rdlc">
+    <EmbeddedResource Include="Reports\BCviphamtheoloai.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\baocaodocgiavipham.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BCsachquahan.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BCsachmat.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BCdocgiamuonsach.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\BCsachmuonnhieunhat.rdlc">
@@ -297,6 +365,17 @@
     <None Include="dsBaoCao.xss">
       <DependentUpon>dsBaoCao.xsd</DependentUpon>
     </None>
+    <None Include="dsbaocaodocgiamuonsach.xsc">
+      <DependentUpon>dsbaocaodocgiamuonsach.xsd</DependentUpon>
+    </None>
+    <None Include="dsbaocaodocgiamuonsach.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsbaocaodocgiamuonsach.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsbaocaodocgiamuonsach.xss">
+      <DependentUpon>dsbaocaodocgiamuonsach.xsd</DependentUpon>
+    </None>
     <None Include="dsBCsachmat.xsc">
       <DependentUpon>dsBCsachmat.xsd</DependentUpon>
     </None>
@@ -308,6 +387,28 @@
     <None Include="dsBCsachmat.xss">
       <DependentUpon>dsBCsachmat.xsd</DependentUpon>
     </None>
+    <None Include="dsBCsachquahan.xsc">
+      <DependentUpon>dsBCsachquahan.xsd</DependentUpon>
+    </None>
+    <None Include="dsBCsachquahan.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsBCsachquahan.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsBCsachquahan.xss">
+      <DependentUpon>dsBCsachquahan.xsd</DependentUpon>
+    </None>
+    <None Include="dsdocgiavipham.xsc">
+      <DependentUpon>dsdocgiavipham.xsd</DependentUpon>
+    </None>
+    <None Include="dsdocgiavipham.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsdocgiavipham.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsdocgiavipham.xss">
+      <DependentUpon>dsdocgiavipham.xsd</DependentUpon>
+    </None>
     <None Include="dssachmuonnhieunhat.xsc">
       <DependentUpon>dssachmuonnhieunhat.xsd</DependentUpon>
     </None>
@@ -318,6 +419,17 @@
     </None>
     <None Include="dssachmuonnhieunhat.xss">
       <DependentUpon>dssachmuonnhieunhat.xsd</DependentUpon>
+    </None>
+    <None Include="dsviphamtheoloai.xsc">
+      <DependentUpon>dsviphamtheoloai.xsd</DependentUpon>
+    </None>
+    <None Include="dsviphamtheoloai.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsviphamtheoloai.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsviphamtheoloai.xss">
+      <DependentUpon>dsviphamtheoloai.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

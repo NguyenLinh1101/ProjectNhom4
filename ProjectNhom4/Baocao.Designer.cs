@@ -228,7 +228,7 @@
             this.btnDocGia.Name = "btnDocGia";
             this.btnDocGia.Size = new System.Drawing.Size(1474, 95);
             this.btnDocGia.TabIndex = 4;
-            this.btnDocGia.Text = "Báo cáo danh sách độc giả mượn tài liệu";
+            this.btnDocGia.Text = "Báo cáo chi tiết mượn sách của độc giả";
             this.btnDocGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDocGia.TextOffset = new System.Drawing.Point(50, 0);
             // 
@@ -289,6 +289,7 @@
             this.btnSachquahan.Text = "Báo cáo sách quá hạn trả";
             this.btnSachquahan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSachquahan.TextOffset = new System.Drawing.Point(50, 0);
+            this.btnSachquahan.Click += new System.EventHandler(this.btnSachquahan_Click);
             // 
             // flowLayoutPanel4
             // 
@@ -348,6 +349,7 @@
             this.btnDocGiaVP.Text = "Báo cáo độc giả vi phạm";
             this.btnDocGiaVP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDocGiaVP.TextOffset = new System.Drawing.Point(50, 0);
+            this.btnDocGiaVP.Click += new System.EventHandler(this.btnDocGiaVP_Click);
             // 
             // btnLVP
             // 

@@ -46,9 +46,9 @@
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.label1.Location = new System.Drawing.Point(15, 23);
+            this.label1.Location = new System.Drawing.Point(0, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1282, 62);
+            this.label1.Size = new System.Drawing.Size(1367, 62);
             this.label1.TabIndex = 0;
             this.label1.Text = "BÁO CÁO SÁCH MẤT";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -73,9 +73,10 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.reportViewer1);
-            this.panel1.Location = new System.Drawing.Point(33, 12);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1300, 857);
+            this.panel1.Size = new System.Drawing.Size(1370, 898);
             this.panel1.TabIndex = 2;
             // 
             // btnExit
