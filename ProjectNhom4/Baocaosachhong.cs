@@ -43,26 +43,29 @@ namespace ProjectNhom4
 
                 // Câu query này lấy sách trả bị hỏng dựa trên mô tả
                 string query = @"
-                    SELECT 
+                    SELECT
                         KM.Ten_Kieu_Muon AS KieuMuon,
                         PM.Ma_Phieu_Muon AS MaPhieuMuon,
                         S.Ma_Sach AS MaSach,
                         DS.Ten_Dau_Sach AS TenDauSach,
                         CTPM.Mo_Ta AS TinhTrang,
                         PM.Ngay_Thuc_Tra AS NgayTra
-                    FROM 
+                    FROM
                         PHIEU_MUON AS PM
                     JOIN KIEU_MUON AS KM ON PM.Ma_Kieu_Muon = KM.Ma_Kieu_Muon
                     JOIN CT_PHIEU_MUON AS CTPM ON PM.Ma_Phieu_Muon = CTPM.Ma_Phieu_Muon
                     JOIN SACH AS S ON CTPM.Ma_Sach = S.Ma_Sach
                     JOIN DAU_SACH AS DS ON S.Ma_Dau_Sach = DS.Ma_Dau_Sach
-                    JOIN CT_PHIEU_PHAT AS CTPP ON PM.Ma_Phieu_Phat = CTPP.Ma_Phieu_Phat
-                    JOIN PHIEU_PHAT AS PP ON PM.Ma_Phieu_Muon = PP.Ma_Phieu_Muon
-                    JOIN VP AS VP ON VP.Ma_Vi_Pham = PP.Ma_Vi_Pham
+                    -- SỬA CÁC JOIN BÊN DƯỚI
+                    LEFT JOIN PHIEU_PHAT AS PP ON PM.Ma_Phieu_Muon = PP.Ma_Phieu_Muon
+                    LEFT JOIN CT_PHIEU_PHAT AS CTPP ON PP.Ma_Phieu_Phat = CTPP.Ma_Phieu_Phat
+                    LEFT JOIN VI_PHAM AS VP ON CTPP.Ma_Vi_Pham = VP.Ma_Vi_Pham -- Sửa tên bảng VI_PHAM
                     WHERE
                         (PM.Ngay_Thuc_Tra BETWEEN @TuNgay AND @DenNgay)
+
                         AND (@MaKieuMuon = 'TATCA' OR PM.Ma_Kieu_Muon = @MaKieuMuon)
-                        AND (VP.Mo_Ta LIKE N'%hỏng%' OR CTPM.Mo_Ta LIKE N'%rách%' OR CTPM.Mo_Ta LIKE N'%ướt%' OR CTPM.Mo_Ta LIKE N'%hư%')
+                        -- Sửa VP.Mo_Ta thành VP.Ten_Vi_Pham
+                        AND (VP.Ten_Vi_Pham LIKE N'%hỏng%' OR CTPM.Mo_Ta LIKE N'%rách%' OR CTPM.Mo_Ta LIKE N'%ướt%' OR CTPM.Mo_Ta LIKE N'%hư%')
                     ORDER BY
                         KM.Ten_Kieu_Muon"; 
 
@@ -151,6 +154,11 @@ namespace ProjectNhom4
         }
 
         private void reportViewer2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

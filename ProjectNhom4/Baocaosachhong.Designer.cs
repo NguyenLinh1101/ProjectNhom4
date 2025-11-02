@@ -31,6 +31,7 @@
             this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.btnXem = new Guna.UI2.WinForms.Guna2Button();
             this.cboKieuMuon = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -38,19 +39,20 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dtpNgayKT = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayBĐ = new System.Windows.Forms.DateTimePicker();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // reportViewer2
             // 
-            this.reportViewer2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.reportViewer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.reportViewer2.Location = new System.Drawing.Point(39, 310);
             this.reportViewer2.Name = "reportViewer2";
             this.reportViewer2.ServerReport.BearerToken = null;
             this.reportViewer2.Size = new System.Drawing.Size(1128, 349);
             this.reportViewer2.TabIndex = 0;
+            this.reportViewer2.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.reportViewer2.Load += new System.EventHandler(this.reportViewer2_Load);
             // 
             // label5
@@ -84,6 +86,24 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1235, 763);
             this.panel2.TabIndex = 2;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.Red;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Location = new System.Drawing.Point(977, 682);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(190, 54);
+            this.guna2Button2.TabIndex = 7;
+            this.guna2Button2.Text = "Thoát";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // btnXem
             // 
@@ -94,9 +114,9 @@
             this.btnXem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnXem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnXem.ForeColor = System.Drawing.Color.White;
-            this.btnXem.Location = new System.Drawing.Point(989, 249);
+            this.btnXem.Location = new System.Drawing.Point(977, 249);
             this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(178, 54);
+            this.btnXem.Size = new System.Drawing.Size(190, 54);
             this.btnXem.TabIndex = 6;
             this.btnXem.Text = "Xem Báo Cáo";
             this.btnXem.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -160,23 +180,6 @@
             this.dtpNgayBĐ.Size = new System.Drawing.Size(300, 26);
             this.dtpNgayBĐ.TabIndex = 0;
             this.dtpNgayBĐ.ValueChanged += new System.EventHandler(this.dtpNgayBĐ_ValueChanged);
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.Red;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(937, 682);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(230, 54);
-            this.guna2Button2.TabIndex = 7;
-            this.guna2Button2.Text = "Thoát";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // Baocaosachhong
             // 

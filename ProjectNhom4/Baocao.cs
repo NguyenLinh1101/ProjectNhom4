@@ -66,5 +66,11 @@ namespace ProjectNhom4
             Form f = new frmBCdocgiavipham();
             f.ShowDialog();
         }
+
+        private void btnLVP_Click(object sender, EventArgs e)
+        {
+            Form f = new frmBCviphamtheoloai();
+            f.ShowDialog();
+        }
     }
 }

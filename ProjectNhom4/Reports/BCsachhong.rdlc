@@ -91,7 +91,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Kieu Muon</Value>
+                                  <Value>Kiểu Mượn</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Segoe UI Variable Text</FontFamily>
@@ -611,8 +611,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.57167in</Top>
-            <Left>0.3425in</Left>
+            <Top>1.25223in</Top>
+            <Left>0.57861in</Left>
             <Height>1.36112in</Height>
             <Width>8.1111in</Width>
             <Style>
@@ -641,8 +641,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox27</rd:DefaultName>
-            <Top>2.20361in</Top>
-            <Left>0.71056in</Left>
+            <Top>2.78in</Top>
+            <Left>0.71055in</Left>
             <Height>0.29167in</Height>
             <Width>1.96528in</Width>
             <ZIndex>1</ZIndex>
@@ -675,7 +675,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox27</rd:DefaultName>
-            <Top>2.49528in</Top>
+            <Top>3.12722in</Top>
             <Left>0.71055in</Left>
             <Height>0.29167in</Height>
             <Width>1.96528in</Width>
@@ -709,7 +709,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox27</rd:DefaultName>
-            <Top>2.50917in</Top>
+            <Top>3.12722in</Top>
             <Left>6.18514in</Left>
             <Height>0.29167in</Height>
             <Width>1.96528in</Width>
@@ -744,7 +744,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox27</rd:DefaultName>
-            <Top>2.18972in</Top>
+            <Top>2.78in</Top>
             <Left>6.18514in</Left>
             <Height>0.29167in</Height>
             <Width>1.96528in</Width>
@@ -770,15 +770,53 @@
                     <Style />
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox32</rd:DefaultName>
-            <Top>0.18278in</Top>
-            <Left>2.11333in</Left>
+            <Top>0.82861in</Top>
+            <Left>2.41194in</Left>
             <Height>0.25in</Height>
             <Width>4.63889in</Width>
             <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>BÁO CÁO SÁCH HỎNG</Value>
+                    <Style>
+                      <FontFamily>Segoe UI Variable Text</FontFamily>
+                      <FontSize>18pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>0.12028in</Top>
+            <Left>0.57861in</Left>
+            <Height>0.47222in</Height>
+            <Width>8.1111in</Width>
+            <ZIndex>6</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>

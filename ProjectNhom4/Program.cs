@@ -19,20 +19,20 @@ namespace ProjectNhom4
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmBCviphamtheoloai());
+            Application.Run(new Baocaosachhong());
         }
     }
     //public class MainForm : Form
     //{
-    //    private Baocao qlSach;
+    //    private panelMenu qlSach;
 
     //    public MainForm()
     //    {
-    //       qlSach = new Baocao(  );
-    //       qlSach.Dock = DockStyle.Fill;
-    //       this.Controls.Add(qlSach);
-    //       this.Text = "Quản Lý Sách";
-    //       this.WindowState = FormWindowState.Maximized;
-    //   }
+    //        qlSach = new Baocao();
+    //        qlSach.Dock = DockStyle.Fill;
+    //        this.Controls.Add(qlSach);
+    //        this.Text = "Quản Lý Sách";
+    //        this.WindowState = FormWindowState.Maximized;
+    //    }
     //}
 }

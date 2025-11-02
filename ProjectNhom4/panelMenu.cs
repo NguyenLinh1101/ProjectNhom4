@@ -69,6 +69,24 @@ namespace ProjectNhom4
         {
             LoadUserControl(new UC_QuanlyDocGia());
         }
+
+        private void btnBaocao_Click(object sender, EventArgs e)
+        {
+            Baocao myUserControl = new Baocao();
+            loadControl(myUserControl);
+
+        }
+        private void loadControl(UserControl uc)
+        {
+            // 1. Xóa tất cả control cũ đang có trong panelMain
+            panelHienthiUC.Controls.Clear();
+
+            // 2. Yêu cầu UserControl mới lấp đầy (Dock.Fill) panelMain
+            uc.Dock = DockStyle.Fill;
+
+            // 3. Thêm UserControl mới vào panelMain
+            panelHienthiUC.Controls.Add(uc);
+        }
     }
 }
 

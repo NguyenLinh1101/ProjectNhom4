@@ -72,9 +72,9 @@
             this.flowLayoutPanel1.Controls.Add(this.btnSachHong);
             this.flowLayoutPanel1.Controls.Add(this.btnSachMat);
             this.flowLayoutPanel1.Controls.Add(this.btnSachmuon);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(55, 121);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(50, 77);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1481, 402);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1378, 276);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -84,13 +84,13 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1478, 87);
+            this.panel1.Size = new System.Drawing.Size(1478, 78);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ProjectNhom4.Properties.Resources.book;
-            this.pictureBox1.Location = new System.Drawing.Point(32, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(30, 17);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(67, 51);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -102,7 +102,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 16.8F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.label2.Location = new System.Drawing.Point(569, 22);
+            this.label2.Location = new System.Drawing.Point(491, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(321, 46);
             this.label2.TabIndex = 0;
@@ -117,9 +117,9 @@
             this.btnSachHong.FillColor = System.Drawing.Color.White;
             this.btnSachHong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSachHong.ForeColor = System.Drawing.Color.Black;
-            this.btnSachHong.Location = new System.Drawing.Point(3, 96);
+            this.btnSachHong.Location = new System.Drawing.Point(3, 87);
             this.btnSachHong.Name = "btnSachHong";
-            this.btnSachHong.Size = new System.Drawing.Size(1474, 95);
+            this.btnSachHong.Size = new System.Drawing.Size(1474, 49);
             this.btnSachHong.TabIndex = 1;
             this.btnSachHong.Text = "Báo cáo sách bị hư hỏng";
             this.btnSachHong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -135,9 +135,9 @@
             this.btnSachMat.FillColor = System.Drawing.Color.White;
             this.btnSachMat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSachMat.ForeColor = System.Drawing.Color.Black;
-            this.btnSachMat.Location = new System.Drawing.Point(3, 197);
+            this.btnSachMat.Location = new System.Drawing.Point(3, 142);
             this.btnSachMat.Name = "btnSachMat";
-            this.btnSachMat.Size = new System.Drawing.Size(1474, 95);
+            this.btnSachMat.Size = new System.Drawing.Size(1474, 58);
             this.btnSachMat.TabIndex = 2;
             this.btnSachMat.Text = "Báo cáo sách bị mất ";
             this.btnSachMat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -153,9 +153,9 @@
             this.btnSachmuon.FillColor = System.Drawing.Color.White;
             this.btnSachmuon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSachmuon.ForeColor = System.Drawing.Color.Black;
-            this.btnSachmuon.Location = new System.Drawing.Point(3, 298);
+            this.btnSachmuon.Location = new System.Drawing.Point(3, 206);
             this.btnSachmuon.Name = "btnSachmuon";
-            this.btnSachmuon.Size = new System.Drawing.Size(1474, 95);
+            this.btnSachmuon.Size = new System.Drawing.Size(1474, 59);
             this.btnSachmuon.TabIndex = 3;
             this.btnSachmuon.Text = "Báo cáo sách được mượn nhiều nhất";
             this.btnSachmuon.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -164,23 +164,23 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.label1.Location = new System.Drawing.Point(564, 20);
+            this.label1.Location = new System.Drawing.Point(53, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(449, 54);
+            this.label1.Size = new System.Drawing.Size(1375, 54);
             this.label1.TabIndex = 1;
             this.label1.Text = "DANH SÁCH BÁO CÁO";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.panel2);
             this.flowLayoutPanel2.Controls.Add(this.btnDocGia);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(58, 549);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(50, 359);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1481, 213);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1378, 162);
             this.flowLayoutPanel2.TabIndex = 4;
             // 
             // panel2
@@ -190,13 +190,13 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1478, 101);
+            this.panel2.Size = new System.Drawing.Size(1478, 83);
             this.panel2.TabIndex = 0;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::ProjectNhom4.Properties.Resources.man_8661663;
-            this.pictureBox2.Location = new System.Drawing.Point(29, 18);
+            this.pictureBox2.Location = new System.Drawing.Point(29, 8);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(67, 65);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -208,7 +208,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 16.8F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.label3.Location = new System.Drawing.Point(550, 27);
+            this.label3.Location = new System.Drawing.Point(453, 8);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(371, 46);
             this.label3.TabIndex = 0;
@@ -224,9 +224,9 @@
             this.flowLayoutPanel2.SetFlowBreak(this.btnDocGia, true);
             this.btnDocGia.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnDocGia.ForeColor = System.Drawing.Color.Black;
-            this.btnDocGia.Location = new System.Drawing.Point(3, 110);
+            this.btnDocGia.Location = new System.Drawing.Point(3, 92);
             this.btnDocGia.Name = "btnDocGia";
-            this.btnDocGia.Size = new System.Drawing.Size(1474, 95);
+            this.btnDocGia.Size = new System.Drawing.Size(1474, 62);
             this.btnDocGia.TabIndex = 4;
             this.btnDocGia.Text = "Báo cáo chi tiết mượn sách của độc giả";
             this.btnDocGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -236,9 +236,9 @@
             // 
             this.flowLayoutPanel3.Controls.Add(this.panel3);
             this.flowLayoutPanel3.Controls.Add(this.btnSachquahan);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(58, 791);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(50, 527);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(1481, 213);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(1378, 166);
             this.flowLayoutPanel3.TabIndex = 5;
             // 
             // panel3
@@ -248,7 +248,7 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1478, 101);
+            this.panel3.Size = new System.Drawing.Size(1478, 84);
             this.panel3.TabIndex = 0;
             // 
             // pictureBox3
@@ -256,7 +256,7 @@
             this.pictureBox3.Image = global::ProjectNhom4.Properties.Resources.employee_handbook;
             this.pictureBox3.Location = new System.Drawing.Point(29, 18);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(67, 65);
+            this.pictureBox3.Size = new System.Drawing.Size(66, 55);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
@@ -266,7 +266,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 16.8F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.label4.Location = new System.Drawing.Point(550, 27);
+            this.label4.Location = new System.Drawing.Point(453, 18);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(369, 46);
             this.label4.TabIndex = 0;
@@ -282,9 +282,9 @@
             this.flowLayoutPanel3.SetFlowBreak(this.btnSachquahan, true);
             this.btnSachquahan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSachquahan.ForeColor = System.Drawing.Color.Black;
-            this.btnSachquahan.Location = new System.Drawing.Point(3, 110);
+            this.btnSachquahan.Location = new System.Drawing.Point(3, 93);
             this.btnSachquahan.Name = "btnSachquahan";
-            this.btnSachquahan.Size = new System.Drawing.Size(1474, 95);
+            this.btnSachquahan.Size = new System.Drawing.Size(1474, 66);
             this.btnSachquahan.TabIndex = 4;
             this.btnSachquahan.Text = "Báo cáo sách quá hạn trả";
             this.btnSachquahan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -296,9 +296,9 @@
             this.flowLayoutPanel4.Controls.Add(this.panel4);
             this.flowLayoutPanel4.Controls.Add(this.btnDocGiaVP);
             this.flowLayoutPanel4.Controls.Add(this.btnLVP);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(58, 1035);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(50, 699);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(1481, 340);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(1378, 224);
             this.flowLayoutPanel4.TabIndex = 6;
             // 
             // panel4
@@ -308,15 +308,15 @@
             this.panel4.Controls.Add(this.label5);
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1478, 101);
+            this.panel4.Size = new System.Drawing.Size(1478, 82);
             this.panel4.TabIndex = 0;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::ProjectNhom4.Properties.Resources.message_alert;
-            this.pictureBox4.Location = new System.Drawing.Point(29, 17);
+            this.pictureBox4.Location = new System.Drawing.Point(26, 8);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(67, 65);
+            this.pictureBox4.Size = new System.Drawing.Size(66, 65);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 1;
             this.pictureBox4.TabStop = false;
@@ -326,7 +326,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 16.8F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.label5.Location = new System.Drawing.Point(550, 27);
+            this.label5.Location = new System.Drawing.Point(453, 8);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(328, 46);
             this.label5.TabIndex = 0;
@@ -342,9 +342,9 @@
             this.flowLayoutPanel4.SetFlowBreak(this.btnDocGiaVP, true);
             this.btnDocGiaVP.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnDocGiaVP.ForeColor = System.Drawing.Color.Black;
-            this.btnDocGiaVP.Location = new System.Drawing.Point(3, 110);
+            this.btnDocGiaVP.Location = new System.Drawing.Point(3, 91);
             this.btnDocGiaVP.Name = "btnDocGiaVP";
-            this.btnDocGiaVP.Size = new System.Drawing.Size(1474, 95);
+            this.btnDocGiaVP.Size = new System.Drawing.Size(1474, 51);
             this.btnDocGiaVP.TabIndex = 4;
             this.btnDocGiaVP.Text = "Báo cáo độc giả vi phạm";
             this.btnDocGiaVP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -361,25 +361,27 @@
             this.flowLayoutPanel4.SetFlowBreak(this.btnLVP, true);
             this.btnLVP.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnLVP.ForeColor = System.Drawing.Color.Black;
-            this.btnLVP.Location = new System.Drawing.Point(3, 211);
+            this.btnLVP.Location = new System.Drawing.Point(3, 148);
             this.btnLVP.Name = "btnLVP";
-            this.btnLVP.Size = new System.Drawing.Size(1474, 95);
+            this.btnLVP.Size = new System.Drawing.Size(1474, 64);
             this.btnLVP.TabIndex = 5;
             this.btnLVP.Text = "Báo cáo tổng hợp vi phạm theo loại";
             this.btnLVP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLVP.TextOffset = new System.Drawing.Point(50, 0);
+            this.btnLVP.Click += new System.EventHandler(this.btnLVP_Click);
             // 
             // Baocao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.flowLayoutPanel4);
             this.Controls.Add(this.flowLayoutPanel3);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Name = "Baocao";
-            this.Size = new System.Drawing.Size(1592, 1436);
+            this.Size = new System.Drawing.Size(1592, 942);
             this.Load += new System.EventHandler(this.Baocao_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -398,7 +400,6 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
