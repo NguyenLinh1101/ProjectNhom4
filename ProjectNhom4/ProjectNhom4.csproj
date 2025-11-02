@@ -120,6 +120,12 @@
     <Compile Include="QL_DauSach.Designer.cs">
       <DependentUpon>QL_DauSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="QL_TaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QL_TaiKhoan.Designer.cs">
+      <DependentUpon>QL_TaiKhoan.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ChiTietDauSach.resx">
       <DependentUpon>ChiTietDauSach.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QL_DauSach.resx">
       <DependentUpon>QL_DauSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QL_TaiKhoan.resx">
+      <DependentUpon>QL_TaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
