@@ -300,6 +300,7 @@
             this.btnqlsach.Size = new System.Drawing.Size(230, 50);
             this.btnqlsach.TabIndex = 3;
             this.btnqlsach.Text = "Quản lý sách ";
+            this.btnqlsach.Click += new System.EventHandler(this.btnqlsach_Click);
             // 
             // btnTrangChu
             // 
@@ -319,6 +320,7 @@
             this.btnTrangChu.Size = new System.Drawing.Size(230, 50);
             this.btnTrangChu.TabIndex = 2;
             this.btnTrangChu.Text = "Trang chủ";
+            this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click);
             // 
             // panelHienthiUC
             // 

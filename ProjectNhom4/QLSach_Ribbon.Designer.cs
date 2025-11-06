@@ -35,9 +35,9 @@
             this.panelQLSach_contain = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dropDown_DanhMuc = new System.Windows.Forms.Panel();
-            this.btnLoaiSach = new Guna.UI2.WinForms.Guna2Button();
-            this.btnChuDe = new Guna.UI2.WinForms.Guna2Button();
             this.btnDanhMuc = new Guna.UI2.WinForms.Guna2Button();
+            this.btnChuDe = new Guna.UI2.WinForms.Guna2Button();
+            this.btnLoaiSach = new Guna.UI2.WinForms.Guna2Button();
             this.panelQLSach.SuspendLayout();
             this.dropDown_DanhMuc.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +52,7 @@
             this.panelQLSach.ForeColor = System.Drawing.Color.Black;
             this.panelQLSach.Location = new System.Drawing.Point(0, 0);
             this.panelQLSach.Name = "panelQLSach";
-            this.panelQLSach.Size = new System.Drawing.Size(2035, 90);
+            this.panelQLSach.Size = new System.Drawing.Size(1131, 120);
             this.panelQLSach.TabIndex = 0;
             this.panelQLSach.Paint += new System.Windows.Forms.PaintEventHandler(this.panelQLSach_Paint);
             // 
@@ -68,7 +68,7 @@
             this.btnCuonSach.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.btnCuonSach.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnCuonSach.ForeColor = System.Drawing.Color.White;
-            this.btnCuonSach.Location = new System.Drawing.Point(674, 0);
+            this.btnCuonSach.Location = new System.Drawing.Point(405, 19);
             this.btnCuonSach.MaximumSize = new System.Drawing.Size(247, 90);
             this.btnCuonSach.Name = "btnCuonSach";
             this.btnCuonSach.Size = new System.Drawing.Size(247, 90);
@@ -87,7 +87,7 @@
             this.btnDauSach.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.btnDauSach.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnDauSach.ForeColor = System.Drawing.Color.White;
-            this.btnDauSach.Location = new System.Drawing.Point(306, 0);
+            this.btnDauSach.Location = new System.Drawing.Point(26, 19);
             this.btnDauSach.MaximumSize = new System.Drawing.Size(247, 90);
             this.btnDauSach.Name = "btnDauSach";
             this.btnDauSach.Size = new System.Drawing.Size(247, 90);
@@ -98,9 +98,9 @@
             // panelQLSach_contain
             // 
             this.panelQLSach_contain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelQLSach_contain.Location = new System.Drawing.Point(0, 90);
+            this.panelQLSach_contain.Location = new System.Drawing.Point(0, 120);
             this.panelQLSach_contain.Name = "panelQLSach_contain";
-            this.panelQLSach_contain.Size = new System.Drawing.Size(2035, 1289);
+            this.panelQLSach_contain.Size = new System.Drawing.Size(1131, 629);
             this.panelQLSach_contain.TabIndex = 1;
             this.panelQLSach_contain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelQLSach_contain_Paint);
             // 
@@ -114,44 +114,12 @@
             this.dropDown_DanhMuc.Controls.Add(this.btnDanhMuc);
             this.dropDown_DanhMuc.Controls.Add(this.btnChuDe);
             this.dropDown_DanhMuc.Controls.Add(this.btnLoaiSach);
-            this.dropDown_DanhMuc.Location = new System.Drawing.Point(1112, 0);
+            this.dropDown_DanhMuc.Location = new System.Drawing.Point(777, 19);
             this.dropDown_DanhMuc.MaximumSize = new System.Drawing.Size(247, 404);
             this.dropDown_DanhMuc.MinimumSize = new System.Drawing.Size(247, 90);
             this.dropDown_DanhMuc.Name = "dropDown_DanhMuc";
             this.dropDown_DanhMuc.Size = new System.Drawing.Size(247, 90);
             this.dropDown_DanhMuc.TabIndex = 3;
-            // 
-            // btnLoaiSach
-            // 
-            this.btnLoaiSach.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLoaiSach.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLoaiSach.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLoaiSach.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLoaiSach.FillColor = System.Drawing.Color.White;
-            this.btnLoaiSach.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnLoaiSach.ForeColor = System.Drawing.Color.Firebrick;
-            this.btnLoaiSach.Location = new System.Drawing.Point(12, 110);
-            this.btnLoaiSach.Name = "btnLoaiSach";
-            this.btnLoaiSach.Size = new System.Drawing.Size(221, 64);
-            this.btnLoaiSach.TabIndex = 2;
-            this.btnLoaiSach.Text = "Loại Sách";
-            this.btnLoaiSach.Click += new System.EventHandler(this.btnLoaiSach_Click);
-            // 
-            // btnChuDe
-            // 
-            this.btnChuDe.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnChuDe.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnChuDe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnChuDe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChuDe.FillColor = System.Drawing.Color.White;
-            this.btnChuDe.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnChuDe.ForeColor = System.Drawing.Color.Firebrick;
-            this.btnChuDe.Location = new System.Drawing.Point(12, 205);
-            this.btnChuDe.Name = "btnChuDe";
-            this.btnChuDe.Size = new System.Drawing.Size(221, 64);
-            this.btnChuDe.TabIndex = 1;
-            this.btnChuDe.Text = "Chủ Đề";
-            this.btnChuDe.Click += new System.EventHandler(this.btnChuDe_Click);
             // 
             // btnDanhMuc
             // 
@@ -178,6 +146,38 @@
             this.btnDanhMuc.Text = "Danh mục";
             this.btnDanhMuc.Click += new System.EventHandler(this.btnDanhMuc_Click_1);
             // 
+            // btnChuDe
+            // 
+            this.btnChuDe.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChuDe.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChuDe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChuDe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChuDe.FillColor = System.Drawing.Color.White;
+            this.btnChuDe.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnChuDe.ForeColor = System.Drawing.Color.Firebrick;
+            this.btnChuDe.Location = new System.Drawing.Point(12, 205);
+            this.btnChuDe.Name = "btnChuDe";
+            this.btnChuDe.Size = new System.Drawing.Size(221, 64);
+            this.btnChuDe.TabIndex = 1;
+            this.btnChuDe.Text = "Chủ Đề";
+            this.btnChuDe.Click += new System.EventHandler(this.btnChuDe_Click);
+            // 
+            // btnLoaiSach
+            // 
+            this.btnLoaiSach.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoaiSach.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoaiSach.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLoaiSach.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLoaiSach.FillColor = System.Drawing.Color.White;
+            this.btnLoaiSach.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLoaiSach.ForeColor = System.Drawing.Color.Firebrick;
+            this.btnLoaiSach.Location = new System.Drawing.Point(12, 110);
+            this.btnLoaiSach.Name = "btnLoaiSach";
+            this.btnLoaiSach.Size = new System.Drawing.Size(221, 64);
+            this.btnLoaiSach.TabIndex = 2;
+            this.btnLoaiSach.Text = "Loại Sách";
+            this.btnLoaiSach.Click += new System.EventHandler(this.btnLoaiSach_Click);
+            // 
             // QLSach_Ribbon
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -185,7 +185,7 @@
             this.Controls.Add(this.panelQLSach_contain);
             this.Controls.Add(this.panelQLSach);
             this.Name = "QLSach_Ribbon";
-            this.Size = new System.Drawing.Size(2035, 1379);
+            this.Size = new System.Drawing.Size(1131, 749);
             this.panelQLSach.ResumeLayout(false);
             this.dropDown_DanhMuc.ResumeLayout(false);
             this.ResumeLayout(false);

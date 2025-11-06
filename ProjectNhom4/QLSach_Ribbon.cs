@@ -32,8 +32,9 @@ namespace ProjectNhom4
 
         private void btnDauSach_Click(object sender, EventArgs e)
         {
-            var uc = new QL_DauSach();
-            addUserControl(uc);
+            QL_DauSach uc = new QL_DauSach();
+
+            loadControl(uc);
         }
 
         // Fix for CS0103: Define the AddUserControl method
@@ -103,6 +104,12 @@ namespace ProjectNhom4
         private void panelQLSach_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        private void loadControl(UserControl uc)
+        {
+            panelQLSach_contain.Controls.Clear(); // Xóa control cũ
+            uc.Dock = DockStyle.Fill;        // Ép control mới lấp đầy Panel
+            panelQLSach_contain.Controls.Add(uc); // Thêm control mới vào
         }
 
         private void panelControl1_Paint(object sender, PaintEventArgs e)

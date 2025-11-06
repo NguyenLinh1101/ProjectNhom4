@@ -73,19 +73,18 @@ namespace ProjectNhom4
         private void btnBaocao_Click(object sender, EventArgs e)
         {
             Baocao myUserControl = new Baocao();
-            loadControl(myUserControl);
+            LoadUserControl(myUserControl);
 
         }
-        private void loadControl(UserControl uc)
+
+        private void btnTrangChu_Click(object sender, EventArgs e)
         {
-            // 1. Xóa tất cả control cũ đang có trong panelMain
-            panelHienthiUC.Controls.Clear();
+            LoadUserControl(new UC_TrangChu());
+        }
 
-            // 2. Yêu cầu UserControl mới lấp đầy (Dock.Fill) panelMain
-            uc.Dock = DockStyle.Fill;
-
-            // 3. Thêm UserControl mới vào panelMain
-            panelHienthiUC.Controls.Add(uc);
+        private void btnqlsach_Click(object sender, EventArgs e)
+        {
+            LoadUserControl(new QLSach_Ribbon());
         }
     }
 }
