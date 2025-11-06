@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjectNhom4
 {
-    public partial class Form2 : Form
+    public partial class UC_QuanlyCuonsach : UserControl
     {
-        public Form2()
+        public UC_QuanlyCuonsach()
         {
             InitializeComponent();
         }
