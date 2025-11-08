@@ -291,7 +291,6 @@
             // 
             this.picDocGia.BorderRadius = 10;
             this.picDocGia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picDocGia.Image = global::ProjectNhom4.Properties.Resources.user;
             this.picDocGia.ImageRotate = 0F;
             this.picDocGia.Location = new System.Drawing.Point(82, 44);
             this.picDocGia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -637,7 +636,6 @@
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSearch.ForeColor = System.Drawing.Color.DimGray;
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.IconLeft = global::ProjectNhom4.Properties.Resources.search;
             this.txtSearch.IconLeftOffset = new System.Drawing.Point(20, 0);
             this.txtSearch.IconLeftSize = new System.Drawing.Size(25, 25);
             this.txtSearch.Location = new System.Drawing.Point(200, 94);

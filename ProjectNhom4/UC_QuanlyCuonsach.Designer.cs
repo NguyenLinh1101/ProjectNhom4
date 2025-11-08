@@ -96,7 +96,6 @@
             this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.IconLeft = global::ProjectNhom4.Properties.Resources.search;
             this.txtSearch.Location = new System.Drawing.Point(129, 71);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearch.Name = "txtSearch";

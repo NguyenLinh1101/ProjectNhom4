@@ -83,11 +83,12 @@
             this.dgvDauSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDauSach.GridColor = System.Drawing.Color.DarkGray;
             this.dgvDauSach.Location = new System.Drawing.Point(0, 40);
+            this.dgvDauSach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDauSach.Name = "dgvDauSach";
             this.dgvDauSach.RowHeadersVisible = false;
             this.dgvDauSach.RowHeadersWidth = 51;
             this.dgvDauSach.RowTemplate.Height = 24;
-            this.dgvDauSach.Size = new System.Drawing.Size(698, 414);
+            this.dgvDauSach.Size = new System.Drawing.Size(620, 323);
             this.dgvDauSach.TabIndex = 0;
             this.dgvDauSach.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvDauSach.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -132,9 +133,10 @@
             this.grpDauSach.CustomBorderColor = System.Drawing.Color.Silver;
             this.grpDauSach.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.grpDauSach.ForeColor = System.Drawing.Color.Black;
-            this.grpDauSach.Location = new System.Drawing.Point(56, 230);
+            this.grpDauSach.Location = new System.Drawing.Point(50, 184);
+            this.grpDauSach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpDauSach.Name = "grpDauSach";
-            this.grpDauSach.Size = new System.Drawing.Size(698, 454);
+            this.grpDauSach.Size = new System.Drawing.Size(620, 363);
             this.grpDauSach.TabIndex = 9;
             this.grpDauSach.Text = "THÔNG TIN TÁC GIẢ";
             this.grpDauSach.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -150,11 +152,11 @@
             this.btnBack.FillColor = System.Drawing.Color.OrangeRed;
             this.btnBack.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Image = global::ProjectNhom4.Properties.Resources.go_back_arrow;
-            this.btnBack.Location = new System.Drawing.Point(473, 0);
+            this.btnBack.Location = new System.Drawing.Point(412, 7);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBack.Name = "btnBack";
             this.btnBack.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnBack.Size = new System.Drawing.Size(37, 36);
+            this.btnBack.Size = new System.Drawing.Size(33, 29);
             this.btnBack.TabIndex = 18;
             // 
             // guna2GroupBox1
@@ -166,9 +168,10 @@
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Silver;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(760, 230);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(676, 184);
+            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(698, 454);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(620, 363);
             this.guna2GroupBox1.TabIndex = 10;
             this.guna2GroupBox1.Text = "THÔNG TIN ĐẦU SÁCH";
             this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -183,11 +186,11 @@
             this.guna2CircleButton1.FillColor = System.Drawing.Color.OrangeRed;
             this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton1.Image = global::ProjectNhom4.Properties.Resources.go_back_arrow;
-            this.guna2CircleButton1.Location = new System.Drawing.Point(489, 0);
+            this.guna2CircleButton1.Location = new System.Drawing.Point(434, 7);
+            this.guna2CircleButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2CircleButton1.Name = "guna2CircleButton1";
             this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton1.Size = new System.Drawing.Size(37, 36);
+            this.guna2CircleButton1.Size = new System.Drawing.Size(33, 29);
             this.guna2CircleButton1.TabIndex = 19;
             // 
             // guna2DataGridView1
@@ -219,11 +222,12 @@
             this.guna2DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.DarkGray;
             this.guna2DataGridView1.Location = new System.Drawing.Point(0, 40);
+            this.guna2DataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowHeadersWidth = 51;
             this.guna2DataGridView1.RowTemplate.Height = 24;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(698, 414);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(620, 323);
             this.guna2DataGridView1.TabIndex = 0;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -271,9 +275,10 @@
             this.btnChitiet.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.btnChitiet.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnChitiet.ForeColor = System.Drawing.Color.White;
-            this.btnChitiet.Location = new System.Drawing.Point(679, 742);
+            this.btnChitiet.Location = new System.Drawing.Point(604, 594);
+            this.btnChitiet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnChitiet.Name = "btnChitiet";
-            this.btnChitiet.Size = new System.Drawing.Size(158, 55);
+            this.btnChitiet.Size = new System.Drawing.Size(140, 44);
             this.btnChitiet.TabIndex = 17;
             this.btnChitiet.Text = "Xem chi tiết";
             // 
@@ -292,16 +297,15 @@
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSearch.ForeColor = System.Drawing.Color.DimGray;
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.IconLeft = global::ProjectNhom4.Properties.Resources.search;
             this.txtSearch.IconLeftOffset = new System.Drawing.Point(20, 0);
             this.txtSearch.IconLeftSize = new System.Drawing.Size(25, 25);
-            this.txtSearch.Location = new System.Drawing.Point(118, 121);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(6);
+            this.txtSearch.Location = new System.Drawing.Point(105, 97);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtSearch.PlaceholderText = "Nhập để tìm kiếm cuốn sách";
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(1359, 64);
+            this.txtSearch.Size = new System.Drawing.Size(1208, 51);
             this.txtSearch.TabIndex = 8;
             this.txtSearch.TextOffset = new System.Drawing.Point(10, 0);
             // 
@@ -310,22 +314,23 @@
             this.lblDauSach.AutoSize = true;
             this.lblDauSach.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblDauSach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.lblDauSach.Location = new System.Drawing.Point(460, 9);
+            this.lblDauSach.Location = new System.Drawing.Point(409, 7);
             this.lblDauSach.Name = "lblDauSach";
-            this.lblDauSach.Size = new System.Drawing.Size(575, 65);
+            this.lblDauSach.Size = new System.Drawing.Size(477, 54);
             this.lblDauSach.TabIndex = 18;
             this.lblDauSach.Text = "QUẢN LÝ TÁC GIẢ SÁCH";
             // 
             // frmTacgiaSach
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1478, 844);
+            this.ClientSize = new System.Drawing.Size(1314, 675);
             this.Controls.Add(this.lblDauSach);
             this.Controls.Add(this.btnChitiet);
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.grpDauSach);
             this.Controls.Add(this.txtSearch);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmTacgiaSach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmTacgiaSach";

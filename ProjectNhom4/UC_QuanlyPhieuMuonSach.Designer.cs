@@ -728,7 +728,6 @@
             this.txtTimKiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTimKiem.IconLeft = global::ProjectNhom4.Properties.Resources.search;
             this.txtTimKiem.Location = new System.Drawing.Point(168, 86);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTimKiem.Name = "txtTimKiem";
