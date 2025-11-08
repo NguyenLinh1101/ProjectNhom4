@@ -710,7 +710,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox27</rd:DefaultName>
             <Top>3.12722in</Top>
-            <Left>6.18514in</Left>
+            <Left>6.44208in</Left>
             <Height>0.29167in</Height>
             <Width>1.96528in</Width>
             <ZIndex>3</ZIndex>
@@ -744,8 +744,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox27</rd:DefaultName>
-            <Top>2.78in</Top>
-            <Left>6.18514in</Left>
+            <Top>2.76611in</Top>
+            <Left>6.44208in</Left>
             <Height>0.29167in</Height>
             <Width>1.96528in</Width>
             <ZIndex>4</ZIndex>
@@ -777,9 +777,8 @@
             </Paragraphs>
             <rd:DefaultName>Textbox32</rd:DefaultName>
             <Top>0.82861in</Top>
-            <Left>2.41194in</Left>
             <Height>0.25in</Height>
-            <Width>4.63889in</Width>
+            <Width>9.50222in</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>
@@ -803,6 +802,7 @@
                       <FontFamily>Segoe UI Variable Text</FontFamily>
                       <FontSize>18pt</FontSize>
                       <FontWeight>Bold</FontWeight>
+                      <Color>Brown</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -813,9 +813,8 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>0.12028in</Top>
-            <Left>0.57861in</Left>
             <Height>0.47222in</Height>
-            <Width>8.1111in</Width>
+            <Width>9.50222in</Width>
             <ZIndex>6</ZIndex>
             <Style>
               <Border>

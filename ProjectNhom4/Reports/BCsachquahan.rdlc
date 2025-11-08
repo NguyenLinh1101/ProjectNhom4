@@ -259,6 +259,7 @@
                       <FontFamily>Segoe UI Variable Text</FontFamily>
                       <FontSize>18pt</FontSize>
                       <FontWeight>Bold</FontWeight>
+                      <Color>Brown</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>

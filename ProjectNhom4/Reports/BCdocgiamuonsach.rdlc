@@ -117,8 +117,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox27</rd:DefaultName>
-            <Top>4.19444in</Top>
-            <Left>0.71055in</Left>
+            <Top>4.18055in</Top>
+            <Left>0.89111in</Left>
             <Height>0.29167in</Height>
             <Width>1.96528in</Width>
             <Style>
@@ -151,7 +151,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox27</rd:DefaultName>
             <Top>4.52778in</Top>
-            <Left>0.71055in</Left>
+            <Left>0.89111in</Left>
             <Height>0.29167in</Height>
             <Width>1.96528in</Width>
             <ZIndex>1</ZIndex>
@@ -277,6 +277,7 @@
                       <FontFamily>Segoe UI Variable Text</FontFamily>
                       <FontSize>18pt</FontSize>
                       <FontWeight>Bold</FontWeight>
+                      <Color>Brown</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -1488,7 +1489,6 @@
                           <PaddingBottom>2pt</PaddingBottom>
                         </Style>
                       </Textbox>
-                      <rd:Selected>true</rd:Selected>
                     </CellContents>
                   </TablixHeader>
                   <TablixMembers>

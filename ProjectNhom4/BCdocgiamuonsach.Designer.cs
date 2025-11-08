@@ -30,16 +30,16 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.dtNgayBĐ = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.btnXem = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
             this.dtNgayKT = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
             this.cboKieuMuon = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.btnXem = new Guna.UI2.WinForms.Guna2Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -70,6 +70,22 @@
             this.panel1.Size = new System.Drawing.Size(1436, 933);
             this.panel1.TabIndex = 1;
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.dtNgayBĐ);
+            this.panel2.Controls.Add(this.btnXem);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.dtNgayKT);
+            this.panel2.Controls.Add(this.cboKieuMuon);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Location = new System.Drawing.Point(78, 125);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1308, 236);
+            this.panel2.TabIndex = 10;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -86,6 +102,7 @@
             // dtNgayBĐ
             // 
             this.dtNgayBĐ.Checked = true;
+            this.dtNgayBĐ.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dtNgayBĐ.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtNgayBĐ.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dtNgayBĐ.Location = new System.Drawing.Point(20, 78);
@@ -95,6 +112,22 @@
             this.dtNgayBĐ.Size = new System.Drawing.Size(373, 51);
             this.dtNgayBĐ.TabIndex = 2;
             this.dtNgayBĐ.Value = new System.DateTime(2025, 11, 2, 9, 50, 20, 171);
+            // 
+            // btnXem
+            // 
+            this.btnXem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnXem.ForeColor = System.Drawing.Color.White;
+            this.btnXem.Location = new System.Drawing.Point(1018, 154);
+            this.btnXem.Name = "btnXem";
+            this.btnXem.Size = new System.Drawing.Size(251, 62);
+            this.btnXem.TabIndex = 8;
+            this.btnXem.Text = "Xem Báo Cáo";
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
             // label3
             // 
@@ -114,6 +147,7 @@
             // 
             this.dtNgayKT.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtNgayKT.Checked = true;
+            this.dtNgayKT.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dtNgayKT.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dtNgayKT.Location = new System.Drawing.Point(468, 71);
@@ -123,20 +157,6 @@
             this.dtNgayKT.Size = new System.Drawing.Size(373, 51);
             this.dtNgayKT.TabIndex = 4;
             this.dtNgayKT.Value = new System.DateTime(2025, 11, 2, 9, 50, 20, 171);
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(891, 24);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(140, 32);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Kiểu mượn";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cboKieuMuon
             // 
@@ -154,32 +174,19 @@
             this.cboKieuMuon.Size = new System.Drawing.Size(245, 36);
             this.cboKieuMuon.TabIndex = 6;
             // 
-            // reportViewer1
+            // label4
             // 
-            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.reportViewer1.Location = new System.Drawing.Point(78, 390);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1310, 414);
-            this.reportViewer1.TabIndex = 7;
-            // 
-            // btnXem
-            // 
-            this.btnXem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnXem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnXem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnXem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnXem.ForeColor = System.Drawing.Color.White;
-            this.btnXem.Location = new System.Drawing.Point(1018, 154);
-            this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(251, 62);
-            this.btnXem.TabIndex = 8;
-            this.btnXem.Text = "Xem Báo Cáo";
-            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(891, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(140, 32);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Kiểu mượn";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2Button1
             // 
@@ -198,21 +205,16 @@
             this.guna2Button1.Text = "Thoát";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // panel2
+            // reportViewer1
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.dtNgayBĐ);
-            this.panel2.Controls.Add(this.btnXem);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.dtNgayKT);
-            this.panel2.Controls.Add(this.cboKieuMuon);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(78, 125);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1308, 236);
-            this.panel2.TabIndex = 10;
+            this.reportViewer1.Location = new System.Drawing.Point(78, 390);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1310, 414);
+            this.reportViewer1.TabIndex = 7;
             // 
             // BCdocgiamuonsach
             // 

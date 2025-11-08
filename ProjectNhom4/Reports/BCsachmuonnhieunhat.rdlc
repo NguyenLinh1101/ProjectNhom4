@@ -221,9 +221,8 @@
             </Paragraphs>
             <rd:DefaultName>Textbox32</rd:DefaultName>
             <Top>0.71875in</Top>
-            <Left>2.42583in</Left>
             <Height>0.25in</Height>
-            <Width>4.63889in</Width>
+            <Width>10.05777in</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -247,6 +246,7 @@
                       <FontFamily>Segoe UI Variable Text</FontFamily>
                       <FontSize>18pt</FontSize>
                       <FontWeight>Bold</FontWeight>
+                      <Color>Brown</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -257,9 +257,8 @@
             </Paragraphs>
             <rd:DefaultName>Textbox27</rd:DefaultName>
             <Top>0.14931in</Top>
-            <Left>2.42583in</Left>
             <Height>0.5in</Height>
-            <Width>4.63889in</Width>
+            <Width>10.05777in</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>
@@ -275,19 +274,19 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.49153in</Width>
+                  <Width>1.88459in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.27625in</Width>
+                  <Width>2.66931in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.39306in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.54014in</Width>
+                  <Width>1.9332in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.39306in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -624,9 +623,9 @@
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
             <Top>1.30083in</Top>
-            <Left>1.405in</Left>
-            <Height>1.10417in</Height>
-            <Width>7.30792in</Width>
+            <Left>0.39111in</Left>
+            <Height>1.10416in</Height>
+            <Width>9.2732in</Width>
             <ZIndex>6</ZIndex>
             <Style>
               <Border>
@@ -638,7 +637,7 @@
         <Height>4.22917in</Height>
         <Style />
       </Body>
-      <Width>10.4536in</Width>
+      <Width>10.05777in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>

@@ -37,8 +37,6 @@ namespace ProjectNhom4
             loadControl(uc);
         }
 
-        // Fix for CS0103: Define the AddUserControl method
-
 
         private void btnCuonSach_Click(object sender, EventArgs e)
         {

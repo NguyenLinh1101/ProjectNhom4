@@ -84,7 +84,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox27</rd:DefaultName>
             <Top>3.13417in</Top>
-            <Left>0.71055in</Left>
+            <Left>1.0439in</Left>
             <Height>0.29167in</Height>
             <Width>1.96528in</Width>
             <Style>
@@ -116,8 +116,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox27</rd:DefaultName>
-            <Top>3.49528in</Top>
-            <Left>0.71056in</Left>
+            <Top>3.48139in</Top>
+            <Left>1.0439in</Left>
             <Height>0.29167in</Height>
             <Width>1.96528in</Width>
             <ZIndex>1</ZIndex>
@@ -150,8 +150,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox27</rd:DefaultName>
-            <Top>3.49528in</Top>
-            <Left>6.18514in</Left>
+            <Top>3.48139in</Top>
+            <Left>7.2407in</Left>
             <Height>0.29167in</Height>
             <Width>1.96528in</Width>
             <ZIndex>2</ZIndex>
@@ -185,8 +185,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox27</rd:DefaultName>
-            <Top>3.16194in</Top>
-            <Left>6.18514in</Left>
+            <Top>3.13417in</Top>
+            <Left>7.2407in</Left>
             <Height>0.29167in</Height>
             <Width>1.96528in</Width>
             <ZIndex>3</ZIndex>
@@ -218,9 +218,8 @@
             </Paragraphs>
             <rd:DefaultName>Textbox32</rd:DefaultName>
             <Top>0.71875in</Top>
-            <Left>2.18277in</Left>
             <Height>0.25in</Height>
-            <Width>4.63889in</Width>
+            <Width>10.4536in</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -244,6 +243,7 @@
                       <FontFamily>Segoe UI Variable Text</FontFamily>
                       <FontSize>18pt</FontSize>
                       <FontWeight>Bold</FontWeight>
+                      <Color>Brown</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -254,9 +254,8 @@
             </Paragraphs>
             <rd:DefaultName>Textbox27</rd:DefaultName>
             <Top>0.14931in</Top>
-            <Left>2.18277in</Left>
             <Height>0.5in</Height>
-            <Width>4.63889in</Width>
+            <Width>10.4536in</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>
@@ -272,22 +271,22 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.13195in</Width>
+                  <Width>2.45139in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.19833in</Width>
+                  <Width>1.51777in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.02625in</Width>
+                  <Width>1.34569in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.31944in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.31944in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.31944in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -712,6 +711,7 @@
                                   <Value>=Count(Fields!MaSach.Value)</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
+                                    <Color>Brown</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -731,7 +731,6 @@
                           </Style>
                         </Textbox>
                         <ColSpan>3</ColSpan>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell />
@@ -766,9 +765,9 @@
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
             <Top>1.43278in</Top>
-            <Left>1.32167in</Left>
+            <Left>0.55778in</Left>
             <Height>1.43056in</Height>
-            <Width>7.35653in</Width>
+            <Width>9.2732in</Width>
             <ZIndex>6</ZIndex>
             <Style>
               <Border>

@@ -67,6 +67,7 @@
             // dtNgayBĐ
             // 
             this.dtNgayBĐ.Checked = true;
+            this.dtNgayBĐ.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dtNgayBĐ.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtNgayBĐ.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dtNgayBĐ.Location = new System.Drawing.Point(103, 193);
@@ -91,6 +92,7 @@
             // dtNgayKT
             // 
             this.dtNgayKT.Checked = true;
+            this.dtNgayKT.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dtNgayKT.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dtNgayKT.Location = new System.Drawing.Point(527, 193);
@@ -184,6 +186,7 @@
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1274, 369);
             this.reportViewer1.TabIndex = 7;
+            this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
             // frmSachmuonnhieunhat
             // 
@@ -192,7 +195,9 @@
             this.ClientSize = new System.Drawing.Size(1392, 876);
             this.Controls.Add(this.panel1);
             this.Name = "frmSachmuonnhieunhat";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSachmuonnhieunhat";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmSachmuonnhieunhat_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -84,7 +84,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1478, 78);
+            this.panel1.Size = new System.Drawing.Size(1375, 78);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -119,7 +119,7 @@
             this.btnSachHong.ForeColor = System.Drawing.Color.Black;
             this.btnSachHong.Location = new System.Drawing.Point(3, 87);
             this.btnSachHong.Name = "btnSachHong";
-            this.btnSachHong.Size = new System.Drawing.Size(1474, 49);
+            this.btnSachHong.Size = new System.Drawing.Size(1375, 49);
             this.btnSachHong.TabIndex = 1;
             this.btnSachHong.Text = "Báo cáo sách bị hư hỏng";
             this.btnSachHong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -137,7 +137,7 @@
             this.btnSachMat.ForeColor = System.Drawing.Color.Black;
             this.btnSachMat.Location = new System.Drawing.Point(3, 142);
             this.btnSachMat.Name = "btnSachMat";
-            this.btnSachMat.Size = new System.Drawing.Size(1474, 58);
+            this.btnSachMat.Size = new System.Drawing.Size(1375, 58);
             this.btnSachMat.TabIndex = 2;
             this.btnSachMat.Text = "Báo cáo sách bị mất ";
             this.btnSachMat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -155,7 +155,7 @@
             this.btnSachmuon.ForeColor = System.Drawing.Color.Black;
             this.btnSachmuon.Location = new System.Drawing.Point(3, 206);
             this.btnSachmuon.Name = "btnSachmuon";
-            this.btnSachmuon.Size = new System.Drawing.Size(1474, 59);
+            this.btnSachmuon.Size = new System.Drawing.Size(1375, 59);
             this.btnSachmuon.TabIndex = 3;
             this.btnSachmuon.Text = "Báo cáo sách được mượn nhiều nhất";
             this.btnSachmuon.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -168,7 +168,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.label1.Location = new System.Drawing.Point(53, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1375, 54);
+            this.label1.Size = new System.Drawing.Size(1256, 54);
             this.label1.TabIndex = 1;
             this.label1.Text = "DANH SÁCH BÁO CÁO";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -190,7 +190,7 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1478, 83);
+            this.panel2.Size = new System.Drawing.Size(1375, 83);
             this.panel2.TabIndex = 0;
             // 
             // pictureBox2
@@ -226,11 +226,12 @@
             this.btnDocGia.ForeColor = System.Drawing.Color.Black;
             this.btnDocGia.Location = new System.Drawing.Point(3, 92);
             this.btnDocGia.Name = "btnDocGia";
-            this.btnDocGia.Size = new System.Drawing.Size(1474, 62);
+            this.btnDocGia.Size = new System.Drawing.Size(1375, 62);
             this.btnDocGia.TabIndex = 4;
             this.btnDocGia.Text = "Báo cáo chi tiết mượn sách của độc giả";
             this.btnDocGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDocGia.TextOffset = new System.Drawing.Point(50, 0);
+            this.btnDocGia.Click += new System.EventHandler(this.btnDocGia_Click);
             // 
             // flowLayoutPanel3
             // 
@@ -248,7 +249,7 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1478, 84);
+            this.panel3.Size = new System.Drawing.Size(1375, 84);
             this.panel3.TabIndex = 0;
             // 
             // pictureBox3
@@ -284,7 +285,7 @@
             this.btnSachquahan.ForeColor = System.Drawing.Color.Black;
             this.btnSachquahan.Location = new System.Drawing.Point(3, 93);
             this.btnSachquahan.Name = "btnSachquahan";
-            this.btnSachquahan.Size = new System.Drawing.Size(1474, 66);
+            this.btnSachquahan.Size = new System.Drawing.Size(1375, 66);
             this.btnSachquahan.TabIndex = 4;
             this.btnSachquahan.Text = "Báo cáo sách quá hạn trả";
             this.btnSachquahan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -308,7 +309,7 @@
             this.panel4.Controls.Add(this.label5);
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1478, 82);
+            this.panel4.Size = new System.Drawing.Size(1375, 82);
             this.panel4.TabIndex = 0;
             // 
             // pictureBox4
@@ -344,7 +345,7 @@
             this.btnDocGiaVP.ForeColor = System.Drawing.Color.Black;
             this.btnDocGiaVP.Location = new System.Drawing.Point(3, 91);
             this.btnDocGiaVP.Name = "btnDocGiaVP";
-            this.btnDocGiaVP.Size = new System.Drawing.Size(1474, 51);
+            this.btnDocGiaVP.Size = new System.Drawing.Size(1375, 51);
             this.btnDocGiaVP.TabIndex = 4;
             this.btnDocGiaVP.Text = "Báo cáo độc giả vi phạm";
             this.btnDocGiaVP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -363,7 +364,7 @@
             this.btnLVP.ForeColor = System.Drawing.Color.Black;
             this.btnLVP.Location = new System.Drawing.Point(3, 148);
             this.btnLVP.Name = "btnLVP";
-            this.btnLVP.Size = new System.Drawing.Size(1474, 64);
+            this.btnLVP.Size = new System.Drawing.Size(1375, 64);
             this.btnLVP.TabIndex = 5;
             this.btnLVP.Text = "Báo cáo tổng hợp vi phạm theo loại";
             this.btnLVP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;

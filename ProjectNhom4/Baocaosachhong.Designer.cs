@@ -37,8 +37,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dtpNgayKT = new System.Windows.Forms.DateTimePicker();
-            this.dtpNgayBĐ = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayBĐ = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpNgayKT = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +71,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel2.Controls.Add(this.dtpNgayKT);
+            this.panel2.Controls.Add(this.dtpNgayBĐ);
             this.panel2.Controls.Add(this.guna2Button2);
             this.panel2.Controls.Add(this.btnXem);
             this.panel2.Controls.Add(this.cboKieuMuon);
@@ -79,8 +81,6 @@
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.dtpNgayKT);
-            this.panel2.Controls.Add(this.dtpNgayBĐ);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -96,11 +96,11 @@
             this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button2.FillColor = System.Drawing.Color.Red;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(977, 682);
+            this.guna2Button2.Location = new System.Drawing.Point(945, 682);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(190, 54);
+            this.guna2Button2.Size = new System.Drawing.Size(222, 54);
             this.guna2Button2.TabIndex = 7;
             this.guna2Button2.Text = "Thoát";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
@@ -112,11 +112,11 @@
             this.btnXem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnXem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnXem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnXem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnXem.ForeColor = System.Drawing.Color.White;
-            this.btnXem.Location = new System.Drawing.Point(977, 249);
+            this.btnXem.Location = new System.Drawing.Point(945, 249);
             this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(190, 54);
+            this.btnXem.Size = new System.Drawing.Size(222, 54);
             this.btnXem.TabIndex = 6;
             this.btnXem.Text = "Xem Báo Cáo";
             this.btnXem.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -128,7 +128,7 @@
             this.cboKieuMuon.Items.AddRange(new object[] {
             "Tại chỗ",
             "Mang về"});
-            this.cboKieuMuon.Location = new System.Drawing.Point(739, 182);
+            this.cboKieuMuon.Location = new System.Drawing.Point(803, 187);
             this.cboKieuMuon.Name = "cboKieuMuon";
             this.cboKieuMuon.Size = new System.Drawing.Size(198, 37);
             this.cboKieuMuon.TabIndex = 5;
@@ -138,7 +138,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(733, 147);
+            this.label8.Location = new System.Drawing.Point(797, 152);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(140, 32);
             this.label8.TabIndex = 4;
@@ -149,7 +149,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(394, 152);
+            this.label7.Location = new System.Drawing.Point(414, 152);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(123, 32);
             this.label7.TabIndex = 3;
@@ -166,20 +166,33 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "Từ ngày";
             // 
-            // dtpNgayKT
-            // 
-            this.dtpNgayKT.Location = new System.Drawing.Point(400, 187);
-            this.dtpNgayKT.Name = "dtpNgayKT";
-            this.dtpNgayKT.Size = new System.Drawing.Size(300, 26);
-            this.dtpNgayKT.TabIndex = 1;
-            // 
             // dtpNgayBĐ
             // 
-            this.dtpNgayBĐ.Location = new System.Drawing.Point(39, 187);
+            this.dtpNgayBĐ.Checked = true;
+            this.dtpNgayBĐ.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtpNgayBĐ.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpNgayBĐ.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtpNgayBĐ.Location = new System.Drawing.Point(55, 203);
+            this.dtpNgayBĐ.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpNgayBĐ.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpNgayBĐ.Name = "dtpNgayBĐ";
-            this.dtpNgayBĐ.Size = new System.Drawing.Size(300, 26);
-            this.dtpNgayBĐ.TabIndex = 0;
-            this.dtpNgayBĐ.ValueChanged += new System.EventHandler(this.dtpNgayBĐ_ValueChanged);
+            this.dtpNgayBĐ.Size = new System.Drawing.Size(311, 68);
+            this.dtpNgayBĐ.TabIndex = 8;
+            this.dtpNgayBĐ.Value = new System.DateTime(2025, 11, 8, 14, 25, 22, 488);
+            // 
+            // dtpNgayKT
+            // 
+            this.dtpNgayKT.Checked = true;
+            this.dtpNgayKT.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtpNgayKT.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtpNgayKT.Location = new System.Drawing.Point(420, 203);
+            this.dtpNgayKT.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpNgayKT.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpNgayKT.Name = "dtpNgayKT";
+            this.dtpNgayKT.Size = new System.Drawing.Size(311, 68);
+            this.dtpNgayKT.TabIndex = 9;
+            this.dtpNgayKT.Value = new System.DateTime(2025, 11, 8, 14, 25, 22, 488);
             // 
             // Baocaosachhong
             // 
@@ -216,9 +229,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dtpNgayKT;
-        private System.Windows.Forms.DateTimePicker dtpNgayBĐ;
         private Guna.UI2.WinForms.Guna2Button btnXem;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpNgayKT;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpNgayBĐ;
     }
 }
