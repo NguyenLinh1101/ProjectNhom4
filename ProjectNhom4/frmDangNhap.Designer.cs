@@ -113,6 +113,7 @@
             this.btnSignIn.Size = new System.Drawing.Size(169, 59);
             this.btnSignIn.TabIndex = 7;
             this.btnSignIn.Text = "Đăng nhập";
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // btnThoat
             // 
@@ -238,6 +239,7 @@
             this.btnSee.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnSee.Size = new System.Drawing.Size(37, 38);
             this.btnSee.TabIndex = 15;
+            this.btnSee.Click += new System.EventHandler(this.btnSee_Click);
             // 
             // frmDangNhap
             // 
@@ -258,6 +260,7 @@
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDangNhap";
+            this.Load += new System.EventHandler(this.frmDangNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

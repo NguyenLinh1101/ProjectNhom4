@@ -70,6 +70,11 @@
     <Compile Include="ChiTietDauSach.Designer.cs">
       <DependentUpon>ChiTietDauSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="dataThuvien2DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataThuvien2DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +171,17 @@
     <EmbeddedResource Include="QL_TaiKhoan.resx">
       <DependentUpon>QL_TaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="dataThuvien2DataSet.xsc">
+      <DependentUpon>dataThuvien2DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dataThuvien2DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataThuvien2DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataThuvien2DataSet.xss">
+      <DependentUpon>dataThuvien2DataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
