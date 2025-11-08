@@ -176,7 +176,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmBCsachquahan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmBCsachquahan";
+            this.Text = "Báo cáo sách quá hạn trả";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmBCsachquahan_Load);
             this.panel1.ResumeLayout(false);

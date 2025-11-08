@@ -213,7 +213,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmBCviphamtheoloai";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmBCviphamtheoloai";
+            this.Text = "Báo cáo vi phạm theo loại";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmBCviphamtheoloai_Load);
             this.panel1.ResumeLayout(false);

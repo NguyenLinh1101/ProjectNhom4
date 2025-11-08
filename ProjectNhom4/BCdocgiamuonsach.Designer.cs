@@ -224,7 +224,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "BCdocgiamuonsach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BCdocgiamuonsach";
+            this.Text = "Báo cáo chi tiết mượn sách của độc giả";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.BCdocgiamuonsach_Load);
             this.panel1.ResumeLayout(false);

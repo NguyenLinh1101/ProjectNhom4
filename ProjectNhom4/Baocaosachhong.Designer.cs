@@ -201,6 +201,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "Baocaosachhong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Báo cáo sách hỏng";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Baocaosachhong_Load_1);
             this.panel2.ResumeLayout(false);

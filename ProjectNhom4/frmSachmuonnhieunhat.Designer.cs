@@ -207,7 +207,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmSachmuonnhieunhat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmSachmuonnhieunhat";
+            this.Text = "Báo cáo sách mượn nhiều nhất";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmSachmuonnhieunhat_Load);
             this.panel1.ResumeLayout(false);
