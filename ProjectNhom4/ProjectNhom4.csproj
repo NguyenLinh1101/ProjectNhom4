@@ -201,6 +201,21 @@
     <Compile Include="frmBCviphamtheoloai.Designer.cs">
       <DependentUpon>frmBCviphamtheoloai.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmformphuChonSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmformphuChonSach.Designer.cs">
+      <DependentUpon>frmformphuChonSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanlyCuonSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTraSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTraSach.Designer.cs">
+      <DependentUpon>frmTraSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="panelMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,9 +233,6 @@
     <Compile Include="QL_DauSach.Designer.cs">
       <DependentUpon>QL_DauSach.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanlyCuonsach.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmQuanlyCuonSach.Designer.cs">
       <DependentUpon>frmQuanlyCuonSach.cs</DependentUpon>
     </Compile>
@@ -229,6 +241,12 @@
     </Compile>
     <Compile Include="QuanlyThuthu.Designer.cs">
       <DependentUpon>QuanlyThuthu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_PhieuMuonSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_PhieuMuonSach.Designer.cs">
+      <DependentUpon>UC_PhieuMuonSach.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_PhieuPhat.cs">
       <SubType>UserControl</SubType>
@@ -241,18 +259,6 @@
     </Compile>
     <Compile Include="UC_PhieuTraSach.Designer.cs">
       <DependentUpon>UC_PhieuTraSach.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_QuanlyDocgia.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_QuanlyDocgia.Designer.cs">
-      <DependentUpon>UC_QuanlyDocgia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_QuanlyCuonsach.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="QuanlyDocGia.cs">
-      <DependentUpon>QuanlyDocGia.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChuDe.cs">
       <SubType>Form</SubType>
@@ -295,17 +301,29 @@
     <Compile Include="QL_DauSach.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="QuanlyDocGia.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="QuanlyDocGia.Designer.cs">
-      <DependentUpon>QuanlyDocGia.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmSachmuonnhieunhat.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSachmuonnhieunhat.Designer.cs">
       <DependentUpon>frmSachmuonnhieunhat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QuanlyCuonsach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QuanlyCuonsach.Designer.cs">
+      <DependentUpon>UC_QuanlyCuonsach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QuanlyDocgia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QuanlyDocgia.Designer.cs">
+      <DependentUpon>UC_QuanlyDocgia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QuanlyPhieuMuonSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QuanlyPhieuMuonSach.Designer.cs">
+      <DependentUpon>UC_QuanlyPhieuMuonSach.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_QuanlyThongTinTacGia.cs">
       <SubType>UserControl</SubType>
@@ -389,6 +407,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanlyThuthu.resx">
       <DependentUpon>QuanlyThuthu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_PhieuMuonSach.resx">
+      <DependentUpon>UC_PhieuMuonSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_PhieuPhat.resx">
       <DependentUpon>UC_PhieuPhat.cs</DependentUpon>
