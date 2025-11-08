@@ -31,14 +31,14 @@
             this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dtpNgayKT = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpNgayBĐ = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.btnXem = new Guna.UI2.WinForms.Guna2Button();
             this.cboKieuMuon = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dtpNgayBĐ = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.dtpNgayKT = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,6 +87,34 @@
             this.panel2.Size = new System.Drawing.Size(1235, 763);
             this.panel2.TabIndex = 2;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // dtpNgayKT
+            // 
+            this.dtpNgayKT.Checked = true;
+            this.dtpNgayKT.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtpNgayKT.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtpNgayKT.Location = new System.Drawing.Point(420, 203);
+            this.dtpNgayKT.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpNgayKT.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpNgayKT.Name = "dtpNgayKT";
+            this.dtpNgayKT.Size = new System.Drawing.Size(311, 68);
+            this.dtpNgayKT.TabIndex = 9;
+            this.dtpNgayKT.Value = new System.DateTime(2025, 11, 8, 14, 25, 22, 488);
+            // 
+            // dtpNgayBĐ
+            // 
+            this.dtpNgayBĐ.Checked = true;
+            this.dtpNgayBĐ.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtpNgayBĐ.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpNgayBĐ.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtpNgayBĐ.Location = new System.Drawing.Point(55, 203);
+            this.dtpNgayBĐ.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpNgayBĐ.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpNgayBĐ.Name = "dtpNgayBĐ";
+            this.dtpNgayBĐ.Size = new System.Drawing.Size(311, 68);
+            this.dtpNgayBĐ.TabIndex = 8;
+            this.dtpNgayBĐ.Value = new System.DateTime(2025, 11, 8, 14, 25, 22, 488);
             // 
             // guna2Button2
             // 
@@ -165,34 +193,6 @@
             this.label6.Size = new System.Drawing.Size(107, 32);
             this.label6.TabIndex = 2;
             this.label6.Text = "Từ ngày";
-            // 
-            // dtpNgayBĐ
-            // 
-            this.dtpNgayBĐ.Checked = true;
-            this.dtpNgayBĐ.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dtpNgayBĐ.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpNgayBĐ.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpNgayBĐ.Location = new System.Drawing.Point(55, 203);
-            this.dtpNgayBĐ.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpNgayBĐ.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpNgayBĐ.Name = "dtpNgayBĐ";
-            this.dtpNgayBĐ.Size = new System.Drawing.Size(311, 68);
-            this.dtpNgayBĐ.TabIndex = 8;
-            this.dtpNgayBĐ.Value = new System.DateTime(2025, 11, 8, 14, 25, 22, 488);
-            // 
-            // dtpNgayKT
-            // 
-            this.dtpNgayKT.Checked = true;
-            this.dtpNgayKT.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dtpNgayKT.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpNgayKT.Location = new System.Drawing.Point(420, 203);
-            this.dtpNgayKT.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpNgayKT.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpNgayKT.Name = "dtpNgayKT";
-            this.dtpNgayKT.Size = new System.Drawing.Size(311, 68);
-            this.dtpNgayKT.TabIndex = 9;
-            this.dtpNgayKT.Value = new System.DateTime(2025, 11, 8, 14, 25, 22, 488);
             // 
             // Baocaosachhong
             // 

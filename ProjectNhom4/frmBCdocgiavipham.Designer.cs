@@ -48,7 +48,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.label1.Location = new System.Drawing.Point(3, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1654, 55);
+            this.label1.Size = new System.Drawing.Size(1370, 55);
             this.label1.TabIndex = 0;
             this.label1.Text = "BÁO CÁO ĐỘC GIẢ VI PHẠM";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -66,7 +66,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1669, 996);
+            this.panel1.Size = new System.Drawing.Size(1385, 885);
             this.panel1.TabIndex = 1;
             // 
             // btnExit
@@ -77,13 +77,14 @@
             this.btnExit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnExit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnExit.FillColor = System.Drawing.Color.Red;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(1316, 874);
+            this.btnExit.Location = new System.Drawing.Point(1032, 763);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(235, 71);
             this.btnExit.TabIndex = 7;
             this.btnExit.Text = "Thoát";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnXem
             // 
@@ -92,9 +93,9 @@
             this.btnXem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnXem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnXem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnXem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnXem.ForeColor = System.Drawing.Color.White;
-            this.btnXem.Location = new System.Drawing.Point(1316, 324);
+            this.btnXem.Location = new System.Drawing.Point(1032, 324);
             this.btnXem.Name = "btnXem";
             this.btnXem.Size = new System.Drawing.Size(235, 71);
             this.btnXem.TabIndex = 6;
@@ -109,7 +110,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(129, 415);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1422, 408);
+            this.reportViewer1.Size = new System.Drawing.Size(1138, 297);
             this.reportViewer1.TabIndex = 5;
             this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
@@ -120,7 +121,7 @@
             this.dtNgayKT.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dtNgayKT.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtNgayKT.Location = new System.Drawing.Point(985, 214);
+            this.dtNgayKT.Location = new System.Drawing.Point(701, 214);
             this.dtNgayKT.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtNgayKT.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtNgayKT.Name = "dtNgayKT";
@@ -134,7 +135,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(979, 179);
+            this.label3.Location = new System.Drawing.Point(695, 179);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 32);
             this.label3.TabIndex = 3;
@@ -169,7 +170,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1669, 996);
+            this.ClientSize = new System.Drawing.Size(1385, 885);
             this.Controls.Add(this.panel1);
             this.Name = "frmBCdocgiavipham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

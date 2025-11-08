@@ -111,5 +111,10 @@ namespace ProjectNhom4
                         "Lỗi Báo Cáo Chi Tiết");
             }
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

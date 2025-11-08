@@ -125,14 +125,16 @@
             // 
             // lblChuDe
             // 
-            this.lblChuDe.AutoSize = true;
+            this.lblChuDe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblChuDe.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblChuDe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.lblChuDe.Location = new System.Drawing.Point(482, 37);
+            this.lblChuDe.Location = new System.Drawing.Point(3, 37);
             this.lblChuDe.Name = "lblChuDe";
-            this.lblChuDe.Size = new System.Drawing.Size(353, 54);
+            this.lblChuDe.Size = new System.Drawing.Size(1381, 54);
             this.lblChuDe.TabIndex = 11;
             this.lblChuDe.Text = "QUẢN LÝ CHỦ ĐỀ";
+            this.lblChuDe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblChuDe.Click += new System.EventHandler(this.lblChuDe_Click);
             // 
             // dgvChuDe
@@ -326,7 +328,6 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChuDe)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
