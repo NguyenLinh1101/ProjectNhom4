@@ -207,6 +207,12 @@
     <Compile Include="panelMenu.Designer.cs">
       <DependentUpon>panelMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPhieuMuonSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhieuMuonSach.Designer.cs">
+      <DependentUpon>frmPhieuMuonSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QL_DauSach.Designer.cs">
@@ -215,8 +221,35 @@
     <Compile Include="QuanlyCuonsach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanlyCuonsach.Designer.cs">
-      <DependentUpon>QuanlyCuonsach.cs</DependentUpon>
+    <Compile Include="frmQuanlyCuonSach.Designer.cs">
+      <DependentUpon>frmQuanlyCuonSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlyThuthu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuanlyThuthu.Designer.cs">
+      <DependentUpon>QuanlyThuthu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_PhieuPhat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_PhieuPhat.Designer.cs">
+      <DependentUpon>UC_PhieuPhat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_PhieuTraSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_PhieuTraSach.Designer.cs">
+      <DependentUpon>UC_PhieuTraSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QuanlyDocgia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QuanlyDocgia.Designer.cs">
+      <DependentUpon>UC_QuanlyDocgia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QuanlyCuonsach.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="QuanlyDocGia.cs">
       <DependentUpon>QuanlyDocGia.cs</DependentUpon>
@@ -316,6 +349,12 @@
     <EmbeddedResource Include="frmBCviphamtheoloai.resx">
       <DependentUpon>frmBCviphamtheoloai.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmformphuChonSach.resx">
+      <DependentUpon>frmformphuChonSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTraSach.resx">
+      <DependentUpon>frmTraSach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="panelMenu.resx">
       <DependentUpon>panelMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -332,6 +371,9 @@
       <DependentUpon>frmTacgiaSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="frmPhieuMuonSach.resx">
+      <DependentUpon>frmPhieuMuonSach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -342,11 +384,26 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="QuanlyCuonsach.resx">
-      <DependentUpon>QuanlyCuonsach.cs</DependentUpon>
+    <EmbeddedResource Include="frmQuanlyCuonSach.resx">
+      <DependentUpon>frmQuanlyCuonSach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanlyDocGia.resx">
-      <DependentUpon>QuanlyDocGia.cs</DependentUpon>
+    <EmbeddedResource Include="QuanlyThuthu.resx">
+      <DependentUpon>QuanlyThuthu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_PhieuPhat.resx">
+      <DependentUpon>UC_PhieuPhat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_PhieuTraSach.resx">
+      <DependentUpon>UC_PhieuTraSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QuanlyDocgia.resx">
+      <DependentUpon>UC_QuanlyDocgia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QuanlyCuonsach.resx">
+      <DependentUpon>UC_QuanlyCuonsach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QuanlyPhieuMuonSach.resx">
+      <DependentUpon>UC_QuanlyPhieuMuonSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\BCviphamtheoloai.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

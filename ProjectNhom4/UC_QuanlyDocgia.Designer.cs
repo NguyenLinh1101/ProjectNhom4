@@ -167,7 +167,7 @@
             this.lblSDT.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblSDT.Location = new System.Drawing.Point(228, 320);
             this.lblSDT.Name = "lblSDT";
-            this.lblSDT.Size = new System.Drawing.Size(138, 28);
+            this.lblSDT.Size = new System.Drawing.Size(116, 23);
             this.lblSDT.TabIndex = 20;
             this.lblSDT.Text = "Số điện thoại";
             this.lblSDT.Click += new System.EventHandler(this.lblSDT_Click);
@@ -274,7 +274,7 @@
             this.lblNgayHetHan.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblNgayHetHan.Location = new System.Drawing.Point(614, 242);
             this.lblNgayHetHan.Name = "lblNgayHetHan";
-            this.lblNgayHetHan.Size = new System.Drawing.Size(140, 28);
+            this.lblNgayHetHan.Size = new System.Drawing.Size(117, 23);
             this.lblNgayHetHan.TabIndex = 13;
             this.lblNgayHetHan.Text = "Ngày hết hạn";
             // 
@@ -379,7 +379,7 @@
             this.lblNgayCapThe.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblNgayCapThe.Location = new System.Drawing.Point(614, 176);
             this.lblNgayCapThe.Name = "lblNgayCapThe";
-            this.lblNgayCapThe.Size = new System.Drawing.Size(138, 28);
+            this.lblNgayCapThe.Size = new System.Drawing.Size(116, 23);
             this.lblNgayCapThe.TabIndex = 10;
             this.lblNgayCapThe.Text = "Ngày cấp thẻ";
             // 
@@ -389,7 +389,7 @@
             this.lblNghenghiep.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblNghenghiep.Location = new System.Drawing.Point(614, 108);
             this.lblNghenghiep.Name = "lblNghenghiep";
-            this.lblNghenghiep.Size = new System.Drawing.Size(134, 28);
+            this.lblNghenghiep.Size = new System.Drawing.Size(114, 23);
             this.lblNghenghiep.TabIndex = 9;
             this.lblNghenghiep.Text = "Nghề nghiệp";
             // 
@@ -399,7 +399,7 @@
             this.lblMaThe.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblMaThe.Location = new System.Drawing.Point(614, 48);
             this.lblMaThe.Name = "lblMaThe";
-            this.lblMaThe.Size = new System.Drawing.Size(155, 28);
+            this.lblMaThe.Size = new System.Drawing.Size(130, 23);
             this.lblMaThe.TabIndex = 9;
             this.lblMaThe.Text = "Mã thẻ độc giả";
             // 
@@ -409,7 +409,7 @@
             this.lblNgaySinh.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblNgaySinh.Location = new System.Drawing.Point(227, 242);
             this.lblNgaySinh.Name = "lblNgaySinh";
-            this.lblNgaySinh.Size = new System.Drawing.Size(107, 28);
+            this.lblNgaySinh.Size = new System.Drawing.Size(89, 23);
             this.lblNgaySinh.TabIndex = 6;
             this.lblNgaySinh.Text = "Ngày sinh";
             // 
@@ -419,7 +419,7 @@
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblEmail.Location = new System.Drawing.Point(228, 176);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(64, 28);
+            this.lblEmail.Size = new System.Drawing.Size(54, 23);
             this.lblEmail.TabIndex = 4;
             this.lblEmail.Text = "Email";
             this.lblEmail.Click += new System.EventHandler(this.label3_Click);
@@ -430,7 +430,7 @@
             this.lblHoTen.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblHoTen.Location = new System.Drawing.Point(227, 108);
             this.lblHoTen.Name = "lblHoTen";
-            this.lblHoTen.Size = new System.Drawing.Size(76, 28);
+            this.lblHoTen.Size = new System.Drawing.Size(64, 23);
             this.lblHoTen.TabIndex = 4;
             this.lblHoTen.Text = "Họ tên";
             // 
@@ -440,7 +440,7 @@
             this.lblMaDocGia.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblMaDocGia.Location = new System.Drawing.Point(228, 39);
             this.lblMaDocGia.Name = "lblMaDocGia";
-            this.lblMaDocGia.Size = new System.Drawing.Size(118, 28);
+            this.lblMaDocGia.Size = new System.Drawing.Size(99, 23);
             this.lblMaDocGia.TabIndex = 4;
             this.lblMaDocGia.Text = "Mã độc giả";
             this.lblMaDocGia.Click += new System.EventHandler(this.label1_Click);
@@ -598,24 +598,24 @@
             this.contextMenuDocGia.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.contextMenuDocGia.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.contextMenuDocGia.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.contextMenuDocGia.Size = new System.Drawing.Size(129, 100);
+            this.contextMenuDocGia.Size = new System.Drawing.Size(116, 76);
             // 
             // menuThem
             // 
             this.menuThem.Name = "menuThem";
-            this.menuThem.Size = new System.Drawing.Size(128, 32);
+            this.menuThem.Size = new System.Drawing.Size(115, 24);
             this.menuThem.Text = "Thêm";
             // 
             // menuSua
             // 
             this.menuSua.Name = "menuSua";
-            this.menuSua.Size = new System.Drawing.Size(128, 32);
+            this.menuSua.Size = new System.Drawing.Size(115, 24);
             this.menuSua.Text = "Sửa";
             // 
             // menuXoa
             // 
             this.menuXoa.Name = "menuXoa";
-            this.menuXoa.Size = new System.Drawing.Size(128, 32);
+            this.menuXoa.Size = new System.Drawing.Size(115, 24);
             this.menuXoa.Text = "Xóa";
             // 
             // guna2ContextMenuStrip1
@@ -797,7 +797,7 @@
             this.lblTencbbox.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblTencbbox.Location = new System.Drawing.Point(47, 63);
             this.lblTencbbox.Name = "lblTencbbox";
-            this.lblTencbbox.Size = new System.Drawing.Size(104, 30);
+            this.lblTencbbox.Size = new System.Drawing.Size(83, 23);
             this.lblTencbbox.TabIndex = 26;
             this.lblTencbbox.Text = "Lọc theo:";
             // 
