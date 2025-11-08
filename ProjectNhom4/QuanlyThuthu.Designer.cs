@@ -109,7 +109,6 @@
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSearch.ForeColor = System.Drawing.Color.DimGray;
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.IconLeft = global::ProjectNhom4.Properties.Resources.search;
             this.txtSearch.IconLeftOffset = new System.Drawing.Point(20, 0);
             this.txtSearch.IconLeftSize = new System.Drawing.Size(25, 25);
             this.txtSearch.Location = new System.Drawing.Point(217, 71);
@@ -259,7 +258,6 @@
             // 
             this.picThuThu.BorderRadius = 10;
             this.picThuThu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picThuThu.Image = global::ProjectNhom4.Properties.Resources.user;
             this.picThuThu.ImageRotate = 0F;
             this.picThuThu.Location = new System.Drawing.Point(64, 31);
             this.picThuThu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
