@@ -18,5 +18,20 @@ namespace ProjectNhom4
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmMenu());
         }
+            Application.Run(new MainForm());
+        }
+    }
+    public class MainForm : Form
+    {
+        private QLSach_Ribbon qlSach;
+
+        public MainForm()
+        {
+           qlSach = new QLSach_Ribbon();
+           qlSach.Dock = DockStyle.Fill;
+           this.Controls.Add(qlSach);
+           this.Text = "Quản Lý Sách";
+           this.WindowState = FormWindowState.Maximized;
+       }
     }
 }
