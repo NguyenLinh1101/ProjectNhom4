@@ -69,6 +69,7 @@
             this.txtEmail.Size = new System.Drawing.Size(469, 67);
             this.txtEmail.TabIndex = 5;
             this.txtEmail.TextOffset = new System.Drawing.Point(70, 0);
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtMatKhau
             // 
