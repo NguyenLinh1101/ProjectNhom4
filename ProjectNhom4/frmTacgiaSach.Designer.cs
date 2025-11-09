@@ -46,6 +46,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.SuaTacGia = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongTinTacGia)).BeginInit();
             this.grpDauSach.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -81,7 +83,6 @@
             this.dgvThongTinTacGia.GridColor = System.Drawing.Color.DarkGray;
             this.dgvThongTinTacGia.Location = new System.Drawing.Point(0, 40);
             this.dgvThongTinTacGia.Name = "dgvThongTinTacGia";
-            this.dgvThongTinTacGia.ReadOnly = true;
             this.dgvThongTinTacGia.RowHeadersVisible = false;
             this.dgvThongTinTacGia.RowHeadersWidth = 51;
             this.dgvThongTinTacGia.RowTemplate.Height = 24;
@@ -100,7 +101,7 @@
             this.dgvThongTinTacGia.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvThongTinTacGia.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvThongTinTacGia.ThemeStyle.HeaderStyle.Height = 27;
-            this.dgvThongTinTacGia.ThemeStyle.ReadOnly = true;
+            this.dgvThongTinTacGia.ThemeStyle.ReadOnly = false;
             this.dgvThongTinTacGia.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvThongTinTacGia.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvThongTinTacGia.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -245,7 +246,7 @@
             this.btnChitiet.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.btnChitiet.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnChitiet.ForeColor = System.Drawing.Color.White;
-            this.btnChitiet.Location = new System.Drawing.Point(618, 506);
+            this.btnChitiet.Location = new System.Drawing.Point(1212, 505);
             this.btnChitiet.Name = "btnChitiet";
             this.btnChitiet.Size = new System.Drawing.Size(185, 55);
             this.btnChitiet.TabIndex = 17;
@@ -312,6 +313,8 @@
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.SuaTacGia);
+            this.panel2.Controls.Add(this.guna2Button1);
             this.panel2.Controls.Add(this.grpDauSach);
             this.panel2.Controls.Add(this.guna2GroupBox1);
             this.panel2.Controls.Add(this.btnChitiet);
@@ -319,6 +322,39 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1425, 586);
             this.panel2.TabIndex = 19;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BorderRadius = 10;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(1032, 505);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(121, 55);
+            this.guna2Button1.TabIndex = 18;
+            this.guna2Button1.Text = "Lưu";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // SuaTacGia
+            // 
+            this.SuaTacGia.BorderRadius = 10;
+            this.SuaTacGia.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.SuaTacGia.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.SuaTacGia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.SuaTacGia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.SuaTacGia.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.SuaTacGia.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.SuaTacGia.ForeColor = System.Drawing.Color.White;
+            this.SuaTacGia.Location = new System.Drawing.Point(859, 505);
+            this.SuaTacGia.Name = "SuaTacGia";
+            this.SuaTacGia.Size = new System.Drawing.Size(113, 55);
+            this.SuaTacGia.TabIndex = 19;
+            this.SuaTacGia.Text = "Sửa";
             // 
             // frmTacgiaSach
             // 
@@ -355,5 +391,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private Guna.UI2.WinForms.Guna2Button SuaTacGia;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }
