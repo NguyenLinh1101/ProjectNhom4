@@ -259,6 +259,7 @@
   </ItemGroup>
   <ItemGroup>
     <!-- None / Content -->
+    <Content Include="Resources\user.png" />
     <Content Include="Resources\userLanNhi.png" />
     <Content Include="Resources\Ảnh chụp màn hình 2025-10-21 105707.png" />
     <Content Include="Resources\Ảnh chụp màn hình 2025-10-21 105827.png" />
