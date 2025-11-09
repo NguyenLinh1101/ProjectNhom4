@@ -19,16 +19,16 @@ namespace ProjectNhom4
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMenu());
+            Application.Run(new frmLoaiSach());
         }
     }
     //public class MainForm : Form
     //{
-    //    private panelMenu qlSach;
+    //    private UC_QuanlyThongTinTacGia qlSach;
 
     //    public MainForm()
     //    {
-    //        qlSach = new Baocao();
+    //        qlSach = new UC_QuanlyThongTinTacGia();
     //        qlSach.Dock = DockStyle.Fill;
     //        this.Controls.Add(qlSach);
     //        this.Text = "Quản Lý Sách";

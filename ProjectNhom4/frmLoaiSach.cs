@@ -19,6 +19,7 @@ namespace ProjectNhom4
         SqlDataAdapter adapter;
         DataTable dt;
         DataView dv;
+        bool isAdding = false;
         public frmLoaiSach()
         {
             InitializeComponent();
@@ -26,55 +27,107 @@ namespace ProjectNhom4
         private void frmLoaiSach_Load(object sender, EventArgs e)
         {
             dgvLoaiSach.ColumnHeadersDefaultCellStyle.Font = new Font(dgvLoaiSach.Font, FontStyle.Bold);
-
-            txtMaLoaiSach.ReadOnly = true;
-            txtMaLoaiSach.BackColor = System.Drawing.Color.Gainsboro; // Cho người dùng biết là bị khóa
-
-            LoadLoaiSach();
+            dgvLoaiSach.AutoGenerateColumns = false; // Tắt tự tạo cột
+            ShowData();
+            SetControlState("Normal");
         }
+
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            if (dv == null) return; 
+            if (dv == null) return;
             string filterText = txtSearch.Text.Replace("'", "''");
             dv.RowFilter = $"TenLoaiSach LIKE '%{filterText}%'";
         }
-
-        
-        private string GenerateNewMaLoaiSach()
+        private void SetControlState(string state)
         {
-            string nextID = "LS001"; // ID mặc định nếu bảng trống
-            string prefix = "LS";    // Tiền tố của mã
-            int idLength = 3;      // Chiều dài phần số
+            switch (state)
+            {
+                case "Normal": // Trạng thái xem
+                    groupBox1.Enabled = false; // Khóa toàn bộ GroupBox
+                    txtMaLoaiSach.ReadOnly = true;
+
+                    btnNew.Enabled = true;
+                    btnSua.Enabled = true;
+                    btnXoa.Enabled = true;
+                    btnLuu.Enabled = false;
+                    btnHuy.Enabled = false;
+                    break;
+
+                case "Editing": // Trạng thái Thêm/Sửa
+                    groupBox1.Enabled = true; // Mở khóa GroupBox
+                    txtMaLoaiSach.ReadOnly = true; // Nhưng Mã vẫn luôn khóa
+
+                    btnNew.Enabled = false;
+                    btnSua.Enabled = false;
+                    btnXoa.Enabled = false;
+                    btnLuu.Enabled = true;
+                    btnHuy.Enabled = true;
+                    break;
+            }
+        }
+        private void ClearForm()
+        {
+            txtMaLoaiSach.Text = "";
+            txtTenLoaiSach.Text = "";
+        }
+        private void ShowData() // Đổi tên từ LoadLoaiSach
+        {
+            try
+            {
+                this.dgvLoaiSach.SelectionChanged -= new System.EventHandler(this.dgvLoaiSach_SelectionChanged);
+
+                using (con = new SqlConnection(strCon))
+                {
+                    con.Open();
+                    string sql = "SELECT Ma_TL AS MaLoaiSach, Ten_TL AS TenLoaiSach FROM THE_LOAI";
+                    adapter = new SqlDataAdapter(sql, con);
+                    dt = new DataTable();
+                    adapter.Fill(dt);
+                    dv = new DataView(dt);
+                    dgvLoaiSach.DataSource = dv;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi",
+                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                this.dgvLoaiSach.SelectionChanged += new System.EventHandler(this.dgvLoaiSach_SelectionChanged);
+                NapCT();
+            }
+        }
+        private string TaoMaLS() // Đổi tên từ GenerateNewMaLoaiSach
+        {
+            string nextID = "TL0001"; // Sửa: Mã phải khớp với CSDL (TL)
+            string prefix = "TL";    // Sửa: Tiền tố là TL
+            int idLength = 4;        // Sửa: Chiều dài số là 4 (ví dụ: TL0001)
 
             try
             {
                 using (con = new SqlConnection(strCon))
                 {
                     con.Open();
-                    // Tìm mã lớn nhất hiện tại
-                    string sql = "SELECT MAX(Ma_TL) FROM THE_LOAI";
+                    string sql = "SELECT MAX(Ma_TL) FROM THE_LOAI WHERE Ma_TL LIKE 'TL%'";
                     cmd = new SqlCommand(sql, con);
-
                     object result = cmd.ExecuteScalar();
 
                     if (result != null && result != DBNull.Value)
                     {
-                        string lastID = result.ToString(); 
-
+                        string lastID = result.ToString();
                         string numberPart = lastID.Substring(prefix.Length);
                         int lastNumber = int.Parse(numberPart);
-
                         int nextNumber = lastNumber + 1;
 
-                        nextID = prefix + nextNumber.ToString($"D{idLength}");
+                        nextID = prefix + nextNumber.ToString("D" + idLength);
                     }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi sinh mã mới: " + ex.Message, "Lỗi",
-                           MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null; // Trả về null nếu có lỗi
+                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return nextID;
         }
@@ -112,112 +165,100 @@ namespace ProjectNhom4
         private string selectedMaLoaiSach;
         private void NapCT()
         {
-            if (dgvLoaiSach.CurrentRow != null &&
-        dgvLoaiSach.CurrentRow.Index >= 0 &&
-        !dgvLoaiSach.CurrentRow.IsNewRow)
+            if (dgvLoaiSach.CurrentRow != null && dv != null && dgvLoaiSach.CurrentRow.Index < dv.Count)
             {
-                int i = dgvLoaiSach.CurrentRow.Index;
-
-                // SỬA: Lấy giá trị ra biến object trước để kiểm tra null
-                object maValue = dgvLoaiSach.Rows[i].Cells["MaLoaiSach"].Value;
-                object tenValue = dgvLoaiSach.Rows[i].Cells["TenLoaiSach"].Value;
-
-                // SỬA: Chỉ gán giá trị nếu nó không null
-                if (maValue != null && maValue != DBNull.Value)
+                try
                 {
-                    selectedMaLoaiSach = maValue.ToString();
-                    txtMaLoaiSach.Text = selectedMaLoaiSach;
+                    int i = dgvLoaiSach.CurrentRow.Index;
+                    DataRowView rowView = dv[i];
 
-                    // (Textbox Mã của bạn nên được set ReadOnly=true trong hàm Form_Load)
-
-                    txtTenLoaiSach.Text = (tenValue != null) ? tenValue.ToString() : "";
+                    txtMaLoaiSach.Text = rowView["MaLoaiSach"]?.ToString() ?? "";
+                    txtTenLoaiSach.Text = rowView["TenLoaiSach"]?.ToString() ?? "";
                 }
+                catch (Exception) { /* Bỏ qua lỗi */ }
             }
             else
             {
-                // Nếu người dùng chọn hàng mới hoặc mất focus,
-                // chúng ta nên xóa các trường nhập liệu
-                selectedMaLoaiSach = null;
-                txtMaLoaiSach.Text = "";
-                txtTenLoaiSach.Text = "";
+                ClearForm();
             }
         }
 
         private void dgvLoaiSach_SelectionChanged(object sender, EventArgs e)
         {
-            NapCT();
+            if (!isAdding)
+            {
+                NapCT();
+                SetControlState("Normal");
+            }
         }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            txtMaLoaiSach.Text = GenerateNewMaLoaiSach();
-           
-
-            txtTenLoaiSach.Text = "";
-            selectedMaLoaiSach = null; 
-            txtTenLoaiSach.Focus(); 
+            isAdding = true;
+            ClearForm();
+            txtMaLoaiSach.Text = TaoMaLS();
+            SetControlState("Editing");
+            txtTenLoaiSach.Focus();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtMaLoaiSach.Text))
+            if (string.IsNullOrWhiteSpace(txtTenLoaiSach.Text))
             {
-                MessageBox.Show("Vui lòng nhấn 'Làm mới' để tạo mã trước khi thêm.", "Thông báo",
-                           MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Tên loại sách không được để trống.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTenLoaiSach.Focus();
                 return;
             }
 
-            // Kiểm tra xem có phải mã đang chọn (đã tồn tại) không
-            if (txtMaLoaiSach.Text == selectedMaLoaiSach)
-            {
-                MessageBox.Show("Mã này đã tồn tại, vui lòng nhấn 'Làm mới' để tạo mã mới.", "Thông báo",
-                           MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            string maTL = txtMaLoaiSach.Text;
+            string tenTL = txtTenLoaiSach.Text;
 
             try
             {
                 using (con = new SqlConnection(strCon))
                 {
                     con.Open();
-                    string sql = "INSERT INTO THE_LOAI (Ma_TL, Ten_TL) VALUES (@MaTL, @TenTL)";
+                    string sql;
+
+                    if (isAdding) // Logic THÊM MỚI
+                    {
+                        sql = "INSERT INTO THE_LOAI (Ma_TL, Ten_TL) VALUES (@MaTL, @TenTL)";
+                    }
+                    else // Logic SỬA
+                    {
+                        sql = "UPDATE THE_LOAI SET Ten_TL = @TenTL WHERE Ma_TL = @MaTL";
+                    }
+
                     cmd = new SqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("@MaTL", maTL);
+                    cmd.Parameters.AddWithValue("@TenTL", tenTL);
+                    cmd.ExecuteNonQuery();
 
-                    cmd.Parameters.AddWithValue("@MaTL", txtMaLoaiSach.Text);
-                    cmd.Parameters.AddWithValue("@TenTL", txtTenLoaiSach.Text);
+                    string msg = isAdding ? "Thêm loại sách thành công." : "Cập nhật loại sách thành công.";
+                    MessageBox.Show(msg, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    int kq = cmd.ExecuteNonQuery();
-                    if (kq > 0)
-                    {
-                        MessageBox.Show("Thêm thành công bản ghi", "Thông báo",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        LoadLoaiSach();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Thêm không thành công bản ghi", "Lỗi",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    ShowData(); // Tải lại lưới
+                    SetControlState("Normal"); // Trả về trạng thái xem
+                    isAdding = false; // Reset cờ
                 }
             }
             catch (SqlException ex)
             {
-                if (ex.Number == 2627) 
+                if (ex.Number == 2627) // Lỗi trùng khóa chính
                 {
-                    MessageBox.Show("Lỗi: Mã loại sách này đã tồn tại! (Có thể ai đó vừa thêm).", "Lỗi",
-                           MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtMaLoaiSach.Text = GenerateNewMaLoaiSach();
+                    MessageBox.Show("Lỗi: Mã loại sách này đã tồn tại!", "Lỗi",
+                                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtMaLoaiSach.Text = TaoMaLS();
                 }
                 else
                 {
-                    MessageBox.Show("Lỗi SQL khi thêm: " + ex.Message, "Lỗi",
-                           MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi SQL khi lưu: " + ex.Message, "Lỗi",
+                                   MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi thêm: " + ex.Message);
+                MessageBox.Show("Lỗi khi lưu dữ liệu: " + ex.Message, "Lỗi SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -230,46 +271,52 @@ namespace ProjectNhom4
                 return;
             }
 
-            DialogResult rs = MessageBox.Show("Bạn có chắc chắn muốn xóa các bản ghi đã chọn?", "Xác nhận",
+            DialogResult rs = MessageBox.Show($"Bạn có chắc chắn muốn xóa {dgvLoaiSach.SelectedRows.Count} bản ghi đã chọn?", "Xác nhận",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
             if (rs == DialogResult.Yes)
             {
+                List<string> maDeXoa = new List<string>();
+                foreach (DataGridViewRow row in dgvLoaiSach.SelectedRows)
+                {
+                    maDeXoa.Add(row.Cells["MaLoaiSach"].Value.ToString());
+                }
+
                 try
                 {
                     using (con = new SqlConnection(strCon))
                     {
                         con.Open();
-                        int successCount = 0;
 
-                        string sql = "DELETE FROM THE_LOAI WHERE Ma_TL = @MaLoaiSach";
+                        List<string> paramNames = new List<string>();
+                        cmd = new SqlCommand();
+                        cmd.Connection = con;
 
-                        foreach (DataGridViewRow row in dgvLoaiSach.SelectedRows)
+                        for (int i = 0; i < maDeXoa.Count; i++)
                         {
-                            string maLoaiSach = row.Cells["MaLoaiSach"].Value.ToString();
-
-                            cmd = new SqlCommand(sql, con);
-                            cmd.Parameters.Clear();
-                            cmd.Parameters.AddWithValue("@MaLoaiSach", maLoaiSach);
-
-                            int kq = cmd.ExecuteNonQuery();
-                            if (kq > 0)
-                            {
-                                successCount++;
-                            }
+                            string paramName = "@p" + i;
+                            paramNames.Add(paramName);
+                            cmd.Parameters.AddWithValue(paramName, maDeXoa[i]);
                         }
 
-                        MessageBox.Show($"Xóa thành công {successCount} bản ghi.", "Thông báo",
+                        // Sửa tên cột CSDL
+                        string sql = $"DELETE FROM THE_LOAI WHERE Ma_TL IN ({string.Join(", ", paramNames)})";
+                        cmd.CommandText = sql;
+
+                        int kq = cmd.ExecuteNonQuery();
+
+                        MessageBox.Show($"Xóa thành công {kq} bản ghi.", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        LoadLoaiSach(); 
+                        ShowData(); // Sửa: Gọi ShowData() thay vì LoadLoaiSach()
                     }
                 }
                 catch (SqlException ex)
                 {
                     if (ex.Number == 547)
                     {
-                        MessageBox.Show("Lỗi: Không thể xóa vì loại sách này đang được sử dụng ở bảng khác.", "Lỗi Ràng Buộc",
-                          MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Lỗi: Không thể xóa vì loại sách này đang được sử dụng ở bảng Đầu Sách.", "Lỗi Ràng Buộc",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
@@ -287,42 +334,21 @@ namespace ProjectNhom4
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(selectedMaLoaiSach))
+            if (dgvLoaiSach.CurrentRow == null || string.IsNullOrEmpty(txtMaLoaiSach.Text))
             {
-                MessageBox.Show("Chưa chọn bản ghi", "Thông báo",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng chọn một loại sách để sửa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            try
-            {
-                using (con = new SqlConnection(strCon))
-                {
-                    con.Open();
-                    string sql = "UPDATE THE_LOAI SET Ten_TL = @TenLoaiSach WHERE Ma_TL = @MaLoaiSach";
+            isAdding = false;
+            SetControlState("Editing");
+            txtTenLoaiSach.Focus();
+        }
 
-                    cmd = new SqlCommand(sql, con);
-                    cmd.Parameters.AddWithValue("@TenLoaiSach", txtTenLoaiSach.Text);
-                    cmd.Parameters.AddWithValue("@MaLoaiSach", selectedMaLoaiSach);
-
-                    int kq = cmd.ExecuteNonQuery();
-                    if (kq > 0)
-                    {
-                        MessageBox.Show("Cập nhật thành công", "Thông báo",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadLoaiSach();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Cập nhật không thành công (Không tìm thấy mã)", "Lỗi",
-                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi cập nhật: " + ex.Message, "Lỗi",
-                           MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            isAdding = false;
+            NapCT();
+            SetControlState("Normal");
         }
     }
 }
