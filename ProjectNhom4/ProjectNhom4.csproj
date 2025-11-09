@@ -199,6 +199,12 @@
     <Compile Include="QL_DauSach.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="QL_DauSach.Designer.cs">
+      <DependentUpon>QL_DauSach.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="QL_DauSach.resx">
+      <DependentUpon>QL_DauSach.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="QL_TaiKhoan.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -216,9 +222,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QLTacGia_Ribbon.resx">
       <DependentUpon>QLTacGia_Ribbon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QL_DauSach.resx">
-      <DependentUpon>QL_DauSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QL_TaiKhoan.resx">
       <DependentUpon>QL_TaiKhoan.cs</DependentUpon>
@@ -247,7 +250,27 @@
   </ItemGroup>
   <ItemGroup>
     <!-- Embedded resources -->
-    <EmbeddedResource Include="*.resx" />
+    <EmbeddedResource Include="frmChuDe.resx" />
+    <EmbeddedResource Include="frmDangNhap.resx" />
+    <EmbeddedResource Include="frmformphuChonSach.resx" />
+    <EmbeddedResource Include="frmLoaiSach.resx" />
+    <EmbeddedResource Include="frmPhieuMuonSach.resx" />
+    <EmbeddedResource Include="frmQuanlyCuonSach.resx" />
+    <EmbeddedResource Include="frmTacgiaSach.resx" />
+    <EmbeddedResource Include="frmTraSach.resx" />
+    <EmbeddedResource Include="panelMenu.resx" />
+    <EmbeddedResource Include="QLSach_Ribbon.resx" />
+    <EmbeddedResource Include="QLTacGia_Ribbon.resx" />
+    <EmbeddedResource Include="QL_TaiKhoan.resx" />
+    <EmbeddedResource Include="QuanlyThuthu.resx" />
+    <EmbeddedResource Include="UC_PhieuMuonSach.resx" />
+    <EmbeddedResource Include="UC_PhieuPhat.resx" />
+    <EmbeddedResource Include="UC_PhieuTraSach.resx" />
+    <EmbeddedResource Include="UC_QuanlyCuonsach.resx" />
+    <EmbeddedResource Include="UC_QuanlyDocgia.resx" />
+    <EmbeddedResource Include="UC_QuanlyPhieuMuonSach.resx" />
+    <EmbeddedResource Include="UC_QuanlyThongTinTacGia.resx" />
+    <EmbeddedResource Include="UC_TrangChu.resx" />
     <EmbeddedResource Include="obj\Debug\ProjectNhom4.frmformphuChonSach.resources" />
     <EmbeddedResource Include="obj\Debug\ProjectNhom4.frmMenu.resources" />
     <EmbeddedResource Include="obj\Debug\ProjectNhom4.frmMuonSach.resources" />

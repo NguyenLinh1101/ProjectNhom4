@@ -939,5 +939,22 @@ namespace ProjectNhom4
                 MessageBox.Show("Lỗi mở form: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // QL_DauSach
+            // 
+            this.Name = "QL_DauSach";
+            this.Load += new System.EventHandler(this.QL_DauSach_Load_1);
+            this.ResumeLayout(false);
+
+        }
+
+        private void QL_DauSach_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
