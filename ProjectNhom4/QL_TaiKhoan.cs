@@ -216,5 +216,10 @@ namespace ProjectNhom4
             MessageBox.Show("Hãy thay đổi thông tin trong các ô, sau đó nhấn 'Thêm' để lưu lại thay đổi!",
                             "Chế độ sửa", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void grbTTTT_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

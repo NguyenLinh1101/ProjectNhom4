@@ -67,6 +67,11 @@
   <ItemGroup>
     <!-- Compile -->
     <Compile Include="ChiTietDauSach.Designer.cs" />
+    <Compile Include="dataThuvien2DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataThuvien2DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmformphuChonSach.cs">
       <SubType>Form</SubType>
     </Compile>
