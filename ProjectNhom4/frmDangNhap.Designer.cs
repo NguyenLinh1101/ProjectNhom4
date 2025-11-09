@@ -131,6 +131,7 @@
             this.btnThoat.Size = new System.Drawing.Size(169, 59);
             this.btnThoat.TabIndex = 11;
             this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // pictureBox3
             // 
