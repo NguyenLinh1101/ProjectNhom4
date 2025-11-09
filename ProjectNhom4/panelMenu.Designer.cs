@@ -326,6 +326,7 @@
             this.panelHienthiUC.Name = "panelHienthiUC";
             this.panelHienthiUC.Size = new System.Drawing.Size(1000, 810);
             this.panelHienthiUC.TabIndex = 2;
+            this.panelHienthiUC.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHienthiUC_Paint);
             // 
             // frmMenu
             // 

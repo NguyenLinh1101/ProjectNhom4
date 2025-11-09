@@ -69,6 +69,11 @@ namespace ProjectNhom4
         {
             LoadUserControl(new UC_QuanlyDocGia());
         }
+
+        private void panelHienthiUC_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 
