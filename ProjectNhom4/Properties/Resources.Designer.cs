@@ -63,6 +63,16 @@ namespace ProjectNhom4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap analytics {
+            get {
+                object obj = ResourceManager.GetObject("analytics", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_21_105707 {
             get {
                 object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-21 105707", resourceCulture);
@@ -173,9 +183,19 @@ namespace ProjectNhom4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap arrow_down_sign_to_navigate {
+        internal static System.Drawing.Bitmap arrow_down_sign_to_navigate1 {
             get {
-                object obj = ResourceManager.GetObject("arrow-down-sign-to-navigate", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow-down-sign-to-navigate1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap book {
+            get {
+                object obj = ResourceManager.GetObject("book", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

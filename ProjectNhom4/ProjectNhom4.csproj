@@ -256,5 +256,18 @@
   <ItemGroup>
     <None Include="Resources\go-back-arrow.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\analytics.png" />
+    <Content Include="Resources\book.png" />
+    <Content Include="Resources\cogwheel.png" />
+    <Content Include="Resources\home_455816.png" />
+    <Content Include="Resources\hustthuvien.png" />
+    <Content Include="Resources\logohust.png" />
+    <Content Include="Resources\man_8661663.png" />
+    <Content Include="Resources\notepad.png" />
+    <Content Include="Resources\profile.png" />
+    <Content Include="Resources\thuvienhust.jpg" />
+    <Content Include="Resources\write_16791610.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
