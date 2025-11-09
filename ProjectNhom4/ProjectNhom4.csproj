@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <!-- References -->
     <Reference Include="DevExpress.Data.Desktop.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Drawing.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -64,22 +65,25 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChiTietDauSach.cs">
+    <!-- Compile -->
+    <Compile Include="ChiTietDauSach.Designer.cs" />
+    <Compile Include="frmformphuChonSach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChiTietDauSach.Designer.cs">
-      <DependentUpon>ChiTietDauSach.cs</DependentUpon>
+    <Compile Include="frmformphuChonSach.Designer.cs">
+      <DependentUpon>frmformphuChonSach.cs</DependentUpon>
     </Compile>
-    <Compile Include="dataThuvien2DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dataThuvien2DataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="frmQuanlyCuonSach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="frmQuanlyCuonSach.Designer.cs">
+      <DependentUpon>frmQuanlyCuonSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTraSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTraSach.Designer.cs">
+      <DependentUpon>frmTraSach.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChuDe.cs">
       <SubType>Form</SubType>
@@ -105,8 +109,76 @@
     <Compile Include="frmTacgiaSach.Designer.cs">
       <DependentUpon>frmTacgiaSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
+    <Compile Include="panelMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="panelMenu.Designer.cs">
+      <DependentUpon>panelMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhieuMuonSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhieuMuonSach.Designer.cs">
+      <DependentUpon>frmPhieuMuonSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <!-- UserControls -->
+    <Compile Include="QuanlyThuthu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuanlyThuthu.Designer.cs">
+      <DependentUpon>QuanlyThuthu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_PhieuMuonSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_PhieuMuonSach.Designer.cs">
+      <DependentUpon>UC_PhieuMuonSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_PhieuPhat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_PhieuPhat.Designer.cs">
+      <DependentUpon>UC_PhieuPhat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_PhieuTraSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_PhieuTraSach.Designer.cs">
+      <DependentUpon>UC_PhieuTraSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QuanlyDocgia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QuanlyDocgia.Designer.cs">
+      <DependentUpon>UC_QuanlyDocgia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QuanlyCuonsach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QuanlyCuonsach.Designer.cs">
+      <DependentUpon>UC_QuanlyCuonsach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QuanlyPhieuMuonSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QuanlyPhieuMuonSach.Designer.cs">
+      <DependentUpon>UC_QuanlyPhieuMuonSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QuanlyThongTinTacGia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QuanlyThongTinTacGia.Designer.cs">
+      <DependentUpon>UC_QuanlyThongTinTacGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_TrangChu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_TrangChu.Designer.cs">
+      <DependentUpon>UC_TrangChu.cs</DependentUpon>
+    </Compile>
     <Compile Include="QLSach_Ribbon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -122,38 +194,13 @@
     <Compile Include="QL_DauSach.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="QL_DauSach.Designer.cs">
-      <DependentUpon>QL_DauSach.cs</DependentUpon>
-    </Compile>
     <Compile Include="QL_TaiKhoan.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="QL_TaiKhoan.Designer.cs">
       <DependentUpon>QL_TaiKhoan.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ChiTietDauSach.resx">
-      <DependentUpon>ChiTietDauSach.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmChuDe.resx">
-      <DependentUpon>frmChuDe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmDangNhap.resx">
-      <DependentUpon>frmDangNhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmLoaiSach.resx">
-      <DependentUpon>frmLoaiSach.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTacgiaSach.resx">
-      <DependentUpon>frmTacgiaSach.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
+    <!-- Properties -->
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -194,67 +241,78 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <!-- Embedded resources -->
+    <EmbeddedResource Include="*.resx" />
+    <EmbeddedResource Include="obj\Debug\ProjectNhom4.frmformphuChonSach.resources" />
+    <EmbeddedResource Include="obj\Debug\ProjectNhom4.frmMenu.resources" />
+    <EmbeddedResource Include="obj\Debug\ProjectNhom4.frmMuonSach.resources" />
+    <EmbeddedResource Include="obj\Debug\ProjectNhom4.Properties.Resources.resources" />
+    <EmbeddedResource Include="obj\Debug\ProjectNhom4.QuanlyThuthu.resources" />
+    <EmbeddedResource Include="obj\Debug\ProjectNhom4.UC_PhieuPhat.resources" />
+    <EmbeddedResource Include="obj\Debug\ProjectNhom4.UC_PhieuTraSach.resources" />
+    <EmbeddedResource Include="obj\Debug\ProjectNhom4.UC_QuanlyCuonsach.resources" />
+    <EmbeddedResource Include="obj\Debug\ProjectNhom4.UC_QuanlyDocGia.resources" />
+    <EmbeddedResource Include="obj\Debug\ProjectNhom4.UC_QuanlyPhieuMuonSach.resources" />
+    <EmbeddedResource Include="obj\Debug\ProjectNhom4.UC_QuanlyThongTinTacGia.resources" />
+    <EmbeddedResource Include="obj\Debug\ProjectNhom4.UC_TrangChu.resources" />
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- None / Content -->
+    <Content Include="Resources\userLanNhi.png" />
+    <Content Include="Resources\Ảnh chụp màn hình 2025-10-21 105707.png" />
+    <Content Include="Resources\Ảnh chụp màn hình 2025-10-21 105827.png" />
+    <Content Include="Resources\Ảnh chụp màn hình 2025-10-21 110647.png" />
+    <Content Include="Resources\Ảnh chụp màn hình 2025-10-21 111040.png" />
+    <Content Include="Resources\Ảnh chụp màn hình 2025-10-21 233502.png" />
+    <Content Include="Resources\Ảnh chụp màn hình 2025-10-21 233742.png" />
+    <Content Include="Resources\Ảnh chụp màn hình 2025-10-21 233940.png" />
+    <Content Include="Resources\Ảnh chụp màn hình 2025-10-21 234137.png" />
+    <Content Include="Resources\Ảnh chụp màn hình 2025-10-22 000119.png" />
+    <Content Include="Resources\Ảnh chụp màn hình 2025-10-22 222354.png" />
+    <Content Include="Resources\Ảnh chụp màn hình 2025-10-22 222446.png" />
+    <None Include="bin\Debug\ProjectNhom4.exe.config" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\ProjectN.62B2C3EA.Up2Date" />
+    <None Include="obj\Debug\ProjectNhom4.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\ProjectNhom4.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\ProjectNhom4.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\ProjectNhom4.exe.config" />
+    <None Include="packages.config" />
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="bin\Debug\Guna.UI2.dll" />
+    <Content Include="bin\Debug\ProjectNhom4.exe" />
+    <Content Include="bin\Debug\ProjectNhom4.pdb" />
+    <Content Include="obj\Debug\ProjectNhom4.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\ProjectNhom4.exe" />
+    <Content Include="obj\Debug\ProjectNhom4.pdb" />
+    <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <Content Include="Resources\logoneu.png" />
+    <None Include="Properties\Settings.settings" />
+    <!-- Các Resources khác, không duplicate -->
     <None Include="Resources\search.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\arrow-down-sign-to-navigate.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\down-arrow.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\down-chevron.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Ảnh chụp màn hình 2025-10-21 105827.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Ảnh chụp màn hình 2025-10-21 105707.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Ảnh chụp màn hình 2025-10-21 110647.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Ảnh chụp màn hình 2025-10-21 111040.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Ảnh chụp màn hình 2025-10-21 233502.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Ảnh chụp màn hình 2025-10-21 233742.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Ảnh chụp màn hình 2025-10-21 233940.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Ảnh chụp màn hình 2025-10-21 234137.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Ảnh chụp màn hình 2025-10-22 000119.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\gmail.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\user.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\padlock.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Ảnh chụp màn hình 2025-10-22 222354.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Ảnh chụp màn hình 2025-10-22 222446.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\view.png" />
+    <None Include="Resources\go-back-arrow.png" />
+    <None Include="Resources\thuvienhust.jpg" />
+    <None Include="Resources\profile.png" />
+    <None Include="Resources\notepad.png" />
+    <None Include="Resources\man_8661663.png" />
+    <None Include="Resources\write_16791610.png" />
+    <None Include="Resources\home_455816.png" />
+    <None Include="Resources\book.png" />
+    <None Include="Resources\analytics.png" />
+    <None Include="Resources\cogwheel.png" />
+    <None Include="Resources\logohust.png" />
+    <None Include="Resources\hustthuvien.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\go-back-arrow.png" />
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\analytics.png" />

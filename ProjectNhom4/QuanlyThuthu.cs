@@ -11,12 +11,13 @@ using System.Windows.Forms;
 
 namespace ProjectNhom4
 {
-    public partial class ChiTietDauSach : Form
+    public partial class QuanlyThuthu : UserControl
     {
         string strCon = @"Data Source=DESKTOP-ST1KSE3\SQLEXPRESS;Initial Catalog=QL_THU_VIEN;Integrated Security=True";
 
         string maDauSach;
         public ChiTietDauSach()
+        public QuanlyThuthu()
         {
             InitializeComponent();
         }
