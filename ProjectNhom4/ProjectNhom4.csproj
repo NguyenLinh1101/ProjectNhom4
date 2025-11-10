@@ -261,7 +261,7 @@
     <EmbeddedResource Include="panelMenu.resx" />
     
     
-    <EmbeddedResource Include="QL_TaiKhoan.resx" />
+    
     <EmbeddedResource Include="QuanlyThuthu.resx" />
     <EmbeddedResource Include="UC_PhieuMuonSach.resx" />
     <EmbeddedResource Include="UC_PhieuPhat.resx" />
