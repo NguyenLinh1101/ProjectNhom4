@@ -296,7 +296,6 @@
             this.btnLuu.Size = new System.Drawing.Size(179, 45);
             this.btnLuu.TabIndex = 2;
             this.btnLuu.Text = "Lưu phiếu";
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // dgvSachMuon
             // 
