@@ -8,30 +8,24 @@ namespace ProjectNhom4
 {
     internal static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMenu());
-        }
-    
-        
-    }
-    public class MainForm : Form
-    {
-        private QLSach_Ribbon qlSach;
 
-        public MainForm()
-        {
-           qlSach = new QLSach_Ribbon();
-           qlSach.Dock = DockStyle.Fill;
-           this.Controls.Add(qlSach);
-           this.Text = "Quản Lý Sách";
-           this.WindowState = FormWindowState.Maximized;
-       }
+            // 🔹 B1: Hiển thị form đăng nhập trước
+            frmDangNhap dangNhap = new frmDangNhap();
+
+            // Nếu đăng nhập thành công (form trả về DialogResult.OK)
+            if (dangNhap.ShowDialog() == DialogResult.OK)
+            {
+                // 🔹 B2: Mở form menu chính
+                Application.Run(new frmMenu());
+            }
+        }
+
+
     }
+    
 }
