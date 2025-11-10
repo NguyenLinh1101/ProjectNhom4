@@ -129,13 +129,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <!-- UserControls -->
     <Compile Include="QuanlyThuthu.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="QuanlyThuthu.Designer.cs">
       <DependentUpon>QuanlyThuthu.cs</DependentUpon>
     </Compile>
+    <!-- UserControls -->
     <Compile Include="UC_PhieuMuonSach.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -250,7 +250,9 @@
     <EmbeddedResource Include="frmTacgiaSach.resx" />
     <EmbeddedResource Include="frmTraSach.resx" />
     <EmbeddedResource Include="panelMenu.resx" />
-    <EmbeddedResource Include="QuanlyThuthu.resx" />
+    <EmbeddedResource Include="QuanlyThuthu.resx">
+      <DependentUpon>QuanlyThuthu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_PhieuMuonSach.resx" />
     <EmbeddedResource Include="UC_PhieuPhat.resx" />
     <EmbeddedResource Include="UC_PhieuTraSach.resx" />
@@ -263,7 +265,6 @@
     <EmbeddedResource Include="obj\Debug\ProjectNhom4.frmMenu.resources" />
     <EmbeddedResource Include="obj\Debug\ProjectNhom4.frmMuonSach.resources" />
     <EmbeddedResource Include="obj\Debug\ProjectNhom4.Properties.Resources.resources" />
-    <EmbeddedResource Include="obj\Debug\ProjectNhom4.QuanlyThuthu.resources" />
     <EmbeddedResource Include="obj\Debug\ProjectNhom4.UC_PhieuPhat.resources" />
     <EmbeddedResource Include="obj\Debug\ProjectNhom4.UC_PhieuTraSach.resources" />
     <EmbeddedResource Include="obj\Debug\ProjectNhom4.UC_QuanlyCuonsach.resources" />
