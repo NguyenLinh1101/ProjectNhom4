@@ -196,15 +196,6 @@
     <Compile Include="QLTacGia_Ribbon.Designer.cs">
       <DependentUpon>QLTacGia_Ribbon.cs</DependentUpon>
     </Compile>
-    <Compile Include="QL_DauSach.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="QL_DauSach.Designer.cs">
-      <DependentUpon>QL_DauSach.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="QL_DauSach.resx">
-      <DependentUpon>QL_DauSach.cs</DependentUpon>
-    </EmbeddedResource>
     <Compile Include="QL_TaiKhoan.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -259,9 +250,6 @@
     <EmbeddedResource Include="frmTacgiaSach.resx" />
     <EmbeddedResource Include="frmTraSach.resx" />
     <EmbeddedResource Include="panelMenu.resx" />
-    
-    
-    
     <EmbeddedResource Include="QuanlyThuthu.resx" />
     <EmbeddedResource Include="UC_PhieuMuonSach.resx" />
     <EmbeddedResource Include="UC_PhieuPhat.resx" />
