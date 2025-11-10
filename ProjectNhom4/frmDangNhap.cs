@@ -78,12 +78,11 @@ namespace ProjectNhom4
                     // Ẩn form đăng nhập
                     this.Hide();
 
-                    // 🔹 Mở form quản lý tài khoản trực tiếp
-                    frmQLTaiKhoan formQLTK = new frmQLTaiKhoan();
-                    formQLTK.ShowDialog();
+                    // 🔹 Mở form Menu chính
+                    frmMenu formMenu = new frmMenu();
+                    formMenu.Show();
 
-                    // Khi form quản lý đóng → hiện lại form đăng nhập
-                    this.Show();
+                    // Không cần ShowDialog, để Menu chạy chính, form đăng nhập ẩn đi
                 }
                 else
                 {
