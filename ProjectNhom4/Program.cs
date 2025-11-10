@@ -18,8 +18,8 @@ namespace ProjectNhom4
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmMenu());
         }
-            Application.Run(new MainForm());
-        }
+    
+        
     }
     public class MainForm : Form
     {
