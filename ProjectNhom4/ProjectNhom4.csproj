@@ -72,24 +72,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dataThuvien2DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="frmformphuChonSach.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmformphuChonSach.Designer.cs">
-      <DependentUpon>frmformphuChonSach.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmQuanlyCuonSach.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmQuanlyCuonSach.Designer.cs">
-      <DependentUpon>frmQuanlyCuonSach.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmTraSach.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTraSach.Designer.cs">
-      <DependentUpon>frmTraSach.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmChuDe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,11 +84,29 @@
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmformphuChonSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmformphuChonSach.Designer.cs">
+      <DependentUpon>frmformphuChonSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLoaiSach.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLoaiSach.Designer.cs">
       <DependentUpon>frmLoaiSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhieuMuonSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhieuMuonSach.Designer.cs">
+      <DependentUpon>frmPhieuMuonSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanlyCuonSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanlyCuonSach.Designer.cs">
+      <DependentUpon>frmQuanlyCuonSach.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTacgiaSach.cs">
       <SubType>Form</SubType>
@@ -114,18 +114,18 @@
     <Compile Include="frmTacgiaSach.Designer.cs">
       <DependentUpon>frmTacgiaSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTraSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTraSach.Designer.cs">
+      <DependentUpon>frmTraSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="panelMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="panelMenu.Designer.cs">
       <DependentUpon>panelMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmPhieuMuonSach.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPhieuMuonSach.Designer.cs">
-      <DependentUpon>frmPhieuMuonSach.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -184,22 +184,57 @@
     <Compile Include="UC_QuanlyCuonsach.Designer.cs">
       <DependentUpon>UC_QuanlyCuonsach.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_QuanlyDocgia.cs" />
+    <Compile Include="UC_QuanlyDocgia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UC_QuanlyDocgia.Designer.cs">
       <DependentUpon>UC_QuanlyDocgia.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_QuanlyPhieuMuonSach.cs" />
+    <Compile Include="UC_QuanlyPhieuMuonSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UC_QuanlyPhieuMuonSach.Designer.cs">
       <DependentUpon>UC_QuanlyPhieuMuonSach.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_QuanlyThongTinTacGia.cs" />
+    <Compile Include="UC_QuanlyThongTinTacGia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UC_QuanlyThongTinTacGia.Designer.cs">
       <DependentUpon>UC_QuanlyThongTinTacGia.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_TrangChu.cs" />
+    <Compile Include="UC_TrangChu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UC_TrangChu.Designer.cs">
       <DependentUpon>UC_TrangChu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmChuDe.resx">
+      <DependentUpon>frmChuDe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmformphuChonSach.resx">
+      <DependentUpon>frmformphuChonSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoaiSach.resx">
+      <DependentUpon>frmLoaiSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhieuMuonSach.resx">
+      <DependentUpon>frmPhieuMuonSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanlyCuonSach.resx">
+      <DependentUpon>frmQuanlyCuonSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTacgiaSach.resx">
+      <DependentUpon>frmTacgiaSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTraSach.resx">
+      <DependentUpon>frmTraSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panelMenu.resx">
+      <DependentUpon>panelMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QLSach_Ribbon.resx">
       <DependentUpon>QLSach_Ribbon.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,22 +289,12 @@
   </ItemGroup>
   <ItemGroup>
     <!-- Embedded resources -->
-    <EmbeddedResource Include="frmChuDe.resx" />
-    <EmbeddedResource Include="frmDangNhap.resx" />
-    <EmbeddedResource Include="frmformphuChonSach.resx" />
-    <EmbeddedResource Include="frmLoaiSach.resx" />
-    <EmbeddedResource Include="frmPhieuMuonSach.resx" />
-    <EmbeddedResource Include="frmQuanlyCuonSach.resx" />
-    <EmbeddedResource Include="frmTacgiaSach.resx" />
-    <EmbeddedResource Include="frmTraSach.resx" />
-    <EmbeddedResource Include="panelMenu.resx" />
     <EmbeddedResource Include="QuanlyThuthu.resx">
       <DependentUpon>QuanlyThuthu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_PhieuMuonSach.resx">
       <DependentUpon>UC_PhieuMuonSach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="obj\Debug\ProjectNhom4.frmformphuChonSach.resources" />
     <EmbeddedResource Include="obj\Debug\ProjectNhom4.frmMenu.resources" />
     <EmbeddedResource Include="obj\Debug\ProjectNhom4.frmMuonSach.resources" />
     <EmbeddedResource Include="obj\Debug\ProjectNhom4.Properties.Resources.resources" />
