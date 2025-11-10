@@ -142,48 +142,6 @@
       <DependentUpon>UC_PhieuMuonSach.cs</DependentUpon>
     </Compile>
     <!-- UserControls -->
-    <Compile Include="UC_PhieuPhat.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_PhieuPhat.Designer.cs">
-      <DependentUpon>UC_PhieuPhat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_PhieuTraSach.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_PhieuTraSach.Designer.cs">
-      <DependentUpon>UC_PhieuTraSach.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_QuanlyDocgia.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_QuanlyDocgia.Designer.cs">
-      <DependentUpon>UC_QuanlyDocgia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_QuanlyCuonsach.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_QuanlyCuonsach.Designer.cs">
-      <DependentUpon>UC_QuanlyCuonsach.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_QuanlyPhieuMuonSach.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_QuanlyPhieuMuonSach.Designer.cs">
-      <DependentUpon>UC_QuanlyPhieuMuonSach.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_QuanlyThongTinTacGia.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_QuanlyThongTinTacGia.Designer.cs">
-      <DependentUpon>UC_QuanlyThongTinTacGia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_TrangChu.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_TrangChu.Designer.cs">
-      <DependentUpon>UC_TrangChu.cs</DependentUpon>
-    </Compile>
     <Compile Include="QLSach_Ribbon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -208,6 +166,40 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="UC_PhieuPhat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_PhieuPhat.Designer.cs">
+      <DependentUpon>UC_PhieuPhat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_PhieuTraSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_PhieuTraSach.Designer.cs">
+      <DependentUpon>UC_PhieuTraSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QuanlyCuonsach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QuanlyCuonsach.Designer.cs">
+      <DependentUpon>UC_QuanlyCuonsach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QuanlyDocgia.cs" />
+    <Compile Include="UC_QuanlyDocgia.Designer.cs">
+      <DependentUpon>UC_QuanlyDocgia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QuanlyPhieuMuonSach.cs" />
+    <Compile Include="UC_QuanlyPhieuMuonSach.Designer.cs">
+      <DependentUpon>UC_QuanlyPhieuMuonSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QuanlyThongTinTacGia.cs" />
+    <Compile Include="UC_QuanlyThongTinTacGia.Designer.cs">
+      <DependentUpon>UC_QuanlyThongTinTacGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_TrangChu.cs" />
+    <Compile Include="UC_TrangChu.Designer.cs">
+      <DependentUpon>UC_TrangChu.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="QLSach_Ribbon.resx">
       <DependentUpon>QLSach_Ribbon.cs</DependentUpon>
     </EmbeddedResource>
@@ -216,6 +208,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QL_TaiKhoan.resx">
       <DependentUpon>QL_TaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_PhieuPhat.resx">
+      <DependentUpon>UC_PhieuPhat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_PhieuTraSach.resx">
+      <DependentUpon>UC_PhieuTraSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QuanlyCuonsach.resx">
+      <DependentUpon>UC_QuanlyCuonsach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QuanlyDocgia.resx">
+      <DependentUpon>UC_QuanlyDocgia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QuanlyPhieuMuonSach.resx">
+      <DependentUpon>UC_QuanlyPhieuMuonSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QuanlyThongTinTacGia.resx">
+      <DependentUpon>UC_QuanlyThongTinTacGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_TrangChu.resx">
+      <DependentUpon>UC_TrangChu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="dataThuvien2DataSet.xsc">
       <DependentUpon>dataThuvien2DataSet.xsd</DependentUpon>
@@ -256,24 +269,10 @@
     <EmbeddedResource Include="UC_PhieuMuonSach.resx">
       <DependentUpon>UC_PhieuMuonSach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_PhieuPhat.resx" />
-    <EmbeddedResource Include="UC_PhieuTraSach.resx" />
-    <EmbeddedResource Include="UC_QuanlyCuonsach.resx" />
-    <EmbeddedResource Include="UC_QuanlyDocgia.resx" />
-    <EmbeddedResource Include="UC_QuanlyPhieuMuonSach.resx" />
-    <EmbeddedResource Include="UC_QuanlyThongTinTacGia.resx" />
-    <EmbeddedResource Include="UC_TrangChu.resx" />
     <EmbeddedResource Include="obj\Debug\ProjectNhom4.frmformphuChonSach.resources" />
     <EmbeddedResource Include="obj\Debug\ProjectNhom4.frmMenu.resources" />
     <EmbeddedResource Include="obj\Debug\ProjectNhom4.frmMuonSach.resources" />
     <EmbeddedResource Include="obj\Debug\ProjectNhom4.Properties.Resources.resources" />
-    <EmbeddedResource Include="obj\Debug\ProjectNhom4.UC_PhieuPhat.resources" />
-    <EmbeddedResource Include="obj\Debug\ProjectNhom4.UC_PhieuTraSach.resources" />
-    <EmbeddedResource Include="obj\Debug\ProjectNhom4.UC_QuanlyCuonsach.resources" />
-    <EmbeddedResource Include="obj\Debug\ProjectNhom4.UC_QuanlyDocGia.resources" />
-    <EmbeddedResource Include="obj\Debug\ProjectNhom4.UC_QuanlyPhieuMuonSach.resources" />
-    <EmbeddedResource Include="obj\Debug\ProjectNhom4.UC_QuanlyThongTinTacGia.resources" />
-    <EmbeddedResource Include="obj\Debug\ProjectNhom4.UC_TrangChu.resources" />
     <EmbeddedResource Include="Properties\Resources.resx" />
   </ItemGroup>
   <ItemGroup>
