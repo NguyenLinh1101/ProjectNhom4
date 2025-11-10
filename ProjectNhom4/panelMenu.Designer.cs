@@ -72,6 +72,7 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(370, 810);
             this.panelMenu.TabIndex = 0;
+            this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
             // pnlSubCaiDat
             // 
@@ -118,6 +119,7 @@
             this.btnQLTaiKhoan.Size = new System.Drawing.Size(230, 45);
             this.btnQLTaiKhoan.TabIndex = 9;
             this.btnQLTaiKhoan.Text = "Quản lý tài khoản";
+            this.btnQLTaiKhoan.Click += new System.EventHandler(this.btnQLTaiKhoan_Click);
             // 
             // sepBottom
             // 

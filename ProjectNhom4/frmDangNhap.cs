@@ -78,11 +78,13 @@ namespace ProjectNhom4
                     // Ẩn form đăng nhập
                     this.Hide();
 
-                    // 🔹 Mở form Menu chính
+                    // Mở form Menu chính
                     frmMenu formMenu = new frmMenu();
-                    formMenu.Show();
 
-                    // Không cần ShowDialog, để Menu chạy chính, form đăng nhập ẩn đi
+                    // Khi form Menu đóng, thì tắt hẳn ứng dụng
+                    formMenu.FormClosed += (s, args) => Application.Exit();
+
+                    formMenu.Show(); // Hiện form menu
                 }
                 else
                 {

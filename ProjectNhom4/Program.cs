@@ -13,16 +13,7 @@ namespace ProjectNhom4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            // 🔹 B1: Hiển thị form đăng nhập trước
-            frmDangNhap dangNhap = new frmDangNhap();
-
-            // Nếu đăng nhập thành công (form trả về DialogResult.OK)
-            if (dangNhap.ShowDialog() == DialogResult.OK)
-            {
-                // 🔹 B2: Mở form menu chính
-                Application.Run(new frmMenu());
-            }
+            Application.Run(new frmDangNhap()); // ✅ chạy form đăng nhập đầu tiên
         }
 
 

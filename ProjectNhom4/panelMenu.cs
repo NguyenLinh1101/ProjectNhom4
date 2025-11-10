@@ -74,6 +74,31 @@ namespace ProjectNhom4
         {
 
         }
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnQLTaiKhoan_Click(object sender, EventArgs e)
+        {
+            // Xóa mọi control cũ trên form (trừ các nút menu)
+            foreach (Control c in this.Controls.OfType<UserControl>().ToList())
+            {
+                this.Controls.Remove(c);
+                c.Dispose();
+            }
+
+            // Tạo mới UserControl
+            QL_TaiKhoan ucTaiKhoan = new QL_TaiKhoan();
+
+            // Thiết lập vị trí hiển thị (tuỳ form bạn có layout gì)
+            ucTaiKhoan.Dock = DockStyle.Fill;
+
+            // Thêm vào form (trực tiếp)
+            this.Controls.Add(ucTaiKhoan);
+            ucTaiKhoan.BringToFront(); // Cho nó nổi lên trên cùng
+        }
     }
 }
 
