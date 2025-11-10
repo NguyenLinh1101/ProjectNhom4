@@ -1,0 +1,172 @@
+﻿namespace ProjectNhom4
+{
+    partial class UC_QuanlyMuonTra_Ribbon
+    {
+        /// <summary> 
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary> 
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Component Designer generated code
+
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.panelRibbon = new System.Windows.Forms.Panel();
+            this.btnPhieuPhat = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPhieuTra = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPhieuMuon = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThuThu = new Guna.UI2.WinForms.Guna2Button();
+            this.panelContainer = new System.Windows.Forms.Panel();
+            this.panelRibbon.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // panelRibbon
+            // 
+            this.panelRibbon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.panelRibbon.Controls.Add(this.btnPhieuPhat);
+            this.panelRibbon.Controls.Add(this.btnPhieuTra);
+            this.panelRibbon.Controls.Add(this.btnPhieuMuon);
+            this.panelRibbon.Controls.Add(this.btnThuThu);
+            this.panelRibbon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelRibbon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelRibbon.ForeColor = System.Drawing.Color.Black;
+            this.panelRibbon.Location = new System.Drawing.Point(0, 0);
+            this.panelRibbon.Name = "panelRibbon";
+            this.panelRibbon.Size = new System.Drawing.Size(1171, 90);
+            this.panelRibbon.TabIndex = 4;
+            this.panelRibbon.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRibbon_Paint);
+            // 
+            // btnPhieuPhat
+            // 
+            this.btnPhieuPhat.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnPhieuPhat.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnPhieuPhat.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.btnPhieuPhat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPhieuPhat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPhieuPhat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPhieuPhat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPhieuPhat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.btnPhieuPhat.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhieuPhat.ForeColor = System.Drawing.Color.White;
+            this.btnPhieuPhat.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnPhieuPhat.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnPhieuPhat.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.btnPhieuPhat.Location = new System.Drawing.Point(611, 0);
+            this.btnPhieuPhat.Name = "btnPhieuPhat";
+            this.btnPhieuPhat.Size = new System.Drawing.Size(247, 90);
+            this.btnPhieuPhat.TabIndex = 0;
+            this.btnPhieuPhat.Text = "Phiếu phạt";
+            // 
+            // btnPhieuTra
+            // 
+            this.btnPhieuTra.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnPhieuTra.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnPhieuTra.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.btnPhieuTra.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPhieuTra.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPhieuTra.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPhieuTra.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPhieuTra.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.btnPhieuTra.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhieuTra.ForeColor = System.Drawing.Color.White;
+            this.btnPhieuTra.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnPhieuTra.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnPhieuTra.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.btnPhieuTra.Location = new System.Drawing.Point(306, 0);
+            this.btnPhieuTra.Name = "btnPhieuTra";
+            this.btnPhieuTra.Size = new System.Drawing.Size(247, 90);
+            this.btnPhieuTra.TabIndex = 0;
+            this.btnPhieuTra.Text = "Phiếu trả";
+            this.btnPhieuTra.Click += new System.EventHandler(this.btnPhieuTra_Click);
+            // 
+            // btnPhieuMuon
+            // 
+            this.btnPhieuMuon.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnPhieuMuon.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnPhieuMuon.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.btnPhieuMuon.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPhieuMuon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPhieuMuon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPhieuMuon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPhieuMuon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.btnPhieuMuon.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhieuMuon.ForeColor = System.Drawing.Color.White;
+            this.btnPhieuMuon.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnPhieuMuon.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnPhieuMuon.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.btnPhieuMuon.Location = new System.Drawing.Point(0, 0);
+            this.btnPhieuMuon.Name = "btnPhieuMuon";
+            this.btnPhieuMuon.Size = new System.Drawing.Size(247, 90);
+            this.btnPhieuMuon.TabIndex = 0;
+            this.btnPhieuMuon.Text = "Phiếu mượn";
+            this.btnPhieuMuon.Click += new System.EventHandler(this.btnPhieuMuon_Click);
+            // 
+            // btnThuThu
+            // 
+            this.btnThuThu.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnThuThu.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnThuThu.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.btnThuThu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnThuThu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnThuThu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnThuThu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThuThu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.btnThuThu.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThuThu.ForeColor = System.Drawing.Color.White;
+            this.btnThuThu.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnThuThu.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnThuThu.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.btnThuThu.Location = new System.Drawing.Point(882, 0);
+            this.btnThuThu.Name = "btnThuThu";
+            this.btnThuThu.Size = new System.Drawing.Size(247, 90);
+            this.btnThuThu.TabIndex = 0;
+            this.btnThuThu.Text = "Thủ thư";
+            // 
+            // panelContainer
+            // 
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(0, 90);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(1171, 699);
+            this.panelContainer.TabIndex = 5;
+            // 
+            // UC_QuanlyMuonTra_Ribbon
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panelContainer);
+            this.Controls.Add(this.panelRibbon);
+            this.Name = "UC_QuanlyMuonTra_Ribbon";
+            this.Size = new System.Drawing.Size(1171, 789);
+            this.panelRibbon.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel panelRibbon;
+        private Guna.UI2.WinForms.Guna2Button btnPhieuPhat;
+        private Guna.UI2.WinForms.Guna2Button btnPhieuTra;
+        private Guna.UI2.WinForms.Guna2Button btnPhieuMuon;
+        private Guna.UI2.WinForms.Guna2Button btnThuThu;
+        private System.Windows.Forms.Panel panelContainer;
+    }
+}
