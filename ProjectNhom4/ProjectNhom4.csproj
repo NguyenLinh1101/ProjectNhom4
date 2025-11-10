@@ -259,7 +259,7 @@
     <EmbeddedResource Include="frmTacgiaSach.resx" />
     <EmbeddedResource Include="frmTraSach.resx" />
     <EmbeddedResource Include="panelMenu.resx" />
-    <EmbeddedResource Include="QLSach_Ribbon.resx" />
+    
     <EmbeddedResource Include="QLTacGia_Ribbon.resx" />
     <EmbeddedResource Include="QL_TaiKhoan.resx" />
     <EmbeddedResource Include="QuanlyThuthu.resx" />
