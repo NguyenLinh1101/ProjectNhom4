@@ -233,7 +233,7 @@ namespace ProjectNhom4
             txtMaDauSach.Text = "";
             txtTenDauSach.Text = "";
             // Sửa lại: Thêm hướng dẫn
-            txtTacGia.Text = "Sử dụng Quản lý tác giả để thêm tác giả";
+            txtTacGia.Text = "Sử dụng Xem chi tiết để thêm tác giả";
             txtNamXB.Text = "";
             txtGiaBia.Text = "";
             txtSoTrang.Text = "";
@@ -411,7 +411,7 @@ namespace ProjectNhom4
                         cmd.ExecuteNonQuery();
 
                         string message = addNewFlag ? "Thêm mới thành công!" : "Cập nhật thành công!";
-                        MessageBox.Show(message + "\nLưu ý: Bạn cần vào quản lý tác giả để thêm tác giả.", "Thông báo");
+                        MessageBox.Show(message + "\nLưu ý: Bạn cần ấn Xem chi tiết để thêm tác giả.", "Thông báo");
                     }
                 }
                 catch (Exception ex)

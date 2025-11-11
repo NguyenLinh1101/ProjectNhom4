@@ -201,6 +201,12 @@
     <Compile Include="frmBCviphamtheoloai.Designer.cs">
       <DependentUpon>frmBCviphamtheoloai.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmThemTacGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmThemTacGia.Designer.cs">
+      <DependentUpon>FrmThemTacGia.cs</DependentUpon>
+    </Compile>
     <Compile Include="panelMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTacgiaSach.resx">
       <DependentUpon>frmTacgiaSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmThemTacGia.resx">
+      <DependentUpon>FrmThemTacGia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="panelMenu.resx">
       <DependentUpon>panelMenu.cs</DependentUpon>

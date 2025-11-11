@@ -13,7 +13,7 @@ namespace ProjectNhom4
 {
     public partial class frmTacgiaSach : Form
     {
-        string strConnectionString = @"Data Source=LAPTOP-SO78PQJP\MSSQLSERVER01;Initial Catalog=QL_THUVIEN;Integrated Security=True";
+        string strConnectionString = @"Data Source=DESKTOP-ST1KSE3\SQLEXPRESS;Initial Catalog=QL_THU_VIEN;Integrated Security=True";
 
         public frmTacgiaSach()
         {
@@ -47,6 +47,7 @@ namespace ProjectNhom4
         {
             try
             {
+                splitContainer1.SplitterDistance = splitContainer1.Width / 2;
                 LoadTacGia();
                 LoadDauSach();
 

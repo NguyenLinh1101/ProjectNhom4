@@ -17,28 +17,28 @@ namespace ProjectNhom4
 
         string maDauSach;
         bool isEditing = false;
-        public ChiTietDauSach()
-        {
-            InitializeComponent();
-        }
 
         public ChiTietDauSach(string maDS)
         {
             InitializeComponent();
-            maDauSach = maDS;
-            // SỬA DÒNG NÀY:
-            // SetControlsReadOnly();
-            SetControlsState(false); // <-- Sửa thành hàm mới
-
+            this.maDauSach = maDS;
             NapDuLieu();
+
+
+            LoadTatCaTacGiaVaoDropDown();
+
+
+            LoadTacGiaCuaSach();
+
+            SetControlsState(false);
         }
         private void SetControlsState(bool editing)
         {
             this.isEditing = editing;
 
-            // --- Ẩn/Hiện Control Tác Giả ---
-            txtTenTacGia.Visible = !editing; // Ẩn TextBox
-            cblTacGia.Visible = editing;     // Hiện CheckedListBox
+            // --- Khóa/Mở Control Tác Giả ---
+            // Dùng ReadOnly = true, control sẽ "sáng" nhưng không cho sửa
+            cceTacGia.ReadOnly = !editing;
 
             // --- Khóa các ô Text khác ---
             txtMaDauSach.ReadOnly = true;
@@ -50,58 +50,110 @@ namespace ProjectNhom4
             txtLoaiSach.ReadOnly = true;
             txtChuDe.ReadOnly = true;
 
-            //(Hoặc dùng.Visible nếu bạn muốn ẩn / hiện nút)
-             btnSua.Visible = !editing;
+            // --- Quản lý các nút ---
+            btnSua.Enabled = !editing;
+            btnLuu.Enabled = editing;
+            btnHuy.Enabled = editing;
+
+            btnSua.Visible = !editing;
             btnLuu.Visible = editing;
             btnHuy.Visible = editing;
-
-            // Chỉ tải CSDL cho CheckedListBox KHI NHẤN SỬA
-            if (editing)
-            {
-                LoadVaCheckTacGia();
-            }
         }
-        private void LoadVaCheckTacGia()
+        
+        
+        private void NapDuLieu()
         {
-            cblTacGia.Items.Clear(); // Xóa danh sách cũ
-
-            DataTable dtAllTacGia = new DataTable();
-            List<string> maTacGiaCuaSach = new List<string>();
-
             try
             {
                 using (SqlConnection con = new SqlConnection(strCon))
                 {
                     con.Open();
+                    // SỬA SQL: PHẢI JOIN VÀ STRING_AGG TÁC GIẢ
+                    string sql = @"
+                SELECT 
+                    DS.Ma_Dau_Sach, DS.Ten_Dau_Sach, DS.Nam_XB, DS.Gia_Bia, DS.So_Trang, DS.So_Luong,
+                    TL.Ten_TL AS TenLoaiSach, CD.Ten_Chu_De AS TenChuDe,
+                    ISNULL(STRING_AGG(TG.Ten_Tac_Gia, ', '), N'Chưa có tác giả') AS TenCacTacGia
+                FROM DAU_SACH DS
+                LEFT JOIN THE_LOAI TL ON DS.Ma_TL = TL.Ma_TL
+                LEFT JOIN CHU_DE CD ON DS.Ma_Chu_De = CD.Ma_Chu_De
+                LEFT JOIN TG_DAU_SACH DSTG ON DS.Ma_Dau_Sach = DSTG.Ma_Dau_Sach
+                LEFT JOIN TAC_GIA TG ON DSTG.Ma_Tac_Gia = TG.Ma_Tac_Gia
+                WHERE DS.Ma_Dau_Sach = @MaDS
+                GROUP BY 
+                    DS.Ma_Dau_Sach, DS.Ten_Dau_Sach, DS.Nam_XB, DS.Gia_Bia, 
+                    DS.So_Trang, DS.So_Luong, TL.Ten_TL, CD.Ten_Chu_De";
 
-                    // 1. Lấy TẤT CẢ tác giả
-                    SqlDataAdapter da = new SqlDataAdapter("SELECT Ma_Tac_Gia, Ten_Tac_Gia FROM TAC_GIA", con);
-                    da.Fill(dtAllTacGia);
-
-                    // 2. Lấy danh sách mã tác giả ĐÃ CÓ của sách này
-                    SqlCommand cmd = new SqlCommand("SELECT Ma_Tac_Gia FROM TG_DAU_SACH WHERE Ma_Dau_Sach = @MaDS", con);
+                    SqlCommand cmd = new SqlCommand(sql, con);
                     cmd.Parameters.AddWithValue("@MaDS", maDauSach);
+
                     SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
+                    if (reader.Read())
                     {
-                        maTacGiaCuaSach.Add(reader["Ma_Tac_Gia"].ToString());
+                        txtMaDauSach.Text = reader["Ma_Dau_Sach"].ToString();
+                        txtTenDauSach.Text = reader["Ten_Dau_Sach"].ToString();
+                        txtNamXuatBan.Text = reader["Nam_XB"].ToString();
+                        txtGiaBia.Text = reader.IsDBNull(reader.GetOrdinal("Gia_Bia")) ? "0" : Convert.ToDecimal(reader["Gia_Bia"]).ToString("N0");
+                        txtSoTrang.Text = reader.IsDBNull(reader.GetOrdinal("So_Trang")) ? "0" : Convert.ToInt32(reader["So_Trang"]).ToString("N0");
+                        txtSoLuong.Text = reader.IsDBNull(reader.GetOrdinal("So_Luong")) ? "0" : Convert.ToInt32(reader["So_Luong"]).ToString("N0");
+                        txtLoaiSach.Text = reader.IsDBNull(reader.GetOrdinal("TenLoaiSach")) ? "N/A" : reader["TenLoaiSach"].ToString();
+                        txtChuDe.Text = reader.IsDBNull(reader.GetOrdinal("TenChuDe")) ? "N/A" : reader["TenChuDe"].ToString();
+
+                        // SỬA: NẠP CHUỖI TÁC GIẢ VÀO Ô cceTacGia
+                        // (Control này sẽ tự động hiển thị text khi ReadOnly = true)
+                        cceTacGia.Text = reader["TenCacTacGia"].ToString();
                     }
                     reader.Close();
                 }
-
-                // 3. Đổ vào CheckedListBox
-                cblTacGia.DataSource = dtAllTacGia;
-                cblTacGia.ValueMember = "Ma_Tac_Gia";
-                cblTacGia.DisplayMember = "Ten_Tac_Gia";
-
-                // 4. Check vào các tác giả đã có
-                for (int i = 0; i < cblTacGia.Items.Count; i++)
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi nạp thông tin sách: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public string MaDS { get; }
+        private void LoadTatCaTacGiaVaoDropDown()
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(strCon))
                 {
-                    DataRowView drv = (DataRowView)cblTacGia.Items[i];
-                    string maTG = drv["Ma_Tac_Gia"].ToString();
-                    if (maTacGiaCuaSach.Contains(maTG))
+                    SqlDataAdapter da = new SqlDataAdapter("SELECT Ma_Tac_Gia, Ten_Tac_Gia FROM TAC_GIA", con);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    // Thêm cột hiển thị kết hợp mã + tên
+                    dt.Columns.Add("DisplayText", typeof(string), "[Ma_Tac_Gia] + ' - ' + [Ten_Tac_Gia]");
+
+                    cceTacGia.Properties.DataSource = dt;
+                    cceTacGia.Properties.DisplayMember = "DisplayText";
+                    cceTacGia.Properties.ValueMember = "Ma_Tac_Gia";
+
+                    // Hiển thị autocomplete filter trong popup
+                    cceTacGia.Properties.IncrementalSearch = true; // ✅ Gõ chữ để tìm nhanh
+
+                    // Thêm nút "+"
+                    if (!cceTacGia.Properties.Buttons.Any(b => b.Kind == DevExpress.XtraEditors.Controls.ButtonPredefines.Plus))
                     {
-                        cblTacGia.SetItemChecked(i, true);
+                        cceTacGia.Properties.Buttons.Add(
+                            new DevExpress.XtraEditors.Controls.EditorButton(
+                                DevExpress.XtraEditors.Controls.ButtonPredefines.Plus
+                            )
+                        );
+
+                        cceTacGia.ButtonClick += (s, e) =>
+                        {
+                            if (e.Button.Kind == DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)
+                            {
+                                using (var frm = new FrmThemTacGia())
+                                {
+                                    if (frm.ShowDialog() == DialogResult.OK)
+                                    {
+                                        LoadTatCaTacGiaVaoDropDown();
+                                    }
+                                }
+                            }
+                        };
                     }
                 }
             }
@@ -110,73 +162,38 @@ namespace ProjectNhom4
                 MessageBox.Show("Lỗi tải danh sách tác giả: " + ex.Message);
             }
         }
-        private void NapDuLieu()
+        private void ChiTietDauSach_Load(object sender, EventArgs e)
         {
+
+        }
+        private void LoadTacGiaCuaSach()
+        {
+            // Dùng List<object> để giữ các Mã Tác Giả
+            List<object> maTacGiaCuaSach = new List<object>();
             try
             {
                 using (SqlConnection con = new SqlConnection(strCon))
                 {
                     con.Open();
-                    string sql = @"
-SELECT 
-    DS.Ma_Dau_Sach,
-    DS.Ten_Dau_Sach,
-    STRING_AGG(TG.Ten_Tac_Gia, ', ') AS Ten_Tac_Gia,  -- Gộp nhiều tác giả cùng một đầu sách
-    DS.Nam_XB,
-    DS.Gia_Bia,
-    DS.So_Trang,
-    DS.So_Luong,
-    TL.Ten_TL AS TenLoaiSach,
-    CD.Ten_Chu_De AS TenChuDe
-FROM DAU_SACH DS
-LEFT JOIN TG_DAU_SACH DSTG ON DS.Ma_Dau_Sach = DSTG.Ma_Dau_Sach
-LEFT JOIN TAC_GIA TG ON DSTG.Ma_Tac_Gia = TG.Ma_Tac_Gia
-LEFT JOIN THE_LOAI TL ON DS.Ma_TL = TL.Ma_TL
-LEFT JOIN CHU_DE CD ON DS.Ma_Chu_De = CD.Ma_Chu_De
-WHERE DS.Ma_Dau_Sach = @MaDS
-GROUP BY 
-    DS.Ma_Dau_Sach, DS.Ten_Dau_Sach, DS.Nam_XB, 
-    DS.Gia_Bia, DS.So_Trang, DS.So_Luong,
-    TL.Ten_TL, CD.Ten_Chu_De";
-
-
-                    SqlCommand cmd = new SqlCommand(sql, con);
+                    SqlCommand cmd = new SqlCommand("SELECT Ma_Tac_Gia FROM TG_DAU_SACH WHERE Ma_Dau_Sach = @MaDS", con);
                     cmd.Parameters.AddWithValue("@MaDS", maDauSach);
-
                     SqlDataReader reader = cmd.ExecuteReader();
-                    if (reader.Read())
+                    while (reader.Read())
                     {
-                        // Nạp vào TextBox
-                        txtMaDauSach.Text = reader["Ma_Dau_Sach"].ToString();
-                        txtTenDauSach.Text = reader["Ten_Dau_Sach"].ToString();
-                        txtTenTacGia.Text = reader["Ten_Tac_Gia"].ToString();
-                        txtNamXuatBan.Text = reader["Nam_XB"].ToString();
-
-                        txtGiaBia.Text = reader.IsDBNull(reader.GetOrdinal("Gia_Bia")) ? "0" : Convert.ToDecimal(reader["Gia_Bia"]).ToString("N0");
-                        txtSoTrang.Text = reader.IsDBNull(reader.GetOrdinal("So_Trang")) ? "0" : Convert.ToInt32(reader["So_Trang"]).ToString("N0");
-                        txtSoLuong.Text = reader.IsDBNull(reader.GetOrdinal("So_Luong")) ? "0" : Convert.ToInt32(reader["So_Luong"]).ToString("N0");
-
-                        txtLoaiSach.Text = reader.IsDBNull(reader.GetOrdinal("TenLoaiSach")) ? "N/A" : reader["TenLoaiSach"].ToString();
-                        txtChuDe.Text = reader.IsDBNull(reader.GetOrdinal("TenChuDe")) ? "N/A" : reader["TenChuDe"].ToString();
+                        // SỬA: Đọc Ma_Tac_Gia trực tiếp
+                        maTacGiaCuaSach.Add(reader["Ma_Tac_Gia"]);
                     }
-                    else
-                    {
-                        MessageBox.Show("Không tìm thấy dữ liệu cho mã sách này!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    reader.Close();
                 }
+
+                // SỬA: Dùng SetEditValue để "check" các mục
+                cceTacGia.SetEditValue(maTacGiaCuaSach);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi nạp dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi tải tác giả của sách: " + ex.Message);
             }
         }
-        public string MaDS { get; }
-
-        private void ChiTietDauSach_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -189,7 +206,8 @@ GROUP BY
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            SetControlsState(false);
+            LoadTacGiaCuaSach(); // Tải lại (Reset) các check
+            SetControlsState(false); // Quay về chế độ Xem
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -201,16 +219,18 @@ GROUP BY
                     con.Open();
                     SqlTransaction trans = con.BeginTransaction();
 
-                    // 1. Xóa TẤT CẢ liên kết tác giả cũ của sách này
+                    // 1. Xóa TẤT CẢ liên kết tác giả cũ
                     SqlCommand cmdDelete = new SqlCommand("DELETE FROM TG_DAU_SACH WHERE Ma_Dau_Sach = @MaDS", con, trans);
                     cmdDelete.Parameters.AddWithValue("@MaDS", maDauSach);
                     cmdDelete.ExecuteNonQuery();
 
-                    // 2. Thêm lại các liên kết MỚI (những cái được check)
-                    foreach (var item in cblTacGia.CheckedItems)
+                    // SỬA: Lấy danh sách MÃ TÁC GIẢ mới (đã được check)
+                    List<object> listChecked = cceTacGia.Properties.Items.GetCheckedValues();
+
+                    // 2. Thêm lại các liên kết MỚI
+                    foreach (object maTG_obj in listChecked)
                     {
-                        DataRowView drv = (DataRowView)item;
-                        string maTG = drv["Ma_Tac_Gia"].ToString();
+                        string maTG = maTG_obj.ToString(); // Chuyển sang string
 
                         SqlCommand cmdInsert = new SqlCommand("INSERT INTO TG_DAU_SACH (Ma_Dau_Sach, Ma_Tac_Gia) VALUES (@MaDS, @MaTG)", con, trans);
                         cmdInsert.Parameters.AddWithValue("@MaDS", maDauSach);
@@ -218,14 +238,14 @@ GROUP BY
                         cmdInsert.ExecuteNonQuery();
                     }
 
-                    trans.Commit(); // Hoàn tất
+                    trans.Commit();
                     MessageBox.Show("Cập nhật tác giả thành công!");
 
-                    // Tải lại dữ liệu (để cập nhật txtTenTacGia với chuỗi mới)
-                    NapDuLieu();
+                    SetControlsState(false); // Quay về trạng thái xem
 
-                    // Quay về trạng thái xem
-                    SetControlsState(false);
+                    // (Tải lại dữ liệu cơ bản không cần thiết
+                    // trừ khi bạn cho phép sửa Tên sách)
+                    // NapThongTinCoBan(); 
                 }
             }
             catch (Exception ex)
