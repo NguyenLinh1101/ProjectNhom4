@@ -133,6 +133,7 @@
             this.txtChuDe.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtChuDe.Name = "txtChuDe";
             this.txtChuDe.PlaceholderText = "";
+            this.txtChuDe.ReadOnly = true;
             this.txtChuDe.SelectedText = "";
             this.txtChuDe.Size = new System.Drawing.Size(465, 60);
             this.txtChuDe.TabIndex = 8;
@@ -153,6 +154,7 @@
             this.txtLoaiSach.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtLoaiSach.Name = "txtLoaiSach";
             this.txtLoaiSach.PlaceholderText = "";
+            this.txtLoaiSach.ReadOnly = true;
             this.txtLoaiSach.SelectedText = "";
             this.txtLoaiSach.Size = new System.Drawing.Size(465, 60);
             this.txtLoaiSach.TabIndex = 7;
@@ -173,6 +175,7 @@
             this.txtSoLuong.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.PlaceholderText = "";
+            this.txtSoLuong.ReadOnly = true;
             this.txtSoLuong.SelectedText = "";
             this.txtSoLuong.Size = new System.Drawing.Size(465, 60);
             this.txtSoLuong.TabIndex = 6;
@@ -193,6 +196,7 @@
             this.txtSoTrang.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtSoTrang.Name = "txtSoTrang";
             this.txtSoTrang.PlaceholderText = "";
+            this.txtSoTrang.ReadOnly = true;
             this.txtSoTrang.SelectedText = "";
             this.txtSoTrang.Size = new System.Drawing.Size(528, 60);
             this.txtSoTrang.TabIndex = 5;
@@ -213,6 +217,7 @@
             this.txtGiaBia.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtGiaBia.Name = "txtGiaBia";
             this.txtGiaBia.PlaceholderText = "";
+            this.txtGiaBia.ReadOnly = true;
             this.txtGiaBia.SelectedText = "";
             this.txtGiaBia.Size = new System.Drawing.Size(528, 60);
             this.txtGiaBia.TabIndex = 4;
@@ -233,6 +238,7 @@
             this.txtNamXuatBan.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtNamXuatBan.Name = "txtNamXuatBan";
             this.txtNamXuatBan.PlaceholderText = "";
+            this.txtNamXuatBan.ReadOnly = true;
             this.txtNamXuatBan.SelectedText = "";
             this.txtNamXuatBan.Size = new System.Drawing.Size(528, 60);
             this.txtNamXuatBan.TabIndex = 3;
@@ -253,6 +259,7 @@
             this.txtTenTacGia.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtTenTacGia.Name = "txtTenTacGia";
             this.txtTenTacGia.PlaceholderText = "";
+            this.txtTenTacGia.ReadOnly = true;
             this.txtTenTacGia.SelectedText = "";
             this.txtTenTacGia.Size = new System.Drawing.Size(528, 60);
             this.txtTenTacGia.TabIndex = 2;
@@ -273,6 +280,7 @@
             this.txtTenDauSach.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtTenDauSach.Name = "txtTenDauSach";
             this.txtTenDauSach.PlaceholderText = "";
+            this.txtTenDauSach.ReadOnly = true;
             this.txtTenDauSach.SelectedText = "";
             this.txtTenDauSach.Size = new System.Drawing.Size(528, 60);
             this.txtTenDauSach.TabIndex = 1;
@@ -293,6 +301,7 @@
             this.txtMaDauSach.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtMaDauSach.Name = "txtMaDauSach";
             this.txtMaDauSach.PlaceholderText = "";
+            this.txtMaDauSach.ReadOnly = true;
             this.txtMaDauSach.SelectedText = "";
             this.txtMaDauSach.Size = new System.Drawing.Size(528, 60);
             this.txtMaDauSach.TabIndex = 0;

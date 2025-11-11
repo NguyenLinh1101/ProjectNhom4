@@ -63,9 +63,109 @@ namespace ProjectNhom4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap analytics {
+        internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_21_105707 {
             get {
-                object obj = ResourceManager.GetObject("analytics", resourceCulture);
+                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-21 105707", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_21_105827 {
+            get {
+                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-21 105827", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_21_110647 {
+            get {
+                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-21 110647", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_21_111040 {
+            get {
+                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-21 111040", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_21_233502 {
+            get {
+                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-21 233502", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_21_233742 {
+            get {
+                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-21 233742", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_21_233940 {
+            get {
+                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-21 233940", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_21_234137 {
+            get {
+                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-21 234137", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_22_000119 {
+            get {
+                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-22 000119", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_22_222354 {
+            get {
+                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-22 222354", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_22_222446 {
+            get {
+                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-22 222446", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

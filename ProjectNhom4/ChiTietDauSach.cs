@@ -13,7 +13,7 @@ namespace ProjectNhom4
 {
     public partial class ChiTietDauSach : Form
     {
-        string strCon = @"Data Source=DESKTOP-ST1KSE3\SQLEXPRESS;Initial Catalog=QL_THU_VIEN;Integrated Security=True";
+        string strCon = @"Data Source=LAPTOP-SO78PQJP\MSSQLSERVER01;Initial Catalog=QL_THUVIEN;Integrated Security=True";
 
         string maDauSach;
         public ChiTietDauSach()
@@ -49,24 +49,28 @@ namespace ProjectNhom4
                 using (SqlConnection con = new SqlConnection(strCon))
                 {
                     con.Open();
-
                     string sql = @"
-                SELECT 
-                    DS.Ma_Dau_Sach, DS.Ten_Dau_Sach, DS.Nam_XB, DS.Gia_Bia, DS.So_Trang, DS.So_Luong,
-                    TL.Ten_TL AS TenLoaiSach, 
-                    CD.Ten_Chu_De AS TenChuDe,
-                    ISNULL(STRING_AGG(TG.Ten_Tac_Gia, ', '), 'Chưa có tác giả') AS TenCacTacGia
-                FROM DAU_SACH DS
-                LEFT JOIN THE_LOAI TL ON DS.Ma_TL = TL.Ma_TL
-                LEFT JOIN CHU_DE CD ON DS.Ma_Chu_De = CD.Ma_Chu_De
-                -- Thêm 2 JOIN sau --
-                LEFT JOIN TG_DAU_SACH TDS ON DS.Ma_Dau_Sach = TDS.Ma_Dau_Sach
-                LEFT JOIN TAC_GIA TG ON TDS.Ma_Tac_Gia = TG.Ma_Tac_Gia
-                WHERE DS.Ma_Dau_Sach = @MaDS
-                -- Thêm GROUP BY cho các cột --
-                GROUP BY 
-                    DS.Ma_Dau_Sach, DS.Ten_Dau_Sach, DS.Nam_XB, DS.Gia_Bia, 
-                    DS.So_Trang, DS.So_Luong, TL.Ten_TL, CD.Ten_Chu_De";
+SELECT 
+    DS.Ma_Dau_Sach,
+    DS.Ten_Dau_Sach,
+    STRING_AGG(TG.Ten_Tac_Gia, ', ') AS Ten_Tac_Gia,  -- Gộp nhiều tác giả cùng một đầu sách
+    DS.Nam_XB,
+    DS.Gia_Bia,
+    DS.So_Trang,
+    DS.So_Luong,
+    TL.Ten_TL AS TenLoaiSach,
+    CD.Ten_Chu_De AS TenChuDe
+FROM DAU_SACH DS
+LEFT JOIN TG_DAU_SACH DSTG ON DS.Ma_Dau_Sach = DSTG.Ma_Dau_Sach
+LEFT JOIN TAC_GIA TG ON DSTG.Ma_Tac_Gia = TG.Ma_Tac_Gia
+LEFT JOIN THE_LOAI TL ON DS.Ma_TL = TL.Ma_TL
+LEFT JOIN CHU_DE CD ON DS.Ma_Chu_De = CD.Ma_Chu_De
+WHERE DS.Ma_Dau_Sach = @MaDS
+GROUP BY 
+    DS.Ma_Dau_Sach, DS.Ten_Dau_Sach, DS.Nam_XB, 
+    DS.Gia_Bia, DS.So_Trang, DS.So_Luong,
+    TL.Ten_TL, CD.Ten_Chu_De";
+
 
                     SqlCommand cmd = new SqlCommand(sql, con);
                     cmd.Parameters.AddWithValue("@MaDS", maDauSach);
@@ -77,10 +81,7 @@ namespace ProjectNhom4
                         // Nạp vào TextBox
                         txtMaDauSach.Text = reader["Ma_Dau_Sach"].ToString();
                         txtTenDauSach.Text = reader["Ten_Dau_Sach"].ToString();
-
-                        // SỬA LẠI TÊN CỘT:
-                        txtTenTacGia.Text = reader["TenCacTacGia"].ToString();
-
+                        txtTenTacGia.Text = reader["Ten_Tac_Gia"].ToString();
                         txtNamXuatBan.Text = reader["Nam_XB"].ToString();
 
                         txtGiaBia.Text = reader.IsDBNull(reader.GetOrdinal("Gia_Bia")) ? "0" : Convert.ToDecimal(reader["Gia_Bia"]).ToString("N0");

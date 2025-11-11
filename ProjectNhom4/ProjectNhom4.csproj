@@ -220,6 +220,8 @@
     </Compile>
     <Compile Include="QuanlyDocGia.cs">
       <DependentUpon>QuanlyDocGia.cs</DependentUpon>
+    <Compile Include="frmCuonSach.Designer.cs">
+      <DependentUpon>frmCuonSach.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChuDe.cs">
       <SubType>Form</SubType>
@@ -227,11 +229,23 @@
     <Compile Include="frmChuDe.Designer.cs">
       <DependentUpon>frmChuDe.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLoaiSach.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLoaiSach.Designer.cs">
       <DependentUpon>frmLoaiSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTacgiaSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTacgiaSach.Designer.cs">
+      <DependentUpon>frmTacgiaSach.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -240,6 +254,12 @@
     </Compile>
     <Compile Include="QLSach_Ribbon.Designer.cs">
       <DependentUpon>QLSach_Ribbon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLTacGia_Ribbon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTacGia_Ribbon.Designer.cs">
+      <DependentUpon>QLTacGia_Ribbon.cs</DependentUpon>
     </Compile>
     <Compile Include="QL_DauSach.cs">
       <SubType>UserControl</SubType>
@@ -298,6 +318,9 @@
     <EmbeddedResource Include="frmChuDe.resx">
       <DependentUpon>frmChuDe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLoaiSach.resx">
       <DependentUpon>frmLoaiSach.cs</DependentUpon>
     </EmbeddedResource>
@@ -350,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QLSach_Ribbon.resx">
       <DependentUpon>QLSach_Ribbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLTacGia_Ribbon.resx">
+      <DependentUpon>QLTacGia_Ribbon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QL_DauSach.resx">
       <DependentUpon>QL_DauSach.cs</DependentUpon>
@@ -474,7 +500,54 @@
   <ItemGroup>
     <None Include="Resources\down-chevron.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Ảnh chụp màn hình 2025-10-21 105827.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ảnh chụp màn hình 2025-10-21 105707.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ảnh chụp màn hình 2025-10-21 110647.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ảnh chụp màn hình 2025-10-21 111040.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ảnh chụp màn hình 2025-10-21 233502.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ảnh chụp màn hình 2025-10-21 233742.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ảnh chụp màn hình 2025-10-21 233940.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ảnh chụp màn hình 2025-10-21 234137.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ảnh chụp màn hình 2025-10-22 000119.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ảnh chụp màn hình 2025-10-22 222354.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ảnh chụp màn hình 2025-10-22 222446.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\go-back-arrow.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
