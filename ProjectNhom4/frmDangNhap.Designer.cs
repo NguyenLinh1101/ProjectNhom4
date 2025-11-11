@@ -39,9 +39,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnSee = new Guna.UI2.WinForms.Guna2CircleButton();
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -228,6 +228,20 @@
             this.label1.Text = "ĐẠI HỌC BÁCH KHOA HÀ NỘI";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(17, 147);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(263, 112);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "HUST";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
             // btnSee
             // 
             this.btnSee.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -263,20 +277,7 @@
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(549, 594);
             this.panelLeft.TabIndex = 16;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(17, 147);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(263, 112);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "HUST";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.panelLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLeft_Paint);
             // 
             // frmDangNhap
             // 
