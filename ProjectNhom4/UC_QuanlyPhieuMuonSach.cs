@@ -392,6 +392,11 @@ namespace ProjectNhom4
         {
             get { return dgvSachDangMuon; }
         }
+
+        private void UC_QuanlyPhieuMuonSach_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

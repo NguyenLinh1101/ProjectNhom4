@@ -123,7 +123,23 @@ namespace ProjectNhom4
             }
         }
 
-       
+        private void gbThongTinPhieu_Enter(object sender, EventArgs e)
+        {
+
+        }
+        // Thêm biến tham chiếu tới UC cha
+        private UC_QuanlyPhieuMuonSach parentUC;
+
+        // Constructor nhận dữ liệu và UC cha
+        public frmMuonSach(string maPhieuMuon, string maDocGia, UC_QuanlyPhieuMuonSach parent)
+        {
+            InitializeComponent();
+            this.maPhieuMuon = maPhieuMuon;
+            this.maDocGia = maDocGia;
+            this.parentUC = parent; // lưu reference UC
+            this.Load += FrmMuonSach_Load;
+        }
+
 
     }
 }

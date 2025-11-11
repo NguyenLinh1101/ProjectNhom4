@@ -75,12 +75,12 @@
             this.btnXuatphieumuon = new Guna.UI2.WinForms.Guna2Button();
             this.grbSachDangMuon = new System.Windows.Forms.GroupBox();
             this.dgvSachDangMuon = new System.Windows.Forms.DataGridView();
-            this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.Ma_Sach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mo_Ta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ma_Dau_Sach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ten_Dau_Sach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gia_Bia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuMuon)).BeginInit();
             this.grbThongTinPhieuMuon.SuspendLayout();
@@ -769,30 +769,6 @@
             this.dgvSachDangMuon.TabIndex = 0;
             this.dgvSachDangMuon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSachDangMuon_CellContentClick);
             // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.AcceptsTab = true;
-            this.txtTimKiem.BorderColor = System.Drawing.Color.Silver;
-            this.txtTimKiem.BorderRadius = 8;
-            this.txtTimKiem.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTimKiem.DefaultText = "";
-            this.txtTimKiem.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTimKiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTimKiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTimKiem.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTimKiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTimKiem.IconLeft = global::ProjectNhom4.Properties.Resources.search;
-            this.txtTimKiem.Location = new System.Drawing.Point(168, 86);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtTimKiem.PlaceholderText = "Nhập để tìm kiếm ";
-            this.txtTimKiem.SelectedText = "";
-            this.txtTimKiem.Size = new System.Drawing.Size(452, 36);
-            this.txtTimKiem.TabIndex = 13;
-            // 
             // Ma_Sach
             // 
             this.Ma_Sach.DataPropertyName = "Ma_Sach";
@@ -825,6 +801,30 @@
             this.Gia_Bia.MinimumWidth = 6;
             this.Gia_Bia.Name = "Gia_Bia";
             // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.AcceptsTab = true;
+            this.txtTimKiem.BorderColor = System.Drawing.Color.Silver;
+            this.txtTimKiem.BorderRadius = 8;
+            this.txtTimKiem.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTimKiem.DefaultText = "";
+            this.txtTimKiem.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTimKiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTimKiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTimKiem.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTimKiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTimKiem.IconLeft = global::ProjectNhom4.Properties.Resources.search;
+            this.txtTimKiem.Location = new System.Drawing.Point(168, 86);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtTimKiem.PlaceholderText = "Nhập để tìm kiếm ";
+            this.txtTimKiem.SelectedText = "";
+            this.txtTimKiem.Size = new System.Drawing.Size(452, 36);
+            this.txtTimKiem.TabIndex = 13;
+            // 
             // UC_QuanlyPhieuMuonSach
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -845,6 +845,7 @@
             this.Controls.Add(this.pnlTitle);
             this.Name = "UC_QuanlyPhieuMuonSach";
             this.Size = new System.Drawing.Size(1308, 700);
+            this.Load += new System.EventHandler(this.UC_QuanlyPhieuMuonSach_Load_1);
             this.pnlTitle.ResumeLayout(false);
             this.pnlTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuMuon)).EndInit();
