@@ -45,6 +45,7 @@ namespace ProjectNhom4
         private void frmDangNhap_Load(object sender, EventArgs e)
         {
             txtMatKhau.PasswordChar = '*';
+
         }
 
         private void btnSignIn_Click(object sender, EventArgs e)
@@ -107,6 +108,11 @@ namespace ProjectNhom4
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

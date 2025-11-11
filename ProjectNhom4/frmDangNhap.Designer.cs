@@ -35,20 +35,23 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelImage = new System.Windows.Forms.Panel();
+            this.panelRight = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnSee = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.panelLeft = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelImage.SuspendLayout();
+            this.panelRight.SuspendLayout();
+            this.panelLeft.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtEmail
             // 
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtEmail.BorderRadius = 10;
             this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmail.DefaultText = "";
@@ -60,7 +63,7 @@
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtEmail.ForeColor = System.Drawing.Color.DimGray;
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmail.Location = new System.Drawing.Point(61, 347);
+            this.txtEmail.Location = new System.Drawing.Point(57, 323);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -73,6 +76,7 @@
             // 
             // txtMatKhau
             // 
+            this.txtMatKhau.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtMatKhau.BorderRadius = 10;
             this.txtMatKhau.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMatKhau.DefaultText = "";
@@ -83,7 +87,7 @@
             this.txtMatKhau.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMatKhau.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMatKhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMatKhau.Location = new System.Drawing.Point(61, 439);
+            this.txtMatKhau.Location = new System.Drawing.Point(57, 415);
             this.txtMatKhau.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.PasswordChar = '*';
@@ -96,6 +100,7 @@
             // 
             // btnSignIn
             // 
+            this.btnSignIn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSignIn.AutoRoundedCorners = true;
             this.btnSignIn.BorderRadius = 28;
             this.btnSignIn.BorderThickness = 2;
@@ -109,7 +114,7 @@
             this.btnSignIn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(48)))), ((int)(((byte)(100)))));
             this.btnSignIn.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.btnSignIn.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(48)))), ((int)(((byte)(100)))));
-            this.btnSignIn.Location = new System.Drawing.Point(61, 623);
+            this.btnSignIn.Location = new System.Drawing.Point(57, 599);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(169, 59);
             this.btnSignIn.TabIndex = 7;
@@ -118,6 +123,7 @@
             // 
             // btnThoat
             // 
+            this.btnThoat.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnThoat.AutoRoundedCorners = true;
             this.btnThoat.BorderRadius = 28;
             this.btnThoat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -127,7 +133,7 @@
             this.btnThoat.FillColor = System.Drawing.Color.Red;
             this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(361, 623);
+            this.btnThoat.Location = new System.Drawing.Point(357, 599);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(169, 59);
             this.btnThoat.TabIndex = 11;
@@ -136,8 +142,9 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox3.Image = global::ProjectNhom4.Properties.Resources.padlock;
-            this.pictureBox3.Location = new System.Drawing.Point(83, 452);
+            this.pictureBox3.Location = new System.Drawing.Point(79, 428);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(35, 36);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -146,8 +153,9 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = global::ProjectNhom4.Properties.Resources.user;
-            this.pictureBox2.Location = new System.Drawing.Point(83, 360);
+            this.pictureBox2.Location = new System.Drawing.Point(79, 336);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(35, 36);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -156,33 +164,36 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::ProjectNhom4.Properties.Resources.Ảnh_chụp_màn_hình_2025_10_22_000119;
-            this.pictureBox1.Location = new System.Drawing.Point(199, 64);
+            this.pictureBox1.Location = new System.Drawing.Point(195, 40);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(179, 226);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // panelImage
+            // panelRight
             // 
-            this.panelImage.BackgroundImage = global::ProjectNhom4.Properties.Resources.Ảnh_chụp_màn_hình_2025_10_21_234137;
-            this.panelImage.Controls.Add(this.label3);
-            this.panelImage.Controls.Add(this.label2);
-            this.panelImage.Controls.Add(this.label1);
-            this.panelImage.Controls.Add(this.label6);
-            this.panelImage.Location = new System.Drawing.Point(568, 0);
-            this.panelImage.Name = "panelImage";
-            this.panelImage.Size = new System.Drawing.Size(597, 908);
-            this.panelImage.TabIndex = 4;
+            this.panelRight.BackgroundImage = global::ProjectNhom4.Properties.Resources.Ảnh_chụp_màn_hình_2025_10_21_234137;
+            this.panelRight.Controls.Add(this.label3);
+            this.panelRight.Controls.Add(this.label2);
+            this.panelRight.Controls.Add(this.label1);
+            this.panelRight.Controls.Add(this.label6);
+            this.panelRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelRight.Location = new System.Drawing.Point(555, 0);
+            this.panelRight.Name = "panelRight";
+            this.panelRight.Size = new System.Drawing.Size(543, 694);
+            this.panelRight.TabIndex = 4;
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(180, 772);
+            this.label3.Location = new System.Drawing.Point(143, 621);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(258, 26);
             this.label3.TabIndex = 9;
@@ -190,11 +201,12 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(59, 476);
+            this.label2.Location = new System.Drawing.Point(32, 369);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(463, 21);
             this.label2.TabIndex = 8;
@@ -202,23 +214,26 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(56, 438);
+            this.label1.Location = new System.Drawing.Point(29, 323);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(470, 38);
             this.label1.TabIndex = 4;
             this.label1.Text = "ĐẠI HỌC BÁCH KHOA HÀ NỘI";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(44, 326);
+            this.label6.Location = new System.Drawing.Point(17, 203);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(263, 112);
             this.label6.TabIndex = 7;
@@ -227,6 +242,7 @@
             // 
             // btnSee
             // 
+            this.btnSee.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSee.BackColor = System.Drawing.Color.White;
             this.btnSee.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -236,28 +252,38 @@
             this.btnSee.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSee.ForeColor = System.Drawing.Color.White;
             this.btnSee.Image = global::ProjectNhom4.Properties.Resources.view;
-            this.btnSee.Location = new System.Drawing.Point(469, 450);
+            this.btnSee.Location = new System.Drawing.Point(465, 426);
             this.btnSee.Name = "btnSee";
             this.btnSee.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnSee.Size = new System.Drawing.Size(37, 38);
             this.btnSee.TabIndex = 15;
             this.btnSee.Click += new System.EventHandler(this.btnSee_Click);
             // 
+            // panelLeft
+            // 
+            this.panelLeft.Controls.Add(this.btnSee);
+            this.panelLeft.Controls.Add(this.pictureBox3);
+            this.panelLeft.Controls.Add(this.pictureBox2);
+            this.panelLeft.Controls.Add(this.pictureBox1);
+            this.panelLeft.Controls.Add(this.btnThoat);
+            this.panelLeft.Controls.Add(this.btnSignIn);
+            this.panelLeft.Controls.Add(this.txtMatKhau);
+            this.panelLeft.Controls.Add(this.txtEmail);
+            this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelLeft.Location = new System.Drawing.Point(0, 0);
+            this.panelLeft.Name = "panelLeft";
+            this.panelLeft.Size = new System.Drawing.Size(549, 694);
+            this.panelLeft.TabIndex = 16;
+            // 
             // frmDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1165, 816);
-            this.Controls.Add(this.btnSee);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.btnSignIn);
-            this.Controls.Add(this.txtMatKhau);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.panelImage);
+            this.ClientSize = new System.Drawing.Size(1098, 694);
+            this.Controls.Add(this.panelLeft);
+            this.Controls.Add(this.panelRight);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -266,15 +292,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelImage.ResumeLayout(false);
-            this.panelImage.PerformLayout();
+            this.panelRight.ResumeLayout(false);
+            this.panelRight.PerformLayout();
+            this.panelLeft.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panelImage;
+        private System.Windows.Forms.Panel panelRight;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
@@ -287,5 +314,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private Guna.UI2.WinForms.Guna2CircleButton btnSee;
+        private System.Windows.Forms.Panel panelLeft;
     }
 }

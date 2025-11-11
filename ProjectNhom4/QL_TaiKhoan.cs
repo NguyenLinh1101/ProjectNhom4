@@ -41,7 +41,21 @@ namespace ProjectNhom4
                 SqlDataAdapter da = new SqlDataAdapter(sql, conn);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
+
                 dgvTaiKhoan.DataSource = dt;
+
+                // Thêm đoạn này để gán STT (ID hiển thị)
+                for (int i = 0; i < dgvTaiKhoan.Rows.Count; i++)
+                {
+                    dgvTaiKhoan.Rows[i].Cells["ID"].Value = i + 1;
+                }
+
+                // (nếu cần đổi tiêu đề cột)
+                dgvTaiKhoan.Columns["TenDN"].HeaderText = "Tên đăng nhập";
+                dgvTaiKhoan.Columns["Email"].HeaderText = "Email";
+                dgvTaiKhoan.Columns["MatKhau"].HeaderText = "Mật khẩu";
+                dgvTaiKhoan.Columns["MaThuThu"].HeaderText = "Mã thủ thư";
+                dgvTaiKhoan.Columns["Quyen"].HeaderText = "Quyền";
             }
             catch (Exception ex)
             {
