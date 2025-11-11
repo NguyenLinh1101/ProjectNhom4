@@ -113,29 +113,11 @@
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmformphuChonSach.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmformphuChonSach.Designer.cs">
-      <DependentUpon>frmformphuChonSach.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLoaiSach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPhatSach.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPhatSach.Designer.cs">
-      <DependentUpon>frmPhatSach.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLoaiSach.Designer.cs">
       <DependentUpon>frmLoaiSach.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmPhieuMuonSach.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPhieuMuonSach.Designer.cs">
-      <DependentUpon>frmPhieuMuonSach.cs</DependentUpon>
     </Compile>
     <Compile Include="frmQuanlyCuonSach.cs">
       <SubType>Form</SubType>
@@ -148,12 +130,6 @@
     </Compile>
     <Compile Include="frmTacgiaSach.Designer.cs">
       <DependentUpon>frmTacgiaSach.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmTraSach.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTraSach.Designer.cs">
-      <DependentUpon>frmTraSach.cs</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="panelMenu.cs">
@@ -177,12 +153,6 @@
       <DependentUpon>QuanlyThuthu.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="UC_PhieuMuonSach.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_PhieuMuonSach.Designer.cs">
-      <DependentUpon>UC_PhieuMuonSach.cs</DependentUpon>
-    </Compile>
     <!-- UserControls -->
     <Compile Include="QLSach_Ribbon.cs">
       <SubType>UserControl</SubType>
@@ -208,18 +178,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="UC_PhieuPhat.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_PhieuPhat.Designer.cs">
-      <DependentUpon>UC_PhieuPhat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_PhieuTraSach.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_PhieuTraSach.Designer.cs">
-      <DependentUpon>UC_PhieuTraSach.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC_QuanlyCuonsach.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -237,12 +195,6 @@
     </Compile>
     <Compile Include="UC_QuanlyMuonTra_Ribbon.Designer.cs">
       <DependentUpon>UC_QuanlyMuonTra_Ribbon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_QuanlyPhieuMuonSach.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_QuanlyPhieuMuonSach.Designer.cs">
-      <DependentUpon>UC_QuanlyPhieuMuonSach.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_QuanlyThongTinTacGia.cs">
       <SubType>UserControl</SubType>
@@ -265,26 +217,14 @@
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmformphuChonSach.resx">
-      <DependentUpon>frmformphuChonSach.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmLoaiSach.resx">
       <DependentUpon>frmLoaiSach.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPhieuMuonSach.resx">
-      <DependentUpon>frmPhieuMuonSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanlyCuonSach.resx">
       <DependentUpon>frmQuanlyCuonSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTacgiaSach.resx">
       <DependentUpon>frmTacgiaSach.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPhatSach.resx">
-      <DependentUpon>frmPhatSach.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTraSach.resx">
-      <DependentUpon>frmTraSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="panelMenu.resx">
       <DependentUpon>panelMenu.cs</DependentUpon>
@@ -301,12 +241,6 @@
     <EmbeddedResource Include="QL_TaiKhoan.resx">
       <DependentUpon>QL_TaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_PhieuPhat.resx">
-      <DependentUpon>UC_PhieuPhat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_PhieuTraSach.resx">
-      <DependentUpon>UC_PhieuTraSach.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UC_QuanlyCuonsach.resx">
       <DependentUpon>UC_QuanlyCuonsach.cs</DependentUpon>
     </EmbeddedResource>
@@ -315,9 +249,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_QuanlyMuonTra_Ribbon.resx">
       <DependentUpon>UC_QuanlyMuonTra_Ribbon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_QuanlyPhieuMuonSach.resx">
-      <DependentUpon>UC_QuanlyPhieuMuonSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_QuanlyThongTinTacGia.resx">
       <DependentUpon>UC_QuanlyThongTinTacGia.cs</DependentUpon>
@@ -352,10 +283,6 @@
     <EmbeddedResource Include="QuanlyThuthu.resx">
       <DependentUpon>QuanlyThuthu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_PhieuMuonSach.resx">
-      <DependentUpon>UC_PhieuMuonSach.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="obj\Debug\ProjectNhom4.frmMuonSach.resources" />
     <EmbeddedResource Include="obj\Debug\ProjectNhom4.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx" />
   </ItemGroup>
