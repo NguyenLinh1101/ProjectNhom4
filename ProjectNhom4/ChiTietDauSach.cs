@@ -13,9 +13,10 @@ namespace ProjectNhom4
 {
     public partial class ChiTietDauSach : Form
     {
-        string strCon = @"Data Source=LAPTOP-SO78PQJP\MSSQLSERVER01;Initial Catalog=QL_THUVIEN;Integrated Security=True";
+        string strCon = @"Data Source=DESKTOP-ST1KSE3\SQLEXPRESS;Initial Catalog=QL_THU_VIEN;Integrated Security=True";
 
         string maDauSach;
+        bool isEditing = false;
         public ChiTietDauSach()
         {
             InitializeComponent();
@@ -25,22 +26,89 @@ namespace ProjectNhom4
         {
             InitializeComponent();
             maDauSach = maDS;
-            SetControlsReadOnly();
+            // SỬA DÒNG NÀY:
+            // SetControlsReadOnly();
+            SetControlsState(false); // <-- Sửa thành hàm mới
+
             NapDuLieu();
         }
-        private void SetControlsReadOnly()
+        private void SetControlsState(bool editing)
         {
-            // Dùng 'ReadOnly = true' sẽ cho phép người dùng copy text
-            // và giao diện nhìn rõ ràng hơn là 'Enabled = false' (bị xám đi)
+            this.isEditing = editing;
+
+            // --- Ẩn/Hiện Control Tác Giả ---
+            txtTenTacGia.Visible = !editing; // Ẩn TextBox
+            cblTacGia.Visible = editing;     // Hiện CheckedListBox
+
+            // --- Khóa các ô Text khác ---
             txtMaDauSach.ReadOnly = true;
             txtTenDauSach.ReadOnly = true;
-            txtTenTacGia.ReadOnly = true;
             txtNamXuatBan.ReadOnly = true;
             txtGiaBia.ReadOnly = true;
             txtSoTrang.ReadOnly = true;
             txtSoLuong.ReadOnly = true;
             txtLoaiSach.ReadOnly = true;
             txtChuDe.ReadOnly = true;
+
+            //(Hoặc dùng.Visible nếu bạn muốn ẩn / hiện nút)
+             btnSua.Visible = !editing;
+            btnLuu.Visible = editing;
+            btnHuy.Visible = editing;
+
+            // Chỉ tải CSDL cho CheckedListBox KHI NHẤN SỬA
+            if (editing)
+            {
+                LoadVaCheckTacGia();
+            }
+        }
+        private void LoadVaCheckTacGia()
+        {
+            cblTacGia.Items.Clear(); // Xóa danh sách cũ
+
+            DataTable dtAllTacGia = new DataTable();
+            List<string> maTacGiaCuaSach = new List<string>();
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(strCon))
+                {
+                    con.Open();
+
+                    // 1. Lấy TẤT CẢ tác giả
+                    SqlDataAdapter da = new SqlDataAdapter("SELECT Ma_Tac_Gia, Ten_Tac_Gia FROM TAC_GIA", con);
+                    da.Fill(dtAllTacGia);
+
+                    // 2. Lấy danh sách mã tác giả ĐÃ CÓ của sách này
+                    SqlCommand cmd = new SqlCommand("SELECT Ma_Tac_Gia FROM TG_DAU_SACH WHERE Ma_Dau_Sach = @MaDS", con);
+                    cmd.Parameters.AddWithValue("@MaDS", maDauSach);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        maTacGiaCuaSach.Add(reader["Ma_Tac_Gia"].ToString());
+                    }
+                    reader.Close();
+                }
+
+                // 3. Đổ vào CheckedListBox
+                cblTacGia.DataSource = dtAllTacGia;
+                cblTacGia.ValueMember = "Ma_Tac_Gia";
+                cblTacGia.DisplayMember = "Ten_Tac_Gia";
+
+                // 4. Check vào các tác giả đã có
+                for (int i = 0; i < cblTacGia.Items.Count; i++)
+                {
+                    DataRowView drv = (DataRowView)cblTacGia.Items[i];
+                    string maTG = drv["Ma_Tac_Gia"].ToString();
+                    if (maTacGiaCuaSach.Contains(maTG))
+                    {
+                        cblTacGia.SetItemChecked(i, true);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải danh sách tác giả: " + ex.Message);
+            }
         }
         private void NapDuLieu()
         {
@@ -112,6 +180,58 @@ GROUP BY
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            SetControlsState(true);
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            SetControlsState(false);
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(strCon))
+                {
+                    con.Open();
+                    SqlTransaction trans = con.BeginTransaction();
+
+                    // 1. Xóa TẤT CẢ liên kết tác giả cũ của sách này
+                    SqlCommand cmdDelete = new SqlCommand("DELETE FROM TG_DAU_SACH WHERE Ma_Dau_Sach = @MaDS", con, trans);
+                    cmdDelete.Parameters.AddWithValue("@MaDS", maDauSach);
+                    cmdDelete.ExecuteNonQuery();
+
+                    // 2. Thêm lại các liên kết MỚI (những cái được check)
+                    foreach (var item in cblTacGia.CheckedItems)
+                    {
+                        DataRowView drv = (DataRowView)item;
+                        string maTG = drv["Ma_Tac_Gia"].ToString();
+
+                        SqlCommand cmdInsert = new SqlCommand("INSERT INTO TG_DAU_SACH (Ma_Dau_Sach, Ma_Tac_Gia) VALUES (@MaDS, @MaTG)", con, trans);
+                        cmdInsert.Parameters.AddWithValue("@MaDS", maDauSach);
+                        cmdInsert.Parameters.AddWithValue("@MaTG", maTG);
+                        cmdInsert.ExecuteNonQuery();
+                    }
+
+                    trans.Commit(); // Hoàn tất
+                    MessageBox.Show("Cập nhật tác giả thành công!");
+
+                    // Tải lại dữ liệu (để cập nhật txtTenTacGia với chuỗi mới)
+                    NapDuLieu();
+
+                    // Quay về trạng thái xem
+                    SetControlsState(false);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lưu: " + ex.Message);
+            }
         }
     }
 }

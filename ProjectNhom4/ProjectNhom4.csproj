@@ -248,7 +248,6 @@
       <DependentUpon>frmTacgiaSach.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QLSach_Ribbon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -321,6 +320,9 @@
     <EmbeddedResource Include="frmCuonSach.resx">
       <DependentUpon>frmCuonSach.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTacgiaSach.resx">
+      <DependentUpon>frmTacgiaSach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="panelMenu.resx">
       <DependentUpon>panelMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -380,9 +382,6 @@
     <EmbeddedResource Include="UC_QuanlyThongTinTacGia.resx">
       <DependentUpon>UC_QuanlyThongTinTacGia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_TrangChu.resx">
-      <DependentUpon>UC_TrangChu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="QLSach_Ribbon.resx">
       <DependentUpon>QLSach_Ribbon.cs</DependentUpon>
     </EmbeddedResource>
@@ -391,6 +390,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QL_DauSach.resx">
       <DependentUpon>QL_DauSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_TrangChu.resx">
+      <DependentUpon>UC_TrangChu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="dsBaoCao.xsc">
       <DependentUpon>dsBaoCao.xsd</DependentUpon>
@@ -501,6 +503,7 @@
     <None Include="Resources\logohust.png" />
     <None Include="Resources\hustthuvien.png" />
     <None Include="Resources\employee-handbook.png" />
+    <None Include="Resources\books.png" />
     <Content Include="Resources\logoneu.png" />
   </ItemGroup>
   <ItemGroup>

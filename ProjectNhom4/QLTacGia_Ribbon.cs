@@ -11,15 +11,9 @@ using System.Windows.Forms;
 
 namespace ProjectNhom4
 {
-<<<<<<<< HEAD:ProjectNhom4/UC_TrangChu.cs
-    public partial class UC_TrangChu : UserControl
-    {
-        public UC_TrangChu()
-========
-    public partial class QLTacGia_Ribbon : Form
+    public partial class QLTacGia_Ribbon : UserControl
     {
         public QLTacGia_Ribbon()
->>>>>>>> NguyenHa:ProjectNhom4/QLTacGia_Ribbon.cs
         {
             InitializeComponent();
         }

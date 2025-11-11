@@ -52,6 +52,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.cblTacGia = new System.Windows.Forms.CheckedListBox();
+            this.btnSua = new Guna.UI2.WinForms.Guna2Button();
+            this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
+            this.btnHuy = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +71,7 @@
             this.lblChiTietDauSach.BackColor = System.Drawing.SystemColors.Control;
             this.lblChiTietDauSach.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblChiTietDauSach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.lblChiTietDauSach.Location = new System.Drawing.Point(642, 55);
+            this.lblChiTietDauSach.Location = new System.Drawing.Point(646, 28);
             this.lblChiTietDauSach.Name = "lblChiTietDauSach";
             this.lblChiTietDauSach.Size = new System.Drawing.Size(323, 45);
             this.lblChiTietDauSach.TabIndex = 0;
@@ -75,6 +79,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnHuy);
+            this.groupBox1.Controls.Add(this.btnLuu);
+            this.groupBox1.Controls.Add(this.btnSua);
+            this.groupBox1.Controls.Add(this.cblTacGia);
             this.groupBox1.Controls.Add(this.btnClose);
             this.groupBox1.Controls.Add(this.txtChuDe);
             this.groupBox1.Controls.Add(this.txtLoaiSach);
@@ -95,9 +103,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(32, 125);
+            this.groupBox1.Location = new System.Drawing.Point(32, 87);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1471, 567);
+            this.groupBox1.Size = new System.Drawing.Size(1471, 605);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -108,9 +116,9 @@
             this.btnClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1235, 459);
+            this.btnClose.Location = new System.Drawing.Point(1315, 494);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(133, 67);
             this.btnClose.TabIndex = 9;
@@ -261,7 +269,7 @@
             this.txtTenTacGia.PlaceholderText = "";
             this.txtTenTacGia.ReadOnly = true;
             this.txtTenTacGia.SelectedText = "";
-            this.txtTenTacGia.Size = new System.Drawing.Size(528, 60);
+            this.txtTenTacGia.Size = new System.Drawing.Size(528, 87);
             this.txtTenTacGia.TabIndex = 2;
             // 
             // txtTenDauSach
@@ -396,6 +404,65 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã đầu sách";
             // 
+            // cblTacGia
+            // 
+            this.cblTacGia.FormattingEnabled = true;
+            this.cblTacGia.Location = new System.Drawing.Point(215, 181);
+            this.cblTacGia.Name = "cblTacGia";
+            this.cblTacGia.Size = new System.Drawing.Size(528, 88);
+            this.cblTacGia.TabIndex = 10;
+            // 
+            // btnSua
+            // 
+            this.btnSua.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSua.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSua.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSua.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSua.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSua.ForeColor = System.Drawing.Color.White;
+            this.btnSua.Location = new System.Drawing.Point(800, 494);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(162, 67);
+            this.btnSua.TabIndex = 11;
+            this.btnSua.Text = "Quản lý tác giả";
+            this.btnSua.Visible = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLuu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLuu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLuu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLuu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnLuu.ForeColor = System.Drawing.Color.White;
+            this.btnLuu.Location = new System.Drawing.Point(990, 494);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(133, 67);
+            this.btnLuu.TabIndex = 12;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Visible = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHuy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHuy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHuy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnHuy.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnHuy.ForeColor = System.Drawing.Color.White;
+            this.btnHuy.Location = new System.Drawing.Point(1149, 494);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(133, 67);
+            this.btnHuy.TabIndex = 13;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.Visible = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
             // ChiTietDauSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -443,6 +510,10 @@
         private Guna.UI2.WinForms.Guna2TextBox txtChuDe;
         private Guna.UI2.WinForms.Guna2TextBox txtLoaiSach;
         private Guna.UI2.WinForms.Guna2Button btnClose;
+        private System.Windows.Forms.CheckedListBox cblTacGia;
+        private Guna.UI2.WinForms.Guna2Button btnHuy;
+        private Guna.UI2.WinForms.Guna2Button btnLuu;
+        private Guna.UI2.WinForms.Guna2Button btnSua;
     }
 }
 
