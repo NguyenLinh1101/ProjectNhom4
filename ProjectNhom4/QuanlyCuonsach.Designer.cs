@@ -39,14 +39,8 @@
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.grpDauSach = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dgvDauSach = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.colMaDauSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenDauSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colKhosach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpCuonSach = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dgvCuonSach = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.btnSua = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
@@ -140,10 +134,6 @@
             this.dgvDauSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDauSach.ColumnHeadersHeight = 27;
             this.dgvDauSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvDauSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaDauSach,
-            this.colTenDauSach,
-            this.colKhosach});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -185,24 +175,6 @@
             this.dgvDauSach.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvDauSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDauSach_CellContentClick);
             // 
-            // colMaDauSach
-            // 
-            this.colMaDauSach.HeaderText = "Mã đầu sách";
-            this.colMaDauSach.MinimumWidth = 6;
-            this.colMaDauSach.Name = "colMaDauSach";
-            // 
-            // colTenDauSach
-            // 
-            this.colTenDauSach.HeaderText = "Tên đầu sách";
-            this.colTenDauSach.MinimumWidth = 6;
-            this.colTenDauSach.Name = "colTenDauSach";
-            // 
-            // colKhosach
-            // 
-            this.colKhosach.HeaderText = "Kho sách";
-            this.colKhosach.MinimumWidth = 6;
-            this.colKhosach.Name = "colKhosach";
-            // 
             // grpCuonSach
             // 
             this.grpCuonSach.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -233,10 +205,6 @@
             this.dgvCuonSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCuonSach.ColumnHeadersHeight = 27;
             this.dgvCuonSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvCuonSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -382,14 +350,8 @@
         private System.Windows.Forms.Label lblTieude;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2GroupBox grpDauSach;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaDauSach;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTenDauSach;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colKhosach;
         private Guna.UI2.WinForms.Guna2GroupBox grpCuonSach;
         private Guna.UI2.WinForms.Guna2DataGridView dgvCuonSach;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private Guna.UI2.WinForms.Guna2Button btnThem;
         private Guna.UI2.WinForms.Guna2Button btnSua;
         private Guna.UI2.WinForms.Guna2Button btnXoa;

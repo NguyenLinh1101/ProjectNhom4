@@ -13,7 +13,7 @@ namespace ProjectNhom4
 {
     public partial class frmQuanlyCuonSach : Form
     {
-        string connStr = @"Data Source=LAPTOP-SO78PQJP\MSSQLSERVER01;Initial Catalog=QL_THUVIEN;Integrated Security=True";
+        string connStr = @"Data Source=DESKTOP-ST1KSE3\SQLEXPRESS;Initial Catalog=QL_THU_VIEN;Integrated Security=True";
 
         SqlConnection conn;
         SqlCommand cmd;
