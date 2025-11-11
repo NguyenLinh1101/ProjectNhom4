@@ -552,6 +552,12 @@ namespace ProjectNhom4
             {
                 ChiTietDauSach formChiTiet = new ChiTietDauSach(maDS);
                 formChiTiet.ShowDialog();
+                ShowDauSach(); // load lại dữ liệu mới từ SQL
+                if (dgvDSDauSach.Rows.Count > 0)
+                {
+                    dgvDSDauSach.CurrentCell = dgvDSDauSach.Rows[0].Cells[0];
+                    NapCT();
+                }
             }
             catch (Exception ex)
             {

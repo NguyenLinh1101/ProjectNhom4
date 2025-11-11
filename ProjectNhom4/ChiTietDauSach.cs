@@ -58,9 +58,47 @@ namespace ProjectNhom4
             btnSua.Visible = !editing;
             btnLuu.Visible = editing;
             btnHuy.Visible = editing;
+            var plusButton = cceTacGia.Properties.Buttons
+    .FirstOrDefault(b => b.Kind == DevExpress.XtraEditors.Controls.ButtonPredefines.Plus);
+
+            if (editing)
+            {
+                // Nếu chưa có nút + thì thêm
+                if (plusButton == null)
+                {
+                    cceTacGia.Properties.Buttons.Add(
+                        new DevExpress.XtraEditors.Controls.EditorButton(
+                            DevExpress.XtraEditors.Controls.ButtonPredefines.Plus
+                        )
+                    );
+
+                    // Gắn sự kiện click cho nút +
+                    cceTacGia.ButtonClick += (s, e) =>
+                    {
+                        if (e.Button.Kind == DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)
+                        {
+                            using (var frm = new FrmThemTacGia())
+                            {
+                                if (frm.ShowDialog() == DialogResult.OK)
+                                {
+                                    LoadTatCaTacGiaVaoDropDown();
+                                }
+                            }
+                        }
+                    };
+                }
+            }
+            else
+            {
+                // Nếu đang ở chế độ xem thì xóa nút +
+                if (plusButton != null)
+                {
+                    cceTacGia.Properties.Buttons.Remove(plusButton);
+                }
+            }
         }
-        
-        
+
+
         private void NapDuLieu()
         {
             try
@@ -128,33 +166,34 @@ namespace ProjectNhom4
                     cceTacGia.Properties.DataSource = dt;
                     cceTacGia.Properties.DisplayMember = "DisplayText";
                     cceTacGia.Properties.ValueMember = "Ma_Tac_Gia";
+                    cceTacGia.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+                    cceTacGia.Properties.IncrementalSearch = true;
 
                     // Hiển thị autocomplete filter trong popup
-                    cceTacGia.Properties.IncrementalSearch = true; // ✅ Gõ chữ để tìm nhanh
-
+                    cceTacGia.Properties.IncrementalSearch = true;
                     // Thêm nút "+"
-                    if (!cceTacGia.Properties.Buttons.Any(b => b.Kind == DevExpress.XtraEditors.Controls.ButtonPredefines.Plus))
-                    {
-                        cceTacGia.Properties.Buttons.Add(
-                            new DevExpress.XtraEditors.Controls.EditorButton(
-                                DevExpress.XtraEditors.Controls.ButtonPredefines.Plus
-                            )
-                        );
+                    //if (!cceTacGia.Properties.Buttons.Any(b => b.Kind == DevExpress.XtraEditors.Controls.ButtonPredefines.Plus))
+                    //{
+                    //    cceTacGia.Properties.Buttons.Add(
+                    //        new DevExpress.XtraEditors.Controls.EditorButton(
+                    //            DevExpress.XtraEditors.Controls.ButtonPredefines.Plus
+                    //        )
+                    //    );
 
-                        cceTacGia.ButtonClick += (s, e) =>
-                        {
-                            if (e.Button.Kind == DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)
-                            {
-                                using (var frm = new FrmThemTacGia())
-                                {
-                                    if (frm.ShowDialog() == DialogResult.OK)
-                                    {
-                                        LoadTatCaTacGiaVaoDropDown();
-                                    }
-                                }
-                            }
-                        };
-                    }
+                    //    cceTacGia.ButtonClick += (s, e) =>
+                    //    {
+                    //        if (e.Button.Kind == DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)
+                    //        {
+                    //            using (var frm = new FrmThemTacGia())
+                    //            {
+                    //                if (frm.ShowDialog() == DialogResult.OK)
+                    //                {
+                    //                    LoadTatCaTacGiaVaoDropDown();
+                    //                }
+                    //            }
+                    //        }
+                    //    };
+                    //}
                 }
             }
             catch (Exception ex)
@@ -185,9 +224,11 @@ namespace ProjectNhom4
                     }
                     reader.Close();
                 }
+                string checkedValues = string.Join(",", maTacGiaCuaSach);
 
-                // SỬA: Dùng SetEditValue để "check" các mục
-                cceTacGia.SetEditValue(maTacGiaCuaSach);
+                // Set giá trị cho CheckedComboBoxEdit
+                cceTacGia.SetEditValue(checkedValues);
+
             }
             catch (Exception ex)
             {
@@ -252,6 +293,10 @@ namespace ProjectNhom4
             {
                 MessageBox.Show("Lỗi khi lưu: " + ex.Message);
             }
+        }
+
+        private void cceTacGia_EditValueChanged(object sender, EventArgs e)
+        {
         }
     }
 }

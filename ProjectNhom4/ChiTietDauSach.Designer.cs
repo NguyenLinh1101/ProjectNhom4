@@ -117,6 +117,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cceTacGia.Size = new System.Drawing.Size(528, 80);
             this.cceTacGia.TabIndex = 14;
+            this.cceTacGia.EditValueChanged += new System.EventHandler(this.cceTacGia_EditValueChanged);
             // 
             // btnHuy
             // 
@@ -127,7 +128,7 @@
             this.btnHuy.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnHuy.ForeColor = System.Drawing.Color.White;
-            this.btnHuy.Location = new System.Drawing.Point(1149, 494);
+            this.btnHuy.Location = new System.Drawing.Point(968, 496);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(133, 67);
             this.btnHuy.TabIndex = 13;
@@ -144,7 +145,7 @@
             this.btnLuu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(990, 494);
+            this.btnLuu.Location = new System.Drawing.Point(798, 496);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(133, 67);
             this.btnLuu.TabIndex = 12;
@@ -161,7 +162,7 @@
             this.btnSua.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Location = new System.Drawing.Point(800, 494);
+            this.btnSua.Location = new System.Drawing.Point(1139, 496);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(162, 67);
             this.btnSua.TabIndex = 11;
@@ -178,7 +179,7 @@
             this.btnClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1315, 494);
+            this.btnClose.Location = new System.Drawing.Point(1325, 496);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(133, 67);
             this.btnClose.TabIndex = 9;
