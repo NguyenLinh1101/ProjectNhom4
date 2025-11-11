@@ -51,13 +51,54 @@ namespace ProjectNhom4
 
         private void LoadUserControl(UserControl uc)
         {
-           panelHienthiUC.Controls.Clear(); // Xóa UC cũ (nếu có)
-            uc.Dock = DockStyle.Fill;   // Cho UC full panel
-           panelHienthiUC.Controls.Add(uc); // Thêm UC vào panel
+            panelHienthiUC.Controls.Clear(); // Xóa UC cũ nếu có
+
+            // Kích thước gốc của UC (giả sử kích thước được thiết kế ở design mode)
+            int originalWidth = uc.PreferredSize.Width > 0 ? uc.PreferredSize.Width : uc.Width;
+            int originalHeight = uc.PreferredSize.Height > 0 ? uc.PreferredSize.Height : uc.Height;
+
+            // Tính tỉ lệ scale so với panel
+            float ratioX = (float)panelHienthiUC.Width / originalWidth;
+            float ratioY = (float)panelHienthiUC.Height / originalHeight;
+
+            // Lấy tỉ lệ nhỏ hơn để tránh méo
+            float scale = Math.Min(ratioX, ratioY);
+
+            // Đặt lại AutoScaleMode cho UC để scale toàn bộ control con
+            uc.AutoScaleMode = AutoScaleMode.None;
+
+            // Áp dụng scale cho toàn bộ UC
+            uc.SuspendLayout();
+            uc.Scale(new SizeF(scale, scale));
+            uc.ResumeLayout();
+
+            // Căn giữa UC trong panel
+            uc.Left = (panelHienthiUC.Width - uc.Width) / 2;
+            uc.Top = (panelHienthiUC.Height - uc.Height) / 2;
+
+            // Đảm bảo UC hiển thị đúng kích thước
+            uc.Anchor = AnchorStyles.None;
+
+            panelHienthiUC.Controls.Add(uc);
+            uc.BringToFront();
         }
         private void frmMenu_Load(object sender, EventArgs e)
         {
             LoadUserControl(new UC_QuanlyThongTinTacGia());
+            LoadUserControl(new UC_QuanlyThongTinTacGia());
+
+            // Khi panelHienthiUC resize, scale lại UC hiện tại
+            panelHienthiUC.Resize += (object sender2, EventArgs e2) =>
+            {
+                if (panelHienthiUC.Controls.Count > 0)
+                {
+                    var uc = panelHienthiUC.Controls[0] as UserControl;
+                    if (uc != null)
+                    {
+                        LoadUserControl(uc);
+                    }
+                }
+            };
         }
       
         private void btnqltacgia_Click_1(object sender, EventArgs e)
@@ -98,6 +139,11 @@ namespace ProjectNhom4
             // Thêm vào form (trực tiếp)
             this.Controls.Add(ucTaiKhoan);
             ucTaiKhoan.BringToFront(); // Cho nó nổi lên trên cùng
+        }
+
+        private void btnqlmuontra_Click(object sender, EventArgs e)
+        {
+            LoadUserControl(new UC_QuanlyMuonTra_Ribbon());
         }
     }
 }

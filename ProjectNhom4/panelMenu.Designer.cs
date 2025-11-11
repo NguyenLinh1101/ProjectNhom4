@@ -180,7 +180,7 @@
             this.label1.Location = new System.Drawing.Point(122, 55);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(181, 30);
+            this.label1.Size = new System.Drawing.Size(151, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "THƯ VIỆN HUST";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -242,6 +242,7 @@
             this.btnqlmuontra.Size = new System.Drawing.Size(230, 50);
             this.btnqlmuontra.TabIndex = 6;
             this.btnqlmuontra.Text = "Quản lý mượn trả";
+            this.btnqlmuontra.Click += new System.EventHandler(this.btnqlmuontra_Click);
             // 
             // btnqldocgia
             // 
@@ -332,7 +333,7 @@
             // 
             // frmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 810);
             this.Controls.Add(this.panelHienthiUC);
