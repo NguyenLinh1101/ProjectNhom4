@@ -145,6 +145,23 @@ namespace ProjectNhom4
         {
             LoadUserControl(new UC_QuanlyMuonTra_Ribbon());
         }
+
+        private void btnBaocao_Click(object sender, EventArgs e)
+        {
+            Baocao myUserControl = new Baocao();
+            LoadUserControl(myUserControl);
+
+        }
+
+        private void btnTrangChu_Click(object sender, EventArgs e)
+        {
+            LoadUserControl(new UC_TrangChu());
+        }
+
+        private void btnqlsach_Click(object sender, EventArgs e)
+        {
+            LoadUserControl(new QLSach_Ribbon());
+        }
     }
 }
 

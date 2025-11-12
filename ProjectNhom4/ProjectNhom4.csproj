@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props" Condition="Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,44 +36,71 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <!-- References -->
+    <Reference Include="DevExpress.Charts.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Drawing.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v24.1.Drawing, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v24.1.Export, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v24.1.UI, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v24.1.Extensions, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net48\Guna.UI2.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.Common">
+      <HintPath>C:\Users\DELL\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.Common.resources">
+      <HintPath>C:\Users\DELL\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.Common.resources.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization">
+      <HintPath>C:\Users\DELL\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization.resources">
+      <HintPath>C:\Users\DELL\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.resources.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.Design">
+      <HintPath>C:\Users\DELL\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.Design.resources">
+      <HintPath>C:\Users\DELL\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.Design.resources.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel">
+      <HintPath>C:\Users\DELL\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.WinForms">
+      <HintPath>C:\Users\DELL\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms.resources">
+      <HintPath>C:\Users\DELL\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Remoting" />
@@ -89,8 +119,96 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <!-- Compile -->
+    <Compile Include="Baocao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Baocao.Designer.cs">
+      <DependentUpon>Baocao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Baocaosachhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Baocaosachhong.Designer.cs">
+      <DependentUpon>Baocaosachhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BCdocgiamuonsach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BCdocgiamuonsach.Designer.cs">
+      <DependentUpon>BCdocgiamuonsach.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChiTietDauSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietDauSach.Designer.cs">
+      <DependentUpon>ChiTietDauSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dsBaoCao.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsBaoCao.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsbaocaodocgiamuonsach.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsbaocaodocgiamuonsach.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsBCsachmat.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsBCsachmat.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsBCsachquahan.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsBCsachquahan.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsdocgiavipham.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsdocgiavipham.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dssachmuonnhieunhat.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dssachmuonnhieunhat.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsviphamtheoloai.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsviphamtheoloai.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmBaocaosachmat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaocaosachmat.Designer.cs">
+      <DependentUpon>frmBaocaosachmat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBCdocgiavipham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBCdocgiavipham.Designer.cs">
+      <DependentUpon>frmBCdocgiavipham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBCsachquahan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBCsachquahan.Designer.cs">
+      <DependentUpon>frmBCsachquahan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBCviphamtheoloai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBCviphamtheoloai.Designer.cs">
+      <DependentUpon>frmBCviphamtheoloai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmThemTacGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmThemTacGia.Designer.cs">
+      <DependentUpon>FrmThemTacGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="panelMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChiTietDauSach.Designer.cs">
@@ -100,6 +218,22 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dataThuvien2DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QL_DauSach.Designer.cs">
+      <DependentUpon>QL_DauSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanlyCuonsach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanlyCuonsach.Designer.cs">
+      <DependentUpon>QuanlyCuonsach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCuonSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCuonSach.Designer.cs">
+      <DependentUpon>frmCuonSach.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChuDe.cs">
       <SubType>Form</SubType>
@@ -161,7 +295,7 @@
       <DependentUpon>QLSach_Ribbon.cs</DependentUpon>
     </Compile>
     <Compile Include="QLTacGia_Ribbon.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="QLTacGia_Ribbon.Designer.cs">
       <DependentUpon>QLTacGia_Ribbon.cs</DependentUpon>
@@ -177,6 +311,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="UC_QuanlyCuonsach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QuanlyCuonsach.Designer.cs">
+      <DependentUpon>UC_QuanlyCuonsach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSachmuonnhieunhat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSachmuonnhieunhat.Designer.cs">
+      <DependentUpon>frmSachmuonnhieunhat.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_QuanlyCuonsach.cs">
       <SubType>UserControl</SubType>
@@ -208,8 +354,41 @@
     <Compile Include="UC_TrangChu.Designer.cs">
       <DependentUpon>UC_TrangChu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Baocao.resx">
+      <DependentUpon>Baocao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Baocaosachhong.resx">
+      <DependentUpon>Baocaosachhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BCdocgiamuonsach.resx">
+      <DependentUpon>BCdocgiamuonsach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChiTietDauSach.resx">
       <DependentUpon>ChiTietDauSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBaocaosachmat.resx">
+      <DependentUpon>frmBaocaosachmat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBCdocgiavipham.resx">
+      <DependentUpon>frmBCdocgiavipham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBCsachquahan.resx">
+      <DependentUpon>frmBCsachquahan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBCviphamtheoloai.resx">
+      <DependentUpon>frmBCviphamtheoloai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCuonSach.resx">
+      <DependentUpon>frmCuonSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTacgiaSach.resx">
+      <DependentUpon>frmTacgiaSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmThemTacGia.resx">
+      <DependentUpon>FrmThemTacGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panelMenu.resx">
+      <DependentUpon>panelMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChuDe.resx">
       <DependentUpon>frmChuDe.cs</DependentUpon>
@@ -228,6 +407,52 @@
     </EmbeddedResource>
     <EmbeddedResource Include="panelMenu.resx">
       <DependentUpon>panelMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="QuanlyCuonsach.resx">
+      <DependentUpon>QuanlyCuonsach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanlyDocGia.resx">
+      <DependentUpon>QuanlyDocGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BCviphamtheoloai.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\baocaodocgiavipham.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BCsachquahan.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BCsachmat.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BCdocgiamuonsach.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BCsachmuonnhieunhat.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BCsachhong.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSachmuonnhieunhat.resx">
+      <DependentUpon>frmSachmuonnhieunhat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QuanlyCuonsach.resx">
+      <DependentUpon>UC_QuanlyCuonsach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QuanlyThongTinTacGia.resx">
+      <DependentUpon>UC_QuanlyThongTinTacGia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLSach_Ribbon.resx">
       <DependentUpon>QLSach_Ribbon.cs</DependentUpon>
@@ -266,6 +491,83 @@
     </None>
     <None Include="dataThuvien2DataSet.xss">
       <DependentUpon>dataThuvien2DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dsBaoCao.xsc">
+      <DependentUpon>dsBaoCao.xsd</DependentUpon>
+    </None>
+    <None Include="dsBaoCao.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsBaoCao.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsBaoCao.xss">
+      <DependentUpon>dsBaoCao.xsd</DependentUpon>
+    </None>
+    <None Include="dsbaocaodocgiamuonsach.xsc">
+      <DependentUpon>dsbaocaodocgiamuonsach.xsd</DependentUpon>
+    </None>
+    <None Include="dsbaocaodocgiamuonsach.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsbaocaodocgiamuonsach.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsbaocaodocgiamuonsach.xss">
+      <DependentUpon>dsbaocaodocgiamuonsach.xsd</DependentUpon>
+    </None>
+    <None Include="dsBCsachmat.xsc">
+      <DependentUpon>dsBCsachmat.xsd</DependentUpon>
+    </None>
+    <None Include="dsBCsachmat.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsBCsachmat.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsBCsachmat.xss">
+      <DependentUpon>dsBCsachmat.xsd</DependentUpon>
+    </None>
+    <None Include="dsBCsachquahan.xsc">
+      <DependentUpon>dsBCsachquahan.xsd</DependentUpon>
+    </None>
+    <None Include="dsBCsachquahan.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsBCsachquahan.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsBCsachquahan.xss">
+      <DependentUpon>dsBCsachquahan.xsd</DependentUpon>
+    </None>
+    <None Include="dsdocgiavipham.xsc">
+      <DependentUpon>dsdocgiavipham.xsd</DependentUpon>
+    </None>
+    <None Include="dsdocgiavipham.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsdocgiavipham.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsdocgiavipham.xss">
+      <DependentUpon>dsdocgiavipham.xsd</DependentUpon>
+    </None>
+    <None Include="dssachmuonnhieunhat.xsc">
+      <DependentUpon>dssachmuonnhieunhat.xsd</DependentUpon>
+    </None>
+    <None Include="dssachmuonnhieunhat.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dssachmuonnhieunhat.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dssachmuonnhieunhat.xss">
+      <DependentUpon>dssachmuonnhieunhat.xsd</DependentUpon>
+    </None>
+    <None Include="dsviphamtheoloai.xsc">
+      <DependentUpon>dsviphamtheoloai.xsd</DependentUpon>
+    </None>
+    <None Include="dsviphamtheoloai.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsviphamtheoloai.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsviphamtheoloai.xss">
+      <DependentUpon>dsviphamtheoloai.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -372,4 +674,10 @@
     <Content Include="Resources\write_16791610.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props'))" />
+  </Target>
 </Project>

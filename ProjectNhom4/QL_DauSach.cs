@@ -27,14 +27,12 @@ namespace ProjectNhom4
         public QL_DauSach() => InitializeComponent();
         private void SetControls(bool status)
         {
-            // Mã đầu sách sẽ được tạo tự động, không cho sửa
             txtMaDauSach.Enabled = false;
-
-            txtTenDauSach.Enabled = status;
-            txtNamXB.Enabled = status;
-            txtGiaBia.Enabled = status;
-            txtSoTrang.Enabled = status;
-            txtTacGia.Enabled = status; // Thêm TextBox Tác giả
+            txtTacGia.ReadOnly = true;
+            txtTenDauSach.ReadOnly = !status;
+            txtNamXB.ReadOnly = !status;
+            txtGiaBia.ReadOnly = !status;
+            txtSoTrang.ReadOnly = !status;
             cboLoaiSach.Enabled = status;
             cboChuDe.Enabled = status;
         }
@@ -45,13 +43,36 @@ namespace ProjectNhom4
                 using (con = new SqlConnection(strCon))
                 {
                     con.Open();
-                    // Đổi tên bảng thành DAU_SACH
-                    string sql = "SELECT * FROM DAU_SACH";
+
+                    string sql = @"
+                SELECT 
+                    ds.Ma_Dau_Sach AS MaDauSach, 
+                    ds.Ten_Dau_Sach AS TenDauSach, 
+                    ds.Nam_XB AS NamXB, 
+                    ds.Ma_Chu_De AS MaChuDe, 
+                    ds.Ma_TL,
+                    ds.Gia_Bia AS GiaBia, 
+                    ds.So_Trang AS SoTrang, 
+                    ds.So_Luong AS SoLuong,
+                    ISNULL(STRING_AGG(tg.Ten_Tac_Gia, ', '), N'Chưa có tác giả') AS TenCacTacGia
+                FROM 
+                    DAU_SACH ds
+                LEFT JOIN 
+                    TG_DAU_SACH tds ON ds.Ma_Dau_Sach = tds.Ma_Dau_Sach
+                LEFT JOIN 
+                    TAC_GIA tg ON tds.Ma_Tac_Gia = tg.Ma_Tac_Gia
+                GROUP BY 
+                    ds.Ma_Dau_Sach, ds.Ten_Dau_Sach, ds.Nam_XB, ds.Ma_Chu_De, 
+                    ds.Ma_TL, ds.Gia_Bia, ds.So_Trang, ds.So_Luong";
+
                     adapter = new SqlDataAdapter(sql, con);
                     dt = new DataTable();
                     adapter.Fill(dt);
                 }
                 dv = new DataView(dt);
+
+                dgvDSDauSach.AutoGenerateColumns = false;
+
                 dgvDSDauSach.DataSource = dv;
             }
             catch (Exception ex)
@@ -84,33 +105,33 @@ namespace ProjectNhom4
         }
         private void NapCT()
         {
-            if (dgvDSDauSach.CurrentRow != null)
+            if (dgvDSDauSach.CurrentRow != null && dv != null && dgvDSDauSach.CurrentRow.Index < dv.Count)
             {
                 try
                 {
                     int i = dgvDSDauSach.CurrentRow.Index;
+                    DataRowView rowView = dv[i]; // Lấy dữ liệu từ DataView
 
-                    // Sử dụng tên cột chính xác với khoảng trắng từ DB
-                    txtMaDauSach.Text = dgvDSDauSach.Rows[i].Cells["MaDauSach"].Value?.ToString() ?? "";
-                    txtTenDauSach.Text = dgvDSDauSach.Rows[i].Cells["TenDauSach"].Value?.ToString() ?? "";
-                    txtTacGia.Text = dgvDSDauSach.Rows[i].Cells["TacGia"].Value?.ToString() ?? "";
-                    txtNamXB.Text = dgvDSDauSach.Rows[i].Cells["NamXB"].Value?.ToString() ?? "";
-                    txtGiaBia.Text = dgvDSDauSach.Rows[i].Cells["GiaBia"].Value?.ToString() ?? "";
-                    txtSoTrang.Text = dgvDSDauSach.Rows[i].Cells["SoTrang"].Value?.ToString() ?? "";
+                    txtMaDauSach.Text = rowView["MaDauSach"]?.ToString() ?? "";
+                    txtTenDauSach.Text = rowView["TenDauSach"]?.ToString() ?? "";
+                    txtTacGia.Text = rowView["TenCacTacGia"]?.ToString() ?? "";
 
-                    // ComboBox với kiểm tra NULL
-                    if (dgvDSDauSach.Rows[i].Cells["Ma_TL"].Value != DBNull.Value && dgvDSDauSach.Rows[i].Cells["Ma_TL"].Value != null)
+                    txtNamXB.Text = rowView["NamXB"]?.ToString() ?? "";
+                    txtGiaBia.Text = rowView["GiaBia"]?.ToString() ?? "";
+                    txtSoTrang.Text = rowView["SoTrang"]?.ToString() ?? "";
+
+                    if (rowView["Ma_TL"] != DBNull.Value && rowView["Ma_TL"] != null)
                     {
-                        cboLoaiSach.SelectedValue = dgvDSDauSach.Rows[i].Cells["Ma_TL"].Value.ToString();
+                        cboLoaiSach.SelectedValue = rowView["Ma_TL"].ToString();
                     }
                     else
                     {
                         cboLoaiSach.SelectedIndex = -1;
                     }
 
-                    if (dgvDSDauSach.Rows[i].Cells["MaChuDe"].Value != DBNull.Value && dgvDSDauSach.Rows[i].Cells["MaChuDe"].Value != null)
+                    if (rowView["MaChuDe"] != DBNull.Value && rowView["MaChuDe"] != null)
                     {
-                        cboChuDe.SelectedValue = dgvDSDauSach.Rows[i].Cells["MaChuDe"].Value.ToString();
+                        cboChuDe.SelectedValue = rowView["MaChuDe"].ToString();
                     }
                     else
                     {
@@ -202,8 +223,7 @@ namespace ProjectNhom4
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            string searchText = txtSearch.Text;
-            dv.RowFilter = $"[Ten_Dau_Sach] like '%{searchText}%'";
+            
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -212,24 +232,24 @@ namespace ProjectNhom4
 
             txtMaDauSach.Text = "";
             txtTenDauSach.Text = "";
-            txtTacGia.Text = "";
+            // Sửa lại: Thêm hướng dẫn
+            txtTacGia.Text = "Sử dụng Xem chi tiết để thêm tác giả";
             txtNamXB.Text = "";
             txtGiaBia.Text = "";
             txtSoTrang.Text = "";
             cboLoaiSach.SelectedIndex = -1;
             cboChuDe.SelectedIndex = -1;
 
-            SetControls(true);
-
+            SetControls(true); // Mở khóa các ô (trừ ô Tác giả)
             TaoMaDS();
 
             btnThem.Enabled = false;
             btnXoa.Enabled = false;
-            btnSua.Text = "Lưu";  
+            btnSua.Enabled = true; // Bật nút Sửa
+            btnSua.Text = "Lưu";
             btnHuy.Visible = true;
             txtTenDauSach.Focus();
         }
-        // Add this method to handle the SelectedIndexChanged event for cboLoaiSach
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataRowView selectedRow = cboLoaiSach.SelectedItem as DataRowView;
@@ -267,7 +287,7 @@ namespace ProjectNhom4
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (btnSua.Text == "Sửa")
+            if (btnSua.Text == "Sửa") //Trạng thái 1: Nhấn "Sửa"
             {
                 if (dgvDSDauSach.CurrentRow == null)
                 {
@@ -278,7 +298,6 @@ namespace ProjectNhom4
                 addNewFlag = false;
                 SetControls(true); // Mở khóa controls
 
-                // Quản lý trạng thái nút
                 btnSua.Text = "Lưu";
                 btnHuy.Visible = true;
                 btnThem.Enabled = false;
@@ -286,7 +305,7 @@ namespace ProjectNhom4
 
                 txtTenDauSach.Focus();
             }
-            // Trường hợp 2: Nút đang là "Lưu" (Hoàn tất Thêm hoặc Sửa)
+            // Trạng thái 2: Nhấn "Lưu" (sau khi Thêm hoặc Sửa)
             else
             {
                 if (string.IsNullOrWhiteSpace(txtTenDauSach.Text))
@@ -304,67 +323,107 @@ namespace ProjectNhom4
 
                 string maDS = txtMaDauSach.Text;
                 string tenDS = txtTenDauSach.Text;
-                string tacGia = txtTacGia.Text;
-                
-                string maLoai = cboLoaiSach.SelectedValue.ToString();
-                string maChuDe_sql = (cboChuDe.SelectedValue != null) ? $"'{cboChuDe.SelectedValue}'" : "NULL";
-                string tacGia_sql = !string.IsNullOrWhiteSpace(tacGia) ? $"N'{tacGia}'" : "NULL";
 
-                int namXB_num;
-                if (!int.TryParse(txtNamXB.Text, out namXB_num) && !string.IsNullOrWhiteSpace(txtNamXB.Text))
+                // === SỬA LỖI SQL INJECTION: Dùng DBNull.Value cho các giá trị NULL ===
+                object maChuDe = (cboChuDe.SelectedValue != null) ? cboChuDe.SelectedValue : DBNull.Value;
+
+                object namXB_sql;
+                if (string.IsNullOrWhiteSpace(txtNamXB.Text))
+                {
+                    namXB_sql = DBNull.Value;
+                }
+                else if (int.TryParse(txtNamXB.Text, out int namXB_num))
+                {
+                    namXB_sql = namXB_num;
+                }
+                else
                 {
                     MessageBox.Show("Năm xuất bản không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtNamXB.Focus();
                     return;
                 }
-                string namXB_sql = !string.IsNullOrWhiteSpace(txtNamXB.Text) ? namXB_num.ToString() : "NULL";
 
-                decimal giaBia_num;
-                if (!decimal.TryParse(txtGiaBia.Text, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out giaBia_num) && !string.IsNullOrWhiteSpace(txtGiaBia.Text))
+                object giaBia_sql;
+                if (string.IsNullOrWhiteSpace(txtGiaBia.Text))
                 {
-                    MessageBox.Show("Giá bìa không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    giaBia_sql = DBNull.Value;
+                }
+                else if (decimal.TryParse(txtGiaBia.Text.Replace(",", "."), NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out decimal giaBia_num))
+                {
+                    giaBia_sql = giaBia_num;
+                }
+                else
+                {
+                    MessageBox.Show("Giá bìa không hợp lệ! (Ví dụ: 120000.50)", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtGiaBia.Focus();
                     return;
                 }
-                string giaBia_sql = !string.IsNullOrWhiteSpace(txtGiaBia.Text) ? giaBia_num.ToString(CultureInfo.InvariantCulture) : "NULL";
 
-
-                int soTrang_num;
-                if (!int.TryParse(txtSoTrang.Text, out soTrang_num) && !string.IsNullOrWhiteSpace(txtSoTrang.Text))
+                object soTrang_sql;
+                if (string.IsNullOrWhiteSpace(txtSoTrang.Text))
+                {
+                    soTrang_sql = DBNull.Value;
+                }
+                else if (int.TryParse(txtSoTrang.Text, out int soTrang_num))
+                {
+                    soTrang_sql = soTrang_num;
+                }
+                else
                 {
                     MessageBox.Show("Số trang không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtSoTrang.Focus();
                     return;
                 }
-                string soTrang_sql = !string.IsNullOrWhiteSpace(txtSoTrang.Text) ? soTrang_num.ToString() : "NULL";
-
-                string sql;
-                if (addNewFlag) // THÊM MỚI
+                try
                 {
-                    sql = $"INSERT INTO DAU_SACH([Ma_Dau_Sach], [Ten_Dau_Sach], [Tac_Gia], [Nam_XB], [Ma_Chu_De], [Ma_TL], [Gia_Bia], [So_Trang]) " +
-                    $"VALUES ('{maDS}', N'{tenDS}', {tacGia_sql}, {namXB_sql}, {maChuDe_sql}, '{maLoai}', {giaBia_sql}, {soTrang_sql})";
-                    DoSQL(sql);
-                    MessageBox.Show("Thêm mới thành công!");
+                    using (con = new SqlConnection(strCon))
+                    {
+                        con.Open();
+                        string sql;
+                        if (addNewFlag)
+                        {
+                            // SỬA SQL: Xóa [Tac_Gia]
+                            sql = @"INSERT INTO DAU_SACH([Ma_Dau_Sach], [Ten_Dau_Sach], [Nam_XB], [Ma_Chu_De], [Ma_TL], [Gia_Bia], [So_Trang]) 
+                            VALUES (@MaDS, @TenDS, @NamXB, @MaChuDe, @MaLoai, @GiaBia, @SoTrang)";
+                        }
+                        else // CẬP NHẬT
+                        {
+                            // SỬA SQL: Xóa [Tac_Gia]
+                            sql = @"UPDATE DAU_SACH SET 
+                                [Ten_Dau_Sach] = @TenDS, 
+                                [Nam_XB] = @NamXB, 
+                                [Ma_Chu_De] = @MaChuDe, 
+                                [Ma_TL] = @MaLoai, 
+                                [Gia_Bia] = @GiaBia, 
+                                [So_Trang] = @SoTrang 
+                            WHERE [Ma_Dau_Sach] = @MaDS";
+                        }
+
+                        cmd = new SqlCommand(sql, con);
+                        cmd.Parameters.AddWithValue("@MaDS", maDS);
+                        cmd.Parameters.AddWithValue("@TenDS", tenDS);
+                        cmd.Parameters.AddWithValue("@NamXB", namXB_sql);
+                        cmd.Parameters.AddWithValue("@MaChuDe", maChuDe);
+                        cmd.Parameters.AddWithValue("@MaLoai", cboLoaiSach.SelectedValue.ToString());
+                        cmd.Parameters.AddWithValue("@GiaBia", giaBia_sql);
+                        cmd.Parameters.AddWithValue("@SoTrang", soTrang_sql);
+
+                        cmd.ExecuteNonQuery();
+
+                        string message = addNewFlag ? "Thêm mới thành công!" : "Cập nhật thành công!";
+                        MessageBox.Show(message + "\nLưu ý: Bạn cần ấn Xem chi tiết để thêm tác giả.", "Thông báo");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    sql = $"UPDATE DAU_SACH SET " +
-                          $"[Ten_Dau_Sach] = N'{tenDS}', " +
-                          $"[Tac_Gia] = {tacGia_sql}, " +
-                          $"[Nam_XB] = {namXB_sql}, " +
-                          $"[Ma_Chu_De] = {maChuDe_sql}, " +
-                          $"[Ma_TL] = '{maLoai}', " +
-                          $"[Gia_Bia] = {giaBia_sql}, " +
-                          $"[So_Trang] = {soTrang_sql} " +
-                          $"WHERE [Ma_Dau_Sach] = '{maDS}'";
-                    DoSQL(sql);
-                    MessageBox.Show("Cập nhật thành công!");
+                    MessageBox.Show("Lỗi khi lưu dữ liệu: " + ex.Message, "Lỗi SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return; // Dừng lại nếu lỗi
                 }
 
+                // === Reset lại form ===
                 ShowDauSach();
                 SetControls(false); // Khóa controls
 
-                // Xóa trắng các ô sau khi lưu
                 txtMaDauSach.Text = "";
                 txtTenDauSach.Text = "";
                 txtTacGia.Text = "";
@@ -378,7 +437,6 @@ namespace ProjectNhom4
                 btnThem.Enabled = true;
                 btnHuy.Visible = false;
 
-                // Tắt nút Sửa/Xóa vì chưa chọn gì
                 btnSua.Enabled = false;
                 btnXoa.Enabled = false;
             }
@@ -393,25 +451,48 @@ namespace ProjectNhom4
                 return;
             }
 
-            // Lấy mã TRỰC TIẾP từ bảng
-            string maDS = dgvDSDauSach.CurrentRow.Cells["Ma_Dau_Sach"].Value.ToString();
+            // Lấy mã từ DataGridView (tên cột "MaDauSach" từ câu SQL)
+            string maDS = dgvDSDauSach.CurrentRow.Cells["MaDauSach"].Value.ToString();
 
             DialogResult dr = MessageBox.Show($"Bạn có chắc chắn muốn xóa đầu sách '{maDS}' không?\n" +
-                                     $"(Lưu ý: Bạn không thể xóa nếu đầu sách này đã có trong bảng SACH)",
-                                     "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                                             $"(Lưu ý: Mọi liên kết tác giả sẽ bị xóa. " +
+                                             $"Không thể xóa nếu sách đã có trong thư viện)",
+                                             "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (dr == DialogResult.Yes)
             {
-                string sql = $"DELETE FROM DAU_SACH WHERE [Ma_Dau_Sach]='{maDS}'";
-                DoSQL(sql);
+                try
+                {
+                    using (con = new SqlConnection(strCon))
+                    {
+                        con.Open();
+                        // Phải xóa ở bảng TG_DAU_SACH trước (quan hệ nhiều-nhiều)
+                        // Sau đó mới xóa ở bảng DAU_SACH (bảng chính)
+                        string sql = "DELETE FROM TG_DAU_SACH WHERE [Ma_Dau_Sach]=@MaDS; " +
+                                     "DELETE FROM DAU_SACH WHERE [Ma_Dau_Sach]=@MaDS;";
 
-                MessageBox.Show("Xóa thành công!"); 
-                ShowDauSach();
+                        cmd = new SqlCommand(sql, con);
+                        cmd.Parameters.AddWithValue("@MaDS", maDS);
+                        cmd.ExecuteNonQuery();
+                    }
 
-                txtMaDauSach.Text = "";
-                txtTenDauSach.Text = "";
-                cboLoaiSach.SelectedIndex = -1;
-                cboChuDe.SelectedIndex = -1;
+                    MessageBox.Show("Xóa thành công!");
+                    ShowDauSach();
+
+                    // Xóa trắng các ô
+                    txtMaDauSach.Text = "";
+                    txtTenDauSach.Text = "";
+                    txtTacGia.Text = "";
+                    txtNamXB.Text = "";
+                    txtGiaBia.Text = "";
+                    txtSoTrang.Text = "";
+                    cboLoaiSach.SelectedIndex = -1;
+                    cboChuDe.SelectedIndex = -1;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi xóa (Có thể do ràng buộc khóa ngoại): " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -471,11 +552,23 @@ namespace ProjectNhom4
             {
                 ChiTietDauSach formChiTiet = new ChiTietDauSach(maDS);
                 formChiTiet.ShowDialog();
+                ShowDauSach(); // load lại dữ liệu mới từ SQL
+                if (dgvDSDauSach.Rows.Count > 0)
+                {
+                    dgvDSDauSach.CurrentCell = dgvDSDauSach.Rows[0].Cells[0];
+                    NapCT();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi mở form: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void txtSearch_TextChanged_1(object sender, EventArgs e)
+        {
+            string searchText = txtSearch.Text;
+            dv.RowFilter = $"[Ten_Dau_Sach] like '%{searchText}%'";
         }
     }
 }

@@ -21,8 +21,8 @@ namespace ProjectNhom4
         SqlDataAdapter adapter;
         DataTable dt;
         DataView dv;
-        string selectedMa_Doc_Gia; // Di chuyển lên đây để dùng chung
-
+        string selectedMa_Doc_Gia; 
+        private bool isAdding = false;
         public UC_QuanlyDocGia()
         {
             InitializeComponent();
@@ -32,6 +32,7 @@ namespace ProjectNhom4
         {
             LoadDocGia(); // Tải dữ liệu khi UserControl được load
             NapCT();      // Nạp chi tiết cho dòng đầu tiên
+            SetControlState("Normal");
         }
 
         private void LoadDocGia()
@@ -74,39 +75,69 @@ namespace ProjectNhom4
                 MessageBox.Show("Lỗi khi tải danh sách độc giả: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void SetTextBoxReadOnly(bool readOnly)
+        {
+            // Các mã này LUÔN LUÔN chỉ đọc
+            txtMaDocGia.ReadOnly = true;
+            txtMaTheMuon.ReadOnly = true;
 
+            // Các ô này có thể thay đổi
+            txtHoTen.ReadOnly = readOnly;
+            txtEmail.ReadOnly = readOnly;
+            txtSDT.ReadOnly = readOnly;
+            txtNgheNghiep.ReadOnly = readOnly;
+
+            // Lưu ý: DateTimePicker không có .ReadOnly, chúng ta phải dùng .Enabled
+            dtpNgaySinh.Enabled = !readOnly;
+            dtpNgayCapThe.Enabled = !readOnly;
+            dtpNgayHetHan.Enabled = !readOnly;
+
+            // Nút chọn ảnh cũng vậy
+            btnChonAnh.Enabled = !readOnly;
+        }
         private void NapCT()
         {
             if (dgvDocGia.CurrentCell != null && dgvDocGia.CurrentCell.RowIndex >= 0)
             {
                 int i = dgvDocGia.CurrentRow.Index;
-                DataRowView rowView = dv[i]; 
 
-                selectedMa_Doc_Gia = rowView["Ma_Doc_Gia"]?.ToString() ?? string.Empty;
+                // SỬA LỖI Ở ĐÂY: Thêm điều kiện kiểm tra xem 'i' có nằm trong phạm vi của 'dv' không
+                if (dv != null && i < dv.Count)
+                {
+                    DataRowView rowView = dv[i]; // This line is now safe
 
-                // Gán dữ liệu vào textbox
-                txtMaDocGia.Text = selectedMa_Doc_Gia;
-                txtMaDocGia.Enabled = false; // Mã độc giả không nên cho sửa
-                txtMaTheMuon.Text = rowView["Ma_The"]?.ToString() ?? string.Empty;
-                txtMaTheMuon.Enabled = false; // Mã thẻ mượn không nên cho sửa
-                txtHoTen.Text = rowView["Ho_Ten"]?.ToString() ?? string.Empty;
-                txtEmail.Text = rowView["Email"]?.ToString() ?? string.Empty;
-                txtSDT.Text = rowView["SDT"]?.ToString() ?? string.Empty;
+                    selectedMa_Doc_Gia = rowView["Ma_Doc_Gia"]?.ToString() ?? string.Empty;
 
-                txtNgheNghiep.Text = rowView["Loai_Doc_Gia"]?.ToString() ?? string.Empty;
+                    // Gán dữ liệu vào textbox
+                    txtMaDocGia.Text = selectedMa_Doc_Gia;
+                    txtMaTheMuon.Text = rowView["Ma_The"]?.ToString() ?? string.Empty;
+                    txtHoTen.Text = rowView["Ho_Ten"]?.ToString() ?? string.Empty;
+                    txtEmail.Text = rowView["Email"]?.ToString() ?? string.Empty;
+                    txtSDT.Text = rowView["SDT"]?.ToString() ?? string.Empty;
+                    txtNgheNghiep.Text = rowView["Loai_Doc_Gia"]?.ToString() ?? string.Empty;
 
+                    // Sửa logic kiểm tra DBNull cho an toàn hơn
+                    object ngaySinh = rowView["Ngay_Sinh"];
+                    object ngayCap = rowView["Ngay_Cap"];
+                    object ngayHetHan = rowView["Ngay_Het_Han"];
 
-                object ngayCap = rowView["Ngay_Cap"];
-                object ngayHetHan = rowView["Ngay_Het_Han"];
-                dtpNgaySinh.Value = Convert.ToDateTime(rowView["Ngay_Sinh"] ?? DateTime.Now);
-                dtpNgayCapThe.Value = (ngayCap == DBNull.Value || ngayCap == null) ? DateTime.Now : Convert.ToDateTime(ngayCap);
-                dtpNgayHetHan.Value = (ngayHetHan == DBNull.Value || ngayHetHan == null) ? DateTime.Now : Convert.ToDateTime(ngayHetHan);
+                    dtpNgaySinh.Value = (ngaySinh == DBNull.Value || ngaySinh == null) ? DateTime.Now : Convert.ToDateTime(ngaySinh);
+                    dtpNgayCapThe.Value = (ngayCap == DBNull.Value || ngayCap == null) ? DateTime.Now : Convert.ToDateTime(ngayCap);
+                    dtpNgayHetHan.Value = (ngayHetHan == DBNull.Value || ngayHetHan == null) ? DateTime.Now : Convert.ToDateTime(ngayHetHan);
 
-                LoadImageFromPath(rowView["Anh_Chan_Dung"]);
+                    LoadImageFromPath(rowView["Anh_Chan_Dung"]);
+
+                    SetTextBoxReadOnly(true);
+                }
+                else
+                {
+                    // Nếu chỉ số không hợp lệ (ví dụ: vừa bị xóa), thì xóa trắng form
+                    ClearForm();
+                }
             }
             else
             {
-                // Xóa trắng form nếu không có dòng nào được chọn
+                // Không có ô nào được chọn, xóa trắng form
                 ClearForm();
             }
         }
@@ -148,17 +179,29 @@ namespace ProjectNhom4
 
         private void ClearForm()
         {
+            txtMaDocGia.Text = "";
             txtMaTheMuon.Text = "";
+
+            // Xóa các ô Text
             txtHoTen.Text = "";
-            txtSDT.Text = "";
             txtEmail.Text = "";
+            txtSDT.Text = "";
             txtNgheNghiep.Text = "";
+
+            // Đặt lại ngày
+            dtpNgaySinh.Value = DateTime.Now;
             dtpNgayCapThe.Value = DateTime.Now;
             dtpNgayHetHan.Value = DateTime.Now;
+
+            // Đặt lại ảnh
             picDocGia.Image = Properties.Resources.user;
             picDocGia.ImageLocation = null;
+
             selectedMa_Doc_Gia = null;
-            txtMaTheMuon.Enabled = true;
+
+            // Luôn khóa các ô mã, ngay cả trong ClearForm
+            txtMaDocGia.Enabled = false;
+            txtMaTheMuon.Enabled = false;
         }
 
         private void btnChonAnh_Click(object sender, EventArgs e)
@@ -178,49 +221,53 @@ namespace ProjectNhom4
         private void dgvDocGia_SelectionChanged(object sender, EventArgs e)
         {
             NapCT();
+
+            SetControlState("Normal");
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            ClearForm(); // Xóa trắng form
+            isAdding = true; // Báo cho chương trình biết là đang Thêm
+            ClearForm();     // Gọi hàm ClearForm() (đã sửa ở trên)
 
-            // Tạo mã độc giả mới
+            string newMaDocGia = "";
             try
             {
                 using (con = new SqlConnection(strCon))
                 {
                     con.Open();
-                    string sql = "SELECT MAX(Ma_Doc_Gia) FROM DocGia";
+                    string sql = "SELECT MAX(Ma_Doc_Gia) FROM DOC_GIA";
                     cmd = new SqlCommand(sql, con);
                     object rs = cmd.ExecuteScalar();
                     if (rs != DBNull.Value && rs != null)
                     {
-                        string maTheMuon = rs.ToString();
-                        // Lấy phần số (ví dụ: 'DG0019' -> '0019')
-                        int number = int.Parse(maTheMuon.Substring(2));
+                        string maHienTai = rs.ToString();
+                        int number = int.Parse(maHienTai.Substring(2));
                         ++number;
-                        // Định dạng D4 cho 4 chữ số (ví dụ: DG0020)
-                        txtMaTheMuon.Text = "DG" + number.ToString("D4");
+                        newMaDocGia = "DG" + number.ToString("D4");
                     }
                     else
                     {
-                        txtMaTheMuon.Text = "DG0001"; // Nếu là bản ghi đầu tiên
+                        newMaDocGia = "DG0001";
                     }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi tạo mã độc giả mới: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtMaTheMuon.Text = "DG"; // Cho phép người dùng tự nhập
+                return;
             }
 
-            txtMaTheMuon.Enabled = true; // Cho phép nhập mã nếu muốn
+            // Gán mã mới vào ô Mã Độc Giả (ô này đã bị khóa)
+            txtMaDocGia.Text = newMaDocGia;
+
+            SetControlState("Editing"); // Chuyển sang trạng thái "Sửa" (các ô sáng lên)
             txtHoTen.Focus();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtMaTheMuon.Text) || string.IsNullOrWhiteSpace(txtHoTen.Text))
+            if (string.IsNullOrWhiteSpace(txtMaDocGia.Text) || string.IsNullOrWhiteSpace(txtHoTen.Text))
             {
                 MessageBox.Show("Mã độc giả và Họ tên không được để trống.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -235,66 +282,103 @@ namespace ProjectNhom4
 
                     try
                     {
-                        // Lấy đường dẫn ảnh từ ImageLocation
                         string anhChanDungPath = picDocGia.ImageLocation;
                         string ngayCap = dtpNgayCapThe.Value.ToString("yyyy-MM-dd");
                         string ngayHan = dtpNgayHetHan.Value.ToString("yyyy-MM-dd");
+                        string maDocGia = txtMaDocGia.Text.Trim();
 
-                        // Thêm vào bảng DocGia
-                        // Đã sửa lại tên cột cho đúng schema: Anh_Chan_Dung, SDT, Loai_Doc_Gia
-                        string sqlDocGia = @"INSERT INTO DOC_GIA 
-                            (Ma_Doc_Gia, Ho_Ten, Anh_Chan_Dung, Email, SDT, Loai_Doc_Gia)
-                            VALUES (@Ma_Doc_Gia, @HoTen, @Anh_Chan_Dung, @Email, @SDT, @Loai_Doc_Gia)";
-
-                        using (SqlCommand cmdDocGia = new SqlCommand(sqlDocGia, con, trans))
+                        if (isAdding) // === NẾU LÀ THÊM MỚI ===
                         {
-                            cmdDocGia.Parameters.AddWithValue("@Ma_Doc_Gia", txtMaTheMuon.Text.Trim());
-                            cmdDocGia.Parameters.AddWithValue("@HoTen", txtHoTen.Text.Trim());
-                            cmdDocGia.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
-                            cmdDocGia.Parameters.AddWithValue("@SDT", txtSDT.Text.Trim());
-                            // Giả định: txtNgheNghiep là control để nhập Loai_Doc_Gia
-                            cmdDocGia.Parameters.AddWithValue("@Loai_Doc_Gia", txtNgheNghiep.Text.Trim());
-                            // Lưu đường dẫn (string), nếu không có ảnh thì lưu DBNull
-                            cmdDocGia.Parameters.AddWithValue("@Anh_Chan_Dung", (object)anhChanDungPath ?? DBNull.Value);
+                            // 1. Thêm vào bảng DocGia
+                            string sqlDocGia = @"INSERT INTO DOC_GIA 
+                                (Ma_Doc_Gia, Ho_Ten, Ngay_Sinh, Anh_Chan_Dung, Email, SDT, Loai_Doc_Gia)
+                                VALUES (@Ma_Doc_Gia, @HoTen, @NgaySinh, @Anh_Chan_Dung, @Email, @SDT, @Loai_Doc_Gia)";
 
-                            cmdDocGia.ExecuteNonQuery();
+                            using (SqlCommand cmdDocGia = new SqlCommand(sqlDocGia, con, trans))
+                            {
+                                cmdDocGia.Parameters.AddWithValue("@Ma_Doc_Gia", maDocGia);
+                                cmdDocGia.Parameters.AddWithValue("@HoTen", txtHoTen.Text.Trim());
+                                cmdDocGia.Parameters.AddWithValue("@NgaySinh", dtpNgaySinh.Value.ToString("yyyy-MM-dd"));
+                                cmdDocGia.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
+                                cmdDocGia.Parameters.AddWithValue("@SDT", txtSDT.Text.Trim());
+                                cmdDocGia.Parameters.AddWithValue("@Loai_Doc_Gia", txtNgheNghiep.Text.Trim());
+                                cmdDocGia.Parameters.AddWithValue("@Anh_Chan_Dung", (object)anhChanDungPath ?? DBNull.Value);
+                                cmdDocGia.ExecuteNonQuery();
+                            }
+
+                            // 2. Thêm vào bảng TheDocGia
+                            string newMaThe = "T" + maDocGia.Substring(2); // Tạo mã thẻ mới (T0020)
+                            txtMaTheMuon.Text = newMaThe;
+
+                            string sqlThe = @"INSERT INTO THE_DOC_GIA (Ma_The, Ma_Doc_Gia, Ngay_Cap, Ngay_Het_Han, Trang_Thai_The)
+                                    VALUES (@Ma_The, @Ma_Doc_Gia, @Ngay_Cap, @Ngay_Het_Han, @TrangThai)";
+
+                            using (SqlCommand cmdThe = new SqlCommand(sqlThe, con, trans))
+                            {
+                                cmdThe.Parameters.AddWithValue("@Ma_The", newMaThe);
+                                cmdThe.Parameters.AddWithValue("@Ma_Doc_Gia", maDocGia);
+                                cmdThe.Parameters.AddWithValue("@Ngay_Cap", ngayCap);
+                                cmdThe.Parameters.AddWithValue("@Ngay_Het_Han", ngayHan);
+                                cmdThe.Parameters.AddWithValue("@TrangThai", "Còn hạn");
+                                cmdThe.ExecuteNonQuery();
+                            }
+                            MessageBox.Show("Thêm mới độc giả thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-
-                        // Thêm vào bảng TheDocGia
-                        // Đã sửa lại tên cột: Ngay_Cap, Ngay_Het_Han
-                        string sqlThe = @"INSERT INTO THE_DOC_GIA (Ma_Doc_Gia, Ngay_Cap, Ngay_Het_Han, Trang_Thai_The)
-                                          VALUES (@Ma_Doc_Gia, @Ngay_Cap, @Ngay_Het_Han, @TrangThai)";
-
-                        using (SqlCommand cmdThe = new SqlCommand(sqlThe, con, trans))
+                        else // === NẾU LÀ SỬA ===
                         {
-                            cmdThe.Parameters.AddWithValue("@Ma_Doc_Gia", txtMaTheMuon.Text.Trim());
-                            cmdThe.Parameters.AddWithValue("@Ngay_Cap", ngayCap);
-                            cmdThe.Parameters.AddWithValue("@Ngay_Het_Han", ngayHan);
-                            cmdThe.Parameters.AddWithValue("@TrangThai", "Còn hạn"); // Mặc định khi tạo mới
+                            // 1. Cập nhật bảng DOC_GIA
+                            string sqlDocGia = @"UPDATE DOC_GIA 
+                                       SET Ho_Ten = @HoTen, Ngay_Sinh = @NgaySinh, Email = @Email, SDT = @SDT, 
+                                           Loai_Doc_Gia = @LoaiDocGia, Anh_Chan_Dung = @AnhChanDung 
+                                       WHERE Ma_Doc_Gia = @MaDocGia";
 
-                            cmdThe.ExecuteNonQuery();
+                            using (SqlCommand cmdDG = new SqlCommand(sqlDocGia, con, trans))
+                            {
+                                cmdDG.Parameters.AddWithValue("@HoTen", txtHoTen.Text.Trim());
+                                cmdDG.Parameters.AddWithValue("@NgaySinh", dtpNgaySinh.Value.ToString("yyyy-MM-dd"));
+                                cmdDG.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
+                                cmdDG.Parameters.AddWithValue("@SDT", txtSDT.Text.Trim());
+                                cmdDG.Parameters.AddWithValue("@LoaiDocGia", txtNgheNghiep.Text.Trim());
+                                cmdDG.Parameters.AddWithValue("@AnhChanDung", (object)anhChanDungPath ?? DBNull.Value);
+                                cmdDG.Parameters.AddWithValue("@MaDocGia", maDocGia);
+                                cmdDG.ExecuteNonQuery();
+                            }
+
+                            // 2. Cập nhật bảng THE_DOC_GIA
+                            string sqlThe = @"UPDATE THE_DOC_GIA 
+                                    SET Ngay_Cap = @NgayCap, Ngay_Het_Han = @NgayHetHan 
+                                    WHERE Ma_The = @MaThe";
+
+                            using (SqlCommand cmdThe = new SqlCommand(sqlThe, con, trans))
+                            {
+                                cmdThe.Parameters.AddWithValue("@NgayCap", ngayCap);
+                                cmdThe.Parameters.AddWithValue("@NgayHetHan", ngayHan);
+                                cmdThe.Parameters.AddWithValue("@MaThe", txtMaTheMuon.Text.Trim());
+                                cmdThe.ExecuteNonQuery();
+                            }
+                            MessageBox.Show("Cập nhật thông tin thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
 
                         trans.Commit();
-                        MessageBox.Show("Thêm mới độc giả thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
                     {
                         trans.Rollback();
-                        MessageBox.Show("Lỗi khi thêm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (ex.Message.Contains("PRIMARY KEY constraint"))
+                        {
+                            MessageBox.Show("Lỗi: Mã độc giả hoặc Mã thẻ đã tồn tại.", "Lỗi Trùng lặp", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Lỗi khi lưu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
 
-                // Tải lại dữ liệu và chọn dòng vừa thêm
+                // Tải lại dữ liệu và trả về trạng thái "Normal"
                 LoadDocGia();
-                int lastRowIndex = dgvDocGia.RowCount - 1;
-                if (lastRowIndex >= 0)
-                {
-                    dgvDocGia.ClearSelection();
-                    dgvDocGia.CurrentCell = dgvDocGia.Rows[lastRowIndex].Cells[0];
-                    dgvDocGia.FirstDisplayedScrollingRowIndex = lastRowIndex;
-                }
                 NapCT();
+                SetControlState("Normal");
             }
             catch (Exception ex)
             {
@@ -310,89 +394,10 @@ namespace ProjectNhom4
                 return;
             }
 
-            int currentIndex = dgvDocGia.CurrentRow.Index;
-
-            using (SqlConnection con = new SqlConnection(strCon))
-            {
-                con.Open();
-                SqlTransaction transaction = con.BeginTransaction();
-
-                try
-                {
-                    // ====== 1. Cập nhật bảng DOC_GIA ======
-                    // Lấy đường dẫn ảnh (string) từ ImageLocation
-                    string anhChanDungPath = picDocGia.ImageLocation;
-
-                    // Sửa tên cột: Loai_Doc_Gia, Anh_Chan_Dung
-                    string sqlDocGia = @"UPDATE DOC_GIA 
-                                       SET Ho_Ten = @HoTen, Email = @Email, SDT = @SDT, 
-                                           Loai_Doc_Gia = @LoaiDocGia, Anh_Chan_Dung = @AnhChanDung 
-                                       WHERE Ma_Doc_Gia = @MaDocGia";
-
-                    using (SqlCommand cmdDG = new SqlCommand(sqlDocGia, con, transaction))
-                    {
-                        cmdDG.Parameters.AddWithValue("@HoTen", txtHoTen.Text);
-                        cmdDG.Parameters.AddWithValue("@Email", txtEmail.Text);
-                        cmdDG.Parameters.AddWithValue("@SDT", txtSDT.Text);
-                        // Giả định: txtNgheNghiep là control để nhập Loai_Doc_Gia
-                        cmdDG.Parameters.AddWithValue("@LoaiDocGia", txtNgheNghiep.Text);
-                        cmdDG.Parameters.AddWithValue("@AnhChanDung", (object)anhChanDungPath ?? DBNull.Value);
-                        cmdDG.Parameters.AddWithValue("@MaDocGia", selectedMa_Doc_Gia);
-                        cmdDG.ExecuteNonQuery();
-                    }
-
-                    // ====== 2. Cập nhật bảng THE_DOC_GIA ======
-                    string ngayCap = dtpNgayCapThe.Value.ToString("yyyy-MM-dd");
-                    string ngayHetHan = dtpNgayHetHan.Value.ToString("yyyy-MM-dd");
-
-                    // Tên cột Ngay_Cap, Ngay_Het_Han đã đúng
-                    string sqlThe = @"UPDATE THE_DOC_GIA 
-                                    SET Ngay_Cap = @NgayCap, Ngay_Het_Han = @NgayHetHan 
-                                    WHERE Ma_Doc_Gia = @MaDocGia";
-
-                    using (SqlCommand cmdThe = new SqlCommand(sqlThe, con, transaction))
-                    {
-                        cmdThe.Parameters.AddWithValue("@NgayCap", ngayCap);
-                        cmdThe.Parameters.AddWithValue("@NgayHetHan", ngayHetHan);
-                        cmdThe.Parameters.AddWithValue("@MaDocGia", selectedMa_Doc_Gia);
-
-                        // Kiểm tra xem bản ghi THE_DOC_GIA đã tồn tại chưa
-                        int rowsAffected = cmdThe.ExecuteNonQuery();
-
-                        // Nếu chưa tồn tại (rowsAffected = 0) thì tạo mới
-                        if (rowsAffected == 0)
-                        {
-                            string sqlInsertThe = @"INSERT INTO THE_DOC_GIA (Ma_Doc_Gia, Ngay_Cap, Ngay_Het_Han, Trang_Thai_The)
-                                                    VALUES (@Ma_Doc_Gia, @Ngay_Cap, @Ngay_Het_Han, @TrangThai)";
-                            using (SqlCommand cmdInsertThe = new SqlCommand(sqlInsertThe, con, transaction))
-                            {
-                                cmdInsertThe.Parameters.AddWithValue("@Ma_Doc_Gia", selectedMa_Doc_Gia);
-                                cmdInsertThe.Parameters.AddWithValue("@Ngay_Cap", ngayCap);
-                                cmdInsertThe.Parameters.AddWithValue("@Ngay_Het_Han", ngayHetHan);
-                                cmdInsertThe.Parameters.AddWithValue("@TrangThai", "Còn hạn");
-                                cmdInsertThe.ExecuteNonQuery();
-                            }
-                        }
-                    }
-
-                    transaction.Commit();
-                    MessageBox.Show("Cập nhật thông tin thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    transaction.Rollback();
-                    MessageBox.Show("Lỗi khi cập nhật: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-            LoadDocGia();
-            if (currentIndex >= 0 && currentIndex < dgvDocGia.RowCount)
-            {
-                dgvDocGia.ClearSelection();
-                dgvDocGia.CurrentCell = dgvDocGia.Rows[currentIndex].Cells[0];
-                dgvDocGia.FirstDisplayedScrollingRowIndex = currentIndex;
-            }
-            NapCT();
+            // Chỉ cần set cờ và trạng thái. Mọi logic UPDATE phải nằm trong btnLuu_Click
+            isAdding = false; // Đặt cờ là đang Sửa
+            SetControlState("Editing");
+            txtHoTen.Focus();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -579,6 +584,57 @@ namespace ProjectNhom4
                     e.Value = Properties.Resources.user;
                 }
             }
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void SetControlState(string state)
+        {
+            grbTTDG.Enabled = true;
+
+            switch (state)
+            {
+                case "Normal":
+                    // 1. Bật nút chức năng
+                    btnThem.Enabled = true;
+                    btnSua.Enabled = true;
+                    btnXoa.Enabled = true;
+
+                    // 2. Tắt nút lưu/hủy
+                    btnLuu.Enabled = false;
+                    btnHuy.Enabled = false;
+
+                    // 3. Đặt các ô text về "Chỉ Đọc"
+                    SetTextBoxReadOnly(true);
+                    break;
+
+                case "Editing":
+                    // 1. Tắt nút chức năng
+                    btnThem.Enabled = false;
+                    btnSua.Enabled = false;
+                    btnXoa.Enabled = false;
+
+                    // 2. Bật nút lưu/hủy
+                    btnLuu.Enabled = true;
+                    btnHuy.Enabled = true;
+
+                    // 3. Tắt "Chỉ Đọc" để cho phép nhập
+                    SetTextBoxReadOnly(false);
+                    break;
+            }
+        }
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            NapCT();
+            errorDocGia.Clear();
+            SetControlState("Normal");
+        }
+
+        private void grbTTDG_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -75,7 +75,7 @@ namespace ProjectNhom4.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_21_105707 {
             get {
-                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-21 105707", resourceCulture);
+                object obj = ResourceManager.GetObject("Ảnh_chụp_màn_hình_2025_10_21_105707", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -85,7 +85,7 @@ namespace ProjectNhom4.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_21_105827 {
             get {
-                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-21 105827", resourceCulture);
+                object obj = ResourceManager.GetObject("Ảnh_chụp_màn_hình_2025_10_21_105827", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -95,7 +95,7 @@ namespace ProjectNhom4.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_21_110647 {
             get {
-                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-21 110647", resourceCulture);
+                object obj = ResourceManager.GetObject("Ảnh_chụp_màn_hình_2025_10_21_110647", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -105,7 +105,7 @@ namespace ProjectNhom4.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_21_111040 {
             get {
-                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-21 111040", resourceCulture);
+                object obj = ResourceManager.GetObject("Ảnh_chụp_màn_hình_2025_10_21_111040", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -115,7 +115,7 @@ namespace ProjectNhom4.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_21_233502 {
             get {
-                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-21 233502", resourceCulture);
+                object obj = ResourceManager.GetObject("Ảnh_chụp_màn_hình_2025_10_21_233502", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -125,7 +125,7 @@ namespace ProjectNhom4.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_21_233742 {
             get {
-                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-21 233742", resourceCulture);
+                object obj = ResourceManager.GetObject("Ảnh_chụp_màn_hình_2025_10_21_233742", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -135,7 +135,7 @@ namespace ProjectNhom4.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_21_233940 {
             get {
-                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-21 233940", resourceCulture);
+                object obj = ResourceManager.GetObject("Ảnh_chụp_màn_hình_2025_10_21_233940", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -145,7 +145,7 @@ namespace ProjectNhom4.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_21_234137 {
             get {
-                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-21 234137", resourceCulture);
+                object obj = ResourceManager.GetObject("Ảnh_chụp_màn_hình_2025_10_21_234137", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -155,7 +155,7 @@ namespace ProjectNhom4.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_22_000119 {
             get {
-                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-22 000119", resourceCulture);
+                object obj = ResourceManager.GetObject("Ảnh_chụp_màn_hình_2025_10_22_000119", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -165,7 +165,7 @@ namespace ProjectNhom4.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_22_222354 {
             get {
-                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-22 222354", resourceCulture);
+                object obj = ResourceManager.GetObject("Ảnh_chụp_màn_hình_2025_10_22_222354", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -175,7 +175,7 @@ namespace ProjectNhom4.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2025_10_22_222446 {
             get {
-                object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2025-10-22 222446", resourceCulture);
+                object obj = ResourceManager.GetObject("Ảnh_chụp_màn_hình_2025_10_22_222446", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -185,7 +185,7 @@ namespace ProjectNhom4.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap arrow_down_sign_to_navigate {
             get {
-                object obj = ResourceManager.GetObject("arrow-down-sign-to-navigate", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_down_sign_to_navigate", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,6 +196,16 @@ namespace ProjectNhom4.Properties {
         internal static System.Drawing.Bitmap book {
             get {
                 object obj = ResourceManager.GetObject("book", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap books {
+            get {
+                object obj = ResourceManager.GetObject("books", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -215,7 +225,7 @@ namespace ProjectNhom4.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap down_arrow {
             get {
-                object obj = ResourceManager.GetObject("down-arrow", resourceCulture);
+                object obj = ResourceManager.GetObject("down_arrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -225,7 +235,17 @@ namespace ProjectNhom4.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap down_chevron {
             get {
-                object obj = ResourceManager.GetObject("down-chevron", resourceCulture);
+                object obj = ResourceManager.GetObject("down_chevron", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap employee_handbook {
+            get {
+                object obj = ResourceManager.GetObject("employee_handbook", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -245,7 +265,7 @@ namespace ProjectNhom4.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap go_back_arrow {
             get {
-                object obj = ResourceManager.GetObject("go-back-arrow", resourceCulture);
+                object obj = ResourceManager.GetObject("go_back_arrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,9 +303,29 @@ namespace ProjectNhom4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logoneu {
+            get {
+                object obj = ResourceManager.GetObject("logoneu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap man_8661663 {
             get {
                 object obj = ResourceManager.GetObject("man_8661663", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap message_alert {
+            get {
+                object obj = ResourceManager.GetObject("message_alert", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -353,6 +393,16 @@ namespace ProjectNhom4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap userLanNhi {
+            get {
+                object obj = ResourceManager.GetObject("userLanNhi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap view {
             get {
                 object obj = ResourceManager.GetObject("view", resourceCulture);
@@ -369,18 +419,5 @@ namespace ProjectNhom4.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>       
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-       
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        
     }
 }

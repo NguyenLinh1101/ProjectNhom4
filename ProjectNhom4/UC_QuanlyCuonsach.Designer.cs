@@ -66,8 +66,9 @@
             this.gnlPanelHeader.Controls.Add(this.lblTieude);
             this.gnlPanelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.gnlPanelHeader.Location = new System.Drawing.Point(0, 0);
+            this.gnlPanelHeader.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gnlPanelHeader.Name = "gnlPanelHeader";
-            this.gnlPanelHeader.Size = new System.Drawing.Size(999, 64);
+            this.gnlPanelHeader.Size = new System.Drawing.Size(1124, 80);
             this.gnlPanelHeader.TabIndex = 1;
             // 
             // lblTieude
@@ -76,9 +77,9 @@
             this.lblTieude.BackColor = System.Drawing.Color.Transparent;
             this.lblTieude.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblTieude.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.lblTieude.Location = new System.Drawing.Point(283, 9);
+            this.lblTieude.Location = new System.Drawing.Point(318, 11);
             this.lblTieude.Name = "lblTieude";
-            this.lblTieude.Size = new System.Drawing.Size(332, 41);
+            this.lblTieude.Size = new System.Drawing.Size(392, 48);
             this.lblTieude.TabIndex = 0;
             this.lblTieude.Text = "QUẢN LÝ CUỐN SÁCH";
             // 
@@ -96,13 +97,14 @@
             this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Location = new System.Drawing.Point(129, 71);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSearch.IconLeft = global::ProjectNhom4.Properties.Resources.search;
+            this.txtSearch.Location = new System.Drawing.Point(145, 89);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtSearch.PlaceholderText = "Nhập để tìm kiếm cuốn sách";
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(655, 48);
+            this.txtSearch.Size = new System.Drawing.Size(737, 60);
             this.txtSearch.TabIndex = 9;
             // 
             // grpDauSach
@@ -113,9 +115,10 @@
             this.grpDauSach.CustomBorderColor = System.Drawing.Color.Silver;
             this.grpDauSach.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.grpDauSach.ForeColor = System.Drawing.Color.Black;
-            this.grpDauSach.Location = new System.Drawing.Point(18, 152);
+            this.grpDauSach.Location = new System.Drawing.Point(20, 190);
+            this.grpDauSach.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grpDauSach.Name = "grpDauSach";
-            this.grpDauSach.Size = new System.Drawing.Size(468, 358);
+            this.grpDauSach.Size = new System.Drawing.Size(526, 448);
             this.grpDauSach.TabIndex = 10;
             this.grpDauSach.Text = "THÔNG TIN ĐẦU SÁCH";
             this.grpDauSach.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -150,11 +153,12 @@
             this.dgvDauSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDauSach.GridColor = System.Drawing.Color.DarkGray;
             this.dgvDauSach.Location = new System.Drawing.Point(0, 40);
+            this.dgvDauSach.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvDauSach.Name = "dgvDauSach";
             this.dgvDauSach.RowHeadersVisible = false;
             this.dgvDauSach.RowHeadersWidth = 51;
             this.dgvDauSach.RowTemplate.Height = 24;
-            this.dgvDauSach.Size = new System.Drawing.Size(468, 318);
+            this.dgvDauSach.Size = new System.Drawing.Size(526, 408);
             this.dgvDauSach.TabIndex = 0;
             this.dgvDauSach.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvDauSach.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -204,9 +208,10 @@
             this.grpCuonSach.CustomBorderColor = System.Drawing.Color.Silver;
             this.grpCuonSach.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.grpCuonSach.ForeColor = System.Drawing.Color.Black;
-            this.grpCuonSach.Location = new System.Drawing.Point(492, 152);
+            this.grpCuonSach.Location = new System.Drawing.Point(554, 190);
+            this.grpCuonSach.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grpCuonSach.Name = "grpCuonSach";
-            this.grpCuonSach.Size = new System.Drawing.Size(487, 358);
+            this.grpCuonSach.Size = new System.Drawing.Size(548, 448);
             this.grpCuonSach.TabIndex = 11;
             this.grpCuonSach.Text = "THÔNG TIN CUỐN SÁCH";
             this.grpCuonSach.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -241,11 +246,12 @@
             this.dgvCuonSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCuonSach.GridColor = System.Drawing.Color.DarkGray;
             this.dgvCuonSach.Location = new System.Drawing.Point(0, 40);
+            this.dgvCuonSach.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvCuonSach.Name = "dgvCuonSach";
             this.dgvCuonSach.RowHeadersVisible = false;
             this.dgvCuonSach.RowHeadersWidth = 51;
             this.dgvCuonSach.RowTemplate.Height = 24;
-            this.dgvCuonSach.Size = new System.Drawing.Size(487, 318);
+            this.dgvCuonSach.Size = new System.Drawing.Size(548, 408);
             this.dgvCuonSach.TabIndex = 0;
             this.dgvCuonSach.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvCuonSach.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -294,9 +300,10 @@
             this.panel1.Controls.Add(this.btnXoa);
             this.panel1.Controls.Add(this.btnSua);
             this.panel1.Controls.Add(this.btnThem);
-            this.panel1.Location = new System.Drawing.Point(18, 528);
+            this.panel1.Location = new System.Drawing.Point(20, 660);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(961, 74);
+            this.panel1.Size = new System.Drawing.Size(1081, 92);
             this.panel1.TabIndex = 12;
             // 
             // btnHuy
@@ -315,9 +322,10 @@
             this.btnHuy.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnHuy.HoverState.FillColor = System.Drawing.Color.White;
             this.btnHuy.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnHuy.Location = new System.Drawing.Point(850, 20);
+            this.btnHuy.Location = new System.Drawing.Point(956, 25);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(108, 39);
+            this.btnHuy.Size = new System.Drawing.Size(122, 49);
             this.btnHuy.TabIndex = 20;
             this.btnHuy.Text = "Hủy";
             // 
@@ -337,11 +345,13 @@
             this.btnLuu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnLuu.HoverState.FillColor = System.Drawing.Color.White;
             this.btnLuu.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnLuu.Location = new System.Drawing.Point(636, 20);
+            this.btnLuu.Location = new System.Drawing.Point(716, 25);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(108, 39);
+            this.btnLuu.Size = new System.Drawing.Size(122, 49);
             this.btnLuu.TabIndex = 19;
             this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoa
             // 
@@ -359,9 +369,10 @@
             this.btnXoa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnXoa.HoverState.FillColor = System.Drawing.Color.White;
             this.btnXoa.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnXoa.Location = new System.Drawing.Point(416, 20);
+            this.btnXoa.Location = new System.Drawing.Point(468, 25);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(108, 39);
+            this.btnXoa.Size = new System.Drawing.Size(122, 49);
             this.btnXoa.TabIndex = 18;
             this.btnXoa.Text = "Xóa";
             // 
@@ -381,9 +392,10 @@
             this.btnSua.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnSua.HoverState.FillColor = System.Drawing.Color.White;
             this.btnSua.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnSua.Location = new System.Drawing.Point(201, 20);
+            this.btnSua.Location = new System.Drawing.Point(226, 25);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(108, 39);
+            this.btnSua.Size = new System.Drawing.Size(122, 49);
             this.btnSua.TabIndex = 17;
             this.btnSua.Text = "Sửa";
             // 
@@ -403,15 +415,16 @@
             this.btnThem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnThem.HoverState.FillColor = System.Drawing.Color.White;
             this.btnThem.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnThem.Location = new System.Drawing.Point(3, 20);
+            this.btnThem.Location = new System.Drawing.Point(3, 25);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(108, 39);
+            this.btnThem.Size = new System.Drawing.Size(122, 49);
             this.btnThem.TabIndex = 16;
             this.btnThem.Text = "Thêm";
             // 
             // UC_QuanlyCuonsach
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Controls.Add(this.panel1);
@@ -419,8 +432,9 @@
             this.Controls.Add(this.grpDauSach);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.gnlPanelHeader);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_QuanlyCuonsach";
-            this.Size = new System.Drawing.Size(999, 620);
+            this.Size = new System.Drawing.Size(1124, 775);
             this.gnlPanelHeader.ResumeLayout(false);
             this.gnlPanelHeader.PerformLayout();
             this.grpDauSach.ResumeLayout(false);

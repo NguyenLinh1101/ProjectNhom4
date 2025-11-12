@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace ProjectNhom4
 {
-    public partial class QLTacGia_Ribbon : Form
+    public partial class QLTacGia_Ribbon : UserControl
     {
         public QLTacGia_Ribbon()
         {
