@@ -259,12 +259,6 @@
     <Compile Include="QuanlyDocGia.Designer.cs">
       <DependentUpon>QuanlyDocGia.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanlyThuthu.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="QuanlyThuthu.Designer.cs">
-      <DependentUpon>QuanlyThuthu.cs</DependentUpon>
-    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <!-- UserControls -->
     <Compile Include="QLSach_Ribbon.cs">
@@ -517,12 +511,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <!-- Embedded resources -->
-    <EmbeddedResource Include="QuanlyThuthu.resx">
-      <DependentUpon>QuanlyThuthu.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <!-- None / Content -->
