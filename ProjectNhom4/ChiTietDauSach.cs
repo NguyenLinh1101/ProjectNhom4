@@ -43,7 +43,6 @@ namespace ProjectNhom4
             // --- Khóa các ô Text khác ---
             txtMaDauSach.ReadOnly = true;
             txtTenDauSach.ReadOnly = true;
-            txtTenTacGia.ReadOnly = true;
             txtNamXuatBan.ReadOnly = true;
             txtGiaBia.ReadOnly = true;
             txtSoTrang.ReadOnly = true;
