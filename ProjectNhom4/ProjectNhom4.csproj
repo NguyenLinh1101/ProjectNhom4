@@ -66,31 +66,31 @@
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net48\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common">
-      <HintPath>C:\Users\DELL\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+      <HintPath>C:\Users\hp\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common.resources">
-      <HintPath>C:\Users\DELL\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.Common.resources.dll</HintPath>
+      <HintPath>C:\Users\hp\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.Common.resources.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.DataVisualization">
-      <HintPath>C:\Users\DELL\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+      <HintPath>C:\Users\hp\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.DataVisualization.resources">
-      <HintPath>C:\Users\DELL\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.resources.dll</HintPath>
+      <HintPath>C:\Users\hp\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.resources.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Design">
-      <HintPath>C:\Users\DELL\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+      <HintPath>C:\Users\hp\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Design.resources">
-      <HintPath>C:\Users\DELL\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.Design.resources.dll</HintPath>
+      <HintPath>C:\Users\hp\.nuget\packages\corrected.microsoft.reportingservices.reportviewercontrol.winforms\150.1358.0\lib\net40\Microsoft.ReportViewer.Design.resources.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel">
-      <HintPath>C:\Users\DELL\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+      <HintPath>C:\Users\hp\.nuget\packages\microsoft.reportviewer.common\10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms">
-      <HintPath>C:\Users\DELL\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <HintPath>C:\Users\hp\.nuget\packages\microsoft.reportviewer.winforms\10.0.40219.1\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms.resources">
-      <HintPath>C:\Users\DELL\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.resources.dll</HintPath>
+      <HintPath>C:\Users\hp\.nuget\packages\corrected.microsoft.reportingservices.reportviewercontrol.winforms\150.1358.0\lib\net40\Microsoft.ReportViewer.WinForms.resources.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
@@ -220,14 +220,13 @@
       <DependentUpon>dataThuvien2DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="QL_DauSach.Designer.cs">
       <DependentUpon>QL_DauSach.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanlyCuonsach.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanlyCuonsach.Designer.cs">
-      <DependentUpon>QuanlyCuonsach.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCuonSach.cs">
       <SubType>Form</SubType>
@@ -407,6 +406,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="panelMenu.resx">
       <DependentUpon>panelMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -418,12 +418,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="QuanlyCuonsach.resx">
-      <DependentUpon>QuanlyCuonsach.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuanlyDocGia.resx">
-      <DependentUpon>QuanlyDocGia.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reports\BCviphamtheoloai.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -585,13 +579,34 @@
     <EmbeddedResource Include="QuanlyThuthu.resx">
       <DependentUpon>QuanlyThuthu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="obj\Debug\ProjectNhom4.Properties.Resources.resources" />
-    <EmbeddedResource Include="Properties\Resources.resx" />
   </ItemGroup>
   <ItemGroup>
     <!-- None / Content -->
+    <Content Include="Resources\analytics.png" />
+    <Content Include="Resources\arrow-down-sign-to-navigate.png" />
+    <Content Include="Resources\book.png" />
+    <Content Include="Resources\books.png" />
+    <Content Include="Resources\cogwheel.png" />
+    <Content Include="Resources\down-arrow.png" />
+    <Content Include="Resources\down-chevron.png" />
+    <Content Include="Resources\employee-handbook.png" />
+    <Content Include="Resources\gmail.png" />
+    <Content Include="Resources\go-back-arrow.png" />
+    <Content Include="Resources\home_455816.png" />
+    <Content Include="Resources\hustthuvien.png" />
+    <Content Include="Resources\logohust.png" />
+    <Content Include="Resources\logoneu.png" />
+    <Content Include="Resources\man_8661663.png" />
+    <Content Include="Resources\message-alert.png" />
+    <Content Include="Resources\notepad.png" />
+    <Content Include="Resources\padlock.png" />
+    <Content Include="Resources\profile.png" />
+    <Content Include="Resources\search.png" />
+    <Content Include="Resources\thuvienhust.jpg" />
     <Content Include="Resources\user.png" />
     <Content Include="Resources\userLanNhi.png" />
+    <Content Include="Resources\view.png" />
+    <Content Include="Resources\write_16791610.png" />
     <Content Include="Resources\Ảnh chụp màn hình 2025-10-21 105707.png" />
     <Content Include="Resources\Ảnh chụp màn hình 2025-10-21 105827.png" />
     <Content Include="Resources\Ảnh chụp màn hình 2025-10-21 110647.png" />
@@ -603,6 +618,7 @@
     <Content Include="Resources\Ảnh chụp màn hình 2025-10-22 000119.png" />
     <Content Include="Resources\Ảnh chụp màn hình 2025-10-22 222354.png" />
     <Content Include="Resources\Ảnh chụp màn hình 2025-10-22 222446.png" />
+    <Content Include="SqlServerTypes\msvcr120.dll" />
     <Content Include="SqlServerTypes\readme.htm" />
     <None Include="bin\Debug\ProjectNhom4.exe.config" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
@@ -621,13 +637,15 @@
     <Content Include="obj\Debug\ProjectNhom4.exe" />
     <Content Include="obj\Debug\ProjectNhom4.pdb" />
     <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
-    <Content Include="Resources\logoneu.png" />
-    <None Include="Properties\Settings.settings" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
+    </None>
     <!-- Các Resources khác, không duplicate -->
-    <None Include="Resources\search.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\SqlServerSpatial140.dll" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll" />
     <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -638,40 +656,12 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\arrow-down-sign-to-navigate.png" />
-    <None Include="Resources\down-arrow.png" />
-    <None Include="Resources\down-chevron.png" />
-    <None Include="Resources\gmail.png" />
-    <None Include="Resources\padlock.png" />
-    <None Include="Resources\view.png" />
-    <None Include="Resources\go-back-arrow.png" />
-    <None Include="Resources\thuvienhust.jpg" />
-    <None Include="Resources\profile.png" />
-    <None Include="Resources\notepad.png" />
-    <None Include="Resources\man_8661663.png" />
-    <None Include="Resources\write_16791610.png" />
-    <None Include="Resources\home_455816.png" />
-    <None Include="Resources\book.png" />
-    <None Include="Resources\analytics.png" />
-    <None Include="Resources\cogwheel.png" />
-    <None Include="Resources\logohust.png" />
-    <None Include="Resources\hustthuvien.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\analytics.png" />
-    <Content Include="Resources\book.png" />
-    <Content Include="Resources\cogwheel.png" />
-    <Content Include="Resources\home_455816.png" />
-    <Content Include="Resources\hustthuvien.png" />
-    <Content Include="Resources\logohust.png" />
-    <Content Include="Resources\man_8661663.png" />
-    <Content Include="Resources\notepad.png" />
-    <Content Include="Resources\profile.png" />
-    <Content Include="Resources\thuvienhust.jpg" />
-    <Content Include="Resources\write_16791610.png" />
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
