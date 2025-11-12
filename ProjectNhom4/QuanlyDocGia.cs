@@ -15,7 +15,7 @@ namespace ProjectNhom4
     public partial class UC_QuanlyDocGia : UserControl
     {
         // Đảm bảo chuỗi kết nối của bạn là chính xác
-        string strCon = @"Data Source=LANNHI\SQLEXPRESS;Initial Catalog=dataThuvien2;Integrated Security=True";
+        string strCon = @"Data Source=DESKTOP-ST1KSE3\SQLEXPRESS;Initial Catalog=QL_THU_VIEN;Integrated Security=True";
         SqlConnection con;
         SqlCommand cmd;
         SqlDataAdapter adapter;

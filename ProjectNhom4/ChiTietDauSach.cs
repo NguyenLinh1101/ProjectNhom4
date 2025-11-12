@@ -103,8 +103,6 @@ namespace ProjectNhom4
         {
             try
             {
-                // Khai báo và khởi tạo 'con' trực tiếp trong 'using'
-                // Nó sẽ tự động được giải phóng khi kết thúc khối 'using'
                 using (SqlConnection con = new SqlConnection(strCon))
                 {
                     con.Open();
@@ -130,17 +128,12 @@ namespace ProjectNhom4
                     SqlDataReader reader = cmd.ExecuteReader();
                     if (reader.Read())
                     {
-                        // Nạp vào TextBox
                         txtMaDauSach.Text = reader["Ma_Dau_Sach"].ToString();
                         txtTenDauSach.Text = reader["Ten_Dau_Sach"].ToString();
-                        txtTenTacGia.Text = reader["Tac_Gia"].ToString();
                         txtNamXuatBan.Text = reader["Nam_XB"].ToString();
-
                         txtGiaBia.Text = reader.IsDBNull(reader.GetOrdinal("Gia_Bia")) ? "0" : Convert.ToDecimal(reader["Gia_Bia"]).ToString("N0");
                         txtSoTrang.Text = reader.IsDBNull(reader.GetOrdinal("So_Trang")) ? "0" : Convert.ToInt32(reader["So_Trang"]).ToString("N0");
                         txtSoLuong.Text = reader.IsDBNull(reader.GetOrdinal("So_Luong")) ? "0" : Convert.ToInt32(reader["So_Luong"]).ToString("N0");
-
-                        // Xử lý trường hợp JOIN bị NULL (dù LEFT JOIN đã an toàn)
                         txtLoaiSach.Text = reader.IsDBNull(reader.GetOrdinal("TenLoaiSach")) ? "N/A" : reader["TenLoaiSach"].ToString();
                         txtChuDe.Text = reader.IsDBNull(reader.GetOrdinal("TenChuDe")) ? "N/A" : reader["TenChuDe"].ToString();
 
@@ -304,11 +297,6 @@ namespace ProjectNhom4
 
         private void cceTacGia_EditValueChanged(object sender, EventArgs e)
         {
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

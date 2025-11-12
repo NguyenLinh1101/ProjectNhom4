@@ -72,7 +72,6 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(370, 810);
             this.panelMenu.TabIndex = 0;
-            this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
             // pnlSubCaiDat
             // 
@@ -119,7 +118,6 @@
             this.btnQLTaiKhoan.Size = new System.Drawing.Size(230, 45);
             this.btnQLTaiKhoan.TabIndex = 9;
             this.btnQLTaiKhoan.Text = "Quản lý tài khoản";
-            this.btnQLTaiKhoan.Click += new System.EventHandler(this.btnQLTaiKhoan_Click);
             // 
             // sepBottom
             // 
@@ -180,7 +178,7 @@
             this.label1.Location = new System.Drawing.Point(122, 55);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 25);
+            this.label1.Size = new System.Drawing.Size(181, 30);
             this.label1.TabIndex = 1;
             this.label1.Text = "THƯ VIỆN HUST";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -223,7 +221,6 @@
             this.btnBaocao.Size = new System.Drawing.Size(230, 50);
             this.btnBaocao.TabIndex = 7;
             this.btnBaocao.Text = "Báo cáo";
-            this.btnBaocao.Click += new System.EventHandler(this.btnBaocao_Click);
             // 
             // btnqlmuontra
             // 
@@ -243,7 +240,6 @@
             this.btnqlmuontra.Size = new System.Drawing.Size(230, 50);
             this.btnqlmuontra.TabIndex = 6;
             this.btnqlmuontra.Text = "Quản lý mượn trả";
-            this.btnqlmuontra.Click += new System.EventHandler(this.btnqlmuontra_Click);
             // 
             // btnqldocgia
             // 
@@ -303,7 +299,6 @@
             this.btnqlsach.Size = new System.Drawing.Size(230, 50);
             this.btnqlsach.TabIndex = 3;
             this.btnqlsach.Text = "Quản lý sách ";
-            this.btnqlsach.Click += new System.EventHandler(this.btnqlsach_Click);
             // 
             // btnTrangChu
             // 
@@ -323,11 +318,9 @@
             this.btnTrangChu.Size = new System.Drawing.Size(230, 50);
             this.btnTrangChu.TabIndex = 2;
             this.btnTrangChu.Text = "Trang chủ";
-            this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click);
             // 
             // panelHienthiUC
             // 
-            this.panelHienthiUC.BackColor = System.Drawing.SystemColors.Control;
             this.panelHienthiUC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelHienthiUC.Location = new System.Drawing.Point(370, 0);
             this.panelHienthiUC.Name = "panelHienthiUC";
@@ -337,7 +330,7 @@
             // 
             // frmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 810);
             this.Controls.Add(this.panelHienthiUC);
