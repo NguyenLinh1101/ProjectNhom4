@@ -74,6 +74,7 @@
             this.grbTTTG.TabIndex = 11;
             this.grbTTTG.TabStop = false;
             this.grbTTTG.Text = "Thông Tin Tác Giả";
+            this.grbTTTG.Enter += new System.EventHandler(this.grbTTTG_Enter);
             // 
             // btnHuy
             // 

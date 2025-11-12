@@ -240,6 +240,7 @@
             this.btnqlmuontra.Size = new System.Drawing.Size(230, 50);
             this.btnqlmuontra.TabIndex = 6;
             this.btnqlmuontra.Text = "Quản lý mượn trả";
+            this.btnqlmuontra.Click += new System.EventHandler(this.btnqlmuontra_Click);
             // 
             // btnqldocgia
             // 

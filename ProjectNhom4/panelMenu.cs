@@ -72,6 +72,11 @@ namespace ProjectNhom4
 
         private void panelHienthiUC_Paint(object sender, PaintEventArgs e)
         {
+            
+        }
+
+        private void btnqlmuontra_Click(object sender, EventArgs e)
+        {
 
         }
     }

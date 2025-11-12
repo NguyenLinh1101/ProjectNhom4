@@ -14,7 +14,7 @@ namespace ProjectNhom4.Reports
 {
     public partial class frmSachmuonnhieunhat : Form
     {
-        string connectionString = "Data Source=DESKTOP-ST1KSE3\\SQLEXPRESS;Initial Catalog=QL_THU_VIEN;Integrated Security=True";
+        string connectionString = "Data Source=LAPTOP-31TAL89T\\SQLEXPRESS03;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False";
         public frmSachmuonnhieunhat()
         {
             InitializeComponent();
@@ -148,6 +148,11 @@ namespace ProjectNhom4.Reports
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

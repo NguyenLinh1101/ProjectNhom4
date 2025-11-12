@@ -14,7 +14,7 @@ namespace ProjectNhom4
 {
     public partial class frmBCdocgiavipham : Form
     {
-        string connectionString = "Data Source=DESKTOP-ST1KSE3\\SQLEXPRESS;Initial Catalog=QL_THU_VIEN;Integrated Security=True";
+        string connectionString = "Data Source=LAPTOP-31TAL89T\\SQLEXPRESS03;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False";
         public frmBCdocgiavipham()
         {
             InitializeComponent();
@@ -115,6 +115,11 @@ namespace ProjectNhom4
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
