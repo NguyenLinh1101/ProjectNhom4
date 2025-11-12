@@ -306,5 +306,10 @@ namespace ProjectNhom4
         private void cceTacGia_EditValueChanged(object sender, EventArgs e)
         {
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
