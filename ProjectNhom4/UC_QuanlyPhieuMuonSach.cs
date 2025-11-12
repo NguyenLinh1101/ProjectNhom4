@@ -172,7 +172,7 @@ namespace ProjectNhom4
             frmMuonSach muonSachForm = new frmMuonSach(maPhieuMuon, maDocGia);
             muonSachForm.StartPosition = FormStartPosition.CenterParent;
             muonSachForm.ShowDialog();
-        
+            
 
         }
 
@@ -394,6 +394,11 @@ namespace ProjectNhom4
         }
 
         private void UC_QuanlyPhieuMuonSach_Load_1(object sender, EventArgs e)
+        {
+        
+        }
+
+        private void txtMaPhieuMuon_TextChanged(object sender, EventArgs e)
         {
 
         }

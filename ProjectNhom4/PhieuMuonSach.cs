@@ -11,6 +11,8 @@ using System.Windows.Forms;
 
 namespace ProjectNhom4
 {
+   
+
     public partial class frmMuonSach : Form
     {
         // Chuỗi kết nối
@@ -18,9 +20,6 @@ namespace ProjectNhom4
 
         private string maPhieuMuon;
         private string maDocGia;
-       
-
-
         public frmMuonSach()
         {
             InitializeComponent();
@@ -139,7 +138,11 @@ namespace ProjectNhom4
             this.parentUC = parent; // lưu reference UC
             this.Load += FrmMuonSach_Load;
         }
-
+      
 
     }
+
 }
+
+
+

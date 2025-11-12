@@ -149,6 +149,12 @@
     <Compile Include="UC_QuanlyCuonsach.Designer.cs">
       <DependentUpon>UC_QuanlyCuonsach.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_QuanlyMuonTra.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QuanlyMuonTra.Designer.cs">
+      <DependentUpon>UC_QuanlyMuonTra.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_QuanlyMuonTra_Ribbon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_QuanlyCuonsach.resx">
       <DependentUpon>UC_QuanlyCuonsach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QuanlyMuonTra.resx">
+      <DependentUpon>UC_QuanlyMuonTra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_QuanlyMuonTra_Ribbon.resx">
       <DependentUpon>UC_QuanlyMuonTra_Ribbon.cs</DependentUpon>
