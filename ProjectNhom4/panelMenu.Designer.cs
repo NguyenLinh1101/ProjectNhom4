@@ -72,6 +72,7 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(370, 810);
             this.panelMenu.TabIndex = 0;
+            this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
             // pnlSubCaiDat
             // 
@@ -221,6 +222,7 @@
             this.btnBaocao.Size = new System.Drawing.Size(230, 50);
             this.btnBaocao.TabIndex = 7;
             this.btnBaocao.Text = "Báo cáo";
+            this.btnBaocao.Click += new System.EventHandler(this.btnBaocao_Click_1);
             // 
             // btnqlmuontra
             // 
@@ -300,6 +302,7 @@
             this.btnqlsach.Size = new System.Drawing.Size(230, 50);
             this.btnqlsach.TabIndex = 3;
             this.btnqlsach.Text = "Quản lý sách ";
+            this.btnqlsach.Click += new System.EventHandler(this.btnqlsach_Click_1);
             // 
             // btnTrangChu
             // 

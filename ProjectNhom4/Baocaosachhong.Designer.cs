@@ -160,6 +160,7 @@
             this.cboKieuMuon.Name = "cboKieuMuon";
             this.cboKieuMuon.Size = new System.Drawing.Size(198, 37);
             this.cboKieuMuon.TabIndex = 5;
+            this.cboKieuMuon.SelectedIndexChanged += new System.EventHandler(this.cboKieuMuon_SelectedIndexChanged);
             // 
             // label8
             // 

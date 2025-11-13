@@ -131,6 +131,9 @@
     <EmbeddedResource Include="ChiTietDauSach.resx">
       <DependentUpon>ChiTietDauSach.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="dsBaoCao.cs">
+      <DependentUpon>dsBaoCao.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsBaoCao.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

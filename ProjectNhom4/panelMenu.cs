@@ -51,15 +51,16 @@ namespace ProjectNhom4
 
         private void LoadUserControl(UserControl uc)
         {
-           panelHienthiUC.Controls.Clear(); // Xóa UC cũ (nếu có)
+            panelHienthiUC.Controls.Clear(); // Xóa UC cũ (nếu có)
             uc.Dock = DockStyle.Fill;   // Cho UC full panel
-           panelHienthiUC.Controls.Add(uc); // Thêm UC vào panel
+            panelHienthiUC.Controls.Add(uc); // Thêm UC vào panel
         }
         private void frmMenu_Load(object sender, EventArgs e)
         {
-            LoadUserControl(new UC_QuanlyThongTinTacGia());
+            UC_TrangChu ucTrangChu = new UC_TrangChu();
+            LoadUserControl(ucTrangChu);
         }
-      
+
         private void btnqltacgia_Click_1(object sender, EventArgs e)
         {
             LoadUserControl(new UC_QuanlyThongTinTacGia());
@@ -72,13 +73,55 @@ namespace ProjectNhom4
 
         private void panelHienthiUC_Paint(object sender, PaintEventArgs e)
         {
-            
+
         }
 
         private void btnqlmuontra_Click(object sender, EventArgs e)
+        {
+            LoadUserControl(new UC_QuanlyMuonTra_Ribbon());
+        }
+
+        private void btnTrangChu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnQLTaiKhoan_Click(object sender, EventArgs e)
+        {
+            LoadUserControl(new QL_TaiKhoan());
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show(
+            "Bạn có chắc chắn muốn đăng xuất?",
+            "Xác nhận",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question);
+
+            // 2. Kiểm tra xem người dùng có chọn "Yes" không
+            if (dr == DialogResult.Yes)
+            {
+                // 3. Khởi động lại ứng dụng.
+                // Tác vụ này sẽ đóng form hiện tại (kích hoạt Application.Exit)
+                // và tự động mở một tiến trình mới, bắt đầu lại từ frmDangNhap.
+                Application.Restart();
+            }
+        }
+
+        private void btnBaocao_Click_1(object sender, EventArgs e)
+        {
+            LoadUserControl(new Baocao());
+        }
+
+        private void btnqlsach_Click_1(object sender, EventArgs e)
+        {
+            LoadUserControl(new QL_DauSach());
+        }
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
         {
 
         }
     }
 }
-
