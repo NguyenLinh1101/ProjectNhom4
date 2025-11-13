@@ -82,9 +82,15 @@ namespace ProjectNhom4
 
             }
             dgvDauSach.SelectionChanged += dgvPhieuMuon_SelectionChanged;
-
+            LoadPhieuMuonData();
 
             LoadComboTenDauSach();
+            // --- Nạp giá trị cho comTruong ---
+            comTruong.Items.Clear();
+            comTruong.Items.Add("Ma_Phieu_Muon");
+            comTruong.Items.Add("Trang_Thai_Muon");
+            comTruong.SelectedIndex = 0; // Mặc định chọn "Ma_Phieu_Muon"
+
         }
         private void dgvPhieuMuon_SelectionChanged(object sender, EventArgs e)
         {
@@ -254,67 +260,28 @@ namespace ProjectNhom4
 
         private void comTruong_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Nếu chưa chọn trường thì thoát, tránh lỗi cú pháp SQL
+            if (comTruong.SelectedIndex == -1 || string.IsNullOrEmpty(comTruong.Text))
+                return;
+
             try
             {
-                using (SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=dataThuvien2;Integrated Security=True"))
-                {
-                    conn.Open();
+                string selectedField = comTruong.Text;
+                string sql = $"SELECT DISTINCT {selectedField} FROM PHIEU_MUON";
 
-                    // 🔹 Tạo câu truy vấn động — lấy giá trị duy nhất của cột đã chọn
-                    string sql = "SELECT DISTINCT " + comTruong.Text + " FROM PHIEU_MUON";
-
-                    SqlDataAdapter da = new SqlDataAdapter(sql, conn);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    // 🔹 Đổ dữ liệu vào ComboBox comGT
-                    comGT.DataSource = dt;
-                    comGT.DisplayMember = comTruong.Text;
-                    comGT.ValueMember = comTruong.Text;
-                }
+                DataTable comtb = GetData(sql);
+                comGT.DataSource = comtb;
+                comGT.DisplayMember = selectedField;
+                comGT.ValueMember = selectedField;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi nạp dữ liệu cho ComboBox: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi khi nạp dữ liệu cho combobox: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void btnLoc_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // 🔹 Kiểm tra ComboBox đã chọn chưa
-                if (string.IsNullOrEmpty(comTruong.Text) || string.IsNullOrEmpty(comGT.Text))
-                {
-                    MessageBox.Show("Vui lòng chọn trường và giá trị cần lọc!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
 
-                // 🔹 Câu truy vấn lọc dữ liệu
-                string sql = "SELECT * FROM PHIEU_MUON WHERE " + comTruong.Text + " = N'" + comGT.Text + "'";
 
-                // 🔹 Kết nối và lấy dữ liệu
-                using (SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=dataThuvien2;Integrated Security=True"))
-                {
-                    conn.Open();
-
-                    SqlDataAdapter da = new SqlDataAdapter(sql, conn);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    // 🔹 Hiển thị dữ liệu ra DataGridView dgvDauSach
-                    dgvDauSach.DataSource = dt;
-                    dgvDauSach.Refresh();
-                }
-
-                // 🔹 Gọi lại hàm NapCT() nếu bạn có dùng
-                NapCT();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi lọc dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         private void btnTaomoi_Click(object sender, EventArgs e)
         {
@@ -638,61 +605,53 @@ namespace ProjectNhom4
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            try
             {
-                try
+                string maPM = txtMaPhieuMuon.Text.Trim();
+                string maThe = txtMaThe.Text.Trim();
+                string maKieuMuon = cmbMaKieuMuon.SelectedValue?.ToString();
+                string maThuThu = cmbMaThuThu.SelectedValue?.ToString();
+                DateTime ngayMuon = dtpNgayMuon.Value;
+                DateTime hanTra = dtpHanTra.Value;
+                DateTime? ngayThucTra = (dtpNgayThucTra.CustomFormat == " ") ? (DateTime?)null : dtpNgayThucTra.Value;
+
+                decimal tienCoc = 0;
+                decimal.TryParse(txtTienCoc.Text, out tienCoc);
+
+                if (string.IsNullOrEmpty(maThe) || string.IsNullOrEmpty(maKieuMuon) || string.IsNullOrEmpty(maThuThu))
                 {
-                    if (!addnewFlag)
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin phiếu mượn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlTransaction trans = conn.BeginTransaction();
+
+                    try
                     {
-                        MessageBox.Show("Vui lòng bấm 'Tạo mới' trước khi thêm phiếu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-
-                    // 🔹 Lấy dữ liệu cơ bản
-                    string maPM = txtMaPhieuMuon.Text.Trim();
-                    string maThe = txtMaThe.Text.Trim();
-                    string maKieuMuon = cmbMaKieuMuon.SelectedValue?.ToString();
-                    string maThuThu = cmbMaThuThu.SelectedValue?.ToString();
-                    DateTime ngayMuon = dtpNgayMuon.Value;
-                    DateTime hanTra = dtpHanTra.Value;
-                    DateTime? ngayThucTra = (dtpNgayThucTra.CustomFormat == " ") ? (DateTime?)null : dtpNgayThucTra.Value;
-
-                    decimal tienCoc = 0;
-                    decimal.TryParse(txtTienCoc.Text, out tienCoc);
-
-                    if (string.IsNullOrEmpty(maThe) || string.IsNullOrEmpty(maKieuMuon) || string.IsNullOrEmpty(maThuThu))
-                    {
-                        MessageBox.Show("Vui lòng nhập đầy đủ thông tin phiếu mượn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    using (SqlConnection conn = new SqlConnection(connectionString))
-                    {
-                        conn.Open();
-                        SqlTransaction trans = conn.BeginTransaction();
-
-                        try
+                        // 🔹 Kiểm tra THE_DOC_GIA
+                        string sqlCheckDG = "SELECT COUNT(*) FROM THE_DOC_GIA WHERE Ma_The = @MaThe";
+                        using (SqlCommand cmdCheckDG = new SqlCommand(sqlCheckDG, conn, trans))
                         {
-                            // 🔹 Kiểm tra xem Ma_The đã tồn tại trong THE_DOC_GIA chưa
-                            string sqlCheckDG = "SELECT COUNT(*) FROM THE_DOC_GIA WHERE Ma_The = @MaThe";
-                            using (SqlCommand cmdCheckDG = new SqlCommand(sqlCheckDG, conn, trans))
-                            {
-                                cmdCheckDG.Parameters.AddWithValue("@MaThe", maThe);
-                                int count = (int)cmdCheckDG.ExecuteScalar();
+                            cmdCheckDG.Parameters.AddWithValue("@MaThe", maThe);
+                            int count = (int)cmdCheckDG.ExecuteScalar();
 
-                                if (count == 0)
+                            if (count == 0)
+                            {
+                                string sqlInsertDG = "INSERT INTO THE_DOC_GIA (Ma_The, Ho_Ten) VALUES (@MaThe, @HoTen)";
+                                using (SqlCommand cmdInsertDG = new SqlCommand(sqlInsertDG, conn, trans))
                                 {
-                                    // 🔹 Nếu chưa có -> insert mới
-                                    string sqlInsertDG = "INSERT INTO THE_DOC_GIA (Ma_The, Ho_Ten) VALUES (@MaThe, @HoTen)";
-                                    using (SqlCommand cmdInsertDG = new SqlCommand(sqlInsertDG, conn, trans))
-                                    {
-                                        cmdInsertDG.Parameters.AddWithValue("@MaThe", maThe);
-                                        cmdInsertDG.Parameters.AddWithValue("@HoTen", txtTenDocGia.Text.Trim()); // Ho_Ten lấy từ textbox
-                                        cmdInsertDG.ExecuteNonQuery();
-                                    }
+                                    cmdInsertDG.Parameters.AddWithValue("@MaThe", maThe);
+                                    cmdInsertDG.Parameters.AddWithValue("@HoTen", txtTenDocGia.Text.Trim());
+                                    cmdInsertDG.ExecuteNonQuery();
                                 }
                             }
+                        }
 
-                            // 1️⃣ Thêm phiếu mượn
+                        if (addnewFlag) // 🔹 Thêm mới phiếu mượn
+                        {
                             string sqlPM = @"
                     INSERT INTO PHIEU_MUON (Ma_Phieu_Muon, Ma_The, Ma_Kieu_Muon, Ma_Thu_Thu, Ngay_Muon, Han_Tra, Ngay_Thuc_Tra, Tien_Coc, Trang_Thai_Muon)
                     VALUES (@MaPM, @MaThe, @MaKieuMuon, @MaThuThu, @NgayMuon, @HanTra, @NgayThucTra, @TienCoc, N'Đang Mượn')";
@@ -712,101 +671,104 @@ namespace ProjectNhom4
                                     cmdPM.Parameters.AddWithValue("@NgayThucTra", DBNull.Value);
                                 cmdPM.ExecuteNonQuery();
                             }
+                        }
+                        else // 🔹 Cập nhật phiếu mượn đã tồn tại
+                        {
+                            string sqlUpdatePM = @"
+                        UPDATE PHIEU_MUON
+                        SET Ma_Kieu_Muon = @MaKieuMuon,
+                            Ma_Thu_Thu = @MaThuThu,
+                            Ngay_Muon = @NgayMuon,
+                            Han_Tra = @HanTra,
+                            Ngay_Thuc_Tra = @NgayThucTra,
+                            Tien_Coc = @TienCoc,
+                            Trang_Thai_Muon = @TrangThai
+                        WHERE Ma_Phieu_Muon = @MaPM";
 
-                            // 2️⃣ Duyệt qua từng dòng trong dgvCTSach
-                            foreach (DataGridViewRow row in dgvCTSach.Rows)
+                            using (SqlCommand cmd = new SqlCommand(sqlUpdatePM, conn, trans))
                             {
-                                if (row.IsNewRow) continue;
-
-                                string maDauSach = row.Cells["Ma_Dau_Sach"].Value?.ToString();
-                                if (string.IsNullOrEmpty(maDauSach)) continue;
-
-                                // 🔹 Kiểm tra còn sách hay không (So_Luong > 0)
-                                string sqlCheckSL = "SELECT So_Luong FROM DAU_SACH WHERE Ma_Dau_Sach = @MaDauSach";
-                                int soLuong = 0;
-                                using (SqlCommand cmdCheck = new SqlCommand(sqlCheckSL, conn, trans))
-                                {
-                                    cmdCheck.Parameters.AddWithValue("@MaDauSach", maDauSach);
-                                    object result = cmdCheck.ExecuteScalar();
-                                    if (result != null) soLuong = Convert.ToInt32(result);
-                                }
-
-                                if (soLuong <= 0)
-                                {
-                                    MessageBox.Show($"Sách mã {maDauSach} đã hết để mượn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    continue;
-                                }
-
-                                // 🔹 Kiểm tra số lượng sách còn
-                                string sqlCheckSL_1 = "SELECT So_Luong FROM DAU_SACH WHERE Ma_Dau_Sach = @MaDauSach";
-                                int soLuongSach = 0;
-                                using (SqlCommand cmdCheck = new SqlCommand(sqlCheckSL_1, conn, trans))
-                                {
-                                    cmdCheck.Parameters.AddWithValue("@MaDauSach", maDauSach);
-                                    object result = cmdCheck.ExecuteScalar();
-                                    if (result != null) soLuongSach = Convert.ToInt32(result);
-                                }
-
-                                if (soLuongSach <= 0)
-                                {
-                                    MessageBox.Show($"Sách mã {maDauSach} đã hết để mượn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    continue; // bỏ qua dòng này
-                                }
-
-                                // 🔹 Lấy 1 Ma_Sach bất kỳ từ bảng SACH dựa vào Ma_Dau_Sach
-                                string sqlSach_1 = @"SELECT TOP 1 Ma_Sach FROM SACH WHERE Ma_Dau_Sach = @MaDauSach";
-                                string maSach = "";
-                                using (SqlCommand cmdS = new SqlCommand(sqlSach_1, conn, trans))
-                                {
-                                    cmdS.Parameters.AddWithValue("@MaDauSach", maDauSach);
-                                    object kq = cmdS.ExecuteScalar();
-                                    if (kq != null) maSach = kq.ToString();
-                                }
-
-                                // 3️⃣ Thêm vào CT_PHIEU_MUON
-                                string sqlCT = @"INSERT INTO CT_PHIEU_MUON (Ma_Phieu_Muon, Ma_Sach) 
-                                     VALUES (@MaPM, @MaSach)";
-                                using (SqlCommand cmdCT = new SqlCommand(sqlCT, conn, trans))
-                                {
-                                    cmdCT.Parameters.AddWithValue("@MaPM", maPM);
-                                    cmdCT.Parameters.AddWithValue("@MaSach", maSach);
-                                    cmdCT.ExecuteNonQuery();
-                                }
-
-                                // 4️⃣ Cập nhật trạng thái sách & trừ số lượng
-                                string sqlUpdateSach = "UPDATE SACH SET Trang_Thai_Sach_Muon = N'Đang Mượn' WHERE Ma_Sach = @MaSach";
-                                using (SqlCommand cmdUpdate = new SqlCommand(sqlUpdateSach, conn, trans))
-                                {
-                                    cmdUpdate.Parameters.AddWithValue("@MaSach", maSach);
-                                    cmdUpdate.ExecuteNonQuery();
-                                }
-
-                                string sqlUpdateSL = "UPDATE DAU_SACH SET So_Luong = So_Luong - 1 WHERE Ma_Dau_Sach = @MaDauSach";
-                                using (SqlCommand cmdUpdateSL = new SqlCommand(sqlUpdateSL, conn, trans))
-                                {
-                                    cmdUpdateSL.Parameters.AddWithValue("@MaDauSach", maDauSach);
-                                    cmdUpdateSL.ExecuteNonQuery();
-                                }
+                                cmd.Parameters.AddWithValue("@MaKieuMuon", maKieuMuon);
+                                cmd.Parameters.AddWithValue("@MaThuThu", maThuThu);
+                                cmd.Parameters.AddWithValue("@NgayMuon", ngayMuon);
+                                cmd.Parameters.AddWithValue("@HanTra", hanTra);
+                                if (ngayThucTra.HasValue)
+                                    cmd.Parameters.AddWithValue("@NgayThucTra", ngayThucTra.Value);
+                                else
+                                    cmd.Parameters.AddWithValue("@NgayThucTra", DBNull.Value);
+                                cmd.Parameters.AddWithValue("@TienCoc", tienCoc);
+                                cmd.Parameters.AddWithValue("@TrangThai", txtTrangThaiMuon.Text.Trim());
+                                cmd.Parameters.AddWithValue("@MaPM", maPM);
+                                cmd.ExecuteNonQuery();
                             }
 
-                            trans.Commit();
-                            MessageBox.Show("Thêm phiếu mượn và chi tiết phiếu mượn thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            addnewFlag = false;
-                            UC_QuanlyMuonTra_Load(sender, e);
+                            // Xóa chi tiết cũ
+                            string sqlDelCT = "DELETE FROM CT_PHIEU_MUON WHERE Ma_Phieu_Muon = @MaPM";
+                            using (SqlCommand cmdDel = new SqlCommand(sqlDelCT, conn, trans))
+                            {
+                                cmdDel.Parameters.AddWithValue("@MaPM", maPM);
+                                cmdDel.ExecuteNonQuery();
+                            }
                         }
-                        catch (Exception ex)
+
+                        // 🔹 Duyệt qua từng dòng trong dgvCTSach để thêm CT_PHIEU_MUON & cập nhật SACH, DAU_SACH
+                        foreach (DataGridViewRow row in dgvCTSach.Rows)
                         {
-                            trans.Rollback();
-                            MessageBox.Show("Lỗi khi thêm phiếu mượn: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            if (row.IsNewRow) continue;
+
+                            string maDauSach = row.Cells["Ma_Dau_Sach"].Value?.ToString();
+                            if (string.IsNullOrEmpty(maDauSach)) continue;
+
+                            string sqlSach_1 = @"SELECT TOP 1 Ma_Sach FROM SACH WHERE Ma_Dau_Sach = @MaDauSach";
+                            string maSach = "";
+                            using (SqlCommand cmdS = new SqlCommand(sqlSach_1, conn, trans))
+                            {
+                                cmdS.Parameters.AddWithValue("@MaDauSach", maDauSach);
+                                object kq = cmdS.ExecuteScalar();
+                                if (kq != null) maSach = kq.ToString();
+                            }
+
+                            string sqlCT = @"INSERT INTO CT_PHIEU_MUON (Ma_Phieu_Muon, Ma_Sach) VALUES (@MaPM, @MaSach)";
+                            using (SqlCommand cmdCT = new SqlCommand(sqlCT, conn, trans))
+                            {
+                                cmdCT.Parameters.AddWithValue("@MaPM", maPM);
+                                cmdCT.Parameters.AddWithValue("@MaSach", maSach);
+                                cmdCT.ExecuteNonQuery();
+                            }
+
+                            // Cập nhật trạng thái sách & trừ số lượng
+                            string sqlUpdateSach = "UPDATE SACH SET Trang_Thai_Sach_Muon = N'Đang Mượn' WHERE Ma_Sach = @MaSach";
+                            using (SqlCommand cmdUpdate = new SqlCommand(sqlUpdateSach, conn, trans))
+                            {
+                                cmdUpdate.Parameters.AddWithValue("@MaSach", maSach);
+                                cmdUpdate.ExecuteNonQuery();
+                            }
+
+                            string sqlUpdateSL = "UPDATE DAU_SACH SET So_Luong = So_Luong - 1 WHERE Ma_Dau_Sach = @MaDauSach";
+                            using (SqlCommand cmdUpdateSL = new SqlCommand(sqlUpdateSL, conn, trans))
+                            {
+                                cmdUpdateSL.Parameters.AddWithValue("@MaDauSach", maDauSach);
+                                cmdUpdateSL.ExecuteNonQuery();
+                            }
                         }
+
+                        trans.Commit();
+                        MessageBox.Show(addnewFlag ? "Thêm phiếu mượn thành công!" : "Cập nhật phiếu mượn thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        addnewFlag = false;
+                        UC_QuanlyMuonTra_Load(sender, e);
+                    }
+                    catch (Exception ex)
+                    {
+                        trans.Rollback();
+                        MessageBox.Show("Lỗi khi lưu phiếu mượn: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -886,20 +848,35 @@ namespace ProjectNhom4
 
                 try
                 {
-                    // 1️⃣ Cập nhật PHIEU_MUON: đặt Ngay_Thuc_Tra = hôm nay, Trang_Thai_Muon = 'Đã Trả'
+                    // 🔹 Lấy Han_Tra từ PHIEU_MUON
+                    DateTime hanTra;
+                    string sqlGetHanTra = "SELECT Han_Tra FROM PHIEU_MUON WHERE Ma_Phieu_Muon = @MaPM";
+                    using (SqlCommand cmd = new SqlCommand(sqlGetHanTra, conn, trans))
+                    {
+                        cmd.Parameters.AddWithValue("@MaPM", maPhieuMuon);
+                        object result = cmd.ExecuteScalar();
+                        if (result == null)
+                            throw new Exception("Không tìm thấy phiếu mượn.");
+                        hanTra = Convert.ToDateTime(result);
+                    }
+
+                    // 🔹 Kiểm tra xem trả muộn hay đúng hạn
+                    string trangThai = (ngayTra > hanTra) ? "Trả muộn" : "Đã Trả";
+
+                    // 🔹 Cập nhật PHIEU_MUON
                     string sqlUpdatePM = @"
                 UPDATE PHIEU_MUON 
-                SET Ngay_Thuc_Tra = @NgayThucTra, Trang_Thai_Muon = N'Đã Trả'
+                SET Ngay_Thuc_Tra = @NgayThucTra, Trang_Thai_Muon = @TrangThai
                 WHERE Ma_Phieu_Muon = @MaPM";
-
                     using (SqlCommand cmd = new SqlCommand(sqlUpdatePM, conn, trans))
                     {
                         cmd.Parameters.AddWithValue("@NgayThucTra", ngayTra);
+                        cmd.Parameters.AddWithValue("@TrangThai", trangThai);
                         cmd.Parameters.AddWithValue("@MaPM", maPhieuMuon);
                         cmd.ExecuteNonQuery();
                     }
 
-                    // 2️⃣ Cập nhật lại trạng thái sách trong CT_PHIEU_MUON & DAU_SACH
+                    // 🔹 Cập nhật trạng thái sách trong CT_PHIEU_MUON & DAU_SACH
                     string sqlSelectSach = @"SELECT Ma_Sach FROM CT_PHIEU_MUON WHERE Ma_Phieu_Muon = @MaPM";
                     List<string> listMaSach = new List<string>();
                     using (SqlCommand cmd = new SqlCommand(sqlSelectSach, conn, trans))
@@ -922,10 +899,10 @@ namespace ProjectNhom4
                             cmd.ExecuteNonQuery();
                         }
 
-                        // Trừ số lượng mượn trong DAU_SACH (tăng lại)
+                        // Tăng lại số lượng trong DAU_SACH
                         string sqlUpdateSL = @"UPDATE DAU_SACH 
-                                       SET So_Luong = So_Luong + 1 
-                                       WHERE Ma_Dau_Sach = (SELECT Ma_Dau_Sach FROM SACH WHERE Ma_Sach = @MaSach)";
+                                SET So_Luong = So_Luong + 1 
+                                WHERE Ma_Dau_Sach = (SELECT Ma_Dau_Sach FROM SACH WHERE Ma_Sach = @MaSach)";
                         using (SqlCommand cmd = new SqlCommand(sqlUpdateSL, conn, trans))
                         {
                             cmd.Parameters.AddWithValue("@MaSach", maSach);
@@ -936,10 +913,10 @@ namespace ProjectNhom4
                     trans.Commit();
                     MessageBox.Show("Trả sách thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Nếu có dtpNgayThucTra hiển thị trên form, cập nhật luôn
+                    // Cập nhật dtpNgayThucTra trên form
                     dtpNgayThucTra.Value = ngayTra;
 
-                    // Reload dgvPhieuMuon hoặc các control liên quan
+                    // Reload dữ liệu
                     UC_QuanlyMuonTra_Load(sender, e);
                 }
                 catch (Exception ex)
@@ -948,6 +925,176 @@ namespace ProjectNhom4
                     MessageBox.Show("Lỗi khi trả sách: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+
+        private void dgvCTSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnXoaSach_Click(object sender, EventArgs e)
+        {
+            if (dgvCTSach.CurrentRow == null)
+            {
+                MessageBox.Show("Vui lòng chọn một dòng sách để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string maDauSach = dgvCTSach.CurrentRow.Cells["Ma_Dau_Sach"].Value?.ToString();
+            string maPhieuMuon = txtMaPhieuMuon.Text.Trim();
+
+            if (string.IsNullOrEmpty(maDauSach) || string.IsNullOrEmpty(maPhieuMuon))
+            {
+                MessageBox.Show("Dữ liệu phiếu mượn hoặc đầu sách không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            DialogResult dr = MessageBox.Show(
+                $"Bạn có chắc chắn muốn xóa sách '{dgvCTSach.CurrentRow.Cells["Ten_Dau_Sach"].Value}' khỏi phiếu mượn?",
+                "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            if (dr != DialogResult.OK) return;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlTransaction trans = conn.BeginTransaction();
+
+                    try
+                    {
+                        // Lấy Ma_Sach liên kết với Ma_Phieu_Muon và Ma_Dau_Sach
+                        string sqlGetMaSach = @"
+                    SELECT Ma_Sach 
+                    FROM CT_PHIEU_MUON 
+                    WHERE Ma_Phieu_Muon = @MaPM 
+                    AND Ma_Sach IN (SELECT Ma_Sach FROM SACH WHERE Ma_Dau_Sach = @MaDS)
+                ";
+
+                        List<string> maSachList = new List<string>();
+                        using (SqlCommand cmd = new SqlCommand(sqlGetMaSach, conn, trans))
+                        {
+                            cmd.Parameters.AddWithValue("@MaPM", maPhieuMuon);
+                            cmd.Parameters.AddWithValue("@MaDS", maDauSach);
+
+                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    maSachList.Add(reader["Ma_Sach"].ToString());
+                                }
+                            }
+                        }
+
+                        // Xóa từng Ma_Sach khỏi CT_PHIEU_MUON
+                        foreach (string maSach in maSachList)
+                        {
+                            string sqlDelCT = "DELETE FROM CT_PHIEU_MUON WHERE Ma_Phieu_Muon = @MaPM AND Ma_Sach = @MaSach";
+                            using (SqlCommand cmdDel = new SqlCommand(sqlDelCT, conn, trans))
+                            {
+                                cmdDel.Parameters.AddWithValue("@MaPM", maPhieuMuon);
+                                cmdDel.Parameters.AddWithValue("@MaSach", maSach);
+                                cmdDel.ExecuteNonQuery();
+                            }
+                        }
+
+                        trans.Commit();
+
+                        // ❌ Sửa lại phần này: xóa từ DataTable
+                        DataTable dt = dgvCTSach.DataSource as DataTable;
+                        if (dt != null)
+                        {
+                            DataRow[] rowsToDelete = dt.Select("Ma_Dau_Sach = '" + maDauSach + "'");
+                            foreach (DataRow r in rowsToDelete)
+                                dt.Rows.Remove(r);
+                        }
+
+                        MessageBox.Show("Xóa sách khỏi phiếu mượn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        trans.Rollback();
+                        MessageBox.Show("Lỗi khi xóa sách: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string field = comTruong.Text;
+                    string value = comGT.Text;
+
+                    string sql = $"SELECT Ma_Phieu_Muon, Ma_The, Ma_Thu_thu, Ngay_Muon, Han_Tra, Ngay_Thuc_Tra, Trang_Thai_Muon FROM PHIEU_MUON";
+
+                    // Nếu người dùng có chọn điều kiện lọc
+                    if (!string.IsNullOrEmpty(field) && !string.IsNullOrEmpty(value))
+                    {
+                        sql += $" WHERE {field} = @Value";
+                    }
+
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@Value", value);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    dgvDauSach.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lọc dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void LoadPhieuMuonData()
+        {
+            try
+            {
+                string sql = @"SELECT 
+                          Ma_Phieu_Muon, 
+                          Ma_The, 
+                          Ma_Thu_thu, 
+                          Ngay_Muon, 
+                          Han_Tra, 
+                          Ngay_Thuc_Tra, 
+                          Trang_Thai_Muon
+                       FROM PHIEU_MUON";
+
+                DataTable dt = GetData(sql);
+                dgvDauSach.DataSource = dt;
+
+                // Xóa chọn dòng cũ
+                dgvDauSach.ClearSelection();
+
+                // Reset combobox filter
+                comTruong.SelectedIndex = -1;
+                comGT.DataSource = null;
+                comGT.Items.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải lại dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadPhieuMuonData();
+            MessageBox.Show("Dữ liệu đã được tải lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
     }
