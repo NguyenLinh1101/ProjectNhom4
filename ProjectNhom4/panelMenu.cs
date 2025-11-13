@@ -118,6 +118,12 @@ namespace ProjectNhom4
                 Application.Restart();
             }
         }
+
+        private void frmMenu_Load_1(object sender, EventArgs e)
+        {
+            UC_TrangChu ucTrangChu = new UC_TrangChu();
+            LoadUserControl(ucTrangChu);
+        }
     }
 }
 

@@ -51,7 +51,7 @@
             // 
             this.lblXinchao.AutoSize = true;
             this.lblXinchao.Font = new System.Drawing.Font("Segoe UI", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblXinchao.Location = new System.Drawing.Point(1627, 16);
+            this.lblXinchao.Location = new System.Drawing.Point(35, 20);
             this.lblXinchao.Name = "lblXinchao";
             this.lblXinchao.Size = new System.Drawing.Size(601, 45);
             this.lblXinchao.TabIndex = 1;
