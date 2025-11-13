@@ -65,6 +65,21 @@
     <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net48\Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common">
+      <HintPath>C:\Users\DELL\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common.resources">
+      <HintPath>C:\Users\DELL\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.Common.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization">
+      <HintPath>C:\Users\DELL\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization.resources">
+      <HintPath>C:\Users\DELL\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design">
+      <HintPath>C:\Users\DELL\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Design.resources">
       <HintPath>C:\Users\hp\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1652.0\lib\net40\Microsoft.ReportViewer.Design.resources.dll</HintPath>
     </Reference>
@@ -131,6 +146,7 @@
     <Compile Include="ChiTietDauSach.Designer.cs">
       <DependentUpon>ChiTietDauSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserSession.cs" />
     <EmbeddedResource Include="ChiTietDauSach.resx">
       <DependentUpon>ChiTietDauSach.cs</DependentUpon>
     </EmbeddedResource>

@@ -94,10 +94,10 @@
             this.btnHuongDan.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnHuongDan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.btnHuongDan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnHuongDan.Location = new System.Drawing.Point(0, 0);
+            this.btnHuongDan.Location = new System.Drawing.Point(-14, 0);
             this.btnHuongDan.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnHuongDan.Name = "btnHuongDan";
-            this.btnHuongDan.Size = new System.Drawing.Size(230, 45);
+            this.btnHuongDan.Size = new System.Drawing.Size(244, 45);
             this.btnHuongDan.TabIndex = 10;
             this.btnHuongDan.Text = "Hướng dẫn sử dụng";
             // 
@@ -118,6 +118,7 @@
             this.btnQLTaiKhoan.Size = new System.Drawing.Size(230, 45);
             this.btnQLTaiKhoan.TabIndex = 9;
             this.btnQLTaiKhoan.Text = "Quản lý tài khoản";
+            this.btnQLTaiKhoan.Click += new System.EventHandler(this.btnQLTaiKhoan_Click);
             // 
             // sepBottom
             // 
@@ -145,6 +146,7 @@
             this.btnDangXuat.Size = new System.Drawing.Size(230, 50);
             this.btnDangXuat.TabIndex = 11;
             this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // panelLogo
             // 
@@ -221,6 +223,7 @@
             this.btnBaocao.Size = new System.Drawing.Size(230, 50);
             this.btnBaocao.TabIndex = 7;
             this.btnBaocao.Text = "Báo cáo";
+            this.btnBaocao.Click += new System.EventHandler(this.btnBaocao_Click);
             // 
             // btnqlmuontra
             // 
@@ -300,6 +303,7 @@
             this.btnqlsach.Size = new System.Drawing.Size(230, 50);
             this.btnqlsach.TabIndex = 3;
             this.btnqlsach.Text = "Quản lý sách ";
+            this.btnqlsach.Click += new System.EventHandler(this.btnqlsach_Click);
             // 
             // btnTrangChu
             // 
@@ -319,6 +323,7 @@
             this.btnTrangChu.Size = new System.Drawing.Size(230, 50);
             this.btnTrangChu.TabIndex = 2;
             this.btnTrangChu.Text = "Trang chủ";
+            this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click);
             // 
             // panelHienthiUC
             // 

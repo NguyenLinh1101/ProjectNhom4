@@ -31,6 +31,7 @@
             this.panelQLTacGia = new System.Windows.Forms.Panel();
             this.btnTacGiaSach = new Guna.UI2.WinForms.Guna2Button();
             this.btnTacGia = new Guna.UI2.WinForms.Guna2Button();
+            this.panelQLTG_Contain = new System.Windows.Forms.Panel();
             this.panelQLTacGia.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +45,7 @@
             this.panelQLTacGia.ForeColor = System.Drawing.Color.Black;
             this.panelQLTacGia.Location = new System.Drawing.Point(0, 0);
             this.panelQLTacGia.Name = "panelQLTacGia";
-            this.panelQLTacGia.Size = new System.Drawing.Size(1924, 90);
+            this.panelQLTacGia.Size = new System.Drawing.Size(1024, 90);
             this.panelQLTacGia.TabIndex = 1;
             // 
             // btnTacGiaSach
@@ -65,6 +66,7 @@
             this.btnTacGiaSach.Size = new System.Drawing.Size(247, 90);
             this.btnTacGiaSach.TabIndex = 0;
             this.btnTacGiaSach.Text = "Tác giả sách";
+            this.btnTacGiaSach.Click += new System.EventHandler(this.btnTacGiaSach_Click);
             // 
             // btnTacGia
             // 
@@ -83,15 +85,24 @@
             this.btnTacGia.Size = new System.Drawing.Size(247, 90);
             this.btnTacGia.TabIndex = 0;
             this.btnTacGia.Text = "Tác giả";
+            this.btnTacGia.Click += new System.EventHandler(this.btnTacGia_Click);
+            // 
+            // panelQLTG_Contain
+            // 
+            this.panelQLTG_Contain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelQLTG_Contain.Location = new System.Drawing.Point(0, 90);
+            this.panelQLTG_Contain.Name = "panelQLTG_Contain";
+            this.panelQLTG_Contain.Size = new System.Drawing.Size(1024, 728);
+            this.panelQLTG_Contain.TabIndex = 2;
             // 
             // QLTacGia_Ribbon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1050);
+            this.Controls.Add(this.panelQLTG_Contain);
             this.Controls.Add(this.panelQLTacGia);
             this.Name = "QLTacGia_Ribbon";
-            this.Text = "QLTacGia_Ribbon";
+            this.Size = new System.Drawing.Size(1024, 818);
             this.panelQLTacGia.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -102,5 +113,6 @@
         private System.Windows.Forms.Panel panelQLTacGia;
         private Guna.UI2.WinForms.Guna2Button btnTacGiaSach;
         private Guna.UI2.WinForms.Guna2Button btnTacGia;
+        private System.Windows.Forms.Panel panelQLTG_Contain;
     }
 }

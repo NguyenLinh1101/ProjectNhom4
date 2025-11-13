@@ -40,7 +40,8 @@ namespace ProjectNhom4
 
         private void btnCuonSach_Click(object sender, EventArgs e)
         {
-
+            var f = new frmQuanlyCuonSach();
+            f.ShowDialog();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

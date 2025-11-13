@@ -16,5 +16,15 @@ namespace ProjectNhom4
         {
             InitializeComponent();
         }
+
+        private void pic1Background_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UC_TrangChu_Load(object sender, EventArgs e)
+        {
+            lblXinchao.Text = "Chào mừng trở lại, " + UserSession.TenNguoiDung + "!";
+        }
     }
 }
