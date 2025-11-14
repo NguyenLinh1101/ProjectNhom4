@@ -74,6 +74,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2ContextMenuStrip3 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            this.panelRoot = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSDauSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -81,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             this.grbTTDS.SuspendLayout();
+            this.panelRoot.SuspendLayout();
             this.SuspendLayout();
             // 
             // errorProvider1
@@ -93,7 +95,7 @@
             this.lblDauSach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.lblDauSach.Location = new System.Drawing.Point(0, 2);
             this.lblDauSach.Name = "lblDauSach";
-            this.lblDauSach.Size = new System.Drawing.Size(1216, 57);
+            this.lblDauSach.Size = new System.Drawing.Size(1308, 57);
             this.lblDauSach.TabIndex = 5;
             this.lblDauSach.Text = "QUẢN LÝ ĐẦU SÁCH";
             this.lblDauSach.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -190,7 +192,7 @@
             this.dgvDSDauSach.RowHeadersWidth = 72;
             this.dgvDSDauSach.RowTemplate.Height = 28;
             this.dgvDSDauSach.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvDSDauSach.Size = new System.Drawing.Size(1136, 388);
+            this.dgvDSDauSach.Size = new System.Drawing.Size(1277, 287);
             this.dgvDSDauSach.TabIndex = 1;
             this.dgvDSDauSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSDauSach_CellContentClick);
             this.dgvDSDauSach.SelectionChanged += new System.EventHandler(this.dgvDSDauSach_SelectionChanged);
@@ -288,7 +290,7 @@
             this.btnThem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnThem.HoverState.FillColor = System.Drawing.Color.White;
             this.btnThem.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnThem.Location = new System.Drawing.Point(57, 20);
+            this.btnThem.Location = new System.Drawing.Point(136, 20);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(134, 64);
             this.btnThem.TabIndex = 10;
@@ -311,7 +313,7 @@
             this.btnSua.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnSua.HoverState.FillColor = System.Drawing.Color.White;
             this.btnSua.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnSua.Location = new System.Drawing.Point(310, 20);
+            this.btnSua.Location = new System.Drawing.Point(389, 20);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(134, 64);
             this.btnSua.TabIndex = 11;
@@ -334,7 +336,7 @@
             this.btnXoa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnXoa.HoverState.FillColor = System.Drawing.Color.White;
             this.btnXoa.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnXoa.Location = new System.Drawing.Point(573, 20);
+            this.btnXoa.Location = new System.Drawing.Point(652, 20);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(134, 64);
             this.btnXoa.TabIndex = 12;
@@ -357,9 +359,9 @@
             this.btnXemChiTiet.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnXemChiTiet.HoverState.FillColor = System.Drawing.Color.White;
             this.btnXemChiTiet.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnXemChiTiet.Location = new System.Drawing.Point(816, 18);
+            this.btnXemChiTiet.Location = new System.Drawing.Point(895, 18);
             this.btnXemChiTiet.Name = "btnXemChiTiet";
-            this.btnXemChiTiet.Size = new System.Drawing.Size(134, 64);
+            this.btnXemChiTiet.Size = new System.Drawing.Size(160, 64);
             this.btnXemChiTiet.TabIndex = 13;
             this.btnXemChiTiet.Text = "Xem chi tiết";
             this.btnXemChiTiet.Click += new System.EventHandler(this.btnXemChiTiet_Click);
@@ -371,7 +373,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1225, 153);
+            this.panelControl1.Size = new System.Drawing.Size(1382, 139);
             this.panelControl1.TabIndex = 14;
             this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
             // 
@@ -390,7 +392,7 @@
             this.txtSearch.IconLeft = global::ProjectNhom4.Properties.Resources.search;
             this.txtSearch.IconLeftOffset = new System.Drawing.Point(20, 0);
             this.txtSearch.IconLeftSize = new System.Drawing.Size(25, 25);
-            this.txtSearch.Location = new System.Drawing.Point(106, 64);
+            this.txtSearch.Location = new System.Drawing.Point(172, 64);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PlaceholderText = "Nhập tên đầu sách";
@@ -407,9 +409,9 @@
             this.panelControl2.Controls.Add(this.btnXoa);
             this.panelControl2.Controls.Add(this.btnXemChiTiet);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl2.Location = new System.Drawing.Point(0, 842);
+            this.panelControl2.Location = new System.Drawing.Point(0, 730);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1225, 97);
+            this.panelControl2.Size = new System.Drawing.Size(1382, 97);
             this.panelControl2.TabIndex = 15;
             // 
             // btnHuy
@@ -428,7 +430,7 @@
             this.btnHuy.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnHuy.HoverState.FillColor = System.Drawing.Color.White;
             this.btnHuy.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnHuy.Location = new System.Drawing.Point(1059, 18);
+            this.btnHuy.Location = new System.Drawing.Point(1138, 18);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(134, 64);
             this.btnHuy.TabIndex = 14;
@@ -457,9 +459,9 @@
             this.grbTTDS.Controls.Add(this.label1);
             this.grbTTDS.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.grbTTDS.ForeColor = System.Drawing.Color.Black;
-            this.grbTTDS.Location = new System.Drawing.Point(57, 159);
+            this.grbTTDS.Location = new System.Drawing.Point(57, 145);
             this.grbTTDS.Name = "grbTTDS";
-            this.grbTTDS.Size = new System.Drawing.Size(1136, 275);
+            this.grbTTDS.Size = new System.Drawing.Size(1277, 289);
             this.grbTTDS.TabIndex = 7;
             this.grbTTDS.TabStop = false;
             this.grbTTDS.Text = "Thông tin đầu sách";
@@ -495,7 +497,7 @@
             this.cboChuDe.FormattingEnabled = true;
             this.cboChuDe.Location = new System.Drawing.Point(724, 92);
             this.cboChuDe.Name = "cboChuDe";
-            this.cboChuDe.Size = new System.Drawing.Size(240, 36);
+            this.cboChuDe.Size = new System.Drawing.Size(381, 36);
             this.cboChuDe.TabIndex = 6;
             // 
             // cboLoaiSach
@@ -508,7 +510,7 @@
             this.cboLoaiSach.FormattingEnabled = true;
             this.cboLoaiSach.Location = new System.Drawing.Point(724, 33);
             this.cboLoaiSach.Name = "cboLoaiSach";
-            this.cboLoaiSach.Size = new System.Drawing.Size(240, 36);
+            this.cboLoaiSach.Size = new System.Drawing.Size(381, 36);
             this.cboLoaiSach.TabIndex = 5;
             this.cboLoaiSach.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -707,18 +709,27 @@
             this.guna2ContextMenuStrip3.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.guna2ContextMenuStrip3.Size = new System.Drawing.Size(61, 4);
             // 
+            // panelRoot
+            // 
+            this.panelRoot.Controls.Add(this.panelControl1);
+            this.panelRoot.Controls.Add(this.grbTTDS);
+            this.panelRoot.Controls.Add(this.dgvDSDauSach);
+            this.panelRoot.Controls.Add(this.panelControl2);
+            this.panelRoot.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelRoot.Location = new System.Drawing.Point(0, 0);
+            this.panelRoot.Name = "panelRoot";
+            this.panelRoot.Size = new System.Drawing.Size(1382, 827);
+            this.panelRoot.TabIndex = 16;
+            // 
             // QL_DauSach
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Controls.Add(this.grbTTDS);
-            this.Controls.Add(this.panelControl2);
-            this.Controls.Add(this.panelControl1);
-            this.Controls.Add(this.dgvDSDauSach);
+            this.Controls.Add(this.panelRoot);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "QL_DauSach";
-            this.Size = new System.Drawing.Size(1225, 939);
+            this.Size = new System.Drawing.Size(1382, 827);
             this.Load += new System.EventHandler(this.QL_DauSach_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSDauSach)).EndInit();
@@ -728,6 +739,7 @@
             this.panelControl2.ResumeLayout(false);
             this.grbTTDS.ResumeLayout(false);
             this.grbTTDS.PerformLayout();
+            this.panelRoot.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -775,5 +787,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Giabia;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoTrang;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.Panel panelRoot;
     }
 }

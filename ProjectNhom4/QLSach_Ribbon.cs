@@ -15,6 +15,8 @@ namespace ProjectNhom4
         private UserControl currentUC;
         private Size originalSize;
         private bool originalSizeSaved = false;
+        private Panel panelRoot;  // Panel gốc bên trong mỗi UC con
+
 
         public QLSach_Ribbon()
         {
@@ -25,6 +27,7 @@ namespace ProjectNhom4
         {
             panelContainer.Controls.Clear();
             currentUC = uc;
+            panelRoot = uc.Controls["panelRoot"] as Panel; // Lấy panel gốc
 
             if (!originalSizeSaved)
             {
@@ -38,27 +41,27 @@ namespace ProjectNhom4
             ScaleUC();
         }
 
-        // SCALE MƯỢT, CĂN GIỮA, KHÔNG MÉO
         private void ScaleUC()
         {
-            if (currentUC == null) return;
+            if (panelRoot == null) return;
 
-            currentUC.SuspendLayout();
+            panelRoot.SuspendLayout();
 
-            currentUC.Size = originalSize;
+            panelRoot.Size = originalSize;
 
             float ratioX = (float)panelContainer.Width / originalSize.Width;
             float ratioY = (float)panelContainer.Height / originalSize.Height;
+
             float scale = Math.Min(ratioX, ratioY);
 
-            currentUC.Scale(new SizeF(scale, scale));
+            panelRoot.Scale(new SizeF(scale, scale));
 
-            currentUC.Left = (panelContainer.Width - currentUC.Width) / 2;
-            currentUC.Top = (panelContainer.Height - currentUC.Height) / 2;
+            // căn giữa UC theo panelRoot
+            panelRoot.Left = (panelContainer.Width - panelRoot.Width) / 2;
+            panelRoot.Top = (panelContainer.Height - panelRoot.Height) / 2;
 
-            currentUC.ResumeLayout();
+            panelRoot.ResumeLayout();
         }
-
 
         private void btnDanhMuc_Click(object sender, EventArgs e)
         {

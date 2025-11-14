@@ -53,9 +53,12 @@ namespace ProjectNhom4
 
         private void LoadUserControl(UserControl uc)
         {
-            panelContainer.Controls.Clear(); // Xóa UC cũ (nếu có)
-            uc.Dock = DockStyle.Fill;   // Cho UC full panel
-            panelContainer.Controls.Add(uc); // Thêm UC vào panel
+            panelContainer.Controls.Clear();
+            // Ngăn Dock Fill phá scale
+            uc.Dock = DockStyle.None;
+            uc.Left = 0;
+            uc.Top = 0;
+            panelContainer.Controls.Add(uc);
         }
         private void frmMenu_Load(object sender, EventArgs e)
         {

@@ -47,10 +47,12 @@
             this.panelContainer = new Guna.UI2.WinForms.Guna2Panel();
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelBottom = new System.Windows.Forms.Panel();
+            this.lblTenSP = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.pnlSubCaiDat.SuspendLayout();
+            this.panelTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -337,6 +339,7 @@
             // 
             // panelContainer
             // 
+            this.panelContainer.AutoRoundedCorners = true;
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(291, 40);
             this.panelContainer.Margin = new System.Windows.Forms.Padding(0);
@@ -348,6 +351,7 @@
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.panelTop.Controls.Add(this.lblTenSP);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
@@ -363,6 +367,18 @@
             this.panelBottom.Name = "panelBottom";
             this.panelBottom.Size = new System.Drawing.Size(1350, 41);
             this.panelBottom.TabIndex = 0;
+            // 
+            // lblTenSP
+            // 
+            this.lblTenSP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lblTenSP.AutoSize = true;
+            this.lblTenSP.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenSP.ForeColor = System.Drawing.Color.White;
+            this.lblTenSP.Location = new System.Drawing.Point(561, 9);
+            this.lblTenSP.Name = "lblTenSP";
+            this.lblTenSP.Size = new System.Drawing.Size(317, 28);
+            this.lblTenSP.TabIndex = 1;
+            this.lblTenSP.Text = "PHẦN MỀM QUẢN LÝ THƯ VIỆN";
             // 
             // frmMenu
             // 
@@ -388,6 +404,8 @@
             this.panelLogo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.pnlSubCaiDat.ResumeLayout(false);
+            this.panelTop.ResumeLayout(false);
+            this.panelTop.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -414,6 +432,6 @@
         private Guna.UI2.WinForms.Guna2Panel panelContainer;
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Panel panelBottom;
-
+        private System.Windows.Forms.Label lblTenSP;
     }
 }

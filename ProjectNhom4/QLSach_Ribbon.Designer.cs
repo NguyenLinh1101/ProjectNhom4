@@ -38,21 +38,25 @@
             this.btnDanhMuc = new Guna.UI2.WinForms.Guna2Button();
             this.btnChuDe = new Guna.UI2.WinForms.Guna2Button();
             this.btnLoaiSach = new Guna.UI2.WinForms.Guna2Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelQLSach.SuspendLayout();
             this.dropDown_DanhMuc.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelQLSach
             // 
+            this.panelQLSach.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelQLSach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.panelQLSach.Controls.Add(this.dropDown_DanhMuc);
             this.panelQLSach.Controls.Add(this.btnCuonSach);
             this.panelQLSach.Controls.Add(this.btnDauSach);
-            this.panelQLSach.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelQLSach.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panelQLSach.ForeColor = System.Drawing.Color.Black;
             this.panelQLSach.Location = new System.Drawing.Point(0, 0);
             this.panelQLSach.Name = "panelQLSach";
-            this.panelQLSach.Size = new System.Drawing.Size(1131, 120);
+            this.panelQLSach.Size = new System.Drawing.Size(1134, 123);
             this.panelQLSach.TabIndex = 0;
             this.panelQLSach.Paint += new System.Windows.Forms.PaintEventHandler(this.panelQLSach_Paint);
             // 
@@ -97,10 +101,12 @@
             // 
             // panelContainer
             // 
-            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelContainer.AutoScroll = true;
             this.panelContainer.Location = new System.Drawing.Point(0, 120);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1131, 629);
+            this.panelContainer.Size = new System.Drawing.Size(1134, 629);
             this.panelContainer.TabIndex = 1;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelQLSach_contain_Paint);
             // 
@@ -178,16 +184,25 @@
             this.btnLoaiSach.Text = "Loại Sách";
             this.btnLoaiSach.Click += new System.EventHandler(this.btnLoaiSach_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panelQLSach);
+            this.panel1.Controls.Add(this.panelContainer);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1131, 749);
+            this.panel1.TabIndex = 4;
+            // 
             // QLSach_Ribbon
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.dropDown_DanhMuc);
-            this.Controls.Add(this.panelContainer);
-            this.Controls.Add(this.panelQLSach);
+            this.Controls.Add(this.panel1);
             this.Name = "QLSach_Ribbon";
             this.Size = new System.Drawing.Size(1131, 749);
             this.panelQLSach.ResumeLayout(false);
             this.dropDown_DanhMuc.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -203,5 +218,6 @@
         private Guna.UI2.WinForms.Guna2Button btnDanhMuc;
         private Guna.UI2.WinForms.Guna2Button btnChuDe;
         private Guna.UI2.WinForms.Guna2Button btnLoaiSach;
+        private System.Windows.Forms.Panel panel1;
     }
 }
