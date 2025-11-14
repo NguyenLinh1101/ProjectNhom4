@@ -38,11 +38,11 @@
             this.btnqldocgia = new Guna.UI2.WinForms.Guna2Button();
             this.btnqlmuontra = new Guna.UI2.WinForms.Guna2Button();
             this.btnBaocao = new Guna.UI2.WinForms.Guna2Button();
+            this.sepBottom = new Guna.UI2.WinForms.Guna2Separator();
             this.btnCaiDat = new Guna.UI2.WinForms.Guna2Button();
             this.pnlSubCaiDat = new Guna.UI2.WinForms.Guna2Panel();
             this.btnHuongDan = new Guna.UI2.WinForms.Guna2Button();
             this.btnQLTaiKhoan = new Guna.UI2.WinForms.Guna2Button();
-            this.sepBottom = new Guna.UI2.WinForms.Guna2Separator();
             this.btnDangXuat = new Guna.UI2.WinForms.Guna2Button();
             this.panelHienthiUC = new Guna.UI2.WinForms.Guna2Panel();
             this.panelTop = new System.Windows.Forms.Panel();
@@ -134,6 +134,7 @@
             this.btnTrangChu.Size = new System.Drawing.Size(206, 50);
             this.btnTrangChu.TabIndex = 2;
             this.btnTrangChu.Text = "Trang chủ";
+            this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click_1);
             // 
             // btnqlsach
             // 
@@ -235,6 +236,15 @@
             this.btnBaocao.Text = "Báo cáo";
             this.btnBaocao.Click += new System.EventHandler(this.btnBaocao_Click_1);
             // 
+            // sepBottom
+            // 
+            this.sepBottom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.sepBottom.Location = new System.Drawing.Point(22, 493);
+            this.sepBottom.Name = "sepBottom";
+            this.sepBottom.Size = new System.Drawing.Size(230, 2);
+            this.sepBottom.TabIndex = 12;
+            this.sepBottom.Click += new System.EventHandler(this.sepBottom_Click);
+            // 
             // btnCaiDat
             // 
             this.btnCaiDat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -304,15 +314,6 @@
             this.btnQLTaiKhoan.TabIndex = 9;
             this.btnQLTaiKhoan.Text = "Quản lý tài khoản";
             // 
-            // sepBottom
-            // 
-            this.sepBottom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.sepBottom.Location = new System.Drawing.Point(22, 493);
-            this.sepBottom.Name = "sepBottom";
-            this.sepBottom.Size = new System.Drawing.Size(230, 2);
-            this.sepBottom.TabIndex = 12;
-            this.sepBottom.Click += new System.EventHandler(this.sepBottom_Click);
-            // 
             // btnDangXuat
             // 
             this.btnDangXuat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -338,6 +339,7 @@
             // 
             this.panelHienthiUC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelHienthiUC.Location = new System.Drawing.Point(291, 40);
+            this.panelHienthiUC.Margin = new System.Windows.Forms.Padding(0);
             this.panelHienthiUC.Name = "panelHienthiUC";
             this.panelHienthiUC.Size = new System.Drawing.Size(1059, 781);
             this.panelHienthiUC.TabIndex = 3;

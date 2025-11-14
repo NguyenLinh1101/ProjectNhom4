@@ -30,6 +30,7 @@ namespace ProjectNhom4
 
         private void UC_QuanlyDocGia_Load(object sender, EventArgs e)
         {
+            this.Dock = DockStyle.Fill;
             LoadDocGia(); // Tải dữ liệu khi UserControl được load
             NapCT();      // Nạp chi tiết cho dòng đầu tiên
             SetControlState("Normal");

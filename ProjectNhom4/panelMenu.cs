@@ -59,13 +59,8 @@ namespace ProjectNhom4
         }
         private void frmMenu_Load(object sender, EventArgs e)
         {
-            this.Controls.SetChildIndex(panelTop, 0);
-            this.Controls.SetChildIndex(panelBottom, 1);
-            this.Controls.SetChildIndex(panelMenu, 2);
-            this.Controls.SetChildIndex(panelHienthiUC, 3);
             this.MaximumSize = Screen.PrimaryScreen.WorkingArea.Size;
-            UC_TrangChu ucTrangChu = new UC_TrangChu();
-            LoadUserControl(ucTrangChu);
+            LoadUserControl(new UC_TrangChu());
         }
 
         private void btnqltacgia_Click_1(object sender, EventArgs e)
@@ -123,7 +118,7 @@ namespace ProjectNhom4
 
         private void btnqlsach_Click_1(object sender, EventArgs e)
         {
-            LoadUserControl(new QL_DauSach());
+            LoadUserControl(new QLSach_Ribbon());
         }
 
         private void panelMenu_Paint(object sender, PaintEventArgs e)
@@ -144,6 +139,11 @@ namespace ProjectNhom4
         private void panelTop_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnTrangChu_Click_1(object sender, EventArgs e)
+        {
+            
         }
     }
 }
