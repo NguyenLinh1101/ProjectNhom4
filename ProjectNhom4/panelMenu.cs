@@ -15,6 +15,8 @@ namespace ProjectNhom4
         public frmMenu()
         {
             InitializeComponent();
+            pnlSubCaiDat.Visible = false;
+            pnlSubCaiDat.Height = 0;
         }
 
         private void guna2PictureBox1_Click(object sender, EventArgs e)
@@ -57,6 +59,11 @@ namespace ProjectNhom4
         }
         private void frmMenu_Load(object sender, EventArgs e)
         {
+            this.Controls.SetChildIndex(panelTop, 0);
+            this.Controls.SetChildIndex(panelBottom, 1);
+            this.Controls.SetChildIndex(panelMenu, 2);
+            this.Controls.SetChildIndex(panelHienthiUC, 3);
+            this.MaximumSize = Screen.PrimaryScreen.WorkingArea.Size;
             UC_TrangChu ucTrangChu = new UC_TrangChu();
             LoadUserControl(ucTrangChu);
         }
@@ -120,6 +127,21 @@ namespace ProjectNhom4
         }
 
         private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelLogo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void sepBottom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelTop_Paint(object sender, PaintEventArgs e)
         {
 
         }
