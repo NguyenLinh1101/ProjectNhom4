@@ -131,7 +131,7 @@ namespace ProjectNhom4.Reports
                 // BƯỚC C: Nạp nguồn dữ liệu (DataSource) cho bảng
                 reportViewer1.LocalReport.DataSources.Clear();
                 // *** TÊN "DataSet1" PHẢI KHỚP TÊN DATASET TRONG RDLC ***
-                ReportDataSource rds = new ReportDataSource("DataSet1", dt);
+                ReportDataSource rds = new ReportDataSource("dssachmuonnhieunhat", dt);
                 reportViewer1.LocalReport.DataSources.Add(rds);
 
                 // 4. HIỂN THỊ
@@ -151,6 +151,11 @@ namespace ProjectNhom4.Reports
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

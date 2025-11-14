@@ -32,7 +32,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="dsdocgiavipham">
       <Query>
         <DataSourceName>dsdocgiavipham</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -77,7 +77,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsdocgiavipham</rd:DataSetName>
-        <rd:SchemaPath>E:\BTL\ProjectNhom4\dsdocgiavipham.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\PTUD2025\BTL\ProjectNhom4\ProjectNhom4\dsdocgiavipham.xsd</rd:SchemaPath>
         <rd:TableName>docgiavipham</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -1128,7 +1128,7 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DataSet1</DataSetName>
+            <DataSetName>dsdocgiavipham</DataSetName>
             <Top>1.42583in</Top>
             <Left>0.2337in</Left>
             <Height>1.25694in</Height>

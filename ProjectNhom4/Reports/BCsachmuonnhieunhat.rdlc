@@ -25,7 +25,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="dssachmuonnhieunhat">
       <Query>
         <DataSourceName>dssachmuonnhieunhat</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -54,7 +54,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dssachmuonnhieunhat</rd:DataSetName>
-        <rd:SchemaPath>E:\BTL\ProjectNhom4\dssachmuonnhieunhat.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\PTUD2025\BTL\ProjectNhom4\ProjectNhom4\dssachmuonnhieunhat.xsd</rd:SchemaPath>
         <rd:TableName>sachmuonnhieunhat</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -621,11 +621,11 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DataSet1</DataSetName>
+            <DataSetName>dssachmuonnhieunhat</DataSetName>
             <Top>1.30083in</Top>
             <Left>0.39111in</Left>
             <Height>1.10416in</Height>
-            <Width>9.2732in</Width>
+            <Width>9.27322in</Width>
             <ZIndex>6</ZIndex>
             <Style>
               <Border>

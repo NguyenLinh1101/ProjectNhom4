@@ -18,7 +18,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="dsBCsachmat">
       <Query>
         <DataSourceName>dsBCsachmat</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -51,7 +51,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsBCsachmat</rd:DataSetName>
-        <rd:SchemaPath>E:\BTL\ProjectNhom4\dsBCsachmat.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\PTUD2025\BTL\ProjectNhom4\ProjectNhom4\dsBCsachmat.xsd</rd:SchemaPath>
         <rd:TableName>dsBCsachmat</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -763,11 +763,11 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DataSet1</DataSetName>
+            <DataSetName>dsBCsachmat</DataSetName>
             <Top>1.43278in</Top>
             <Left>0.55778in</Left>
             <Height>1.43056in</Height>
-            <Width>9.2732in</Width>
+            <Width>9.27317in</Width>
             <ZIndex>6</ZIndex>
             <Style>
               <Border>

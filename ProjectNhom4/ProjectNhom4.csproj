@@ -387,7 +387,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\BCdocgiamuonsach.rdlc">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\BCsachmuonnhieunhat.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

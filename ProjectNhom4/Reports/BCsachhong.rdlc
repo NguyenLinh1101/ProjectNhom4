@@ -11,7 +11,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="dsBaoCao">
       <Query>
         <DataSourceName>dsBaoCao</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -44,7 +44,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsBaoCao</rd:DataSetName>
-        <rd:SchemaPath>E:\BTL\ProjectNhom4\dsBaoCao.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\PTUD2025\BTL\ProjectNhom4\ProjectNhom4\dsBaoCao.xsd</rd:SchemaPath>
         <rd:TableName>dtSachTraHong</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -610,7 +610,7 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DataSet1</DataSetName>
+            <DataSetName>dsBaoCao</DataSetName>
             <Top>1.25223in</Top>
             <Left>0.57861in</Left>
             <Height>1.36112in</Height>
