@@ -32,7 +32,7 @@
             this.panelQLSach = new System.Windows.Forms.Panel();
             this.btnCuonSach = new Guna.UI2.WinForms.Guna2Button();
             this.btnDauSach = new Guna.UI2.WinForms.Guna2Button();
-            this.panelQLSach_contain = new System.Windows.Forms.Panel();
+            this.panelContainer = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dropDown_DanhMuc = new System.Windows.Forms.Panel();
             this.btnDanhMuc = new Guna.UI2.WinForms.Guna2Button();
@@ -95,14 +95,14 @@
             this.btnDauSach.Text = "Đầu sách";
             this.btnDauSach.Click += new System.EventHandler(this.btnDauSach_Click);
             // 
-            // panelQLSach_contain
+            // panelContainer
             // 
-            this.panelQLSach_contain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelQLSach_contain.Location = new System.Drawing.Point(0, 120);
-            this.panelQLSach_contain.Name = "panelQLSach_contain";
-            this.panelQLSach_contain.Size = new System.Drawing.Size(1131, 629);
-            this.panelQLSach_contain.TabIndex = 1;
-            this.panelQLSach_contain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelQLSach_contain_Paint);
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(0, 120);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(1131, 629);
+            this.panelContainer.TabIndex = 1;
+            this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelQLSach_contain_Paint);
             // 
             // timer1
             // 
@@ -182,7 +182,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.dropDown_DanhMuc);
-            this.Controls.Add(this.panelQLSach_contain);
+            this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panelQLSach);
             this.Name = "QLSach_Ribbon";
             this.Size = new System.Drawing.Size(1131, 749);
@@ -195,7 +195,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panelQLSach;
-        private System.Windows.Forms.Panel panelQLSach_contain;
+        private System.Windows.Forms.Panel panelContainer;
         private Guna.UI2.WinForms.Guna2Button btnDauSach;
         private Guna.UI2.WinForms.Guna2Button btnCuonSach;
         private System.Windows.Forms.Timer timer1;

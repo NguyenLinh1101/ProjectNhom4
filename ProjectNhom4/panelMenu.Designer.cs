@@ -44,7 +44,7 @@
             this.btnHuongDan = new Guna.UI2.WinForms.Guna2Button();
             this.btnQLTaiKhoan = new Guna.UI2.WinForms.Guna2Button();
             this.btnDangXuat = new Guna.UI2.WinForms.Guna2Button();
-            this.panelHienthiUC = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelContainer = new Guna.UI2.WinForms.Guna2Panel();
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelBottom = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
@@ -335,15 +335,15 @@
             this.btnDangXuat.TabIndex = 11;
             this.btnDangXuat.Text = "Đăng xuất";
             // 
-            // panelHienthiUC
+            // panelContainer
             // 
-            this.panelHienthiUC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelHienthiUC.Location = new System.Drawing.Point(291, 40);
-            this.panelHienthiUC.Margin = new System.Windows.Forms.Padding(0);
-            this.panelHienthiUC.Name = "panelHienthiUC";
-            this.panelHienthiUC.Size = new System.Drawing.Size(1059, 781);
-            this.panelHienthiUC.TabIndex = 3;
-            this.panelHienthiUC.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHienthiUC_Paint);
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(291, 40);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(0);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(1059, 781);
+            this.panelContainer.TabIndex = 3;
+            this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHienthiUC_Paint);
             // 
             // panelTop
             // 
@@ -369,7 +369,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 862);
-            this.Controls.Add(this.panelHienthiUC);
+            this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelBottom);
             this.Controls.Add(this.panelTop);
@@ -411,7 +411,7 @@
         private Guna.UI2.WinForms.Guna2Panel pnlSubCaiDat;
         private Guna.UI2.WinForms.Guna2Button btnHuongDan;
         private Guna.UI2.WinForms.Guna2Button btnQLTaiKhoan;
-        private Guna.UI2.WinForms.Guna2Panel panelHienthiUC;
+        private Guna.UI2.WinForms.Guna2Panel panelContainer;
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Panel panelBottom;
 

@@ -12,17 +12,53 @@ namespace ProjectNhom4
 {
     public partial class QLSach_Ribbon : UserControl
     {
-        private void addUserControl(UserControl userControl)
-        {
-            userControl.Dock = DockStyle.Fill;
-            panelQLSach_contain.Controls.Clear();
-            panelQLSach_contain.Controls.Add(userControl); // <-- Thêm vào panelContainer
-            userControl.BringToFront();
-        }
+        private UserControl currentUC;
+        private Size originalSize;
+        private bool originalSizeSaved = false;
+
         public QLSach_Ribbon()
         {
             InitializeComponent();
         }
+
+        private void LoadUserControlToPanel(UserControl uc)
+        {
+            panelContainer.Controls.Clear();
+            currentUC = uc;
+
+            if (!originalSizeSaved)
+            {
+                originalSize = uc.Size;
+                originalSizeSaved = true;
+            }
+
+            panelContainer.Controls.Add(uc);
+            uc.BringToFront();
+
+            ScaleUC();
+        }
+
+        // SCALE MƯỢT, CĂN GIỮA, KHÔNG MÉO
+        private void ScaleUC()
+        {
+            if (currentUC == null) return;
+
+            currentUC.SuspendLayout();
+
+            currentUC.Size = originalSize;
+
+            float ratioX = (float)panelContainer.Width / originalSize.Width;
+            float ratioY = (float)panelContainer.Height / originalSize.Height;
+            float scale = Math.Min(ratioX, ratioY);
+
+            currentUC.Scale(new SizeF(scale, scale));
+
+            currentUC.Left = (panelContainer.Width - currentUC.Width) / 2;
+            currentUC.Top = (panelContainer.Height - currentUC.Height) / 2;
+
+            currentUC.ResumeLayout();
+        }
+
 
         private void btnDanhMuc_Click(object sender, EventArgs e)
         {
@@ -32,9 +68,7 @@ namespace ProjectNhom4
 
         private void btnDauSach_Click(object sender, EventArgs e)
         {
-            QL_DauSach uc = new QL_DauSach();
-
-            loadControl(uc);
+            LoadUserControlToPanel(new QL_DauSach());
         }
 
 
@@ -70,8 +104,21 @@ namespace ProjectNhom4
         {
             dropDown_DanhMuc.Height = dropDown_DanhMuc.MinimumSize.Height;
             isCollapsed = true;
+            timer1.Enabled = false;
+
+            // Mỗi khi panelContainer thay đổi size → scale lại UC đang load
+            panelContainer.Resize += (s, e2) => ScaleUC();
+
+            dropDown_DanhMuc.Height = dropDown_DanhMuc.MinimumSize.Height;
+            isCollapsed = true;
             timer1.Enabled = false; // Đảm bảo timer không tự chạy
         }
+
+        private void panelContainer_Resize(object sender, EventArgs e)
+        {
+            ScaleUC();
+        }
+
         private void btnDanhMuc_DragDrop(object sender, DragEventArgs e)
         {
 
@@ -105,9 +152,9 @@ namespace ProjectNhom4
         }
         private void loadControl(UserControl uc)
         {
-            panelQLSach_contain.Controls.Clear(); // Xóa control cũ
+            panelContainer.Controls.Clear(); // Xóa control cũ
             uc.Dock = DockStyle.Fill;        // Ép control mới lấp đầy Panel
-            panelQLSach_contain.Controls.Add(uc); // Thêm control mới vào
+            panelContainer.Controls.Add(uc); // Thêm control mới vào
         }
 
         private void panelControl1_Paint(object sender, PaintEventArgs e)

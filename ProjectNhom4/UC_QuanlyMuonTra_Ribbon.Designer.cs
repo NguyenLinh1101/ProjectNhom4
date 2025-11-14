@@ -73,6 +73,7 @@
             this.btnPhieuPhat.Size = new System.Drawing.Size(278, 112);
             this.btnPhieuPhat.TabIndex = 0;
             this.btnPhieuPhat.Text = "Phiếu phạt";
+            this.btnPhieuPhat.Click += new System.EventHandler(this.btnPhieuPhat_Click);
             // 
             // btnPhieuTra
             // 
@@ -131,8 +132,7 @@
             // 
             // UC_QuanlyMuonTra_Ribbon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panelRibbon);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
