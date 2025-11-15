@@ -315,6 +315,7 @@
             this.btnQLTaiKhoan.Size = new System.Drawing.Size(206, 45);
             this.btnQLTaiKhoan.TabIndex = 9;
             this.btnQLTaiKhoan.Text = "Quản lý tài khoản";
+            this.btnQLTaiKhoan.Click += new System.EventHandler(this.btnQLTaiKhoan_Click_1);
             // 
             // btnDangXuat
             // 

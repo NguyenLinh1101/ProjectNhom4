@@ -110,6 +110,9 @@ namespace ProjectNhom4
         }
         private void QL_TaiKhoan_Load(object sender, EventArgs e)
         {
+            dgvTaiKhoan.ReadOnly = true;
+            dgvTaiKhoan.AllowUserToAddRows = false;
+            dgvTaiKhoan.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             LoadTaiKhoan();
             LoadThuThu();
             LoadQuyen();
@@ -180,7 +183,11 @@ namespace ProjectNhom4
             txtEmail.Clear();
             cboQuyen.SelectedIndex = -1;
             cboThuThu.SelectedIndex = -1;
+
             isAdding = true;
+            isEditing = false;
+
+            MessageBox.Show("Bạn đang ở chế độ thêm mới!");
         }
 
         private void btnXoa_Click(object sender, EventArgs e)

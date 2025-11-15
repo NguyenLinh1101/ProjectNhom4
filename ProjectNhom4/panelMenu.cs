@@ -153,5 +153,10 @@ namespace ProjectNhom4
         {
             LoadUserControl (new UC_TrangChu());
         }
+
+        private void btnQLTaiKhoan_Click_1(object sender, EventArgs e)
+        {
+            LoadUserControl (new QL_TaiKhoan());
+        }
     }
 }
