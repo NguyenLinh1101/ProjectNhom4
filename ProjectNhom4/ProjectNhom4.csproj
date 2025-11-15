@@ -136,6 +136,12 @@
     <Compile Include="QuanlyThuthu.Designer.cs">
       <DependentUpon>QuanlyThuthu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_PhieuPhat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_PhieuPhat.Designer.cs">
+      <DependentUpon>UC_PhieuPhat.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_PhieuTraSach.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -217,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanlyThuthu.resx">
       <DependentUpon>QuanlyThuthu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_PhieuPhat.resx">
+      <DependentUpon>UC_PhieuPhat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_PhieuTraSach.resx">
       <DependentUpon>UC_PhieuTraSach.cs</DependentUpon>

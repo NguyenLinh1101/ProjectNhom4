@@ -8,8 +8,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
 using System.Windows.Forms;
 
 namespace ProjectNhom4
@@ -19,7 +17,7 @@ namespace ProjectNhom4
         private bool isLoadingData = false;
 
 
-        string connectionString = "Data Source=LAPTOP-SO78PQJP\\MSSQLSERVER01;Initial Catalog=QL_THUVIEN;Integrated Security=True";
+        string connectionString = "Data Source=DESKTOP-ST1KSE3\\SQLEXPRESS;Initial Catalog=QL_THU_VIEN;Integrated Security=True";
         SqlConnection conn;
         SqlDataAdapter da;
         DataTable dtPhieuPhat;        // DGV trái
@@ -60,6 +58,7 @@ namespace ProjectNhom4
 
             dgvChiTietViPham.AutoGenerateColumns = false;
             dgvChiTietViPham.DataSource = dtChiTiet;
+            SetControlState("Normal");
         }
         #region -- Init / Load Helpers --
 
@@ -139,18 +138,17 @@ namespace ProjectNhom4
                     c.Open();
                     string query = @"
 SELECT
-    PP.Ma_Phieu_Phat AS [Mã Phiếu Phạt],
-    DG.Ho_Ten AS [Độc Giả],
-    PP.Ngay_Lap_Phieu AS [Ngày Lập],
-    -- TÍNH TRẠNG THÁI TỔNG THỂ CỦA PHIẾU PHẠT
+    PP.Ma_Phieu_Phat AS Ma_Phieu_Phat,
+    DG.Ho_Ten AS Doc_Gia,
+    PP.Ngay_Lap_Phieu AS Ngay_Lap,
     CASE
         WHEN EXISTS (
             SELECT 1 FROM CT_PHIEU_PHAT CP
-            WHERE CP.Ma_Phieu_Phat = PP.Ma_Phieu_Phat
-            AND CP.Trang_Thai_Phieu = N'Chưa nộp' -- Nếu TỒN TẠI bất kỳ chi tiết nào CHƯA NỘP
+            WHERE CP.Ma_Phieu_Phat = PP.Ma_Phieu_Phat 
+            AND CP.Trang_Thai_Phieu = N'Chưa nộp'
         ) THEN N'Chưa nộp'
-        ELSE N'Đã nộp' -- Nếu KHÔNG TỒN TẠI chi tiết nào Chưa nộp, nghĩa là Đã nộp hết
-    END AS [Trạng Thái]
+        ELSE N'Đã nộp'
+    END AS Trang_Thai
 FROM PHIEU_PHAT PP
 JOIN PHIEU_MUON PM ON PP.Ma_Phieu_Muon = PM.Ma_Phieu_Muon
 JOIN THE_DOC_GIA TDG ON PM.Ma_The = TDG.Ma_The
@@ -166,11 +164,15 @@ AND (
     END = @TrangThai) OR @TrangThai = N'Tất cả' OR @TrangThai = ''
 )
 ORDER BY PP.Ngay_Lap_Phieu DESC";
+
                     da = new SqlDataAdapter(query, c);
                     da.SelectCommand.Parameters.AddWithValue("@TrangThai", trangThai);
                     da.SelectCommand.Parameters.AddWithValue("@TenDocGia", "%" + tenDocGia + "%");
                     dtPhieuPhat = new DataTable();
                     da.Fill(dtPhieuPhat);
+
+                    // Đặt AutoGenerateColumns TRƯỚC khi gán DataSource
+                    dgvPhieuViPham.AutoGenerateColumns = false;
                     dgvPhieuViPham.DataSource = dtPhieuPhat;
                 }
             }
@@ -280,25 +282,8 @@ ORDER BY PP.Ngay_Lap_Phieu DESC";
 
         private void dgvPhieuViPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                // Lấy Mã Phiếu Phạt từ dòng đang chọn
-                object maPPValue = dgvPhieuViPham.Rows[e.RowIndex].Cells["Mã Phiếu Phạt"].Value;
-                if (maPPValue == null) return;
-                string maPP = maPPValue.ToString();
-
-
-                // 1. Nạp chi tiết vào GroupBox
-                NapThongTinPhieuPhat(maPP);
-
-                // 2. Tải chi tiết các lỗi vi phạm
-                LoadChiTietViPham(maPP);
-
-                isAdding = false;
-                isEditing = false;
-                btnLuu.Enabled = false;
-                txtMaPhieuPhat.ReadOnly = true;
-            }
+            
+            
         }
         private void LoadChiTietViPham(string maPP)
         {
@@ -307,16 +292,17 @@ ORDER BY PP.Ngay_Lap_Phieu DESC";
                 using (conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
+                    // SỬA LỖI SQL: Phải JOIN SACH với DAU_SACH
                     string query = @"
                 SELECT 
-    CP.Ma_Sach AS Ma_Sach,
-    S.Ten_Sach AS Ten_Sach,
-    VP.Ma_Vi_Pham AS Ma_Vi_Pham,
-    CP.Ly_Do AS Ly_Do,
-    CP.So_Tien_Phat AS Tien_Phat
+                    CP.Ma_Sach AS Ma_Sach,
+                    DS.Ten_Dau_Sach AS Ten_Sach, 
+                    CP.Ma_Vi_Pham AS Ma_Vi_Pham,
+                    CP.Ly_Do AS Ly_Do,
+                    CP.So_Tien_Phat AS Tien_Phat
                 FROM CT_PHIEU_PHAT CP
-                JOIN PHIEU_PHAT PP ON CP.Ma_Phieu_Phat = PP.Ma_Phieu_Phat
-                LEFT JOIN PHIEU_MUON PM ON PP.Ma_Phieu_Muon = PM.Ma_Phieu_Muon
+                LEFT JOIN SACH S ON CP.Ma_Sach = S.Ma_Sach
+                LEFT JOIN DAU_SACH DS ON S.Ma_Dau_Sach = DS.Ma_Dau_Sach
                 LEFT JOIN VI_PHAM VP ON CP.Ma_Vi_Pham = VP.Ma_Vi_Pham
                 WHERE CP.Ma_Phieu_Phat = @MaPP";
 
@@ -324,8 +310,7 @@ ORDER BY PP.Ngay_Lap_Phieu DESC";
                     da.SelectCommand.Parameters.AddWithValue("@MaPP", maPP);
                     dtChiTiet = new DataTable();
                     da.Fill(dtChiTiet);
-
-
+                    dgvChiTietViPham.AutoGenerateColumns = false;
                     dgvChiTietViPham.DataSource = dtChiTiet;
                     TinhTongTienPhat();
                 }
@@ -421,31 +406,39 @@ WHERE PP.Ma_Phieu_Phat = @MaPP";
         }
 
         // Hàm mới để lấy Ho_Ten, Ma_Doc_Gia từ Ma_Phieu_Muon
-        private bool LayThongTinDocGiaTuPM(string maPM)
+
+
+        private bool LayThongTinDocGiaTuPM(string maPM, out string maDocGia, out string tenDocGia, out string maThuThu, out DateTime? ngayThucTra)
         {
+            maDocGia = null;
+            tenDocGia = null;
+            maThuThu = null;
+            ngayThucTra = null;
             try
             {
                 using (conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
                     string query = @"
-                SELECT 
-                    TDG.Ma_Doc_Gia, DG.Ho_Ten
-                FROM PHIEU_MUON PM
-                LEFT JOIN THE_DOC_GIA TDG ON PM.Ma_The = TDG.Ma_The
-                LEFT JOIN DOC_GIA DG ON TDG.Ma_Doc_Gia = DG.Ma_Doc_Gia
-                WHERE PM.Ma_Phieu_Muon = @MaPM AND PM.Ngay_Thuc_Tra IS NOT NULL"; // CHỈ LẤY PHIẾU ĐÃ TRẢ
-
+            SELECT
+                TDG.Ma_Doc_Gia, DG.Ho_Ten, PM.Ma_Thu_Thu, PM.Ngay_Thuc_Tra
+            FROM PHIEU_MUON PM
+            LEFT JOIN THE_DOC_GIA TDG ON PM.Ma_The = TDG.Ma_The
+            LEFT JOIN DOC_GIA DG ON TDG.Ma_Doc_Gia = DG.Ma_Doc_Gia
+            WHERE PM.Ma_Phieu_Muon = @MaPM AND PM.Ngay_Thuc_Tra IS NOT NULL"; // Chỉ lấy phiếu đã trả
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@MaPM", maPM);
-                        SqlDataReader reader = cmd.ExecuteReader();
-
-                        if (reader.Read())
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            txtMaDocGia.Text = reader["Ma_Doc_Gia"].ToString();
-                            txtTenDocGia.Text = reader["Ho_Ten"].ToString();
-                            return true;
+                            if (reader.Read())
+                            {
+                                maDocGia = reader["Ma_Doc_Gia"] != DBNull.Value ? reader["Ma_Doc_Gia"].ToString() : null;
+                                tenDocGia = reader["Ho_Ten"] != DBNull.Value ? reader["Ho_Ten"].ToString() : null;
+                                maThuThu = reader["Ma_Thu_Thu"] != DBNull.Value ? reader["Ma_Thu_Thu"].ToString() : null;
+                                ngayThucTra = reader["Ngay_Thuc_Tra"] != DBNull.Value ? (DateTime?)reader["Ngay_Thuc_Tra"] : null;
+                                return true;
+                            }
                         }
                     }
                 }
@@ -453,39 +446,32 @@ WHERE PP.Ma_Phieu_Phat = @MaPP";
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi lấy thông tin Độc Giả: " + ex.Message);
+                return false;
             }
             return false;
         }
+
         #endregion
         private void btnThem_Click(object sender, EventArgs e)
         {
             isAdding = true;
             isEditing = false;
-            // 1. Sinh mã mới
-            txtMaPhieuPhat.Text = SinhMaPhieuPhatMoi();
-            txtMaPhieuPhat.ReadOnly = true;
 
-            // 2. Reset các trường
+            txtMaPhieuPhat.Text = SinhMaPhieuPhatMoi();
+
+            // (Code ClearForm và Reset các trường của bạn đã đúng...)
             txtMaPhieuMuon.Clear();
             txtMaDocGia.Clear();
             txtTenDocGia.Clear();
             txtTongTienPhat.Text = "0 VNĐ";
-
-            // 3. Ngày lập mặc định hôm nay
             dtpNgayLapPhieu.Value = DateTime.Now;
-
-            // 4. Dropdown
             cboThuThu.SelectedIndex = -1;
             cboTrangthainopphat.SelectedIndex = 1;
-
-            // 5. Xóa bảng chi tiết vi phạm
             dtChiTiet.Rows.Clear();
             dgvChiTietViPham.DataSource = dtChiTiet;
 
-            // 6. Trạng thái nút (phù hợp quy trình)
-            btnLuu.Enabled = true;
-            btnSua.Enabled = false;
-            btnXoa.Enabled = false;
+            // SỬA LẠI:
+            SetControlState("Editing"); // Chuyển sang chế độ "Thêm"
 
             MessageBox.Show("Sẵn sàng tạo Phiếu Phạt mới.\nVui lòng nhập Mã Phiếu Mượn.");
             txtMaPhieuMuon.Focus();
@@ -495,14 +481,29 @@ WHERE PP.Ma_Phieu_Phat = @MaPP";
             isAdding = false;
             isEditing = false;
 
+            // 1. Xóa trắng form
             txtMaPhieuPhat.Clear();
             txtMaPhieuMuon.Clear();
             txtMaDocGia.Clear();
             txtTenDocGia.Clear();
-            txtTongTienPhat.Text = "0";
+            txtTongTienPhat.Text = "0 VNĐ";
+            dtpNgayLapPhieu.Value = DateTime.Now;
+            cboThuThu.SelectedIndex = -1;
+            cboTrangthainopphat.SelectedIndex = 1;
 
-            dtChiTiet = new DataTable();
-            dgvChiTietViPham.DataSource = dtChiTiet;
+            dtChiTiet.Rows.Clear(); // Chỉ cần Clear Rows
+
+            // 2. Tải lại dữ liệu của dòng đang chọn (nếu có)
+            if (dgvPhieuViPham.CurrentRow != null)
+            {
+                // Tải lại dữ liệu gốc
+                string maPP = dgvPhieuViPham.CurrentRow.Cells["Ma_Phieu_Phat"].Value.ToString();
+                NapThongTinPhieuPhat(maPP);
+                LoadChiTietViPham(maPP);
+            }
+
+            // 3. Đặt lại trạng thái
+            SetControlState("Normal");
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -559,7 +560,10 @@ WHERE PP.Ma_Phieu_Phat = @MaPP";
             }
             isEditing = true;
             isAdding = false;
-            btnLuu.Enabled = true;
+
+            // SỬA LẠI:
+            SetControlState("Editing"); // Chuyển sang chế độ "Sửa"
+
             MessageBox.Show("Đã chuyển sang chế độ Sửa. Bạn có thể thay đổi thông tin chi tiết và nhấn Lưu.");
         }
 
@@ -652,6 +656,7 @@ VALUES(@MaPhieuPhat, @MaSach, @MaViPham, @LyDo, @TienPhat, @TrangThaiChiTiet)";
                     isAdding = false;
                     isEditing = false;
                     btnLuu.Enabled = false;
+                    SetControlState("Normal");
                     LoadDanhSachPhieuPhat();
                 }
                 catch (Exception ex)
@@ -663,33 +668,9 @@ VALUES(@MaPhieuPhat, @MaSach, @MaViPham, @LyDo, @TienPhat, @TrangThaiChiTiet)";
         }
         private void txtMaPhieuMuon_TextChanged(object sender, EventArgs e)
         {
-            string maPM = txtMaPhieuMuon.Text.Trim();
-
-            // 1. Xóa thông tin cũ
-            txtMaDocGia.Text = "";
-            txtTenDocGia.Text = "";
-            // DGV chi tiết vi phạm cũng cần xóa
-            dtChiTiet?.Clear();
-            dgvChiTietViPham.Refresh();
-
-            if (string.IsNullOrEmpty(maPM))
-            {
-                return;
-            }
-
-            // 2. Kiểm tra tính hợp lệ và nạp thông tin
-            if (LayThongTinDocGiaTuPM(maPM))
-            {
-                // Mã PM hợp lệ và đã được trả
-                // Có thể gọi LoadSachViPham(maPM) nếu cần hiển thị sách bị lỗi ngay
-            }
-            else
-            {
-                // Mã PM không tồn tại hoặc chưa được trả
-                MessageBox.Show("Mã Phiếu Mượn không tồn tại hoặc Phiếu chưa được trả.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtMaPhieuMuon.Focus(); // Bắt người dùng sửa lại
-            }
+            
         }
+
         private void TinhTongTienPhat()
         {
             decimal tong = 0;
@@ -712,16 +693,6 @@ VALUES(@MaPhieuPhat, @MaSach, @MaViPham, @LyDo, @TienPhat, @TrangThaiChiTiet)";
         {
            
         }
-        private void dgvChiTietViPham_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            dgvChiTietViPham.AllowUserToAddRows = true;
-
-            // Cập nhật tổng tiền khi sửa cột Tien_Phat
-            if (dgvChiTietViPham.Columns[e.ColumnIndex].DataPropertyName == "Tien_Phat")
-            {
-                TinhTongTienPhat();
-            }
-        }
 
         private void dgvChiTietViPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -743,46 +714,22 @@ VALUES(@MaPhieuPhat, @MaSach, @MaViPham, @LyDo, @TienPhat, @TrangThaiChiTiet)";
             }
 
         }
-        private void dgvChiTietViPham_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            // Nếu đang load dữ liệu thì bỏ qua (tránh tự kích hoạt)
-            if (isLoadingData) return;
-
-            // Bỏ qua nếu hàng không hợp lệ
-            if (e.RowIndex < 0) return;
-
-            // Nếu không phải cột Mã Sách thì không xử lý
-            if (e.ColumnIndex != dgvChiTietViPham.Columns[COL_MA_SACH].Index)
-                return;
-
-            // Lấy mã sách
-            var cellValue = dgvChiTietViPham.Rows[e.RowIndex]
-                              .Cells[COL_MA_SACH].Value;
-
-            string maSach = cellValue?.ToString()?.Trim();
-            if (string.IsNullOrEmpty(maSach))
-            {
-                dgvChiTietViPham.Rows[e.RowIndex].Cells[COL_TEN_SACH].Value = "";
-                return;
-            }
-
-            // Lấy tên sách
-            string tenSach = LayTenSach(maSach);
-
-            dgvChiTietViPham.Rows[e.RowIndex].Cells[COL_TEN_SACH].Value = tenSach;
-        }
         // 1) Hàm lấy tên sách an toàn
         private string LayTenSach(string maSach)
         {
-            if (string.IsNullOrWhiteSpace(maSach))
-                return string.Empty;
-
+            if (string.IsNullOrWhiteSpace(maSach)) return string.Empty;
             try
             {
                 using (var c = new SqlConnection(connectionString))
                 {
                     c.Open();
-                    string query = "SELECT Ten_Sach FROM SACH WHERE Ma_Sach = @ma";
+                    // SỬA LỖI SQL: Phải JOIN với DAU_SACH
+                    string query = @"
+                SELECT ds.Ten_Dau_Sach 
+                FROM SACH s
+                JOIN DAU_SACH ds ON s.Ma_Dau_Sach = ds.Ma_Dau_Sach
+                WHERE s.Ma_Sach = @ma";
+
                     using (var cmd = new SqlCommand(query, c))
                     {
                         cmd.Parameters.AddWithValue("@ma", maSach);
@@ -794,10 +741,9 @@ VALUES(@MaPhieuPhat, @MaSach, @MaViPham, @LyDo, @TienPhat, @TrangThaiChiTiet)";
             }
             catch (Exception ex)
             {
-                // Có thể ghi log vào file hoặc hiển thị debug theo nhu cầu
                 MessageBox.Show("Lỗi khi lấy Tên Sách: " + ex.Message);
             }
-            return string.Empty;
+            return "Không tìm thấy";
         }
 
 
@@ -815,16 +761,18 @@ VALUES(@MaPhieuPhat, @MaSach, @MaViPham, @LyDo, @TienPhat, @TrangThaiChiTiet)";
                 return;
             }
 
-            DataGridViewRow selectedRow = dgvChiTietViPham.SelectedRows[0];
-            DataRowView rowView = selectedRow.DataBoundItem as DataRowView;
-
-            if (rowView != null)
+            // SỬA: Xóa trong DataGridView sẽ tự động xóa trong DataTable
+            foreach (DataGridViewRow row in dgvChiTietViPham.SelectedRows)
             {
-                rowView.Row.Delete();
-                dtChiTiet.Rows.Remove(rowView.Row);
-                dtChiTiet.AcceptChanges();
-                TinhTongTienPhat();
+                if (!row.IsNewRow)
+                {
+                    dgvChiTietViPham.Rows.Remove(row);
+                }
             }
+
+            // ĐÃ XÓA DÒNG dtChiTiet.AcceptChanges();
+
+            TinhTongTienPhat();
         }
 
         private void txtMaDocGia_TextChanged(object sender, EventArgs e)
@@ -849,86 +797,159 @@ VALUES(@MaPhieuPhat, @MaSach, @MaViPham, @LyDo, @TienPhat, @TrangThaiChiTiet)";
 
         private void btnXuatPhieu_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "PDF File|*.pdf";
-            sfd.FileName = txtMaPhieuPhat.Text + ".pdf";
-            if (sfd.ShowDialog() == DialogResult.OK)
+        }
+        private void SetControlState(string state)
+        {
+            bool isEditingOrAdding = (state == "Editing");
+
+            // === 1. Bật/tắt các nút chính (Thêm, Sửa, Xóa, Lưu, Hủy) ===
+            btnThem.Enabled = !isEditingOrAdding;
+            btnSua.Enabled = !isEditingOrAdding;
+            btnXoa.Enabled = !isEditingOrAdding;
+            btnLuu.Enabled = isEditingOrAdding;
+            btnHuy.Enabled = isEditingOrAdding;
+
+            // === 2. Bật/tắt các ô nhập liệu thông tin chung ===
+            // (Chúng ta khóa các ô này khi ở chế độ "Normal")
+            txtMaPhieuMuon.ReadOnly = !isEditingOrAdding;
+            dtpNgayLapPhieu.Enabled = isEditingOrAdding;
+            cboThuThu.Enabled = isEditingOrAdding;
+            cboTrangthainopphat.Enabled = isEditingOrAdding;
+
+            // Các ô Mã PP, Mã ĐG, Tên ĐG luôn luôn khóa (chỉ để hiển thị)
+            txtMaPhieuPhat.ReadOnly = true;
+            txtMaDocGia.ReadOnly = true;
+            txtTenDocGia.ReadOnly = true;
+            txtTongTienPhat.ReadOnly = true;
+
+            // === 3. Bật/tắt khu vực "Chi tiết vi phạm" ===
+            dgvChiTietViPham.ReadOnly = !isEditingOrAdding; // Khóa/Mở lưới
+            dgvPhieuViPham.ReadOnly = !isEditingOrAdding;
+            btnLuu.Enabled = isEditingOrAdding;   // Nút "Thêm sách"
+            btnXoadong.Enabled = isEditingOrAdding;      // Nút "Xóa sách"
+        }
+        private void dgvPhieuViPham_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvPhieuViPham.CurrentRow != null && dgvPhieuViPham.CurrentRow.Index >= 0)
             {
-                try
-                {
-                    using (FileStream fs = new FileStream(sfd.FileName, FileMode.Create, FileAccess.Write, FileShare.None))
-                    {
-                        iTextSharp.text.Document doc = new iTextSharp.text.Document(iTextSharp.text.PageSize.A4);
-                        iTextSharp.text.pdf.PdfWriter writer = iTextSharp.text.pdf.PdfWriter.GetInstance(doc, fs);
-                        doc.Open();
+                object maPPValue = dgvPhieuViPham.CurrentRow.Cells["Ma_Phieu_Phat"].Value;
+                if (maPPValue == null) return;
+                string maPP = maPPValue.ToString();
 
-                        string fontPath = Environment.GetFolderPath(Environment.SpecialFolder.Fonts) + "\\times.ttf";
-                        if (!File.Exists(fontPath))
-                            fontPath = Environment.GetFolderPath(Environment.SpecialFolder.Fonts) + "\\arial.ttf";
+                NapThongTinPhieuPhat(maPP);
+                LoadChiTietViPham(maPP);
 
-                        BaseFont bf = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
-                        iTextSharp.text.Font fontTitle = new iTextSharp.text.Font(bf, 16, iTextSharp.text.Font.BOLD);
-                        iTextSharp.text.Font fontNormal = new iTextSharp.text.Font(bf, 12, iTextSharp.text.Font.NORMAL);
-                        iTextSharp.text.Font fontHeader = new iTextSharp.text.Font(bf, 12, iTextSharp.text.Font.BOLD);
-
-
-                        iTextSharp.text.Paragraph title = new iTextSharp.text.Paragraph("PHIẾU VI PHẠM", fontTitle);
-                        title.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
-                        title.SpacingAfter = 15f;
-                        doc.Add(title);
-
-                        doc.Add(new iTextSharp.text.Paragraph($"Mã Phiếu Phạt: {txtMaPhieuPhat.Text}", fontNormal));
-                        doc.Add(new iTextSharp.text.Paragraph($"Mã Phiếu Mượn: {txtMaPhieuMuon.Text}", fontNormal));
-                        doc.Add(new iTextSharp.text.Paragraph($"Độc Giả: {txtTenDocGia.Text}", fontNormal));
-                        doc.Add(new iTextSharp.text.Paragraph($"Ngày Lập: {dtpNgayLapPhieu.Value.ToShortDateString()}", fontNormal));
-                        doc.Add(new iTextSharp.text.Paragraph($"Tổng Tiền Phạt: {txtTongTienPhat.Text}", fontNormal));
-                        doc.Add(new iTextSharp.text.Paragraph(" ", fontNormal));
-
-                        iTextSharp.text.pdf.PdfPTable table = new iTextSharp.text.pdf.PdfPTable(dgvChiTietViPham.Columns.Cast<DataGridViewColumn>().Count(c => c.Visible));
-                        table.WidthPercentage = 100;
-                        table.SpacingBefore = 10f;
-                        table.SpacingAfter = 10f;
-
-                        foreach (DataGridViewColumn column in dgvChiTietViPham.Columns)
-                        {
-                            if (column.Visible)
-                            {
-                                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText, fontHeader));
-                                cell.HorizontalAlignment = Element.ALIGN_CENTER;
-                                table.AddCell(cell);
-                            }
-                        }
-
-                        foreach (DataGridViewRow row in dgvChiTietViPham.Rows)
-                        {
-                            if (row.IsNewRow) continue;
-
-                            for (int i = 0; i < dgvChiTietViPham.Columns.Count; i++)
-                            {
-                                DataGridViewColumn column = dgvChiTietViPham.Columns[i];
-                                if (column.Visible)
-                                {
-                                    table.AddCell(new PdfPCell(new Phrase(row.Cells[i].Value?.ToString() ?? "", fontNormal)));
-                                }
-                            }
-                        }
-                        doc.Add(table);
-
-                        doc.Add(new iTextSharp.text.Paragraph(" ", fontNormal));
-                        doc.Add(new iTextSharp.text.Paragraph($"Thủ thư lập phiếu: {cboThuThu.Text}", fontNormal));
-
-
-                        doc.Close();
-                        writer.Close();
-
-                        MessageBox.Show("Xuất Phiếu Phạt thành công!");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi xuất PDF: " + ex.Message + "\nKiểm tra lại đường dẫn font tiếng Việt.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                // SỬA LẠI:
+                SetControlState("Normal"); // Đặt trạng thái "Chỉ xem"
             }
         }
+
+        private void txtMaPhieuMuon_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (isLoadingData || !isAdding)
+                {
+                    return;
+                }
+                e.SuppressKeyPress = true; // Ngăn tiếng beep mặc định
+                string maPM = txtMaPhieuMuon.Text.Trim();
+                if (string.IsNullOrEmpty(maPM))
+                {
+                    return; // Không làm gì nếu empty
+                }
+                // Clear thông tin cũ chỉ khi có maPM
+                txtMaDocGia.Text = "";
+                txtTenDocGia.Text = "";
+                dtChiTiet?.Clear();
+                dgvChiTietViPham.Refresh(); // Optional, nếu bind đúng thì không cần
+
+                if (LayThongTinDocGiaTuPM(maPM, out string maDocGia, out string tenDocGia, out string maThuThu, out DateTime? ngayThucTra))
+                {
+                    // Không check quá hạn nữa, vì có thể phạt do sách hỏng hoặc lý do khác
+                    // Load thông tin độc giả và trạng thái
+                    txtMaDocGia.Text = maDocGia ?? "";
+                    txtTenDocGia.Text = tenDocGia ?? "";
+                    if (!string.IsNullOrEmpty(maThuThu))
+                    {
+                        cboThuThu.SelectedValue = maThuThu; // Giả định cboThuThu bind Ma_Thu_Thu
+                    }
+                    if (ngayThucTra.HasValue)
+                    {
+                        dtpNgayLapPhieu.Value = ngayThucTra.Value; // Ngày lập phiếu = ngày thực trả
+                    }
+                    // Set trạng thái phiếu phạt mặc định "Chưa nộp"
+                    cboTrangthainopphat.SelectedItem = "Chưa nộp";
+                    // Load chi tiết sách mượn vào vi phạm (user sẽ nhập Ly_Do như "Sách hỏng" thủ công)
+                    LoadChiTietPhieuMuonVaoViPham(maPM); 
+                }
+                else
+                {
+                    MessageBox.Show("Mã Phiếu Mượn không tồn tại hoặc Phiếu chưa được trả.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtMaPhieuMuon.SelectAll();
+                    txtMaPhieuMuon.Focus();
+                    return;
+                }
+                SendKeys.Send("{TAB}"); // Nhảy focus tiếp (cẩn thận, có thể dùng SelectNextControl(this.ActiveControl, true, true, true, true); thay thế)
+            }
+        }
+        private void LoadChiTietPhieuMuonVaoViPham(string maPM)
+        {
+            try
+            {
+                using (var c = new SqlConnection(connectionString))
+                {
+                    c.Open();
+                    // Lấy Ma_Sach và Ten_Sach (qua 3 bảng)
+                    string query = @"
+                SELECT 
+                    ctpm.Ma_Sach, 
+                    ds.Ten_Dau_Sach AS Ten_Sach
+                FROM CT_PHIEU_MUON ctpm
+                JOIN SACH s ON ctpm.Ma_Sach = s.Ma_Sach
+                JOIN DAU_SACH ds ON s.Ma_Dau_Sach = ds.Ma_Dau_Sach
+                WHERE ctpm.Ma_Phieu_Muon = @MaPM";
+
+                    using (var cmd = new SqlCommand(query, c))
+                    {
+                        cmd.Parameters.AddWithValue("@MaPM", maPM);
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        // Xóa các chi tiết cũ
+                        dtChiTiet.Rows.Clear();
+
+                        while (reader.Read())
+                        {
+                            // Thêm sách vào DataTable (dtChiTiet)
+                            DataRow newRow = dtChiTiet.NewRow();
+                            newRow["Ma_Sach"] = reader["Ma_Sach"].ToString();
+                            newRow["Ten_Sach"] = reader["Ten_Sach"].ToString();
+                            newRow["Ly_Do"] = ""; // Để trống cho người dùng nhập
+                            newRow["Tien_Phat"] = 0; // Để trống
+                            newRow["Ma_Vi_Pham"] = ""; // Để trống
+                            dtChiTiet.Rows.Add(newRow);
+                        }
+                    }
+                }
+                // Cập nhật lại tổng tiền (sẽ là 0)
+                TinhTongTienPhat();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải chi tiết phiếu mượn: " + ex.Message);
+            }
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Enter)
+            {
+                SelectNextControl(ActiveControl, true, true, true, true);
+                return true; // Đã xử lý Enter
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
     }
 }
