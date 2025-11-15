@@ -918,7 +918,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtTongtien;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox grpSachViPham;
-        private Guna.UI2.WinForms.Guna2DataGridViewStyler guna2DataGridViewStyler1;
+  
         private System.Windows.Forms.DataGridView grpsachvp;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSach;

@@ -1097,5 +1097,91 @@ namespace ProjectNhom4
             MessageBox.Show("Dữ liệu đã được tải lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            if (dgvDauSach.CurrentRow == null)
+            {
+                MessageBox.Show("Vui lòng chọn phiếu mượn cần in!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Lấy Ma_Phieu_Muon từ cột DataPropertyName "Ma_Phieu_Muon"
+            string maPhieuMuon = dgvDauSach.CurrentRow.Cells["Ma_Phieu_Muon"].Value?.ToString()?.Trim();
+
+            if (string.IsNullOrEmpty(maPhieuMuon))
+            {
+                MessageBox.Show("Phiếu mượn này chưa có mã!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Debug: kiểm tra giá trị
+            // MessageBox.Show($"Ma_Phieu_Muon: {maPhieuMuon}");
+
+            // Lấy dữ liệu phiếu mượn từ database
+            DataSet dsPhieuMuon = LayDuLieuPhieuMuon(maPhieuMuon);
+
+            if (dsPhieuMuon == null || dsPhieuMuon.Tables.Count == 0 || dsPhieuMuon.Tables[0].Rows.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy dữ liệu phiếu mượn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Mở form in báo cáo
+            frmPhieuMuon frm = new frmPhieuMuon(dsPhieuMuon);
+            frm.ShowDialog();
+        }
+
+
+        private DataSet LayDuLieuPhieuMuon(string maPhieuMuon)
+        {
+            string connectionString = @"Data Source=LANNHI\SQLEXPRESS;Initial Catalog=dataThuvien2;Integrated Security=True";
+
+            string query = @"
+     SELECT 
+    PM.Ma_Phieu_Muon, PM.Ma_The, PM.Ma_Thu_Thu, PM.Ma_Kieu_Muon,
+    PM.Ngay_Muon, PM.Han_Tra, PM.Ngay_Thuc_Tra,
+    PM.Trang_Thai_Muon, PM.Tien_Coc,
+
+    CT.Ma_Sach,
+    S.Ma_Dau_Sach,
+    S.Trang_Thai_Sach_Muon,
+
+    DS.Ten_Dau_Sach,
+    DS.Nam_XB,
+
+    DG.Ma_Doc_Gia,
+    DG.Ho_Ten,
+
+    TT.Ten_Thu_Thu,
+    KM.Ten_Kieu_Muon AS TenKieuMuon
+FROM PHIEU_MUON PM
+LEFT JOIN CT_PHIEU_MUON CT ON PM.Ma_Phieu_Muon = CT.Ma_Phieu_Muon
+LEFT JOIN SACH S ON CT.Ma_Sach = S.Ma_Sach
+LEFT JOIN DAU_SACH DS ON S.Ma_Dau_Sach = DS.Ma_Dau_Sach
+LEFT JOIN THE_DOC_GIA TDG ON PM.Ma_The = TDG.Ma_The
+LEFT JOIN DOC_GIA DG ON TDG.Ma_Doc_Gia = DG.Ma_Doc_Gia
+LEFT JOIN THU_THU TT ON PM.Ma_Thu_Thu = TT.Ma_Thu_Thu
+LEFT JOIN KIEU_MUON KM ON PM.Ma_Kieu_Muon = KM.Ma_Kieu_Muon
+WHERE PM.Ma_Phieu_Muon = @MaPhieuMuon
+
+
+    ";
+
+            DataSet ds = new DataSet();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@MaPhieuMuon", maPhieuMuon);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds, "dsPhieuMuon"); // Lấy bảng đầu tiên trong dataset
+            }
+
+            return ds;
+        }
+
+
+
     }
 }

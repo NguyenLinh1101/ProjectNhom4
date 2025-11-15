@@ -80,6 +80,14 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dsPhieuMuon.cs">
+      <DependentUpon>dsPhieuMuon.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsPhieuMuon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPhieuMuon.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmformphuChonSach.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +99,12 @@
     </Compile>
     <Compile Include="frmPhatSach.Designer.cs">
       <DependentUpon>frmPhatSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhieuMuon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhieuMuon.Designer.cs">
+      <DependentUpon>frmPhieuMuon.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTraSach.cs">
       <SubType>Form</SubType>
@@ -185,6 +199,9 @@
     <EmbeddedResource Include="frmPhatSach.resx">
       <DependentUpon>frmPhatSach.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPhieuMuon.resx">
+      <DependentUpon>frmPhieuMuon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTraSach.resx">
       <DependentUpon>frmTraSach.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +227,9 @@
     <EmbeddedResource Include="QuanlyThuthu.resx">
       <DependentUpon>QuanlyThuthu.cs</DependentUpon>
     </EmbeddedResource>
+    <Content Include="rptPhieuMuon.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="UC_PhieuPhat.resx">
       <DependentUpon>UC_PhieuPhat.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,6 +257,17 @@
     <EmbeddedResource Include="UC_TrangChu.resx">
       <DependentUpon>UC_TrangChu.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="dsPhieuMuon.xsc">
+      <DependentUpon>dsPhieuMuon.xsd</DependentUpon>
+    </None>
+    <None Include="dsPhieuMuon.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPhieuMuon.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsPhieuMuon.xss">
+      <DependentUpon>dsPhieuMuon.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
