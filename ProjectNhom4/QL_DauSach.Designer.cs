@@ -144,9 +144,6 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.dgvDSDauSach.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDSDauSach.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDSDauSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDSDauSach.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDSDauSach.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -736,6 +733,7 @@
             this.panelRoot.Name = "panelRoot";
             this.panelRoot.Size = new System.Drawing.Size(1265, 827);
             this.panelRoot.TabIndex = 16;
+            this.panelRoot.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRoot_Paint);
             // 
             // QL_DauSach
             // 

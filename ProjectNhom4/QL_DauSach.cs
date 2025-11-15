@@ -575,5 +575,10 @@ namespace ProjectNhom4
         {
 
         }
+
+        private void panelRoot_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

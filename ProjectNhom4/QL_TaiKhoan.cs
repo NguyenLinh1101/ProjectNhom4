@@ -29,7 +29,17 @@ namespace ProjectNhom4
 
         private void dgvTaiKhoan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return;
 
+            var drv = dgvTaiKhoan.Rows[e.RowIndex].DataBoundItem as DataRowView;
+            if (drv == null) return;
+
+            // Dùng tên cột như trong SQL SELECT
+            cboThuThu.Text = drv["Ten_Thu_Thu"]?.ToString();
+            txtTenDN.Text = drv["TenDN"]?.ToString();
+            txtMatKhau.Text = drv["MatKhau"]?.ToString();
+            txtEmail.Text = drv["Email"]?.ToString();
+            cboQuyen.Text = drv["Quyen"]?.ToString();
         }
 
         // 🔹 Load dữ liệu từ bảng THU_THU
@@ -110,6 +120,7 @@ namespace ProjectNhom4
         }
         private void QL_TaiKhoan_Load(object sender, EventArgs e)
         {
+            //FixLayout();          // <<--- thêm dòng này
             dgvTaiKhoan.ReadOnly = true;
             dgvTaiKhoan.AllowUserToAddRows = false;
             dgvTaiKhoan.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -120,9 +131,27 @@ namespace ProjectNhom4
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (cboThuThu.SelectedIndex == -1 || string.IsNullOrWhiteSpace(txtTenDN.Text) || string.IsNullOrWhiteSpace(txtMatKhau.Text))
+            // Xóa các ô nhập
+            txtTenDN.Clear();
+            txtMatKhau.Clear();
+            txtEmail.Clear();
+            cboQuyen.SelectedIndex = -1;
+            cboThuThu.SelectedIndex = -1;
+
+            // Bật chế độ THÊM
+            isAdding = true;
+            isEditing = false;
+
+            MessageBox.Show("Bạn đang ở chế độ THÊM mới.");
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            if (cboThuThu.SelectedIndex == -1 ||
+        string.IsNullOrWhiteSpace(txtTenDN.Text) ||
+        string.IsNullOrWhiteSpace(txtMatKhau.Text))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thiếu dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
                 return;
             }
 
@@ -131,63 +160,59 @@ namespace ProjectNhom4
                 conn.Open();
                 SqlCommand cmd;
 
+                // ---------------------------
+                // 1) THÊM TÀI KHOẢN
+                // ---------------------------
                 if (isAdding)
                 {
-                    // Thêm mới tài khoản
                     string sqlInsert = @"UPDATE THU_THU
-                                         SET TenDN=@TenDN, MatKhau=@MatKhau, Email=@Email, Quyen=@Quyen
-                                         WHERE Ma_Thu_Thu=@Ma_Thu_Thu";
+                                 SET TenDN=@TenDN, MatKhau=@MatKhau, Email=@Email, Quyen=@Quyen
+                                 WHERE Ma_Thu_Thu=@Ma_Thu_Thu";
+
                     cmd = new SqlCommand(sqlInsert, conn);
-                    cmd.Parameters.AddWithValue("@Ma_Thu_Thu", cboThuThu.SelectedValue.ToString());
+                    cmd.Parameters.AddWithValue("@Ma_Thu_Thu", cboThuThu.SelectedValue);
                     cmd.Parameters.AddWithValue("@TenDN", txtTenDN.Text);
                     cmd.Parameters.AddWithValue("@MatKhau", txtMatKhau.Text);
                     cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
                     cmd.Parameters.AddWithValue("@Quyen", cboQuyen.Text);
 
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Đã thêm tài khoản thành công!");
-                    isAdding = false;
+                    MessageBox.Show("Đã thêm tài khoản!");
                 }
-                else
+
+                // ---------------------------
+                // 2) SỬA TÀI KHOẢN
+                // ---------------------------
+                else if (isEditing)
                 {
-                    // Sửa thông tin tài khoản
                     string sqlUpdate = @"UPDATE THU_THU
-                                         SET TenDN=@TenDN, MatKhau=@MatKhau, Email=@Email, Quyen=@Quyen
-                                         WHERE Ma_Thu_Thu=@Ma_Thu_Thu";
+                                 SET TenDN=@TenDN, MatKhau=@MatKhau, Email=@Email, Quyen=@Quyen
+                                 WHERE Ma_Thu_Thu=@Ma_Thu_Thu";
+
                     cmd = new SqlCommand(sqlUpdate, conn);
-                    cmd.Parameters.AddWithValue("@Ma_Thu_Thu", cboThuThu.SelectedValue.ToString());
+                    cmd.Parameters.AddWithValue("@Ma_Thu_Thu", cboThuThu.SelectedValue);
                     cmd.Parameters.AddWithValue("@TenDN", txtTenDN.Text);
                     cmd.Parameters.AddWithValue("@MatKhau", txtMatKhau.Text);
                     cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
                     cmd.Parameters.AddWithValue("@Quyen", cboQuyen.Text);
 
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Đã cập nhật thông tin tài khoản!");
+                    MessageBox.Show("Đã cập nhật tài khoản!");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi lưu: " + ex.Message);
+                MessageBox.Show("Lỗi: " + ex.Message);
             }
             finally
             {
                 conn.Close();
                 LoadTaiKhoan();
+
+                // Reset chế độ
+                isAdding = false;
+                isEditing = false;
             }
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            txtTenDN.Clear();
-            txtMatKhau.Clear();
-            txtEmail.Clear();
-            cboQuyen.SelectedIndex = -1;
-            cboThuThu.SelectedIndex = -1;
-
-            isAdding = true;
-            isEditing = false;
-
-            MessageBox.Show("Bạn đang ở chế độ thêm mới!");
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -227,20 +252,82 @@ namespace ProjectNhom4
         {
             if (cboThuThu.SelectedIndex == -1)
             {
-                MessageBox.Show("Vui lòng chọn bản ghi cần sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng chọn bản ghi để sửa!");
                 return;
             }
 
             isAdding = false;
             isEditing = true;
 
-            MessageBox.Show("Hãy thay đổi thông tin trong các ô, sau đó nhấn 'Thêm' để lưu lại thay đổi!",
-                            "Chế độ sửa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Bạn đang ở chế độ SỬA.\nHãy chỉnh thông tin rồi nhấn LƯU.");
         }
 
         private void grbTTTT_Enter(object sender, EventArgs e)
         {
 
         }
+
+        private void panelRoot_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+       //private void FixLayout()
+       // {
+       //     // ---- Panel gốc chiếm toàn màn hình ----
+       //     panelRoot.Dock = DockStyle.Fill;
+
+       //     // ---- Label tiêu đề đặt trên cùng ----
+       //     lblTaiKhoan.Dock = DockStyle.Top;
+       //     lblTaiKhoan.Height = 40;
+
+       //     // ---- GroupBox chứa thông tin tài khoản ----
+       //     grbTTTT.Dock = DockStyle.Top;
+       //     grbTTTT.Height = 180;
+
+       //     // ---- Panel chứa nút (tạo nếu chưa có) ----
+       //     Panel panelButtons = new Panel();
+       //     panelButtons.Height = 55;
+       //     panelButtons.Dock = DockStyle.Top;
+       //     panelButtons.BackColor = Color.Transparent;
+
+       //     // Nếu panelButtons chưa có trong panelRoot thì thêm:
+       //     if (!panelRoot.Controls.Contains(panelButtons))
+       //     {
+       //         panelRoot.Controls.Add(panelButtons);
+       //         panelButtons.BringToFront();
+       //     }
+
+       //     // ---- Anchor cho các nút ----
+       //     btnThem.Anchor = AnchorStyles.Left | AnchorStyles.Top;
+       //     btnSua.Anchor = AnchorStyles.Left | AnchorStyles.Top;
+       //     btnXoa.Anchor = AnchorStyles.Left | AnchorStyles.Top;
+       //     btnTaomoi.Anchor = AnchorStyles.Left | AnchorStyles.Top;
+
+       //     // Đặt lên panelButtons
+       //     panelButtons.Controls.Add(btnThem);
+       //     panelButtons.Controls.Add(btnSua);
+       //     panelButtons.Controls.Add(btnXoa);
+       //     panelButtons.Controls.Add(btnTaomoi);
+
+       //     // Tự canh vị trí nút
+       //     int x = 10;
+       //     foreach (Control btn in panelButtons.Controls)
+       //     {
+       //         btn.Left = x;
+       //         btn.Top = 10;
+       //         x += btn.Width + 15;
+       //     }
+
+       //     // ---- DataGridView tự chiếm toàn phần còn lại ----
+       //     dgvTaiKhoan.Dock = DockStyle.Fill;
+
+       //     // ---- Tự điều chỉnh cột DGV ----
+       //     dgvTaiKhoan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+       //     dgvTaiKhoan.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+       //     dgvTaiKhoan.RowHeadersVisible = false; // gọn hơn
+       // }
+
+
     }
 }
