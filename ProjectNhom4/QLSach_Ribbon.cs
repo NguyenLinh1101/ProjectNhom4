@@ -77,7 +77,7 @@ namespace ProjectNhom4
 
         private void btnCuonSach_Click(object sender, EventArgs e)
         {
-
+            LoadUserControlToPanel(new UC_QuanlyCuonSach());
         }
 
         private void timer1_Tick(object sender, EventArgs e)

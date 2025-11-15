@@ -128,6 +128,13 @@
     <Compile Include="ChiTietDauSach.Designer.cs">
       <DependentUpon>ChiTietDauSach.cs</DependentUpon>
     </Compile>
+	  <Compile Include="UC_QuanlyCuonSach.cs">
+		  <SubType>UserControl</SubType>
+	  </Compile>
+
+	  <Compile Include="UC_QuanlyCuonSach.Designer.cs">
+		  <DependentUpon>UC_QuanlyCuonSach.cs</DependentUpon>
+	  </Compile>
     <Compile Include="UserSession.cs" />
     <EmbeddedResource Include="ChiTietDauSach.resx">
       <DependentUpon>ChiTietDauSach.cs</DependentUpon>
@@ -408,6 +415,9 @@
     <EmbeddedResource Include="QL_TaiKhoan.resx">
       <DependentUpon>QL_TaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
+	  <EmbeddedResource Include="UC_QuanlyCuonSach.resx">
+		  <DependentUpon>UC_QuanlyCuonSach.cs</DependentUpon>
+	  </EmbeddedResource>
     <EmbeddedResource Include="UC_QuanlyMuonTra_Ribbon.resx">
       <DependentUpon>UC_QuanlyMuonTra_Ribbon.cs</DependentUpon>
     </EmbeddedResource>
