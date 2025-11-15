@@ -22,6 +22,7 @@ namespace ProjectNhom4
         SqlDataAdapter da;
         DataTable dtPhieuPhat;        // DGV trái
         DataTable dtChiTiet;          // DGV chi tiết
+        DataTable dtViPham;
         bool isAdding = false;        // Trạng thái Thêm
         bool isEditing = false;       // Trạng thái Sửa
 
@@ -52,16 +53,30 @@ namespace ProjectNhom4
             LoadTrangThaiComboBox();
             LoadThuThu();
             LoadTrangThai();
+            LoadDanhSachViPhamChoComboBox();
             isLoadingData = false;
             dtpNgayLapPhieu.Value = DateTime.Now;
             txtTongTienPhat.Text = "0 VNĐ";
 
             dgvChiTietViPham.AutoGenerateColumns = false;
             dgvChiTietViPham.DataSource = dtChiTiet;
+            this.dgvChiTietViPham.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvChiTietViPham_CurrentCellDirtyStateChanged);
             SetControlState("Normal");
         }
         #region -- Init / Load Helpers --
-
+        private void dgvChiTietViPham_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            // Kiểm tra xem có phải cột "Lý do" đang được sửa không
+            if (dgvChiTietViPham.CurrentCell.ColumnIndex == dgvChiTietViPham.Columns[COL_LY_DO].Index)
+            {
+                // Commit (chốt) giá trị ComboBox ngay lập tức
+                // Điều này sẽ kích hoạt sự kiện CellValueChanged
+                if (dgvChiTietViPham.IsCurrentCellDirty)
+                {
+                    dgvChiTietViPham.CommitEdit(DataGridViewDataErrorContexts.Commit);
+                }
+            }
+        }
         private void InitChiTietDataTable()
         {
             dtChiTiet = new DataTable();
@@ -640,15 +655,83 @@ VALUES(@MaPhieuPhat, @MaSach, @MaViPham, @LyDo, @TienPhat, @TrangThaiChiTiet)";
 
                     foreach (DataRow r in dtChiTiet.Rows)
                     {
-                        SqlCommand cmd2 = new SqlCommand(insertCT, conn, tran);
-                        cmd2.Parameters.AddWithValue("@MaPhieuPhat", maPP);
-                        cmd2.Parameters.AddWithValue("@MaSach", r["Ma_Sach"].ToString());
-                        cmd2.Parameters.AddWithValue("@LyDo", r["Ly_Do"].ToString());
-                        cmd2.Parameters.AddWithValue("@MaViPham", r["Ma_Vi_Pham"]);
-                        cmd2.Parameters.AddWithValue("@TienPhat", Convert.ToDecimal(r["Tien_Phat"]));
-                        cmd2.Parameters.AddWithValue("@TrangThaiChiTiet", trangThaiChiTiet);
-                        cmd2.ExecuteNonQuery();
+                        // Lấy giá trị an toàn
+                        string maSach = r["Ma_Sach"] == DBNull.Value ? null : r["Ma_Sach"].ToString().Trim();
+                        string maViPham = null;
+                        string lyDo = r.Table.Columns.Contains("Ly_Do") && r["Ly_Do"] != DBNull.Value ? r["Ly_Do"].ToString().Trim() : null;
+                        decimal tienPhat = 0m;
+
+                        // === SỬA LỖI LOGIC: BỎ QUA HÀNG TRỐNG ===
+                        // Nếu cả Mã Sách và Lý Do đều trống, đây là hàng mới (NewRow)
+                        // hoặc hàng rác. Chúng ta sẽ bỏ qua (continue)
+                        if (string.IsNullOrEmpty(maSach) && string.IsNullOrEmpty(lyDo))
+                        {
+                            continue; // Bỏ qua dòng này và đi đến dòng tiếp theo
+                        }
+                        // === KẾT THÚC SỬA ===
+
+                        // Trường hợp dtChiTiet lưu Ma_Vi_Pham (nên ưu tiên)
+                        if (r.Table.Columns.Contains("Ma_Vi_Pham") && r["Ma_Vi_Pham"] != DBNull.Value && !string.IsNullOrEmpty(r["Ma_Vi_Pham"].ToString()))
+                        {
+                            maViPham = r["Ma_Vi_Pham"].ToString().Trim();
+                        }
+                        else if (!string.IsNullOrEmpty(lyDo) && dtViPham != null)
+                        {
+                            // nếu chưa có Ma_Vi_Pham trong row, map từ dtViPham theo Ly_Do
+                            DataRow[] found = dtViPham.Select($"Ly_Do = '{lyDo.Replace("'", "''")}'");
+                            if (found.Length > 0)
+                                maViPham = found[0]["Ma_Vi_Pham"]?.ToString();
+                        }
+
+                        // Lấy Tiền Phạt an toàn
+                        if (r.Table.Columns.Contains("Tien_Phat") && r["Tien_Phat"] != DBNull.Value)
+                        {
+                            decimal.TryParse(r["Tien_Phat"].ToString(), out tienPhat);
+                        }
+                        else if (!string.IsNullOrEmpty(maViPham) && dtViPham != null)
+                        {
+                            // map từ dtViPham nếu cần
+                            DataRow[] f = dtViPham.Select($"Ma_Vi_Pham = '{maViPham.Replace("'", "''")}'");
+                            if (f.Length > 0 && f[0].Table.Columns.Contains("Tien_Phat_Max") && f[0]["Tien_Phat_Max"] != DBNull.Value)
+                            {
+                                decimal.TryParse(f[0]["Tien_Phat_Max"].ToString(), out tienPhat);
+                            }
+                        }
+
+                        // Validate bắt buộc (dành cho các hàng đã điền dở)
+                        if (string.IsNullOrEmpty(maSach) || string.IsNullOrEmpty(maViPham))
+                        {
+                            tran.Rollback();
+                            MessageBox.Show($"Phát hiện dòng chi tiết thiếu Ma_Sach hoặc Ma_Vi_Pham (Sách: {maSach}, Lý do: {lyDo}). Vui lòng kiểm tra lại.", "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        // Kiểm tra Ma_Vi_Pham thực sự tồn tại trong dtViPham (tránh lỗi FK)
+                        bool exists = false;
+                        if (dtViPham != null && dtViPham.Select($"Ma_Vi_Pham = '{maViPham.Replace("'", "''")}'").Length > 0)
+                            exists = true;
+                        if (!exists)
+                        {
+                            tran.Rollback();
+                            MessageBox.Show($"Mã vi phạm '{maViPham}' (cho lý do '{lyDo}') không tồn tại trong danh mục Vi Phạm. Vui lòng kiểm tra.", "Lỗi khóa ngoại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        using (SqlCommand cmd2 = new SqlCommand(insertCT, conn, tran))
+                        {
+                            cmd2.Parameters.Add("@MaPhieuPhat", SqlDbType.NVarChar, 50).Value = maPP;
+                            cmd2.Parameters.Add("@MaSach", SqlDbType.NVarChar, 50).Value = maSach;
+                            cmd2.Parameters.Add("@MaViPham", SqlDbType.NVarChar, 50).Value = maViPham;
+                            cmd2.Parameters.Add("@LyDo", SqlDbType.NVarChar, 200).Value = (object)lyDo ?? DBNull.Value;
+                            cmd2.Parameters.Add("@TienPhat", SqlDbType.Decimal).Value = tienPhat;
+                            cmd2.Parameters["@TienPhat"].Precision = 18;
+                            cmd2.Parameters["@TienPhat"].Scale = 2;
+                            cmd2.Parameters.Add("@TrangThaiChiTiet", SqlDbType.NVarChar, 50).Value = trangThaiChiTiet;
+
+                            cmd2.ExecuteNonQuery();
+                        }
                     }
+                    // === KẾT THÚC SỬA ===
 
                     tran.Commit();
                     MessageBox.Show("Lưu Phiếu Phạt thành công!");
@@ -700,7 +783,7 @@ VALUES(@MaPhieuPhat, @MaSach, @MaViPham, @LyDo, @TienPhat, @TrangThaiChiTiet)";
             // Logic khi click vào danh sách Phiếu Phạt
             if (e.RowIndex >= 0)
             {
-                object maPPValue = dgvPhieuViPham.Rows[e.RowIndex].Cells["Mã Phiếu Phạt"].Value;
+                object maPPValue = dgvPhieuViPham.Rows[e.RowIndex].Cells["Ma_Phieu_Phat"].Value;
                 if (maPPValue == null) return;
                 string maPP = maPPValue.ToString();
 
@@ -939,17 +1022,103 @@ VALUES(@MaPhieuPhat, @MaSach, @MaViPham, @LyDo, @TienPhat, @TrangThaiChiTiet)";
                 MessageBox.Show("Lỗi khi tải chi tiết phiếu mượn: " + ex.Message);
             }
         }
-
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        private void LoadDanhSachViPhamChoComboBox()
         {
-            if (keyData == Keys.Enter)
+            try
             {
-                SelectNextControl(ActiveControl, true, true, true, true);
-                return true; // Đã xử lý Enter
-            }
+                dtViPham = new DataTable(); // Gán vào biến class
+                using (conn = new SqlConnection(connectionString))
+                {
+                    // SỬA: Lấy tất cả các cột
+                    string query = "SELECT Ma_Vi_Pham, Ten_Vi_Pham AS Ly_Do FROM VI_PHAM";
+                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                    da.Fill(dtViPham);
+                }
 
-            return base.ProcessCmdKey(ref msg, keyData);
+                // Lấy cột ComboBox "Lý do phạt" (tên đã đặt ở Bước 1)
+                DataGridViewComboBoxColumn cboCol = dgvChiTietViPham.Columns[COL_LY_DO] as DataGridViewComboBoxColumn;
+
+                if (cboCol != null)
+                {
+                    cboCol.DataSource = dtViPham;
+                    cboCol.DisplayMember = "Ly_Do"; // Hiển thị Tên/Lý do
+                    cboCol.ValueMember = "Ma_Vi_Pham";    // ✔ Giá trị thật của item là mã vi phạm
+                    cboCol.DataPropertyName = "Ma_Vi_Pham";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải danh sách vi phạm: " + ex.Message);
+            }
         }
 
+        private void dgvChiTietViPham_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (isLoadingData || e.RowIndex < 0) return;
+
+            // --- Logic 1: Tự động điền Tên Sách ---
+            if (e.ColumnIndex == dgvChiTietViPham.Columns[COL_MA_SACH].Index)
+            {
+                var cellValue = dgvChiTietViPham.Rows[e.RowIndex].Cells[COL_MA_SACH].Value;
+                string maSach = cellValue?.ToString()?.Trim();
+
+                if (string.IsNullOrEmpty(maSach))
+                {
+                    dgvChiTietViPham.Rows[e.RowIndex].Cells[COL_TEN_SACH].Value = DBNull.Value;
+                    return;
+                }
+                string tenSach = LayTenSach(maSach); // (Phải sửa hàm LayTenSach)
+                dgvChiTietViPham.Rows[e.RowIndex].Cells[COL_TEN_SACH].Value = tenSach;
+            }
+
+            // --- Logic 2 (MỚI): Tự động điền Mã Vi Ph phạm và Tiền Phạt ---
+            // (Sự kiện này được kích hoạt bởi 'CommitEdit' ở trên)
+            if (e.ColumnIndex == dgvChiTietViPham.Columns[COL_LY_DO].Index)
+            {
+                var cellValue = dgvChiTietViPham.Rows[e.RowIndex].Cells[COL_LY_DO].Value;
+                string lyDo = cellValue?.ToString();
+
+                if (string.IsNullOrEmpty(lyDo) || dtViPham == null)
+                {
+                    dgvChiTietViPham.Rows[e.RowIndex].Cells[COL_MA_VI_PHAM].Value = DBNull.Value;
+                    dgvChiTietViPham.Rows[e.RowIndex].Cells[COL_TIEN_PHAT].Value = 0;
+                    TinhTongTienPhat(); // Cập nhật tổng tiền
+                    return;
+                }
+
+                try
+                {
+                    // Tìm trong dtViPham (bảng đã tải) dựa trên Ly_Do
+                    DataRow[] foundRows = dtViPham.Select($"Ly_Do = '{lyDo.Replace("'", "''")}'");
+
+                    if (foundRows.Length > 0)
+                    {
+                        // Tự động điền
+                        dgvChiTietViPham.Rows[e.RowIndex].Cells[COL_MA_VI_PHAM].Value = foundRows[0]["Ma_Vi_Pham"].ToString();
+                        dgvChiTietViPham.Rows[e.RowIndex].Cells[COL_TIEN_PHAT].Value = Convert.ToDecimal(foundRows[0]["Tien_Phat_Max"]);
+                        TinhTongTienPhat(); // Cập nhật tổng tiền
+                    }
+                }
+                catch (Exception ex)
+                {
+                    dgvChiTietViPham.Rows[e.RowIndex].Cells[COL_MA_VI_PHAM].Value = DBNull.Value;
+                    Console.WriteLine("Lỗi tra cứu mã vi phạm: " + ex.Message);
+                }
+            }
+        }
+
+        private void dgvChiTietViPham_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            if (e.Exception is ArgumentException && e.Context == DataGridViewDataErrorContexts.Commit)
+            {
+                // Suppress error dialog
+                e.ThrowException = false;
+                // Optional: Set value mặc định hoặc log
+                MessageBox.Show("Giá trị ComboBox không hợp lệ ở row " + e.RowIndex + ", column " + e.ColumnIndex + ". Vui lòng chọn giá trị đúng.");
+            }
+        }
+        
+        
     }
+
 }
