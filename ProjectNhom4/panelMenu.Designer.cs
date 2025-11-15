@@ -341,6 +341,7 @@
             // panelContainer
             // 
             this.panelContainer.AutoRoundedCorners = true;
+            this.panelContainer.AutoScroll = true;
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(291, 40);
             this.panelContainer.Margin = new System.Windows.Forms.Padding(0);

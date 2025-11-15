@@ -53,7 +53,7 @@
             this.btnDocGiaVP = new Guna.UI2.WinForms.Guna2Button();
             this.btnLVP = new Guna.UI2.WinForms.Guna2Button();
             this.chU_DETableAdapter1 = new ProjectNhom4.dataThuvien2DataSetTableAdapters.CHU_DETableAdapter();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panelRoot = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -66,7 +66,7 @@
             this.flowLayoutPanel4.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel5.SuspendLayout();
+            this.panelRoot.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -400,17 +400,18 @@
             // 
             this.chU_DETableAdapter1.ClearBeforeFill = true;
             // 
-            // panel5
+            // panelRoot
             // 
-            this.panel5.Controls.Add(this.flowLayoutPanel1);
-            this.panel5.Controls.Add(this.flowLayoutPanel4);
-            this.panel5.Controls.Add(this.flowLayoutPanel3);
-            this.panel5.Controls.Add(this.flowLayoutPanel2);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1380, 849);
-            this.panel5.TabIndex = 7;
+            this.panelRoot.AutoScroll = true;
+            this.panelRoot.Controls.Add(this.flowLayoutPanel1);
+            this.panelRoot.Controls.Add(this.flowLayoutPanel4);
+            this.panelRoot.Controls.Add(this.flowLayoutPanel3);
+            this.panelRoot.Controls.Add(this.flowLayoutPanel2);
+            this.panelRoot.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelRoot.Location = new System.Drawing.Point(0, 0);
+            this.panelRoot.Name = "panelRoot";
+            this.panelRoot.Size = new System.Drawing.Size(1380, 849);
+            this.panelRoot.TabIndex = 7;
             // 
             // Baocao
             // 
@@ -418,7 +419,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panelRoot);
             this.Name = "Baocao";
             this.Size = new System.Drawing.Size(1380, 849);
             this.Load += new System.EventHandler(this.Baocao_Load);
@@ -438,7 +439,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel5.ResumeLayout(false);
+            this.panelRoot.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -470,6 +471,6 @@
         private Guna.UI2.WinForms.Guna2Button btnDocGiaVP;
         private Guna.UI2.WinForms.Guna2Button btnLVP;
         private dataThuvien2DataSetTableAdapters.CHU_DETableAdapter chU_DETableAdapter1;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panelRoot;
     }
 }
