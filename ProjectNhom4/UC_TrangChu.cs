@@ -16,5 +16,10 @@ namespace ProjectNhom4
         {
             InitializeComponent();
         }
+
+        private void UC_TrangChu_Load(object sender, EventArgs e)
+        {
+            lblXinchao.Text = "Chào mừng trở lại, " + UserSession.TenNguoiDung + "!";
+        }
     }
 }

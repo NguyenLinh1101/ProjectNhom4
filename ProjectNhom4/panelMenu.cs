@@ -146,7 +146,12 @@ namespace ProjectNhom4
 
         private void btnTrangChu_Click_1(object sender, EventArgs e)
         {
-            
+            LoadUserControl (new UC_TrangChu());
+        }
+
+        private void frmMenu_Load_1(object sender, EventArgs e)
+        {
+            LoadUserControl (new UC_TrangChu());
         }
     }
 }

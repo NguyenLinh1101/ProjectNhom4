@@ -44,14 +44,14 @@
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
             this.pnlMain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(2240, 1605);
+            this.pnlMain.Size = new System.Drawing.Size(1719, 1069);
             this.pnlMain.TabIndex = 2;
             // 
             // lblXinchao
             // 
             this.lblXinchao.AutoSize = true;
             this.lblXinchao.Font = new System.Drawing.Font("Segoe UI", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblXinchao.Location = new System.Drawing.Point(1627, 16);
+            this.lblXinchao.Location = new System.Drawing.Point(3, 13);
             this.lblXinchao.Name = "lblXinchao";
             this.lblXinchao.Size = new System.Drawing.Size(601, 45);
             this.lblXinchao.TabIndex = 1;
@@ -59,12 +59,13 @@
             // 
             // pic1Background
             // 
+            this.pic1Background.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pic1Background.Image = global::ProjectNhom4.Properties.Resources.hustthuvien;
             this.pic1Background.ImageRotate = 0F;
             this.pic1Background.Location = new System.Drawing.Point(0, 0);
             this.pic1Background.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pic1Background.Name = "pic1Background";
-            this.pic1Background.Size = new System.Drawing.Size(2240, 1605);
+            this.pic1Background.Size = new System.Drawing.Size(1719, 1069);
             this.pic1Background.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic1Background.TabIndex = 0;
             this.pic1Background.TabStop = false;
@@ -76,7 +77,8 @@
             this.Controls.Add(this.pnlMain);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_TrangChu";
-            this.Size = new System.Drawing.Size(2240, 1605);
+            this.Size = new System.Drawing.Size(1719, 1069);
+            this.Load += new System.EventHandler(this.UC_TrangChu_Load);
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic1Background)).EndInit();

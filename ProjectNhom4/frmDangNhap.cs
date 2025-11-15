@@ -73,6 +73,7 @@ namespace ProjectNhom4
                 if (reader.Read())
                 {
                     string tenThuThu = reader["Ten_Thu_Thu"].ToString();
+                    UserSession.TenNguoiDung = tenThuThu;
                     MessageBox.Show("Đăng nhập thành công!\nXin chào " + tenThuThu,
                         "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
