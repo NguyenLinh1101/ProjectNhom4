@@ -38,7 +38,6 @@
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1019, 704);
             this.reportViewer1.TabIndex = 0;
-           
             // 
             // frmPhieuMuon
             // 

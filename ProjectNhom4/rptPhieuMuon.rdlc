@@ -865,7 +865,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>STT</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -874,7 +876,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value />
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -904,7 +908,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Ma Sach</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -934,7 +940,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Ma Dau Sach</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -964,7 +972,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Ten Dau Sach</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -994,7 +1004,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Nam XB</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1024,7 +1036,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Trang Thai Sach Muon</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1219,7 +1233,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Trang_Thai_Sach_Muon.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1271,7 +1287,7 @@
         <ZIndex>24</ZIndex>
         <Style>
           <Border>
-            <Style>None</Style>
+            <Style>Solid</Style>
           </Border>
           <FontFamily>Times New Roman</FontFamily>
         </Style>
@@ -1318,9 +1334,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
         <Top>0.43025cm</Top>
-        <Left>7.07411cm</Left>
+        <Left>6.47087cm</Left>
         <Height>0.7905cm</Height>
-        <Width>6.03951cm</Width>
+        <Width>5.22299cm</Width>
         <ZIndex>25</ZIndex>
         <Style>
           <Border>
@@ -1448,7 +1464,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>5.65in</Height>
+    <Height>5.075in</Height>
     <Style />
   </Body>
   <Width>7.675in</Width>
@@ -1463,7 +1479,7 @@
           <Value>Ảnhchụpmànhình20251022000119</Value>
           <Sizing>FitProportional</Sizing>
           <Top>0.44309cm</Top>
-          <Left>8.94503cm</Left>
+          <Left>8.42103cm</Left>
           <Height>1.9558cm</Height>
           <Width>1.79633cm</Width>
           <Style>
@@ -1493,8 +1509,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox19</rd:DefaultName>
-          <Top>2.63737cm</Top>
-          <Left>6.97653cm</Left>
+          <Top>2.60209cm</Top>
+          <Left>6.47087cm</Left>
           <Height>0.51533cm</Height>
           <Width>6.13709cm</Width>
           <ZIndex>1</ZIndex>
@@ -1545,7 +1561,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox19</rd:DefaultName>
           <Top>3.29381cm</Top>
-          <Left>7.74087cm</Left>
+          <Left>7.07411cm</Left>
           <Height>0.51533cm</Height>
           <Width>4.86709cm</Width>
           <ZIndex>2</ZIndex>
@@ -1567,7 +1583,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>5.43983cm</Height>
+      <Height>4.93889cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -1609,7 +1625,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>1.351cm</Top>
+          <Top>0.716cm</Top>
           <Left>1.45203cm</Left>
           <Height>1.1715cm</Height>
           <Width>4.19801cm</Width>
@@ -1661,8 +1677,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>1.351cm</Top>
-          <Left>8.73878cm</Left>
+          <Top>0.716cm</Top>
+          <Left>12.95095cm</Left>
           <Height>1.1715cm</Height>
           <Width>4.19801cm</Width>
           <ZIndex>1</ZIndex>
@@ -1698,7 +1714,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>4.33889cm</Top>
+          <Top>3.53456cm</Top>
           <Left>7.07411cm</Left>
           <Height>0.6cm</Height>
           <Width>11.98267cm</Width>
