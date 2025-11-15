@@ -1224,7 +1224,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="Số độc giả trả muộn: " &amp; CountDistinct(Fields!Ma_Doc_Gia.Value, "DataSet1")</Value>
+                    <Value>="Số độc giả trả muộn: " &amp; CountDistinct(Fields!Ma_Doc_Gia.Value, "dsBCsachquahan")</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                       <Color>Brown</Color>
@@ -1257,7 +1257,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="Thống kê tổng cộng: " &amp; Count(Fields!Ma_Sach.Value, "DataSet1")</Value>
+                    <Value>="Thống kê tổng cộng: " &amp; Count(Fields!Ma_Sach.Value, "dsBCsachquahan")</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                       <Color>Brown</Color>

@@ -302,7 +302,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="Số độc giả vi phạm: " &amp; CountDistinct(Fields!Ma_Doc_Gia.Value, "DataSet1")</Value>
+                    <Value>="Số độc giả vi phạm: " &amp; CountDistinct(Fields!Ma_Doc_Gia.Value, "dsdocgiavipham")</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                       <Color>Brown</Color>
