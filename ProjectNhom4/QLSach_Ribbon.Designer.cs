@@ -47,7 +47,6 @@
             // panelQLSach
             // 
             this.panelQLSach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.panelQLSach.Controls.Add(this.dropDown_DanhMuc);
             this.panelQLSach.Controls.Add(this.btnCuonSach);
             this.panelQLSach.Controls.Add(this.btnDauSach);
             this.panelQLSach.Dock = System.Windows.Forms.DockStyle.Top;
@@ -66,7 +65,7 @@
             this.dropDown_DanhMuc.Controls.Add(this.btnDanhMuc);
             this.dropDown_DanhMuc.Controls.Add(this.btnChuDe);
             this.dropDown_DanhMuc.Controls.Add(this.btnLoaiSach);
-            this.dropDown_DanhMuc.Location = new System.Drawing.Point(777, 19);
+            this.dropDown_DanhMuc.Location = new System.Drawing.Point(710, 19);
             this.dropDown_DanhMuc.MaximumSize = new System.Drawing.Size(247, 404);
             this.dropDown_DanhMuc.MinimumSize = new System.Drawing.Size(247, 90);
             this.dropDown_DanhMuc.Name = "dropDown_DanhMuc";
@@ -91,7 +90,7 @@
             this.btnDanhMuc.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnDanhMuc.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnDanhMuc.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnDanhMuc.Location = new System.Drawing.Point(-49, 0);
+            this.btnDanhMuc.Location = new System.Drawing.Point(0, 0);
             this.btnDanhMuc.MaximumSize = new System.Drawing.Size(247, 90);
             this.btnDanhMuc.Name = "btnDanhMuc";
             this.btnDanhMuc.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
@@ -150,7 +149,7 @@
             this.btnCuonSach.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.btnCuonSach.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnCuonSach.ForeColor = System.Drawing.Color.White;
-            this.btnCuonSach.Location = new System.Drawing.Point(379, 19);
+            this.btnCuonSach.Location = new System.Drawing.Point(406, 19);
             this.btnCuonSach.MaximumSize = new System.Drawing.Size(247, 90);
             this.btnCuonSach.Name = "btnCuonSach";
             this.btnCuonSach.Size = new System.Drawing.Size(205, 90);
@@ -171,7 +170,7 @@
             this.btnDauSach.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.btnDauSach.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnDauSach.ForeColor = System.Drawing.Color.White;
-            this.btnDauSach.Location = new System.Drawing.Point(49, 19);
+            this.btnDauSach.Location = new System.Drawing.Point(64, 19);
             this.btnDauSach.MaximumSize = new System.Drawing.Size(247, 90);
             this.btnDauSach.Name = "btnDauSach";
             this.btnDauSach.Size = new System.Drawing.Size(205, 90);
@@ -196,6 +195,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.dropDown_DanhMuc);
             this.panel1.Controls.Add(this.panelContainer);
             this.panel1.Controls.Add(this.panelQLSach);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;

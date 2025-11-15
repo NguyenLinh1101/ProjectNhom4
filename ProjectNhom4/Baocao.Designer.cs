@@ -52,6 +52,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnDocGiaVP = new Guna.UI2.WinForms.Guna2Button();
             this.btnLVP = new Guna.UI2.WinForms.Guna2Button();
+            this.chU_DETableAdapter1 = new ProjectNhom4.dataThuvien2DataSetTableAdapters.CHU_DETableAdapter();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -64,6 +66,7 @@
             this.flowLayoutPanel4.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -74,17 +77,19 @@
             this.flowLayoutPanel1.Controls.Add(this.btnSachmuon);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(50, 77);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1378, 276);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1307, 236);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1375, 78);
+            this.panel1.Size = new System.Drawing.Size(1303, 78);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -110,6 +115,8 @@
             // 
             // btnSachHong
             // 
+            this.btnSachHong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSachHong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSachHong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSachHong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -119,7 +126,7 @@
             this.btnSachHong.ForeColor = System.Drawing.Color.Black;
             this.btnSachHong.Location = new System.Drawing.Point(3, 87);
             this.btnSachHong.Name = "btnSachHong";
-            this.btnSachHong.Size = new System.Drawing.Size(1375, 49);
+            this.btnSachHong.Size = new System.Drawing.Size(1375, 39);
             this.btnSachHong.TabIndex = 1;
             this.btnSachHong.Text = "Báo cáo sách bị hư hỏng";
             this.btnSachHong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -128,6 +135,8 @@
             // 
             // btnSachMat
             // 
+            this.btnSachMat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSachMat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSachMat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSachMat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -135,9 +144,9 @@
             this.btnSachMat.FillColor = System.Drawing.Color.White;
             this.btnSachMat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSachMat.ForeColor = System.Drawing.Color.Black;
-            this.btnSachMat.Location = new System.Drawing.Point(3, 142);
+            this.btnSachMat.Location = new System.Drawing.Point(3, 132);
             this.btnSachMat.Name = "btnSachMat";
-            this.btnSachMat.Size = new System.Drawing.Size(1375, 58);
+            this.btnSachMat.Size = new System.Drawing.Size(1375, 39);
             this.btnSachMat.TabIndex = 2;
             this.btnSachMat.Text = "Báo cáo sách bị mất ";
             this.btnSachMat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -146,6 +155,8 @@
             // 
             // btnSachmuon
             // 
+            this.btnSachmuon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSachmuon.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSachmuon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSachmuon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -153,9 +164,9 @@
             this.btnSachmuon.FillColor = System.Drawing.Color.White;
             this.btnSachmuon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSachmuon.ForeColor = System.Drawing.Color.Black;
-            this.btnSachmuon.Location = new System.Drawing.Point(3, 206);
+            this.btnSachmuon.Location = new System.Drawing.Point(3, 177);
             this.btnSachmuon.Name = "btnSachmuon";
-            this.btnSachmuon.Size = new System.Drawing.Size(1375, 59);
+            this.btnSachmuon.Size = new System.Drawing.Size(1375, 43);
             this.btnSachmuon.TabIndex = 3;
             this.btnSachmuon.Text = "Báo cáo sách được mượn nhiều nhất";
             this.btnSachmuon.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -166,9 +177,9 @@
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.label1.Location = new System.Drawing.Point(53, 20);
+            this.label1.Location = new System.Drawing.Point(125, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1256, 54);
+            this.label1.Size = new System.Drawing.Size(1064, 54);
             this.label1.TabIndex = 1;
             this.label1.Text = "DANH SÁCH BÁO CÁO";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -178,19 +189,21 @@
             // 
             this.flowLayoutPanel2.Controls.Add(this.panel2);
             this.flowLayoutPanel2.Controls.Add(this.btnDocGia);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(50, 359);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(49, 319);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1378, 162);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1307, 162);
             this.flowLayoutPanel2.TabIndex = 4;
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1375, 83);
+            this.panel2.Size = new System.Drawing.Size(1345, 83);
             this.panel2.TabIndex = 0;
             // 
             // pictureBox2
@@ -216,6 +229,8 @@
             // 
             // btnDocGia
             // 
+            this.btnDocGia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDocGia.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDocGia.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDocGia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -226,7 +241,7 @@
             this.btnDocGia.ForeColor = System.Drawing.Color.Black;
             this.btnDocGia.Location = new System.Drawing.Point(3, 92);
             this.btnDocGia.Name = "btnDocGia";
-            this.btnDocGia.Size = new System.Drawing.Size(1375, 62);
+            this.btnDocGia.Size = new System.Drawing.Size(1375, 47);
             this.btnDocGia.TabIndex = 4;
             this.btnDocGia.Text = "Báo cáo chi tiết mượn sách của độc giả";
             this.btnDocGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -237,19 +252,21 @@
             // 
             this.flowLayoutPanel3.Controls.Add(this.panel3);
             this.flowLayoutPanel3.Controls.Add(this.btnSachquahan);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(50, 527);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(49, 487);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(1378, 166);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(1307, 145);
             this.flowLayoutPanel3.TabIndex = 5;
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel3.Controls.Add(this.pictureBox3);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1375, 84);
+            this.panel3.Size = new System.Drawing.Size(1304, 84);
             this.panel3.TabIndex = 0;
             // 
             // pictureBox3
@@ -275,6 +292,8 @@
             // 
             // btnSachquahan
             // 
+            this.btnSachquahan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSachquahan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSachquahan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSachquahan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -285,7 +304,7 @@
             this.btnSachquahan.ForeColor = System.Drawing.Color.Black;
             this.btnSachquahan.Location = new System.Drawing.Point(3, 93);
             this.btnSachquahan.Name = "btnSachquahan";
-            this.btnSachquahan.Size = new System.Drawing.Size(1375, 66);
+            this.btnSachquahan.Size = new System.Drawing.Size(1375, 42);
             this.btnSachquahan.TabIndex = 4;
             this.btnSachquahan.Text = "Báo cáo sách quá hạn trả";
             this.btnSachquahan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -297,19 +316,21 @@
             this.flowLayoutPanel4.Controls.Add(this.panel4);
             this.flowLayoutPanel4.Controls.Add(this.btnDocGiaVP);
             this.flowLayoutPanel4.Controls.Add(this.btnLVP);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(50, 699);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(49, 638);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(1378, 224);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(1307, 182);
             this.flowLayoutPanel4.TabIndex = 6;
             // 
             // panel4
             // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel4.Controls.Add(this.pictureBox4);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1375, 82);
+            this.panel4.Size = new System.Drawing.Size(1304, 82);
             this.panel4.TabIndex = 0;
             // 
             // pictureBox4
@@ -335,6 +356,8 @@
             // 
             // btnDocGiaVP
             // 
+            this.btnDocGiaVP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDocGiaVP.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDocGiaVP.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDocGiaVP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -345,7 +368,7 @@
             this.btnDocGiaVP.ForeColor = System.Drawing.Color.Black;
             this.btnDocGiaVP.Location = new System.Drawing.Point(3, 91);
             this.btnDocGiaVP.Name = "btnDocGiaVP";
-            this.btnDocGiaVP.Size = new System.Drawing.Size(1375, 51);
+            this.btnDocGiaVP.Size = new System.Drawing.Size(1375, 37);
             this.btnDocGiaVP.TabIndex = 4;
             this.btnDocGiaVP.Text = "Báo cáo độc giả vi phạm";
             this.btnDocGiaVP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -354,6 +377,8 @@
             // 
             // btnLVP
             // 
+            this.btnLVP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLVP.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLVP.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLVP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -362,14 +387,30 @@
             this.flowLayoutPanel4.SetFlowBreak(this.btnLVP, true);
             this.btnLVP.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnLVP.ForeColor = System.Drawing.Color.Black;
-            this.btnLVP.Location = new System.Drawing.Point(3, 148);
+            this.btnLVP.Location = new System.Drawing.Point(3, 134);
             this.btnLVP.Name = "btnLVP";
-            this.btnLVP.Size = new System.Drawing.Size(1375, 64);
+            this.btnLVP.Size = new System.Drawing.Size(1375, 38);
             this.btnLVP.TabIndex = 5;
             this.btnLVP.Text = "Báo cáo tổng hợp vi phạm theo loại";
             this.btnLVP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLVP.TextOffset = new System.Drawing.Point(50, 0);
             this.btnLVP.Click += new System.EventHandler(this.btnLVP_Click);
+            // 
+            // chU_DETableAdapter1
+            // 
+            this.chU_DETableAdapter1.ClearBeforeFill = true;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.flowLayoutPanel1);
+            this.panel5.Controls.Add(this.flowLayoutPanel4);
+            this.panel5.Controls.Add(this.flowLayoutPanel3);
+            this.panel5.Controls.Add(this.flowLayoutPanel2);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1380, 849);
+            this.panel5.TabIndex = 7;
             // 
             // Baocao
             // 
@@ -377,12 +418,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.flowLayoutPanel4);
-            this.Controls.Add(this.flowLayoutPanel3);
-            this.Controls.Add(this.flowLayoutPanel2);
+            this.Controls.Add(this.panel5);
             this.Name = "Baocao";
-            this.Size = new System.Drawing.Size(1592, 942);
+            this.Size = new System.Drawing.Size(1380, 849);
             this.Load += new System.EventHandler(this.Baocao_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -400,6 +438,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -430,5 +469,7 @@
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2Button btnDocGiaVP;
         private Guna.UI2.WinForms.Guna2Button btnLVP;
+        private dataThuvien2DataSetTableAdapters.CHU_DETableAdapter chU_DETableAdapter1;
+        private System.Windows.Forms.Panel panel5;
     }
 }

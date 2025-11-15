@@ -101,6 +101,7 @@
             this.lblDauSach.TabIndex = 5;
             this.lblDauSach.Text = "QUẢN LÝ ĐẦU SÁCH";
             this.lblDauSach.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDauSach.Click += new System.EventHandler(this.lblDauSach_Click);
             // 
             // guna2ContextMenuStrip1
             // 

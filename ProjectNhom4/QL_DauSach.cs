@@ -570,5 +570,10 @@ namespace ProjectNhom4
             string searchText = txtSearch.Text;
             dv.RowFilter = $"[Ten_Dau_Sach] like '%{searchText}%'";
         }
+
+        private void lblDauSach_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
