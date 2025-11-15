@@ -14,7 +14,7 @@ namespace ProjectNhom4
     public partial class frmMuonSach : Form
     {
         // Chuỗi kết nối
-        string strCon = @"Data Source=LANNHI\SQLEXPRESS;Initial Catalog=dataThuvien2;Integrated Security=True";
+        string strCon = @"Data Source=LAPTOP-SO78PQJP\MSSQLSERVER01;Initial Catalog=QL_THUVIEN;Integrated Security=True";
 
         private string maPhieuMuon;
         private string maDocGia;

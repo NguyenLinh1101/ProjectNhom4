@@ -33,8 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net48\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -92,6 +98,12 @@
     <Compile Include="frmPhatSach.Designer.cs">
       <DependentUpon>frmPhatSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPhieuViPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhieuViPham.Designer.cs">
+      <DependentUpon>frmPhieuViPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTraSach.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,18 +136,17 @@
     <Compile Include="QuanlyThuthu.Designer.cs">
       <DependentUpon>QuanlyThuthu.cs</DependentUpon>
     </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="UC_PhieuPhat.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_PhieuPhat.Designer.cs">
-      <DependentUpon>UC_PhieuPhat.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC_PhieuTraSach.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC_PhieuTraSach.Designer.cs">
       <DependentUpon>UC_PhieuTraSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_PhieuViPham.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_PhieuViPham.Designer.cs">
+      <DependentUpon>UC_PhieuViPham.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_QuanlyDocgia.cs">
       <SubType>UserControl</SubType>
@@ -179,6 +190,9 @@
     <EmbeddedResource Include="frmPhatSach.resx">
       <DependentUpon>frmPhatSach.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPhieuViPham.resx">
+      <DependentUpon>frmPhieuViPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTraSach.resx">
       <DependentUpon>frmTraSach.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,11 +218,11 @@
     <EmbeddedResource Include="QuanlyThuthu.resx">
       <DependentUpon>QuanlyThuthu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_PhieuPhat.resx">
-      <DependentUpon>UC_PhieuPhat.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UC_PhieuTraSach.resx">
       <DependentUpon>UC_PhieuTraSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_PhieuViPham.resx">
+      <DependentUpon>UC_PhieuViPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_QuanlyDocgia.resx">
       <DependentUpon>UC_QuanlyDocgia.cs</DependentUpon>
@@ -246,19 +260,6 @@
     <None Include="Resources\search.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\thuvienhust.jpg" />
     <None Include="Resources\user.png" />
     <None Include="Resources\profile.png" />

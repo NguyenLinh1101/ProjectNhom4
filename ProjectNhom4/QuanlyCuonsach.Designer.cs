@@ -75,7 +75,7 @@
             this.lblTieude.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.lblTieude.Location = new System.Drawing.Point(576, 9);
             this.lblTieude.Name = "lblTieude";
-            this.lblTieude.Size = new System.Drawing.Size(439, 54);
+            this.lblTieude.Size = new System.Drawing.Size(529, 65);
             this.lblTieude.TabIndex = 0;
             this.lblTieude.Text = "QUẢN LÝ CUỐN SÁCH";
             this.lblTieude.Click += new System.EventHandler(this.label1_Click);

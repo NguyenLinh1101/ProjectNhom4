@@ -21,5 +21,10 @@ namespace ProjectNhom4
         {
 
         }
+
+        private void UC_PhieuPhat_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

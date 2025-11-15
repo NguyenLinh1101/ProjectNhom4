@@ -48,8 +48,9 @@
             this.panelRibbon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelRibbon.ForeColor = System.Drawing.Color.Black;
             this.panelRibbon.Location = new System.Drawing.Point(0, 0);
+            this.panelRibbon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelRibbon.Name = "panelRibbon";
-            this.panelRibbon.Size = new System.Drawing.Size(1171, 90);
+            this.panelRibbon.Size = new System.Drawing.Size(1317, 112);
             this.panelRibbon.TabIndex = 4;
             this.panelRibbon.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRibbon_Paint);
             // 
@@ -68,9 +69,10 @@
             this.btnPhieuPhat.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnPhieuPhat.HoverState.FillColor = System.Drawing.Color.White;
             this.btnPhieuPhat.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.btnPhieuPhat.Location = new System.Drawing.Point(611, 0);
+            this.btnPhieuPhat.Location = new System.Drawing.Point(687, 0);
+            this.btnPhieuPhat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnPhieuPhat.Name = "btnPhieuPhat";
-            this.btnPhieuPhat.Size = new System.Drawing.Size(247, 90);
+            this.btnPhieuPhat.Size = new System.Drawing.Size(278, 112);
             this.btnPhieuPhat.TabIndex = 0;
             this.btnPhieuPhat.Text = "Phiếu phạt";
             // 
@@ -89,9 +91,10 @@
             this.btnPhieuTra.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnPhieuTra.HoverState.FillColor = System.Drawing.Color.White;
             this.btnPhieuTra.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.btnPhieuTra.Location = new System.Drawing.Point(306, 0);
+            this.btnPhieuTra.Location = new System.Drawing.Point(344, 0);
+            this.btnPhieuTra.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnPhieuTra.Name = "btnPhieuTra";
-            this.btnPhieuTra.Size = new System.Drawing.Size(247, 90);
+            this.btnPhieuTra.Size = new System.Drawing.Size(278, 112);
             this.btnPhieuTra.TabIndex = 0;
             this.btnPhieuTra.Text = "Phiếu trả";
             this.btnPhieuTra.Click += new System.EventHandler(this.btnPhieuTra_Click);
@@ -112,8 +115,9 @@
             this.btnPhieuMuon.HoverState.FillColor = System.Drawing.Color.White;
             this.btnPhieuMuon.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
             this.btnPhieuMuon.Location = new System.Drawing.Point(0, 0);
+            this.btnPhieuMuon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnPhieuMuon.Name = "btnPhieuMuon";
-            this.btnPhieuMuon.Size = new System.Drawing.Size(247, 90);
+            this.btnPhieuMuon.Size = new System.Drawing.Size(278, 112);
             this.btnPhieuMuon.TabIndex = 0;
             this.btnPhieuMuon.Text = "Phiếu mượn";
             this.btnPhieuMuon.Click += new System.EventHandler(this.btnPhieuMuon_Click);
@@ -133,28 +137,32 @@
             this.btnThuThu.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnThuThu.HoverState.FillColor = System.Drawing.Color.White;
             this.btnThuThu.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.btnThuThu.Location = new System.Drawing.Point(882, 0);
+            this.btnThuThu.Location = new System.Drawing.Point(992, 0);
+            this.btnThuThu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnThuThu.Name = "btnThuThu";
-            this.btnThuThu.Size = new System.Drawing.Size(247, 90);
+            this.btnThuThu.Size = new System.Drawing.Size(278, 112);
             this.btnThuThu.TabIndex = 0;
             this.btnThuThu.Text = "Thủ thư";
             // 
             // panelContainer
             // 
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(0, 90);
+            this.panelContainer.Location = new System.Drawing.Point(0, 112);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1171, 699);
+            this.panelContainer.Size = new System.Drawing.Size(1317, 874);
             this.panelContainer.TabIndex = 5;
+            this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
             // UC_QuanlyMuonTra_Ribbon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panelRibbon);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_QuanlyMuonTra_Ribbon";
-            this.Size = new System.Drawing.Size(1171, 789);
+            this.Size = new System.Drawing.Size(1317, 986);
             this.panelRibbon.ResumeLayout(false);
             this.ResumeLayout(false);
 

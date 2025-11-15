@@ -48,7 +48,7 @@ namespace ProjectNhom4
 
         private void btnPhieuTra_Click(object sender, EventArgs e)
         {
-
+            LoadUserControlToPanel(new UC_PhieuTraSach());
         }
 
         private void btnPhieuMuon_Click(object sender, EventArgs e)
@@ -75,6 +75,11 @@ namespace ProjectNhom4
         }
 
         private void panelRibbon_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
         {
 
         }

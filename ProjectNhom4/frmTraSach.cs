@@ -16,5 +16,10 @@ namespace ProjectNhom4
         {
             InitializeComponent();
         }
+
+        private void frmTraSach_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
