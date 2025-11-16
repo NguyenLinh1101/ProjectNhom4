@@ -241,7 +241,9 @@
     <EmbeddedResource Include="QuanlyThuthu.resx">
       <DependentUpon>QuanlyThuthu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptPhieuMuon.rdlc" />
+    <EmbeddedResource Include="rptPhieuPhat.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_PhieuPhat.resx">
       <DependentUpon>UC_PhieuPhat.cs</DependentUpon>
     </EmbeddedResource>

@@ -818,7 +818,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>PHIẾU MƯỢN TRẢ SÁCH</Value>
+                    <Value>PHIẾU PHẠT SÁCH</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Times New Roman</FontFamily>
@@ -830,7 +830,7 @@
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Left</TextAlign>
+                  <TextAlign>Center</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
@@ -857,7 +857,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>I. Thông tin phiếu mượn - trả</Value>
+                    <Value>I. Thông tin phiếu phạt</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Times New Roman</FontFamily>
@@ -896,7 +896,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>II. Thông tin Sách mượn</Value>
+                    <Value>II. Thông tin Sách Phạt</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Times New Roman</FontFamily>
@@ -1419,7 +1419,7 @@
             <DataSetName>DataSet1</DataSetName>
             <Top>11.60498cm</Top>
             <Left>1.45203cm</Left>
-            <Height>1.37583cm</Height>
+            <Height>1.37584cm</Height>
             <Width>16.63809cm</Width>
             <ZIndex>24</ZIndex>
             <Style>
@@ -1592,7 +1592,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.716cm</Top>
+              <Top>1.80989cm</Top>
               <Left>1.45203cm</Left>
               <Height>1.1715cm</Height>
               <Width>4.19801cm</Width>
@@ -1644,8 +1644,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.716cm</Top>
-              <Left>12.95095cm</Left>
+              <Top>1.80989cm</Top>
+              <Left>13.89211cm</Left>
               <Height>1.1715cm</Height>
               <Width>4.19801cm</Width>
               <ZIndex>1</ZIndex>
@@ -1677,11 +1677,13 @@
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox6</rd:DefaultName>
-              <Top>3.53456cm</Top>
+              <Top>0.716cm</Top>
               <Left>8.40761cm</Left>
               <Height>0.6cm</Height>
               <Width>10.64917cm</Width>
@@ -1715,25 +1717,12 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="p_HanTra">
-      <DataType>String</DataType>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="p_NgayMuon">
-      <DataType>String</DataType>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="p_NgayThucTra">
-      <DataType>String</DataType>
-      <AllowBlank>true</AllowBlank>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
     <ReportParameter Name="p_NgayLap">
-      <DataType>DateTime</DataType>
+      <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="p_NgayNop">
-      <DataType>DateTime</DataType>
+      <DataType>String</DataType>
       <Nullable>true</Nullable>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
@@ -1743,21 +1732,6 @@
       <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
       <CellDefinitions>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>p_HanTra</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>1</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>p_NgayMuon</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>2</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>p_NgayThucTra</ParameterName>
-        </CellDefinition>
         <CellDefinition>
           <ColumnIndex>3</ColumnIndex>
           <RowIndex>0</RowIndex>

@@ -16,8 +16,20 @@ namespace ProjectNhom4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMenu());
+            Application.Run(new MainForm());
         }
-        
+        public class MainForm : Form
+        {
+            private UC_PhieuViPham qlSach;
+
+            public MainForm()
+            {
+                qlSach = new UC_PhieuViPham();
+                qlSach.Dock = DockStyle.Fill;
+                this.Controls.Add(qlSach);
+                this.Text = "Quản Lý Sách";
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
     }
 }

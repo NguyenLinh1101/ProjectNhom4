@@ -134,13 +134,13 @@ namespace ProjectNhom4
 
                 if (result != null && result != DBNull.Value)
                 {
-                    string lastMa = result.ToString();   // VD: PP012
+                    string lastMa = result.ToString();   
                     int numberPart = int.Parse(lastMa.Substring(2));
                     nextNumber = numberPart + 1;
                 }
             }
 
-            return prefix + nextNumber.ToString("D3"); // PP001, PP002...
+            return prefix + nextNumber.ToString("D4"); 
         }
 
 

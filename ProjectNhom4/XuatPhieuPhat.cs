@@ -26,17 +26,12 @@ namespace ProjectNhom4
         private void XuatPhieuPhat_Load(object sender, EventArgs e)
         {
 
-            this.reportViewer1.RefreshReport();
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
 
-                    // === SỬA LỖI: Dùng 1 câu SQL duy nhất ===
-                    // Câu SQL này lấy TẤT CẢ dữ liệu (cả chung và chi tiết)
-                    // Thông tin chung (PP.Ma_Phieu_Phat, DG.Ho_Ten...) sẽ bị lặp lại 
-                    // trên mỗi dòng, điều này là BÌNH THƯỜNG.
                     string sqlQuery = @"
                 SELECT 
                     -- Thông tin chung (cho Header)
@@ -44,7 +39,8 @@ namespace ProjectNhom4
                     PM.Ma_Phieu_Muon,
                     DG.Ma_Doc_Gia,
                     DG.Ho_Ten AS Ten_Doc_Gia,
-                    PP.Ngay_Lap_Phieu,
+                    PP.Ngay_Lap_Phieu, 
+                    CP.Ngay_Nop_Phat,
                     TT.Ma_Thu_Thu,
                     TT.Ten_Thu_Thu,
                     (SELECT ISNULL(SUM(So_Tien_Phat), 0) FROM CT_PHIEU_PHAT WHERE Ma_Phieu_Phat = @MaPP) AS Tong_Tien_Phat,
@@ -75,41 +71,47 @@ namespace ProjectNhom4
                     DAU_SACH DS ON S.Ma_Dau_Sach = DS.Ma_Dau_Sach
                 WHERE 
                     PP.Ma_Phieu_Phat = @MaPP";
-
                     SqlDataAdapter da = new SqlDataAdapter(sqlQuery, conn);
                     da.SelectCommand.Parameters.AddWithValue("@MaPP", maPhieuPhat);
+
                     DataTable dtDuLieu = new DataTable();
                     da.Fill(dtDuLieu);
 
-                    // Gán 1 Nguồn dữ liệu duy nhất
-                    ReportDataSource rds = new ReportDataSource("DataSet1", dtDuLieu);
-                    reportViewer1.LocalReport.DataSources.Clear();
-                    reportViewer1.LocalReport.DataSources.Add(rds);
-
-                    // === THÊM PARAMETER (Theo yêu cầu của bạn) ===
-                    // Thêm các Parameter bạn cần (ví dụ: ngày lập và ngày nộp)
-                    // (Chúng ta lấy giá trị Ngày Lập từ dòng ĐẦU TIÊN của bảng)
-                    string ngayLap = "N/A";
-                    if (dtDuLieu.Rows.Count > 0)
+                    if (dtDuLieu.Rows.Count == 0)
                     {
-                        ngayLap = Convert.ToDateTime(dtDuLieu.Rows[0]["Ngay_Lap_Phieu"]).ToString("dd/MM/yyyy");
+                        MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
                     }
 
-                    List<ReportParameter> parameters = new List<ReportParameter>();
-                    parameters.Add(new ReportParameter("p_NgayLap", ngayLap));
-                    // (Thêm các parameter ngày tháng khác mà bạn cần ở đây...)
-                    // parameters.Add(new ReportParameter("p_NgayNop", ...));
+                    // === GÁN REPORT ===
+                    reportViewer1.LocalReport.DataSources.Clear();
+                    reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\rptPhieuPhat.rdlc";
+                    // Nếu file nằm trong Folder con:
+                    // reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\Reports\rptPhieuPhat.rdlc";
 
-                    reportViewer1.LocalReport.SetParameters(parameters);
+                    // === GÁN DATA SOURCE ===
+                    ReportDataSource rds = new ReportDataSource("DataSet1", dtDuLieu);
+                    reportViewer1.LocalReport.DataSources.Add(rds);
+
+                    // === PARAMETER ===
+                    string ngayLap = Convert.ToDateTime(dtDuLieu.Rows[0]["Ngay_Lap_Phieu"]).ToString("dd/MM/yyyy");
+                    string ngayNop = "";
+                    if (dtDuLieu.Rows[0]["Ngay_Nop_Phat"] != DBNull.Value)
+                        ngayNop = Convert.ToDateTime(dtDuLieu.Rows[0]["Ngay_Nop_Phat"]).ToString("dd/MM/yyyy");
+                    else
+                        ngayNop = "Chưa nộp";
+                    reportViewer1.LocalReport.SetParameters(new ReportParameter[]
+                    {
+                new ReportParameter("p_NgayLap", ngayLap),
+                new ReportParameter("p_NgayNop", ngayNop)
+                    });
+
+                    reportViewer1.RefreshReport();
                 }
-
-                // 4. CHỈ ĐỊNH ĐƯỜNG DẪN VÀ REFRESH
-                reportViewer1.LocalReport.ReportPath = @"Reports\rptPhieuPhat.rdlc";
-                reportViewer1.RefreshReport();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi tải báo cáo: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
