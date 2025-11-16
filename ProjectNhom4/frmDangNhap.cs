@@ -73,20 +73,19 @@ namespace ProjectNhom4
                 if (reader.Read())
                 {
                     string tenThuThu = reader["Ten_Thu_Thu"].ToString();
+                    string quyen = reader["Quyen"].ToString();   // lấy quyền từ DB
+
                     UserSession.TenNguoiDung = tenThuThu;
+                    UserSession.Quyen = quyen;
+
                     MessageBox.Show("Đăng nhập thành công!\nXin chào " + tenThuThu,
                         "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Ẩn form đăng nhập
                     this.Hide();
 
-                    // Mở form Menu chính
                     frmMenu formMenu = new frmMenu();
-
-                    // Khi form Menu đóng, thì tắt hẳn ứng dụng
                     formMenu.FormClosed += (s, args) => Application.Exit();
-
-                    formMenu.Show(); // Hiện form menu
+                    formMenu.Show();
                 }
                 else
                 {

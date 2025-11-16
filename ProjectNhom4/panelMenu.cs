@@ -152,6 +152,17 @@ namespace ProjectNhom4
         private void frmMenu_Load_1(object sender, EventArgs e)
         {
             LoadUserControl (new UC_TrangChu());
+            // ========================
+            // PHÂN QUYỀN
+            // ========================
+            if (UserSession.Quyen == "thuthu")
+            {
+                // Ẩn các chức năng chỉ dành cho ADMIN
+                btnQLTaiKhoan.Visible = false;
+                btnBaocao.Visible = false;
+                btnCaiDat.Visible = false;
+                pnlSubCaiDat.Visible = false;
+            }
         }
 
         private void btnQLTaiKhoan_Click_1(object sender, EventArgs e)
@@ -174,6 +185,11 @@ namespace ProjectNhom4
                 frmDangNhap login = new frmDangNhap();
                 login.Show(); // Mở lại form đăng nhập
             }
+        }
+
+        private void btnHuongDan_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

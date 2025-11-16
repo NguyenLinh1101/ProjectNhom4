@@ -297,6 +297,7 @@
             this.btnHuongDan.Size = new System.Drawing.Size(206, 45);
             this.btnHuongDan.TabIndex = 10;
             this.btnHuongDan.Text = "Hướng dẫn sử dụng";
+            this.btnHuongDan.Click += new System.EventHandler(this.btnHuongDan_Click);
             // 
             // btnQLTaiKhoan
             // 

@@ -120,6 +120,13 @@ namespace ProjectNhom4
         }
         private void QL_TaiKhoan_Load(object sender, EventArgs e)
         {
+            if (UserSession.Quyen != "admin")
+            {
+                MessageBox.Show("Bạn không có quyền truy cập mục này!",
+                     "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                this.Parent.Controls.Remove(this);
+            }
             //FixLayout();          // <<--- thêm dòng này
             dgvTaiKhoan.ReadOnly = true;
             dgvTaiKhoan.AllowUserToAddRows = false;

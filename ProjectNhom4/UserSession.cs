@@ -9,5 +9,6 @@ namespace ProjectNhom4
     internal class UserSession
     {
         public static string TenNguoiDung { get; set; }
+        public static string Quyen { get; set; }  // admin / thuthu
     }
 }
