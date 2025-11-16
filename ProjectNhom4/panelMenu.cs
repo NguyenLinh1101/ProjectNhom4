@@ -158,5 +158,22 @@ namespace ProjectNhom4
         {
             LoadUserControl (new QL_TaiKhoan());
         }
+
+        private void btnDangXuat_Click_1(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show(
+        "Bạn có chắc chắn muốn đăng xuất?",
+        "Xác nhận",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Question
+    );
+
+            if (dr == DialogResult.Yes)
+            {
+                this.Hide();  // Ẩn menu
+                frmDangNhap login = new frmDangNhap();
+                login.Show(); // Mở lại form đăng nhập
+            }
+        }
     }
 }

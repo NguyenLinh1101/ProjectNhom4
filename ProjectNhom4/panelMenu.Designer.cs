@@ -337,6 +337,7 @@
             this.btnDangXuat.Size = new System.Drawing.Size(206, 50);
             this.btnDangXuat.TabIndex = 11;
             this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click_1);
             // 
             // panelContainer
             // 
