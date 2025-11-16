@@ -19,7 +19,7 @@ namespace ProjectNhom4
         private void frmPhieuMuon_Load(object sender, EventArgs e)
         {
             // 1. Set đường dẫn báo cáo
-            string rdlcPath = Path.Combine(Application.StartupPath, "rptPhieuMuon.rdlc");
+            string rdlcPath = Path.Combine(Application.StartupPath, "Reports", "rptPhieuMuon.rdlc");
             if (!File.Exists(rdlcPath))
             {
                 MessageBox.Show($"Không tìm thấy file báo cáo: {rdlcPath}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);

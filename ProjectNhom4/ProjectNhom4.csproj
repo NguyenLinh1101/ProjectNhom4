@@ -135,8 +135,8 @@
     </Compile>
     <Compile Include="dsPhieuMuon.Designer.cs">
       <DependentUpon>dsPhieuMuon.xsd</DependentUpon>
-      <AutoGen>true</AutoGen>
-      <DesignTime>true</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="frmPhieuMuon.cs">
       <SubType>Form</SubType>
@@ -445,9 +445,9 @@
     <EmbeddedResource Include="QL_TaiKhoan.resx">
       <DependentUpon>QL_TaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\rptPhieuMuon.rdlc">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <Content Include="Reports\rptPhieuMuon.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="UC_QuanlyCuonSach.resx">
       <DependentUpon>UC_QuanlyCuonSach.cs</DependentUpon>
     </EmbeddedResource>
