@@ -880,6 +880,27 @@ VALUES(@MaPhieuPhat, @MaSach, @MaViPham, @LyDo, @TienPhat, @TrangThaiChiTiet)";
 
         private void btnXuatPhieu_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtMaPhieuPhat.Text))
+            {
+                MessageBox.Show("Vui lòng chọn một phiếu phạt từ danh sách bên trái để xuất.", "Chưa chọn phiếu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // 2. Lấy Mã Phiếu Phạt từ TextBox
+            string maPP = txtMaPhieuPhat.Text;
+
+            // 3. Mở form báo cáo MỚI (frmInPhieuPhat)
+            //    VÀ TRUYỀN maPP vào hàm khởi tạo (constructor)
+            try
+            {
+                // (Nếu form báo cáo của bạn tên là XuatPhieuPhat, hãy đổi tên ở đây)
+                XuatPhieuPhat reportForm = new XuatPhieuPhat(maPP);
+                reportForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi mở form báo cáo: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void SetControlState(string state)
         {

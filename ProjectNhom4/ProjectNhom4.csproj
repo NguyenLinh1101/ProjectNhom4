@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.SqlServer.Types.170.700.9-ctp2p0\build\net472\Microsoft.SqlServer.Types.props" Condition="Exists('..\packages\Microsoft.SqlServer.Types.170.700.9-ctp2p0\build\net472\Microsoft.SqlServer.Types.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -63,8 +66,11 @@
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    <Reference Include="Microsoft.SqlServer.Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=23ec7fc2d6eaa4a5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Server.1.0.0\lib\net46\Microsoft.SqlServer.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.170.700.9-ctp2p0\lib\net472\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -121,6 +127,11 @@
     </Compile>
     <Compile Include="PhieuMuonSach.Designer.cs">
       <DependentUpon>PhieuMuonSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhieuPhat.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhieuPhat.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -190,6 +201,12 @@
     <Compile Include="UC_TrangChu.Designer.cs">
       <DependentUpon>UC_TrangChu.cs</DependentUpon>
     </Compile>
+    <Compile Include="XuatPhieuPhat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XuatPhieuPhat.Designer.cs">
+      <DependentUpon>XuatPhieuPhat.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmformphuChonSach.resx">
       <DependentUpon>frmformphuChonSach.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,6 +241,7 @@
     <EmbeddedResource Include="QuanlyThuthu.resx">
       <DependentUpon>QuanlyThuthu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptPhieuMuon.rdlc" />
     <EmbeddedResource Include="UC_PhieuPhat.resx">
       <DependentUpon>UC_PhieuPhat.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,7 +269,21 @@
     <EmbeddedResource Include="UC_TrangChu.resx">
       <DependentUpon>UC_TrangChu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="XuatPhieuPhat.resx">
+      <DependentUpon>XuatPhieuPhat.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="PhieuPhat.xsc">
+      <DependentUpon>PhieuPhat.xsd</DependentUpon>
+    </None>
+    <None Include="PhieuPhat.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PhieuPhat.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="PhieuPhat.xss">
+      <DependentUpon>PhieuPhat.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -283,5 +315,14 @@
     <None Include="Resources\hustthuvien.png" />
     <Content Include="Resources\logoneu.png" />
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.SqlServer.Types.170.700.9-ctp2p0\build\net472\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SqlServer.Types.170.700.9-ctp2p0\build\net472\Microsoft.SqlServer.Types.props'))" />
+  </Target>
 </Project>
