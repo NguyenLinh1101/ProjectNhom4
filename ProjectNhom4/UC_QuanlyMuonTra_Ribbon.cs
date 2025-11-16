@@ -53,7 +53,7 @@ namespace ProjectNhom4
 
         private void btnPhieuMuon_Click(object sender, EventArgs e)
         {
-            
+            LoadUserControlToPanel(new UC_QuanlyMuonTra());
         }
         private void UC_QuanlyMuonTra_Ribbon_Load(object sender, EventArgs e)
         {

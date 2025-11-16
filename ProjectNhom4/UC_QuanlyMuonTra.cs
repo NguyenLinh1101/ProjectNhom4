@@ -22,7 +22,7 @@ namespace ProjectNhom4
         private bool addnewFlag = false;
 
         // 🔹 Chuỗi kết nối tới SQL Server
-        string connectionString = "Data Source=LANNHI\\SQLEXPRESS;Initial Catalog=dataThuvien2;Integrated Security=True";
+        string connectionString = "Data Source=LAPTOP-31TAL89T\\SQLEXPRESS03;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False";
 
         // 🔹 Hàm thực thi câu lệnh SQL (INSERT, UPDATE, DELETE)
         private void ExecuteSQL(string sql)
