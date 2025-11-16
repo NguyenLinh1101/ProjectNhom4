@@ -11,14 +11,13 @@ using System.Windows.Forms;
 
 namespace ProjectNhom4
 {
-    public partial class frmTacgiaSach : Form
+    public partial class UC_QuanlyTacgiaSach : UserControl
     {
         string strConnectionString = "Data Source=LAPTOP-31TAL89T\\SQLEXPRESS03;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False";
-
-        public frmTacgiaSach()
+        public UC_QuanlyTacgiaSach()
         {
             InitializeComponent();
-            this.Load += frmTacgiaSach_Load;
+            this.Load += UC_QuanlyTacgiaSach_Load;
         }
 
         private void grpDauSach_Click(object sender, EventArgs e)
@@ -43,27 +42,7 @@ namespace ProjectNhom4
 
         }
 
-        private void frmTacgiaSach_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                splitContainer1.SplitterDistance = splitContainer1.Width / 2;
-                LoadTacGia();
-                LoadDauSach();
-
-                dgvThongTinTacGia.AutoGenerateColumns = true;
-                dgvThongTinDauSach.AutoGenerateColumns = true;
-
-                dgvThongTinTacGia.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dgvThongTinDauSach.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message);
-            }
-
-        }
+       
         // --- LOAD DANH SÁCH ---
         private void LoadTacGia()
         {
@@ -74,7 +53,7 @@ namespace ProjectNhom4
             dgvThongTinTacGia.DataSource = dataTable;
             dgvThongTinTacGia.Columns["Ma_Tac_Gia"].HeaderText = "Mã Tác Giả";
             dgvThongTinTacGia.Columns["Ten_Tac_Gia"].HeaderText = "Tên Tác Giả";
-            
+
         }
         private void LoadDauSach()
         {
@@ -85,7 +64,7 @@ namespace ProjectNhom4
             dgvThongTinDauSach.DataSource = dataTable;
             dgvThongTinDauSach.Columns["Ma_Dau_Sach"].HeaderText = "Mã Đầu Sách";
             dgvThongTinDauSach.Columns["Ten_Dau_Sach"].HeaderText = "Tên Đầu Sách";
-                        
+
         }
 
 
@@ -190,7 +169,38 @@ namespace ProjectNhom4
 
         }
 
-        private void btnChitiet_Click(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void UC_QuanlyTacgiaSach_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                splitContainer1.SplitterDistance = splitContainer1.Width / 2;
+                LoadTacGia();
+                LoadDauSach();
+
+                dgvThongTinTacGia.AutoGenerateColumns = true;
+                dgvThongTinDauSach.AutoGenerateColumns = true;
+
+                dgvThongTinTacGia.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvThongTinDauSach.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+        }
+
+        private void SuaTacGia_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnChitiet_Click_1(object sender, EventArgs e)
         {
             // 1️, Kiểm tra có dòng nào được chọn không
             if (dgvThongTinDauSach.CurrentRow == null)
@@ -206,31 +216,5 @@ namespace ProjectNhom4
             ProjectNhom4.ChiTietDauSach frmChiTiet = new ProjectNhom4.ChiTietDauSach(maDauSach);
             frmChiTiet.ShowDialog();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void SuaTacGia_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
-

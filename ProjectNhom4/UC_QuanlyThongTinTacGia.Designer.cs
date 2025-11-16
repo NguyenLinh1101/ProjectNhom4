@@ -61,10 +61,12 @@
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.errorProviderTacGia = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panelRoot = new System.Windows.Forms.Panel();
             this.grbTTTG.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTacGia)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTacGia)).BeginInit();
+            this.panelRoot.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblqlTacGia
@@ -556,15 +558,24 @@
             this.errorProviderTacGia.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
             this.errorProviderTacGia.ContainerControl = this;
             // 
+            // panelRoot
+            // 
+            this.panelRoot.Controls.Add(this.guna2Panel1);
+            this.panelRoot.Controls.Add(this.dgvTacGia);
+            this.panelRoot.Controls.Add(this.grbTTTG);
+            this.panelRoot.Controls.Add(this.txtSearch);
+            this.panelRoot.Controls.Add(this.lblqlTacGia);
+            this.panelRoot.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelRoot.Location = new System.Drawing.Point(0, 0);
+            this.panelRoot.Name = "panelRoot";
+            this.panelRoot.Size = new System.Drawing.Size(1262, 1102);
+            this.panelRoot.TabIndex = 22;
+            // 
             // UC_QuanlyThongTinTacGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.dgvTacGia);
-            this.Controls.Add(this.grbTTTG);
-            this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.lblqlTacGia);
+            this.Controls.Add(this.panelRoot);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_QuanlyThongTinTacGia";
             this.Size = new System.Drawing.Size(1262, 1102);
@@ -574,6 +585,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTacGia)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTacGia)).EndInit();
+            this.panelRoot.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -608,5 +620,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Gioi_Tinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quoc_Tich;
         private Guna.UI2.WinForms.Guna2ComboBox cboQuocTich;
+        private System.Windows.Forms.Panel panelRoot;
     }
 }

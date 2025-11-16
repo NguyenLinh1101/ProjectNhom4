@@ -397,6 +397,7 @@
             this.SuaTacGia.Size = new System.Drawing.Size(113, 55);
             this.SuaTacGia.TabIndex = 19;
             this.SuaTacGia.Text = "Sửa";
+            this.SuaTacGia.Click += new System.EventHandler(this.SuaTacGia_Click);
             // 
             // frmTacgiaSach
             // 

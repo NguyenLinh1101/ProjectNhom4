@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelQLSach = new System.Windows.Forms.Panel();
+            this.btnCuonSach = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDauSach = new Guna.UI2.WinForms.Guna2Button();
             this.dropDown_DanhMuc = new System.Windows.Forms.Panel();
             this.btnDanhMuc = new Guna.UI2.WinForms.Guna2Button();
             this.btnChuDe = new Guna.UI2.WinForms.Guna2Button();
             this.btnLoaiSach = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCuonSach = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDauSach = new Guna.UI2.WinForms.Guna2Button();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
@@ -57,6 +57,49 @@
             this.panelQLSach.Size = new System.Drawing.Size(1092, 123);
             this.panelQLSach.TabIndex = 0;
             this.panelQLSach.Paint += new System.Windows.Forms.PaintEventHandler(this.panelQLSach_Paint);
+            // 
+            // btnCuonSach
+            // 
+            this.btnCuonSach.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCuonSach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.btnCuonSach.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnCuonSach.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.btnCuonSach.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCuonSach.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCuonSach.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCuonSach.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCuonSach.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.btnCuonSach.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCuonSach.ForeColor = System.Drawing.Color.White;
+            this.btnCuonSach.Location = new System.Drawing.Point(406, 19);
+            this.btnCuonSach.MaximumSize = new System.Drawing.Size(247, 90);
+            this.btnCuonSach.Name = "btnCuonSach";
+            this.btnCuonSach.Size = new System.Drawing.Size(205, 90);
+            this.btnCuonSach.TabIndex = 0;
+            this.btnCuonSach.Text = "Cuốn sách";
+            this.btnCuonSach.Click += new System.EventHandler(this.btnCuonSach_Click);
+            // 
+            // btnDauSach
+            // 
+            this.btnDauSach.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDauSach.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnDauSach.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.btnDauSach.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDauSach.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDauSach.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDauSach.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDauSach.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.btnDauSach.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnDauSach.ForeColor = System.Drawing.Color.White;
+            this.btnDauSach.Location = new System.Drawing.Point(64, 19);
+            this.btnDauSach.MaximumSize = new System.Drawing.Size(247, 90);
+            this.btnDauSach.Name = "btnDauSach";
+            this.btnDauSach.Size = new System.Drawing.Size(205, 90);
+            this.btnDauSach.TabIndex = 0;
+            this.btnDauSach.Text = "Đầu sách";
+            this.btnDauSach.Click += new System.EventHandler(this.btnDauSach_Click);
             // 
             // dropDown_DanhMuc
             // 
@@ -134,49 +177,6 @@
             this.btnLoaiSach.TabIndex = 2;
             this.btnLoaiSach.Text = "Loại Sách";
             this.btnLoaiSach.Click += new System.EventHandler(this.btnLoaiSach_Click);
-            // 
-            // btnCuonSach
-            // 
-            this.btnCuonSach.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCuonSach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.btnCuonSach.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnCuonSach.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.btnCuonSach.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCuonSach.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCuonSach.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCuonSach.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCuonSach.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.btnCuonSach.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnCuonSach.ForeColor = System.Drawing.Color.White;
-            this.btnCuonSach.Location = new System.Drawing.Point(406, 19);
-            this.btnCuonSach.MaximumSize = new System.Drawing.Size(247, 90);
-            this.btnCuonSach.Name = "btnCuonSach";
-            this.btnCuonSach.Size = new System.Drawing.Size(205, 90);
-            this.btnCuonSach.TabIndex = 0;
-            this.btnCuonSach.Text = "Cuốn sách";
-            this.btnCuonSach.Click += new System.EventHandler(this.btnCuonSach_Click);
-            // 
-            // btnDauSach
-            // 
-            this.btnDauSach.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDauSach.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnDauSach.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.btnDauSach.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDauSach.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDauSach.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDauSach.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDauSach.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.btnDauSach.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDauSach.ForeColor = System.Drawing.Color.White;
-            this.btnDauSach.Location = new System.Drawing.Point(64, 19);
-            this.btnDauSach.MaximumSize = new System.Drawing.Size(247, 90);
-            this.btnDauSach.Name = "btnDauSach";
-            this.btnDauSach.Size = new System.Drawing.Size(205, 90);
-            this.btnDauSach.TabIndex = 0;
-            this.btnDauSach.Text = "Đầu sách";
-            this.btnDauSach.Click += new System.EventHandler(this.btnDauSach_Click);
             // 
             // panelContainer
             // 

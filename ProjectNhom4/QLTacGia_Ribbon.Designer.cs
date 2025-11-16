@@ -31,7 +31,10 @@
             this.panelQLTacGia = new System.Windows.Forms.Panel();
             this.btnTacGiaSach = new Guna.UI2.WinForms.Guna2Button();
             this.btnTacGia = new Guna.UI2.WinForms.Guna2Button();
+            this.panelContainer = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelQLTacGia.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelQLTacGia
@@ -44,7 +47,7 @@
             this.panelQLTacGia.ForeColor = System.Drawing.Color.Black;
             this.panelQLTacGia.Location = new System.Drawing.Point(0, 0);
             this.panelQLTacGia.Name = "panelQLTacGia";
-            this.panelQLTacGia.Size = new System.Drawing.Size(1924, 90);
+            this.panelQLTacGia.Size = new System.Drawing.Size(1316, 90);
             this.panelQLTacGia.TabIndex = 1;
             // 
             // btnTacGiaSach
@@ -65,6 +68,7 @@
             this.btnTacGiaSach.Size = new System.Drawing.Size(247, 90);
             this.btnTacGiaSach.TabIndex = 0;
             this.btnTacGiaSach.Text = "Tác giả sách";
+            this.btnTacGiaSach.Click += new System.EventHandler(this.btnTacGiaSach_Click);
             // 
             // btnTacGia
             // 
@@ -85,14 +89,36 @@
             this.btnTacGia.Text = "Tác giả";
             this.btnTacGia.Click += new System.EventHandler(this.btnTacGia_Click);
             // 
+            // panelContainer
+            // 
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(0, 90);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(1316, 801);
+            this.panelContainer.TabIndex = 2;
+            this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panelContainer);
+            this.panel1.Controls.Add(this.panelQLTacGia);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1316, 891);
+            this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
             // QLTacGia_Ribbon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panelQLTacGia);
+            this.Controls.Add(this.panel1);
             this.Name = "QLTacGia_Ribbon";
-            this.Size = new System.Drawing.Size(1924, 1050);
+            this.Size = new System.Drawing.Size(1316, 891);
+            this.Load += new System.EventHandler(this.QLTacGia_Ribbon_Load);
             this.panelQLTacGia.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -102,5 +128,7 @@
         private System.Windows.Forms.Panel panelQLTacGia;
         private Guna.UI2.WinForms.Guna2Button btnTacGiaSach;
         private Guna.UI2.WinForms.Guna2Button btnTacGia;
+        private System.Windows.Forms.Panel panelContainer;
+        private System.Windows.Forms.Panel panel1;
     }
 }
