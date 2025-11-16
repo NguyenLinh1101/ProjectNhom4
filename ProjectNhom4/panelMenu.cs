@@ -68,7 +68,7 @@ namespace ProjectNhom4
 
         private void btnqltacgia_Click_1(object sender, EventArgs e)
         {
-            LoadUserControl(new UC_QuanlyThongTinTacGia());
+            LoadUserControl(new QLTacGia_Ribbon());
         }
 
         private void btnqldocgia_Click(object sender, EventArgs e)

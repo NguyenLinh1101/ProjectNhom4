@@ -83,15 +83,15 @@
             this.btnTacGia.Size = new System.Drawing.Size(247, 90);
             this.btnTacGia.TabIndex = 0;
             this.btnTacGia.Text = "Tác giả";
+            this.btnTacGia.Click += new System.EventHandler(this.btnTacGia_Click);
             // 
             // QLTacGia_Ribbon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1050);
             this.Controls.Add(this.panelQLTacGia);
             this.Name = "QLTacGia_Ribbon";
-            this.Text = "QLTacGia_Ribbon";
+            this.Size = new System.Drawing.Size(1924, 1050);
             this.panelQLTacGia.ResumeLayout(false);
             this.ResumeLayout(false);
 
