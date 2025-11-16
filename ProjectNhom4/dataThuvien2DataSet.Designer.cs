@@ -13197,8 +13197,8 @@ SELECT Ma_Phieu_Muon, Ma_The, Ma_Thu_Thu, Ma_Kieu_Muon, Ngay_Muon, Han_Tra, Ngay
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Ma_Phieu_Muon, Ma_The, Ma_Thu_Thu, Ma_Kieu_Muon, Ngay_Muon, Han_Tra, Ngay_" +
-                "Thuc_Tra, Trang_Thai_Muon, Tien_Coc FROM dbo.PHIEU_MUON";
+            this._commandCollection[0].CommandText = "SELECT  Ma_Phieu_Muon, Ma_The, Ma_Thu_Thu, Ma_Kieu_Muon, Ngay_Muon, Han_Tra, Ngay" +
+                "_Thuc_Tra, Trang_Thai_Muon, Tien_Coc\r\nFROM      PHIEU_MUON";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
