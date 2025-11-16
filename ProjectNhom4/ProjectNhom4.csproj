@@ -128,36 +128,34 @@
     <Compile Include="ChiTietDauSach.Designer.cs">
       <DependentUpon>ChiTietDauSach.cs</DependentUpon>
     </Compile>
-	  <Compile Include="dsPhieuMuon.cs">
-		  <DependentUpon>dsPhieuMuon.xsd</DependentUpon>
-		  <AutoGen>true</AutoGen>
-		  <DesignTime>true</DesignTime>
-	  </Compile>
-
-	  <Compile Include="dsPhieuMuon.Designer.cs">
-		  <DependentUpon>dsPhieuMuon.xsd</DependentUpon>
-		  <AutoGen>true</AutoGen>
-		  <DesignTime>true</DesignTime>
-	  </Compile>
-	  <Compile Include="frmPhieuMuon.cs">
-		  <SubType>Form</SubType>
-	  </Compile>
-
-	  <Compile Include="frmPhieuMuon.Designer.cs">
-		  <DependentUpon>frmPhieuMuon.cs</DependentUpon>
-	  </Compile>
+    <Compile Include="dsPhieuMuon.cs">
+      <DependentUpon>dsPhieuMuon.xsd</DependentUpon>
+      <AutoGen>true</AutoGen>
+      <DesignTime>true</DesignTime>
+    </Compile>
+    <Compile Include="dsPhieuMuon.Designer.cs">
+      <DependentUpon>dsPhieuMuon.xsd</DependentUpon>
+      <AutoGen>true</AutoGen>
+      <DesignTime>true</DesignTime>
+    </Compile>
+    <Compile Include="frmPhieuMuon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhieuMuon.Designer.cs">
+      <DependentUpon>frmPhieuMuon.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_QuanlyCuonSach.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC_QuanlyCuonSach.Designer.cs">
       <DependentUpon>UC_QuanlyCuonSach.cs</DependentUpon>
     </Compile>
-	<Compile Include="UC_QuanlyMuonTra.cs">
-	   <SubType>UserControl</SubType>
-	</Compile>
+    <Compile Include="UC_QuanlyMuonTra.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UC_QuanlyMuonTra.Designer.cs">
-	   <DependentUpon>UC_QuanlyMuonTra.cs</DependentUpon>
-	</Compile>
+      <DependentUpon>UC_QuanlyMuonTra.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_QuanlyTacgiaSach.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -373,9 +371,9 @@
     <EmbeddedResource Include="frmCuonSach.resx">
       <DependentUpon>frmCuonSach.cs</DependentUpon>
     </EmbeddedResource>
-	  <EmbeddedResource Include="frmPhieuMuon.resx">
-		  <DependentUpon>frmPhieuMuon.cs</DependentUpon>
-	  </EmbeddedResource>
+    <EmbeddedResource Include="frmPhieuMuon.resx">
+      <DependentUpon>frmPhieuMuon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTacgiaSach.resx">
       <DependentUpon>frmTacgiaSach.cs</DependentUpon>
     </EmbeddedResource>
@@ -447,13 +445,15 @@
     <EmbeddedResource Include="QL_TaiKhoan.resx">
       <DependentUpon>QL_TaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptPhieuMuon.rdlc" />
+    <EmbeddedResource Include="Reports\rptPhieuMuon.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_QuanlyCuonSach.resx">
       <DependentUpon>UC_QuanlyCuonSach.cs</DependentUpon>
     </EmbeddedResource>
-	  <EmbeddedResource Include="UC_QuanlyMuonTra.resx">
-		  <DependentUpon>UC_QuanlyMuonTra.cs</DependentUpon>
-	  </EmbeddedResource>
+    <EmbeddedResource Include="UC_QuanlyMuonTra.resx">
+      <DependentUpon>UC_QuanlyMuonTra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_QuanlyMuonTra_Ribbon.resx">
       <DependentUpon>UC_QuanlyMuonTra_Ribbon.cs</DependentUpon>
     </EmbeddedResource>
@@ -532,19 +532,17 @@
     <None Include="dsdocgiavipham.xss">
       <DependentUpon>dsdocgiavipham.xsd</DependentUpon>
     </None>
-	  <None Include="dsPhieuMuon.xsc">
-		  <DependentUpon>dsPhieuMuon.xsd</DependentUpon>
-	  </None>
-
-	  <None Include="dsPhieuMuon.xss">
-		  <DependentUpon>dsPhieuMuon.xsd</DependentUpon>
-	  </None>
-
-	  <None Include="dsPhieuMuon.xsd">
-		  <Generator>MSDataSetGenerator</Generator>
-		  <LastGenOutput>dsPhieuMuon.Designer.cs</LastGenOutput>
-		  <SubType>Designer</SubType>
-	  </None>
+    <None Include="dsPhieuMuon.xsc">
+      <DependentUpon>dsPhieuMuon.xsd</DependentUpon>
+    </None>
+    <None Include="dsPhieuMuon.xss">
+      <DependentUpon>dsPhieuMuon.xsd</DependentUpon>
+    </None>
+    <None Include="dsPhieuMuon.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPhieuMuon.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="dssachmuonnhieunhat.xsc">
       <DependentUpon>dssachmuonnhieunhat.xsd</DependentUpon>
     </None>

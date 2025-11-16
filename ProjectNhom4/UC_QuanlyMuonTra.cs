@@ -1134,7 +1134,7 @@ namespace ProjectNhom4
 
         private DataSet LayDuLieuPhieuMuon(string maPhieuMuon)
         {
-            string connectionString = @"Data Source=LANNHI\SQLEXPRESS;Initial Catalog=dataThuvien2;Integrated Security=True";
+            string connectionString = "Data Source=LAPTOP-31TAL89T\\SQLEXPRESS03;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False\r\n";
 
             string query = @"
      SELECT 
