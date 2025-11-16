@@ -81,7 +81,7 @@ namespace ProjectNhom4
 
         private void btnPhieuPhat_Click(object sender, EventArgs e)
         {
-
+            LoadUserControlToPanel(new UC_PhieuViPham());
         }
     }
 }

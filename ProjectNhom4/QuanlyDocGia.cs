@@ -637,5 +637,10 @@ namespace ProjectNhom4
         {
 
         }
+
+        private void lblQLDG_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

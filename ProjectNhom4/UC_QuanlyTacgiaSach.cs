@@ -216,5 +216,10 @@ namespace ProjectNhom4
             ProjectNhom4.ChiTietDauSach frmChiTiet = new ProjectNhom4.ChiTietDauSach(maDauSach);
             frmChiTiet.ShowDialog();
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

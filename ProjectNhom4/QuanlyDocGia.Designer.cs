@@ -80,12 +80,14 @@
             this.cbbqldg = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblTencbbox = new System.Windows.Forms.Label();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.panelRoot = new System.Windows.Forms.Panel();
             this.grbTTDG.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDocGia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocGia)).BeginInit();
             this.contextMenuDocGia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorDocGia)).BeginInit();
             this.guna2Panel1.SuspendLayout();
+            this.panelRoot.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblQLDG
@@ -100,6 +102,7 @@
             this.lblQLDG.TabIndex = 7;
             this.lblQLDG.Text = "QUẢN LÝ ĐỘC GIẢ";
             this.lblQLDG.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblQLDG.Click += new System.EventHandler(this.lblQLDG_Click);
             // 
             // grbTTDG
             // 
@@ -498,7 +501,7 @@
             this.dgvDocGia.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDocGia.EnableHeadersVisualStyles = false;
             this.dgvDocGia.GridColor = System.Drawing.Color.Black;
-            this.dgvDocGia.Location = new System.Drawing.Point(3, 548);
+            this.dgvDocGia.Location = new System.Drawing.Point(9, 548);
             this.dgvDocGia.Name = "dgvDocGia";
             this.dgvDocGia.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -513,7 +516,7 @@
             this.dgvDocGia.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dgvDocGia.RowTemplate.Height = 28;
             this.dgvDocGia.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvDocGia.Size = new System.Drawing.Size(1171, 526);
+            this.dgvDocGia.Size = new System.Drawing.Size(1165, 526);
             this.dgvDocGia.TabIndex = 10;
             this.dgvDocGia.SelectionChanged += new System.EventHandler(this.dgvDocGia_SelectionChanged);
             // 
@@ -830,17 +833,28 @@
             this.txtSearch.TextOffset = new System.Drawing.Point(10, 0);
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
+            // panelRoot
+            // 
+            this.panelRoot.AutoScroll = true;
+            this.panelRoot.Controls.Add(this.dgvDocGia);
+            this.panelRoot.Controls.Add(this.lblQLDG);
+            this.panelRoot.Controls.Add(this.lblTencbbox);
+            this.panelRoot.Controls.Add(this.cbbqldg);
+            this.panelRoot.Controls.Add(this.txtSearch);
+            this.panelRoot.Controls.Add(this.grbTTDG);
+            this.panelRoot.Controls.Add(this.guna2Panel1);
+            this.panelRoot.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelRoot.Location = new System.Drawing.Point(0, 0);
+            this.panelRoot.Name = "panelRoot";
+            this.panelRoot.Size = new System.Drawing.Size(1215, 1221);
+            this.panelRoot.TabIndex = 27;
+            // 
             // UC_QuanlyDocGia
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Controls.Add(this.lblTencbbox);
-            this.Controls.Add(this.cbbqldg);
-            this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.dgvDocGia);
-            this.Controls.Add(this.grbTTDG);
-            this.Controls.Add(this.lblQLDG);
-            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.panelRoot);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "UC_QuanlyDocGia";
             this.Size = new System.Drawing.Size(1215, 1221);
@@ -852,8 +866,9 @@
             this.contextMenuDocGia.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorDocGia)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
+            this.panelRoot.ResumeLayout(false);
+            this.panelRoot.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -906,5 +921,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ngay_Cap;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ngay_Het_Han;
+        private System.Windows.Forms.Panel panelRoot;
     }
 }

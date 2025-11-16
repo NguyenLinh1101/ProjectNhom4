@@ -568,7 +568,7 @@ namespace ProjectNhom4
         private void txtSearch_TextChanged_1(object sender, EventArgs e)
         {
             string searchText = txtSearch.Text;
-            dv.RowFilter = $"[Ten_Dau_Sach] like '%{searchText}%'";
+            dv.RowFilter = $"[TenDauSach] like '%{searchText}%'";
         }
 
         private void lblDauSach_Click(object sender, EventArgs e)
