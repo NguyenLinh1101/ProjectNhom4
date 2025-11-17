@@ -49,12 +49,14 @@ namespace ProjectNhom4
                     CP.Ma_Sach,
                     DS.Ten_Dau_Sach AS Ten_Sach,
                     CP.Ma_Vi_Pham,
-                    CP.Ly_Do,
+                    
+                    -- SỬA 1: Đổi VP.Ten_Vi_Pham thành VP.Ly_Do
+                    VP.Ten_Vi_Pham AS Ly_Do, 
+                    
                     CP.So_Tien_Phat AS Tien_Phat,
                     CP.Trang_Thai_Phieu AS Trang_Thai
                 FROM 
                     PHIEU_PHAT PP
-                -- Dùng INNER JOIN để đảm bảo chỉ lấy phiếu phạt có chi tiết
                 INNER JOIN 
                     CT_PHIEU_PHAT CP ON PP.Ma_Phieu_Phat = CP.Ma_Phieu_Phat
                 LEFT JOIN 
@@ -69,6 +71,11 @@ namespace ProjectNhom4
                     SACH S ON CP.Ma_Sach = S.Ma_Sach
                 LEFT JOIN 
                     DAU_SACH DS ON S.Ma_Dau_Sach = DS.Ma_Dau_Sach
+                
+                -- SỬA 2: THÊM DÒNG JOIN CÒN THIẾU
+                LEFT JOIN 
+                    VI_PHAM VP ON CP.Ma_Vi_Pham = VP.Ma_Vi_Pham
+                    
                 WHERE 
                     PP.Ma_Phieu_Phat = @MaPP";
                     SqlDataAdapter da = new SqlDataAdapter(sqlQuery, conn);
