@@ -171,6 +171,12 @@
     <Compile Include="UC_QuanlyTacgiaSach.Designer.cs">
       <DependentUpon>UC_QuanlyTacgiaSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_ThongTinThuThu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ThongTinThuThu.Designer.cs">
+      <DependentUpon>UC_ThongTinThuThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserSession.cs" />
     <Compile Include="XuatPhieuPhat.cs">
       <SubType>Form</SubType>
@@ -484,6 +490,9 @@
     <EmbeddedResource Include="UC_QuanlyThongTinTacGia.resx">
       <DependentUpon>UC_QuanlyThongTinTacGia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_ThongTinThuThu.resx">
+      <DependentUpon>UC_ThongTinThuThu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_TrangChu.resx">
       <DependentUpon>UC_TrangChu.cs</DependentUpon>
     </EmbeddedResource>
@@ -635,6 +644,7 @@
     <Content Include="Resources\notepad.png" />
     <Content Include="Resources\padlock.png" />
     <Content Include="Resources\profile.png" />
+    <None Include="Resources\profile1.png" />
     <Content Include="Resources\search.png" />
     <Content Include="Resources\thuvienhust.jpg" />
     <Content Include="Resources\user.png" />

@@ -47,13 +47,14 @@
             this.btnDangXuat = new Guna.UI2.WinForms.Guna2Button();
             this.panelContainer = new Guna.UI2.WinForms.Guna2Panel();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.btnProfile = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnMaximize = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnMinimize = new System.Windows.Forms.Button();
             this.lblTenSP = new System.Windows.Forms.Label();
             this.panelBottom = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblTime = new System.Windows.Forms.Label();
-            this.btnMinimize = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnMaximize = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -362,6 +363,7 @@
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.panelTop.Controls.Add(this.btnProfile);
             this.panelTop.Controls.Add(this.btnMaximize);
             this.panelTop.Controls.Add(this.btnClose);
             this.panelTop.Controls.Add(this.btnMinimize);
@@ -372,6 +374,57 @@
             this.panelTop.Size = new System.Drawing.Size(1350, 40);
             this.panelTop.TabIndex = 0;
             this.panelTop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTop_Paint);
+            // 
+            // btnProfile
+            // 
+            this.btnProfile.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnProfile.BackColor = System.Drawing.Color.Transparent;
+            this.btnProfile.BorderColor = System.Drawing.Color.White;
+            this.btnProfile.CustomBorderColor = System.Drawing.Color.White;
+            this.btnProfile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnProfile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnProfile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnProfile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnProfile.FillColor = System.Drawing.Color.Snow;
+            this.btnProfile.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnProfile.ForeColor = System.Drawing.Color.White;
+            this.btnProfile.Image = global::ProjectNhom4.Properties.Resources.profile1;
+            this.btnProfile.Location = new System.Drawing.Point(1116, 3);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnProfile.Size = new System.Drawing.Size(37, 36);
+            this.btnProfile.TabIndex = 21;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
+            // 
+            // btnMaximize
+            // 
+            this.btnMaximize.Location = new System.Drawing.Point(1235, 3);
+            this.btnMaximize.Name = "btnMaximize";
+            this.btnMaximize.Size = new System.Drawing.Size(47, 35);
+            this.btnMaximize.TabIndex = 4;
+            this.btnMaximize.Text = "☐";
+            this.btnMaximize.UseVisualStyleBackColor = true;
+            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(1288, 3);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(38, 35);
+            this.btnClose.TabIndex = 3;
+            this.btnClose.Text = "X";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Location = new System.Drawing.Point(1188, 3);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(41, 35);
+            this.btnMinimize.TabIndex = 2;
+            this.btnMinimize.Text = "-";
+            this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // lblTenSP
             // 
@@ -395,12 +448,6 @@
             this.panelBottom.Size = new System.Drawing.Size(1350, 41);
             this.panelBottom.TabIndex = 0;
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
@@ -410,35 +457,11 @@
             this.lblTime.Size = new System.Drawing.Size(0, 30);
             this.lblTime.TabIndex = 0;
             // 
-            // btnMinimize
+            // timer1
             // 
-            this.btnMinimize.Location = new System.Drawing.Point(1188, 3);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(41, 35);
-            this.btnMinimize.TabIndex = 2;
-            this.btnMinimize.Text = "-";
-            this.btnMinimize.UseVisualStyleBackColor = true;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(1288, 3);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(38, 35);
-            this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "X";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnMaximize
-            // 
-            this.btnMaximize.Location = new System.Drawing.Point(1235, 3);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(47, 35);
-            this.btnMaximize.TabIndex = 4;
-            this.btnMaximize.Text = "☐";
-            this.btnMaximize.UseVisualStyleBackColor = true;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmMenu
             // 
@@ -501,5 +524,6 @@
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Button btnClose;
+        private Guna.UI2.WinForms.Guna2CircleButton btnProfile;
     }
 }

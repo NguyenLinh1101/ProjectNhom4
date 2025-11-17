@@ -279,61 +279,71 @@ namespace ProjectNhom4
 
         }
 
-       //private void FixLayout()
-       // {
-       //     // ---- Panel gốc chiếm toàn màn hình ----
-       //     panelRoot.Dock = DockStyle.Fill;
+        private void cboQuyen_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-       //     // ---- Label tiêu đề đặt trên cùng ----
-       //     lblTaiKhoan.Dock = DockStyle.Top;
-       //     lblTaiKhoan.Height = 40;
+        }
 
-       //     // ---- GroupBox chứa thông tin tài khoản ----
-       //     grbTTTT.Dock = DockStyle.Top;
-       //     grbTTTT.Height = 180;
+        private void cboThuThu_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-       //     // ---- Panel chứa nút (tạo nếu chưa có) ----
-       //     Panel panelButtons = new Panel();
-       //     panelButtons.Height = 55;
-       //     panelButtons.Dock = DockStyle.Top;
-       //     panelButtons.BackColor = Color.Transparent;
+        }
 
-       //     // Nếu panelButtons chưa có trong panelRoot thì thêm:
-       //     if (!panelRoot.Controls.Contains(panelButtons))
-       //     {
-       //         panelRoot.Controls.Add(panelButtons);
-       //         panelButtons.BringToFront();
-       //     }
+        //private void FixLayout()
+        // {
+        //     // ---- Panel gốc chiếm toàn màn hình ----
+        //     panelRoot.Dock = DockStyle.Fill;
 
-       //     // ---- Anchor cho các nút ----
-       //     btnThem.Anchor = AnchorStyles.Left | AnchorStyles.Top;
-       //     btnSua.Anchor = AnchorStyles.Left | AnchorStyles.Top;
-       //     btnXoa.Anchor = AnchorStyles.Left | AnchorStyles.Top;
-       //     btnTaomoi.Anchor = AnchorStyles.Left | AnchorStyles.Top;
+        //     // ---- Label tiêu đề đặt trên cùng ----
+        //     lblTaiKhoan.Dock = DockStyle.Top;
+        //     lblTaiKhoan.Height = 40;
 
-       //     // Đặt lên panelButtons
-       //     panelButtons.Controls.Add(btnThem);
-       //     panelButtons.Controls.Add(btnSua);
-       //     panelButtons.Controls.Add(btnXoa);
-       //     panelButtons.Controls.Add(btnTaomoi);
+        //     // ---- GroupBox chứa thông tin tài khoản ----
+        //     grbTTTT.Dock = DockStyle.Top;
+        //     grbTTTT.Height = 180;
 
-       //     // Tự canh vị trí nút
-       //     int x = 10;
-       //     foreach (Control btn in panelButtons.Controls)
-       //     {
-       //         btn.Left = x;
-       //         btn.Top = 10;
-       //         x += btn.Width + 15;
-       //     }
+        //     // ---- Panel chứa nút (tạo nếu chưa có) ----
+        //     Panel panelButtons = new Panel();
+        //     panelButtons.Height = 55;
+        //     panelButtons.Dock = DockStyle.Top;
+        //     panelButtons.BackColor = Color.Transparent;
 
-       //     // ---- DataGridView tự chiếm toàn phần còn lại ----
-       //     dgvTaiKhoan.Dock = DockStyle.Fill;
+        //     // Nếu panelButtons chưa có trong panelRoot thì thêm:
+        //     if (!panelRoot.Controls.Contains(panelButtons))
+        //     {
+        //         panelRoot.Controls.Add(panelButtons);
+        //         panelButtons.BringToFront();
+        //     }
 
-       //     // ---- Tự điều chỉnh cột DGV ----
-       //     dgvTaiKhoan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-       //     dgvTaiKhoan.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-       //     dgvTaiKhoan.RowHeadersVisible = false; // gọn hơn
-       // }
+        //     // ---- Anchor cho các nút ----
+        //     btnThem.Anchor = AnchorStyles.Left | AnchorStyles.Top;
+        //     btnSua.Anchor = AnchorStyles.Left | AnchorStyles.Top;
+        //     btnXoa.Anchor = AnchorStyles.Left | AnchorStyles.Top;
+        //     btnTaomoi.Anchor = AnchorStyles.Left | AnchorStyles.Top;
+
+        //     // Đặt lên panelButtons
+        //     panelButtons.Controls.Add(btnThem);
+        //     panelButtons.Controls.Add(btnSua);
+        //     panelButtons.Controls.Add(btnXoa);
+        //     panelButtons.Controls.Add(btnTaomoi);
+
+        //     // Tự canh vị trí nút
+        //     int x = 10;
+        //     foreach (Control btn in panelButtons.Controls)
+        //     {
+        //         btn.Left = x;
+        //         btn.Top = 10;
+        //         x += btn.Width + 15;
+        //     }
+
+        //     // ---- DataGridView tự chiếm toàn phần còn lại ----
+        //     dgvTaiKhoan.Dock = DockStyle.Fill;
+
+        //     // ---- Tự điều chỉnh cột DGV ----
+        //     dgvTaiKhoan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        //     dgvTaiKhoan.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+        //     dgvTaiKhoan.RowHeadersVisible = false; // gọn hơn
+        // }
 
 
     }

@@ -227,6 +227,19 @@ namespace ProjectNhom4
 
             ShowData();
             SetControlState("Normal");
+            dgvTacGia.EnableHeadersVisualStyles = false;
+
+            dgvTacGia.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI", 11F, FontStyle.Bold);
+
+            dgvTacGia.DefaultCellStyle.Font =
+                new Font("Segoe UI", 10F, FontStyle.Regular);
+
+            foreach (DataGridViewColumn col in dgvTacGia.Columns)
+            {
+                col.DefaultCellStyle.Font =
+                    new Font("Segoe UI", 10F, FontStyle.Regular);
+            }
         }
 
         private void dgvTacGia_SelectionChanged(object sender, EventArgs e)
@@ -377,6 +390,11 @@ namespace ProjectNhom4
             isAdding = false;
             SetControlState("Editing"); // Chuyển sang trạng thái "Sửa"
             txtHoTen.Focus(); // Cho con trỏ vào ô Tên
+        }
+
+        private void dgvTacGia_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

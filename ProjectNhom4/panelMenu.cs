@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+
 
 namespace ProjectNhom4
 {
@@ -163,6 +165,7 @@ namespace ProjectNhom4
                 btnBaocao.Visible = false;
                 btnCaiDat.Visible = false;
                 pnlSubCaiDat.Visible = false;
+                btnProfile.Visible = true;
             }
         }
 
@@ -190,7 +193,7 @@ namespace ProjectNhom4
 
         private void btnHuongDan_Click(object sender, EventArgs e)
         {
-
+        
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -214,6 +217,11 @@ namespace ProjectNhom4
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            LoadUserControl (new UC_ThongTinThuThu());
         }
     }
 }

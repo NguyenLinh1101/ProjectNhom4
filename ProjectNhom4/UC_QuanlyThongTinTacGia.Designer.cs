@@ -380,6 +380,7 @@
             this.dgvTacGia.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvTacGia.Size = new System.Drawing.Size(1133, 489);
             this.dgvTacGia.TabIndex = 11;
+            this.dgvTacGia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTacGia_CellContentClick);
             this.dgvTacGia.SelectionChanged += new System.EventHandler(this.dgvTacGia_SelectionChanged);
             // 
             // Ma_Tac_Gia
