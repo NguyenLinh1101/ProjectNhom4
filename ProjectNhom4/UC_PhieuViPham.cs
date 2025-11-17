@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace ProjectNhom4
 {
-    public partial class UC_PhieuViPham: UserControl
+    public partial class UC_PhieuViPham : UserControl
     {
         private bool isLoadingData = false;
 
 
-        string connectionString = "Data Source=LANNHI\\SQLEXPRESS;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False\r\n";
+        string connectionString = "Data Source=LANNHI\\SQLEXPRESS;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False";
         SqlConnection conn;
         SqlDataAdapter da;
         DataTable dtPhieuPhat;        // DGV trái
@@ -37,7 +37,7 @@ namespace ProjectNhom4
             this.Load += UC_PhieuPhat_Load;
 
         }
-        
+
 
         private void lblNgayLap_Click(object sender, EventArgs e)
         {
@@ -91,18 +91,18 @@ namespace ProjectNhom4
             try
             {
                 using (conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                string query = "SELECT Ma_Thu_Thu, Ten_Thu_Thu FROM THU_THU";
-                SqlDataAdapter da = new SqlDataAdapter(query, conn);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+                {
+                    conn.Open();
+                    string query = "SELECT Ma_Thu_Thu, Ten_Thu_Thu FROM THU_THU";
+                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
 
-                cboThuThu.DataSource = dt;
-                cboThuThu.DisplayMember = "Ten_Thu_Thu";
-                cboThuThu.ValueMember = "Ma_Thu_Thu";
-                cboThuThu.SelectedIndex = -1;
-            }
+                    cboThuThu.DataSource = dt;
+                    cboThuThu.DisplayMember = "Ten_Thu_Thu";
+                    cboThuThu.ValueMember = "Ma_Thu_Thu";
+                    cboThuThu.SelectedIndex = -1;
+                }
             }
             catch (Exception ex)
             {
@@ -134,13 +134,13 @@ namespace ProjectNhom4
 
                 if (result != null && result != DBNull.Value)
                 {
-                    string lastMa = result.ToString();   
+                    string lastMa = result.ToString();
                     int numberPart = int.Parse(lastMa.Substring(2));
                     nextNumber = numberPart + 1;
                 }
             }
 
-            return prefix + nextNumber.ToString("D4"); 
+            return prefix + nextNumber.ToString("D4");
         }
 
 
@@ -297,8 +297,8 @@ ORDER BY PP.Ngay_Lap_Phieu DESC";
 
         private void dgvPhieuViPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            
+
+
         }
         private void LoadChiTietViPham(string maPP)
         {
@@ -377,7 +377,7 @@ WHERE PP.Ma_Phieu_Phat = @MaPP";
                             // Nạp thông tin Độc Giả và Thủ Thư
                             txtMaDocGia.Text = reader["Ma_Doc_Gia"].ToString();
                             txtTenDocGia.Text = reader["Ho_Ten"].ToString();
-                            
+
                             cboThuThu.SelectedValue = reader["Ma_Thu_Thu"].ToString();
                             string trangThaiTong = reader["Trang_Thai_Tong"].ToString();
                             cboTrangthainopphat.SelectedItem = trangThaiTong;
@@ -404,7 +404,7 @@ WHERE PP.Ma_Phieu_Phat = @MaPP";
 
         private void cboTrangThai_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (isLoadingData) return; 
+            if (isLoadingData) return;
             string selectedTrangThai = cboTrangThai.SelectedItem?.ToString();
             string tenDocGia = txtTimKiem.Text.Trim();
             LoadDanhSachPhieuPhat(selectedTrangThai, tenDocGia);
@@ -412,7 +412,7 @@ WHERE PP.Ma_Phieu_Phat = @MaPP";
 
         private void txtMaPhieuPhat_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void cboThuThu_SelectedIndexChanged(object sender, EventArgs e)
@@ -584,152 +584,155 @@ WHERE PP.Ma_Phieu_Phat = @MaPP";
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            // ====== KIỂM TRA DỮ LIỆU ======
-            if (string.IsNullOrWhiteSpace(txtMaPhieuPhat.Text) ||
-                string.IsNullOrWhiteSpace(txtMaPhieuMuon.Text) ||
-                cboThuThu.SelectedValue == null)
+            if (string.IsNullOrWhiteSpace(txtMaPhieuPhat.Text) || string.IsNullOrWhiteSpace(txtMaPhieuMuon.Text) || cboThuThu.SelectedValue == null)
             {
-                MessageBox.Show("Vui lòng nhập đủ Mã Phiếu Phạt, Mã Phiếu Mượn và Thủ Thư.");
+                MessageBox.Show("Vui lòng điền đầy đủ Mã Phiếu Phạt, Mã Phiếu Mượn và Thủ Thư.", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
             if (dtChiTiet.Rows.Count == 0)
             {
-                MessageBox.Show("Phiếu phạt phải có ít nhất 1 chi tiết.");
+                MessageBox.Show("Phiếu phạt phải có ít nhất một Chi Tiết Vi Phạm.", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
                 SqlTransaction tran = conn.BeginTransaction();
-
-                string maPP = txtMaPhieuPhat.Text.Trim();
-
+                string maPP = txtMaPhieuPhat.Text;
                 try
                 {
-                    // ===================================================
-                    // 1. THÊM MỚI PHIẾU PHẠT
-                    // ===================================================
                     if (isAdding)
                     {
-                        string sql = @"
-INSERT INTO PHIEU_PHAT (Ma_Phieu_Phat, Ma_Phieu_Muon, Ma_Thu_Thu, Ngay_Lap_Phieu)
-VALUES (@MaPP, @MaPM, @MaTT, @NgayLap)";
+                        // Insert PHIEU_PHAT
+                        string insertPP = @"
+INSERT INTO PHIEU_PHAT(Ma_Phieu_Phat, Ma_Phieu_Muon, Ma_Thu_Thu, Ngay_Lap_Phieu)
+VALUES (@MaPhieuPhat, @MaPhieuMuon, @MaThuThu, @NgayLap)";
 
-                        using (SqlCommand cmd = new SqlCommand(sql, conn, tran))
-                        {
-                            cmd.Parameters.AddWithValue("@MaPP", maPP);
-                            cmd.Parameters.AddWithValue("@MaPM", txtMaPhieuMuon.Text.Trim());
-                            cmd.Parameters.AddWithValue("@MaTT", cboThuThu.SelectedValue.ToString());
-                            cmd.Parameters.AddWithValue("@NgayLap", dtpNgayLapPhieu.Value);
-                            cmd.ExecuteNonQuery();
-                        }
+
+                        SqlCommand cmd = new SqlCommand(insertPP, conn, tran);
+                        cmd.Parameters.AddWithValue("@MaPhieuPhat", maPP);
+                        cmd.Parameters.AddWithValue("@MaPhieuMuon", txtMaPhieuMuon.Text);
+                        cmd.Parameters.AddWithValue("@MaThuThu", cboThuThu.SelectedValue.ToString());
+                        cmd.Parameters.AddWithValue("@NgayLap", dtpNgayLapPhieu.Value);
+
+                        cmd.ExecuteNonQuery();
+
                     }
-
-                    // ===================================================
-                    // 2. SỬA PHIẾU PHẠT
-                    // ===================================================
-                    if (isEditing)
+                    else if (isEditing)
                     {
-                        // Update PHIEU_PHAT
-                        string sql = @"
-UPDATE PHIEU_PHAT SET 
-    Ma_Phieu_Muon = @MaPM,
-    Ma_Thu_Thu = @MaTT,
+                        // 1. Update PHIEU_PHAT 
+                        string updatePP = @"
+UPDATE PHIEU_PHAT SET
+    Ma_Phieu_Muon = @MaPhieuMuon,
+    Ma_Thu_Thu = @MaThuThu,
     Ngay_Lap_Phieu = @NgayLap
-WHERE Ma_Phieu_Phat = @MaPP";
+WHERE Ma_Phieu_Phat = @MaPhieuPhat";
 
-                        using (SqlCommand cmd = new SqlCommand(sql, conn, tran))
-                        {
-                            cmd.Parameters.AddWithValue("@MaPP", maPP);
-                            cmd.Parameters.AddWithValue("@MaPM", txtMaPhieuMuon.Text.Trim());
-                            cmd.Parameters.AddWithValue("@MaTT", cboThuThu.SelectedValue.ToString());
-                            cmd.Parameters.AddWithValue("@NgayLap", dtpNgayLapPhieu.Value);
-                            cmd.ExecuteNonQuery();
-                        }
 
-                        // Xóa chi tiết cũ
-                        using (SqlCommand cmdDel = new SqlCommand(
-                            "DELETE FROM CT_PHIEU_PHAT WHERE Ma_Phieu_Phat = @MaPP", conn, tran))
-                        {
-                            cmdDel.Parameters.AddWithValue("@MaPP", maPP);
-                            cmdDel.ExecuteNonQuery();
-                        }
+                        SqlCommand cmd = new SqlCommand(updatePP, conn, tran);
+                        cmd.Parameters.AddWithValue("@MaPhieuPhat", maPP);
+                        cmd.Parameters.AddWithValue("@MaPhieuMuon", txtMaPhieuMuon.Text);
+                        cmd.Parameters.AddWithValue("@MaThuThu", cboThuThu.SelectedValue.ToString());
+                        cmd.Parameters.AddWithValue("@NgayLap", dtpNgayLapPhieu.Value);
+                        cmd.ExecuteNonQuery();
+
+                        // Xóa toàn bộ CT_PHIEU_PHAT cũ để chèn lại
+                        string deleteCT = "DELETE FROM CT_PHIEU_PHAT WHERE Ma_Phieu_Phat = @MaPP";
+                        SqlCommand cmdDelete = new SqlCommand(deleteCT, conn, tran);
+                        cmdDelete.Parameters.AddWithValue("@MaPP", maPP);
+                        cmdDelete.ExecuteNonQuery();
+
                     }
-
-                    // ===================================================
-                    // 3. THÊM CHI TIẾT PHIẾU PHẠT (CẢ THÊM MỚI LẪN SỬA)
-                    // ===================================================
-
+                    // 2. Insert CT_PHIEU_PHAT (Thêm chi tiết)
                     string insertCT = @"
-INSERT INTO CT_PHIEU_PHAT
-(Ma_Phieu_Phat, Ma_Sach, Ma_Vi_Pham, Ly_Do, So_Tien_Phat, Trang_Thai_Phieu)
-VALUES (@MaPP, @MaSach, @MaVP, @LyDo, @TienPhat, @TrangThai)";
+INSERT INTO CT_PHIEU_PHAT(Ma_Phieu_Phat, Ma_Sach, Ma_Vi_Pham, Ly_Do, So_Tien_Phat, Trang_Thai_Phieu)
+VALUES(@MaPhieuPhat, @MaSach, @MaViPham, @LyDo, @TienPhat, @TrangThaiChiTiet)";
 
+
+                    // Lấy trạng thái từ ComboBox trên giao diện để áp dụng cho tất cả chi tiết
                     string trangThaiChiTiet = cboTrangthainopphat.SelectedItem?.ToString() ?? "Chưa nộp";
+
 
                     foreach (DataRow r in dtChiTiet.Rows)
                     {
-                        string maSach = r["Ma_Sach"]?.ToString().Trim();
-                        string lyDo = r["Ly_Do"]?.ToString().Trim();
-                        string maViPham = r["Ma_Vi_Pham"]?.ToString().Trim();
+                        // Lấy giá trị an toàn
+                        string maSach = r["Ma_Sach"] == DBNull.Value ? null : r["Ma_Sach"].ToString().Trim();
+                        string maViPham = null;
+                        string lyDo = r.Table.Columns.Contains("Ly_Do") && r["Ly_Do"] != DBNull.Value ? r["Ly_Do"].ToString().Trim() : null;
+                        decimal tienPhat = 0m;
 
-                        // Bỏ qua dòng rỗng
+                        // === SỬA LỖI LOGIC: BỎ QUA HÀNG TRỐNG ===
+                        // Nếu cả Mã Sách và Lý Do đều trống, đây là hàng mới (NewRow)
+                        // hoặc hàng rác. Chúng ta sẽ bỏ qua (continue)
                         if (string.IsNullOrEmpty(maSach) && string.IsNullOrEmpty(lyDo))
-                            continue;
-
-                        if (string.IsNullOrEmpty(maSach) || string.IsNullOrEmpty(maViPham))
                         {
-                            tran.Rollback();
-                            MessageBox.Show($"Dòng chi tiết thiếu dữ liệu (Sách: {maSach}, Vi phạm: {maViPham}).");
-                            return;
+                            continue; // Bỏ qua dòng này và đi đến dòng tiếp theo
+                        }
+                        // === KẾT THÚC SỬA ===
+
+                        // Trường hợp dtChiTiet lưu Ma_Vi_Pham (nên ưu tiên)
+                        if (r.Table.Columns.Contains("Ma_Vi_Pham") && r["Ma_Vi_Pham"] != DBNull.Value && !string.IsNullOrEmpty(r["Ma_Vi_Pham"].ToString()))
+                        {
+                            maViPham = r["Ma_Vi_Pham"].ToString().Trim();
+                        }
+                        else if (!string.IsNullOrEmpty(lyDo) && dtViPham != null)
+                        {
+                            // nếu chưa có Ma_Vi_Pham trong row, map từ dtViPham theo Ly_Do
+                            DataRow[] found = dtViPham.Select($"Ly_Do = '{lyDo.Replace("'", "''")}'");
+                            if (found.Length > 0)
+                                maViPham = found[0]["Ma_Vi_Pham"]?.ToString();
                         }
 
-                        // ==============================
-                        // KIỂM TRA TRÙNG TRƯỚC KHI CHÈN
-                        // ==============================
-                        string checkDup = @"
-SELECT COUNT(*) 
-FROM CT_PHIEU_PHAT
-WHERE Ma_Phieu_Phat = @MaPP AND Ma_Sach = @MaSach AND Ma_Vi_Pham = @MaVP";
-
-                        using (SqlCommand checkCmd = new SqlCommand(checkDup, conn, tran))
+                        // Lấy Tiền Phạt an toàn
+                        if (r.Table.Columns.Contains("Tien_Phat") && r["Tien_Phat"] != DBNull.Value)
                         {
-                            checkCmd.Parameters.AddWithValue("@MaPP", maPP);
-                            checkCmd.Parameters.AddWithValue("@MaSach", maSach);
-                            checkCmd.Parameters.AddWithValue("@MaVP", maViPham);
-
-                            int exists = (int)checkCmd.ExecuteScalar();
-                            if (exists > 0)
+                            decimal.TryParse(r["Tien_Phat"].ToString(), out tienPhat);
+                        }
+                        else if (!string.IsNullOrEmpty(maViPham) && dtViPham != null)
+                        {
+                            // map từ dtViPham nếu cần
+                            DataRow[] f = dtViPham.Select($"Ma_Vi_Pham = '{maViPham.Replace("'", "''")}'");
+                            if (f.Length > 0 && f[0].Table.Columns.Contains("Tien_Phat_Max") && f[0]["Tien_Phat_Max"] != DBNull.Value)
                             {
-                                // BỎ QUA DÒNG TRÙNG
-                                continue;
+                                decimal.TryParse(f[0]["Tien_Phat_Max"].ToString(), out tienPhat);
                             }
                         }
 
-                        // ====== Tính tiền phạt ======
-                        decimal tienPhat = 0;
-                        if (r.Table.Columns.Contains("Tien_Phat") && r["Tien_Phat"] != DBNull.Value)
-                            decimal.TryParse(r["Tien_Phat"].ToString(), out tienPhat);
-
-                        // ====== Insert chi tiết ======
-                        using (SqlCommand cmdCT = new SqlCommand(insertCT, conn, tran))
+                        // Validate bắt buộc (dành cho các hàng đã điền dở)
+                        if (string.IsNullOrEmpty(maSach) || string.IsNullOrEmpty(maViPham))
                         {
-                            cmdCT.Parameters.AddWithValue("@MaPP", maPP);
-                            cmdCT.Parameters.AddWithValue("@MaSach", maSach);
-                            cmdCT.Parameters.AddWithValue("@MaVP", maViPham);
-                            cmdCT.Parameters.AddWithValue("@LyDo", (object)lyDo ?? DBNull.Value);
-                            cmdCT.Parameters.AddWithValue("@TienPhat", tienPhat);
-                            cmdCT.Parameters.AddWithValue("@TrangThai", trangThaiChiTiet);
+                            tran.Rollback();
+                            MessageBox.Show($"Phát hiện dòng chi tiết thiếu Ma_Sach hoặc Ma_Vi_Pham (Sách: {maSach}, Lý do: {lyDo}). Vui lòng kiểm tra lại.", "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
 
-                            cmdCT.ExecuteNonQuery();
+                        // Kiểm tra Ma_Vi_Pham thực sự tồn tại trong dtViPham (tránh lỗi FK)
+                        bool exists = false;
+                        if (dtViPham != null && dtViPham.Select($"Ma_Vi_Pham = '{maViPham.Replace("'", "''")}'").Length > 0)
+                            exists = true;
+                        if (!exists)
+                        {
+                            tran.Rollback();
+                            MessageBox.Show($"Mã vi phạm '{maViPham}' (cho lý do '{lyDo}') không tồn tại trong danh mục Vi Phạm. Vui lòng kiểm tra.", "Lỗi khóa ngoại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        using (SqlCommand cmd2 = new SqlCommand(insertCT, conn, tran))
+                        {
+                            cmd2.Parameters.Add("@MaPhieuPhat", SqlDbType.NVarChar, 50).Value = maPP;
+                            cmd2.Parameters.Add("@MaSach", SqlDbType.NVarChar, 50).Value = maSach;
+                            cmd2.Parameters.Add("@MaViPham", SqlDbType.NVarChar, 50).Value = maViPham;
+                            cmd2.Parameters.Add("@LyDo", SqlDbType.NVarChar, 200).Value = (object)lyDo ?? DBNull.Value;
+                            cmd2.Parameters.Add("@TienPhat", SqlDbType.Decimal).Value = tienPhat;
+                            cmd2.Parameters["@TienPhat"].Precision = 18;
+                            cmd2.Parameters["@TienPhat"].Scale = 2;
+                            cmd2.Parameters.Add("@TrangThaiChiTiet", SqlDbType.NVarChar, 50).Value = trangThaiChiTiet;
+
+                            cmd2.ExecuteNonQuery();
                         }
                     }
+                    // === KẾT THÚC SỬA ===
 
-                    // ===================================================
-                    // 4. HOÀN TẤT
-                    // ===================================================
                     tran.Commit();
                     MessageBox.Show("Lưu Phiếu Phạt thành công!");
 
@@ -746,10 +749,9 @@ WHERE Ma_Phieu_Phat = @MaPP AND Ma_Sach = @MaSach AND Ma_Vi_Pham = @MaVP";
                 }
             }
         }
-
         private void txtMaPhieuMuon_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void TinhTongTienPhat()
@@ -772,12 +774,12 @@ WHERE Ma_Phieu_Phat = @MaPP AND Ma_Sach = @MaSach AND Ma_Vi_Pham = @MaVP";
 
         private void txtTongTienPhat_TextChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void dgvChiTietViPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
         // 1) Hàm lấy tên sách an toàn
         private string LayTenSach(string maSach)
@@ -979,7 +981,7 @@ WHERE Ma_Phieu_Phat = @MaPP AND Ma_Sach = @MaSach AND Ma_Vi_Pham = @MaVP";
                     // Set trạng thái phiếu phạt mặc định "Chưa nộp"
                     cboTrangthainopphat.SelectedItem = "Chưa nộp";
                     // Load chi tiết sách mượn vào vi phạm (user sẽ nhập Ly_Do như "Sách hỏng" thủ công)
-                    LoadChiTietPhieuMuonVaoViPham(maPM); 
+                    LoadChiTietPhieuMuonVaoViPham(maPM);
                 }
                 else
                 {
@@ -1132,8 +1134,8 @@ WHERE Ma_Phieu_Phat = @MaPP AND Ma_Sach = @MaSach AND Ma_Vi_Pham = @MaVP";
                 MessageBox.Show("Giá trị ComboBox không hợp lệ ở row " + e.RowIndex + ", column " + e.ColumnIndex + ". Vui lòng chọn giá trị đúng.");
             }
         }
-        
-        
+
+
     }
 
 }
