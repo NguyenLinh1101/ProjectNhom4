@@ -1108,7 +1108,7 @@
             this.btnHuy.Size = new System.Drawing.Size(90, 39);
             this.btnHuy.TabIndex = 42;
             this.btnHuy.Text = "Hủy";
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+       
             // 
             // UC_QuanlyMuonTra
             // 

@@ -92,7 +92,7 @@ namespace ProjectNhom4
                         formMenu.FormClosed += (s, args) => Application.Exit();
                         formMenu.Show();
                     }
-                }
+                
                 else
                 {
                     MessageBox.Show("Email hoặc mật khẩu không đúng!",
