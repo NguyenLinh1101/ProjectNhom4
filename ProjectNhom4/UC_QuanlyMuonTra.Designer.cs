@@ -114,7 +114,7 @@
             this.lblqlymuontra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.lblqlymuontra.Location = new System.Drawing.Point(473, 10);
             this.lblqlymuontra.Name = "lblqlymuontra";
-            this.lblqlymuontra.Size = new System.Drawing.Size(376, 45);
+            this.lblqlymuontra.Size = new System.Drawing.Size(320, 38);
             this.lblqlymuontra.TabIndex = 7;
             this.lblqlymuontra.Text = "QUẢN LÝ MƯỢN - TRẢ";
             // 
@@ -142,7 +142,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 66);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 25);
+            this.label1.Size = new System.Drawing.Size(87, 20);
             this.label1.TabIndex = 23;
             this.label1.Text = "Tên trường";
             // 
@@ -274,7 +274,7 @@
             this.lblTenDocGia.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblTenDocGia.Location = new System.Drawing.Point(18, 174);
             this.lblTenDocGia.Name = "lblTenDocGia";
-            this.lblTenDocGia.Size = new System.Drawing.Size(100, 21);
+            this.lblTenDocGia.Size = new System.Drawing.Size(82, 17);
             this.lblTenDocGia.TabIndex = 31;
             this.lblTenDocGia.Text = "Tên Độc Giả";
             // 
@@ -303,7 +303,7 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.Location = new System.Drawing.Point(18, 129);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 21);
+            this.label6.Size = new System.Drawing.Size(79, 17);
             this.label6.TabIndex = 29;
             this.label6.Text = "Mã Độc Giả";
             // 
@@ -364,7 +364,7 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.Location = new System.Drawing.Point(16, 268);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(140, 21);
+            this.label5.Size = new System.Drawing.Size(115, 17);
             this.label5.TabIndex = 25;
             this.label5.Text = "Trạng Thái Mượn";
             // 
@@ -393,7 +393,7 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.Location = new System.Drawing.Point(343, 139);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 21);
+            this.label4.Size = new System.Drawing.Size(98, 17);
             this.label4.TabIndex = 23;
             this.label4.Text = "Ngày Thực Trả";
             // 
@@ -436,7 +436,7 @@
             this.lblHoten.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblHoten.Location = new System.Drawing.Point(18, 225);
             this.lblHoten.Name = "lblHoten";
-            this.lblHoten.Size = new System.Drawing.Size(101, 21);
+            this.lblHoten.Size = new System.Drawing.Size(84, 17);
             this.lblHoten.TabIndex = 20;
             this.lblHoten.Text = "Mã Thủ Thư";
             // 
@@ -493,7 +493,7 @@
             this.label9.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label9.Location = new System.Drawing.Point(343, 225);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(151, 21);
+            this.label9.Size = new System.Drawing.Size(123, 17);
             this.label9.TabIndex = 14;
             this.label9.Text = "Tổng tiền phải cọc";
             // 
@@ -522,7 +522,7 @@
             this.lblKieumuon.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblKieumuon.Location = new System.Drawing.Point(343, 182);
             this.lblKieumuon.Name = "lblKieumuon";
-            this.lblKieumuon.Size = new System.Drawing.Size(94, 21);
+            this.lblKieumuon.Size = new System.Drawing.Size(76, 17);
             this.lblKieumuon.TabIndex = 10;
             this.lblKieumuon.Text = "Kiểu mượn";
             // 
@@ -532,7 +532,7 @@
             this.lblHantra.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblHantra.Location = new System.Drawing.Point(343, 96);
             this.lblHantra.Name = "lblHantra";
-            this.lblHantra.Size = new System.Drawing.Size(78, 21);
+            this.lblHantra.Size = new System.Drawing.Size(63, 17);
             this.lblHantra.TabIndex = 8;
             this.lblHantra.Text = "Ngày Trả";
             // 
@@ -542,7 +542,7 @@
             this.lbNgayMuon.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbNgayMuon.Location = new System.Drawing.Point(343, 53);
             this.lbNgayMuon.Name = "lbNgayMuon";
-            this.lbNgayMuon.Size = new System.Drawing.Size(101, 21);
+            this.lbNgayMuon.Size = new System.Drawing.Size(81, 17);
             this.lbNgayMuon.TabIndex = 4;
             this.lbNgayMuon.Text = "Ngày mượn";
             // 
@@ -572,7 +572,7 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.Location = new System.Drawing.Point(18, 86);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 21);
+            this.label3.Size = new System.Drawing.Size(54, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Mã Thẻ";
             // 
@@ -602,7 +602,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.Location = new System.Drawing.Point(16, 43);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 21);
+            this.label2.Size = new System.Drawing.Size(107, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã phiếu mượn";
             // 
@@ -635,13 +635,13 @@
             this.dgvCTSach.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCTSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCTSach.EnableHeadersVisualStyles = false;
-            this.dgvCTSach.Location = new System.Drawing.Point(3, 24);
+            this.dgvCTSach.Location = new System.Drawing.Point(3, 21);
             this.dgvCTSach.Name = "dgvCTSach";
             this.dgvCTSach.RowHeadersVisible = false;
             this.dgvCTSach.RowHeadersWidth = 51;
             this.dgvCTSach.RowTemplate.Height = 24;
             this.dgvCTSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCTSach.Size = new System.Drawing.Size(655, 236);
+            this.dgvCTSach.Size = new System.Drawing.Size(655, 239);
             this.dgvCTSach.TabIndex = 31;
             this.dgvCTSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCTSach_CellContentClick);
             // 
@@ -951,7 +951,7 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label7.Location = new System.Drawing.Point(644, 427);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(140, 21);
+            this.label7.Size = new System.Drawing.Size(113, 17);
             this.label7.TabIndex = 32;
             this.label7.Text = "Chọn Sách Mượn";
             // 

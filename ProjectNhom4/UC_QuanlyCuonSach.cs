@@ -8,7 +8,7 @@ namespace ProjectNhom4
 {
     public partial class UC_QuanlyCuonSach : UserControl
     {
-        string connStr = "Data Source=LAPTOP-31TAL89T\\SQLEXPRESS03;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False";
+        string connStr = "Data Source=LANNHI\\SQLEXPRESS;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False";
 
         DataTable dtDauSach;
         DataTable dtCuonSach;

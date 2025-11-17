@@ -13,7 +13,7 @@ namespace ProjectNhom4
 {
     public partial class FrmThemTacGia : Form
     {
-        string strCon = "Data Source=LAPTOP-31TAL89T\\SQLEXPRESS03;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False";
+        string strCon = "Data Source=LANNHI\\SQLEXPRESS;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False";
         public FrmThemTacGia()
         {
             InitializeComponent();

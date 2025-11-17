@@ -14,8 +14,7 @@ namespace ProjectNhom4
     public partial class frmCuonSach : Form
     {
         SqlConnection conn;
-        string strConn = "Data Source=LAPTOP-31TAL89T\\SQLEXPRESS03;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False";
-
+        string strConn = "Data Source=LANNHI\\SQLEXPRESS;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False";
         public bool IsEditMode { get; set; } = false;   // false = thêm mới, true = sửa
         public string MaDauSach { get; set; }           // nhận từ dgvDauSach hoặc dgvCuonSach
         public string MaSach { get; set; }              // nhận mã sách khi sửa

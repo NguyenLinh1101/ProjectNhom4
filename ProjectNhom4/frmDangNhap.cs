@@ -13,7 +13,7 @@ namespace ProjectNhom4
 {
     public partial class frmDangNhap : Form
     {
-        SqlConnection conn = new SqlConnection("Data Source=LAPTOP-31TAL89T\\SQLEXPRESS03;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False");
+        SqlConnection conn = new SqlConnection("Data Source=LANNHI\\SQLEXPRESS;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False");
 
         public frmDangNhap()
         {

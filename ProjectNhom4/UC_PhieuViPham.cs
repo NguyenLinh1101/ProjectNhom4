@@ -17,7 +17,7 @@ namespace ProjectNhom4
         private bool isLoadingData = false;
 
 
-        string connectionString = "Data Source=LAPTOP-31TAL89T\\SQLEXPRESS03;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False\r\n";
+        string connectionString = "Data Source=LANNHI\\SQLEXPRESS;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False\r\n";
         SqlConnection conn;
         SqlDataAdapter da;
         DataTable dtPhieuPhat;        // DGV trái

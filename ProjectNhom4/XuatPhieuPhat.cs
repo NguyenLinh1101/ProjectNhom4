@@ -15,7 +15,7 @@ namespace ProjectNhom4
 {
     public partial class XuatPhieuPhat : Form
     {
-        string connectionString = "Data Source=LAPTOP-31TAL89T\\SQLEXPRESS03;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False\r\n";
+        string connectionString = "Data Source=LANNHI\\SQLEXPRESS;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False\r\n";
         private string maPhieuPhat;
         public XuatPhieuPhat(string maPP)
         {
