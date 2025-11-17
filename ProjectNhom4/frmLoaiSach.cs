@@ -13,7 +13,7 @@ namespace ProjectNhom4
 {
     public partial class frmLoaiSach : Form
     {
-        string strCon = "Data Source=DESKTOP-ST1KSE3\\SQLEXPRESS;Initial Catalog=QL_THU_VIEN;Integrated Security=True";
+        string strCon = "Data Source=LAPTOP-31TAL89T\\SQLEXPRESS03;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False\r\n";
         SqlConnection con;
         SqlCommand cmd;
         SqlDataAdapter adapter;
@@ -349,6 +349,11 @@ namespace ProjectNhom4
             isAdding = false;
             NapCT();
             SetControlState("Normal");
+        }
+
+        private void lblLoaiSach_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

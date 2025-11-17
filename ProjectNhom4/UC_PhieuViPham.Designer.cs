@@ -90,6 +90,7 @@
             this.pnlTitle.Name = "pnlTitle";
             this.pnlTitle.Size = new System.Drawing.Size(1317, 75);
             this.pnlTitle.TabIndex = 10;
+            this.pnlTitle.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTitle_Paint);
             // 
             // lblDSPhieuPhat
             // 

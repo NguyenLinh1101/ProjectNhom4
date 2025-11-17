@@ -69,6 +69,7 @@
             this.pic1Background.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic1Background.TabIndex = 0;
             this.pic1Background.TabStop = false;
+            this.pic1Background.Click += new System.EventHandler(this.pic1Background_Click);
             // 
             // UC_TrangChu
             // 

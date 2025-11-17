@@ -21,5 +21,10 @@ namespace ProjectNhom4
         {
             lblXinchao.Text = "Chào mừng trở lại, " + UserSession.TenNguoiDung + "!";
         }
+
+        private void pic1Background_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

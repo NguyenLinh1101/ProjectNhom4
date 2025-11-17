@@ -423,6 +423,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1380, 112);
             this.panel5.TabIndex = 8;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // Baocao
             // 

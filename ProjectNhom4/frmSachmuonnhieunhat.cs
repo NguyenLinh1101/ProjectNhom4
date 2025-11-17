@@ -14,7 +14,7 @@ namespace ProjectNhom4.Reports
 {
     public partial class frmSachmuonnhieunhat : Form
     {
-        string connectionString = "Data Source=DESKTOP-ST1KSE3\\SQLEXPRESS;Initial Catalog=QL_THU_VIEN;Integrated Security=True";
+        string connectionString = "Data Source=LAPTOP-31TAL89T\\SQLEXPRESS03;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False\r\n";
         public frmSachmuonnhieunhat()
         {
             InitializeComponent();

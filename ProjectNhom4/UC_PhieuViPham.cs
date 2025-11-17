@@ -17,7 +17,7 @@ namespace ProjectNhom4
         private bool isLoadingData = false;
 
 
-        string connectionString = "Data Source=DESKTOP-ST1KSE3\\SQLEXPRESS;Initial Catalog=QL_THU_VIEN;Integrated Security=True";
+        string connectionString = "Data Source=LAPTOP-31TAL89T\\SQLEXPRESS03;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False\r\n";
         SqlConnection conn;
         SqlDataAdapter da;
         DataTable dtPhieuPhat;        // DGV trái
@@ -1134,8 +1134,11 @@ VALUES(@MaPhieuPhat, @MaSach, @MaViPham, @LyDo, @TienPhat, @TrangThaiChiTiet)";
                 MessageBox.Show("Giá trị ComboBox không hợp lệ ở row " + e.RowIndex + ", column " + e.ColumnIndex + ". Vui lòng chọn giá trị đúng.");
             }
         }
-        
-        
+
+        private void pnlTitle_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 }
