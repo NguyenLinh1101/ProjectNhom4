@@ -238,79 +238,8 @@ namespace ProjectNhom4
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            if (!isEditing)
-                return;
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(strConnectionString))
-                {
-                    conn.Open();
-                    foreach (DataGridViewRow row in dgvThongTinTacGia.Rows)
-                    {
-                        if (row.IsNewRow) continue;
-                        string maTacGia = row.Cells["Ma_Tac_Gia"].Value.ToString();
-                        string tenTacGia = row.Cells["Ten_Tac_Gia"].Value.ToString();
-                        string query = "UPDATE TAC_GIA SET Ten_Tac_Gia = @TenTacGia WHERE Ma_Tac_Gia = @MaTacGia";
-                        using (SqlCommand cmd = new SqlCommand(query, conn))
-                        {
-                            cmd.Parameters.AddWithValue("@TenTacGia", tenTacGia);
-                            cmd.Parameters.AddWithValue("@MaTacGia", maTacGia);
-                            cmd.ExecuteNonQuery();
-                        }
-                    }
-                }
-                MessageBox.Show("Cập nhật tác giả thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                isEditing = false;
-                dgvThongTinTacGia.ReadOnly = true;
-                btnSua.Enabled = true;
-                btnHuy.Enabled = false;
-                btnXoa.Enabled = true;
-                btnLuu.Enabled = false;
-                LoadTacGia();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi lưu: " + ex.Message);
-            }
-
-        }
-
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            if (dgvThongTinTacGia.CurrentRow == null)
-            {
-                MessageBox.Show("Vui lòng chọn một tác giả để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            string maTacGia = dgvThongTinTacGia.CurrentRow.Cells["Ma_Tac_Gia"].Value.ToString();
-            var confirmResult = MessageBox.Show("Bạn có chắc chắn muốn xóa tác giả này?\nMọi liên kết với đầu sách cũng sẽ bị xoá!", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (confirmResult == DialogResult.Yes)
-            {
-                try
-                {
-                    using (SqlConnection conn = new SqlConnection(strConnectionString))
-                    {
-                        conn.Open();
-                        string deleteLink = @"DELETE FROM TG_DAU_SACH WHERE Ma_Tac_Gia = @MaTG";
-                        SqlCommand cmd1 = new SqlCommand(deleteLink, conn);
-                        cmd1.Parameters.AddWithValue("@MaTG", maTacGia);
-                        cmd1.ExecuteNonQuery();
-
-                        string deleteTG = @"DELETE FROM TAC_GIA WHERE Ma_Tac_Gia = @MaTG";
-                        SqlCommand cmd2 = new SqlCommand(deleteTG, conn);
-                        cmd2.Parameters.AddWithValue("@MaTG", maTacGia);
-                        cmd2.ExecuteNonQuery();
-                    }
-                    MessageBox.Show("Xóa tác giả thành công!");
-                    LoadTacGia();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi khi xóa: " + ex.Message);
-                }
-            }
-
+            LoadDauSach();
+            LoadTacGia();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -328,5 +257,5 @@ namespace ProjectNhom4
             }
 
         }
-    }
+   }
 }
