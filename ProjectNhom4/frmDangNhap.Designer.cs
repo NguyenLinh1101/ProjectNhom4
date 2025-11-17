@@ -72,7 +72,6 @@
             this.txtEmail.Size = new System.Drawing.Size(469, 67);
             this.txtEmail.TabIndex = 5;
             this.txtEmail.TextOffset = new System.Drawing.Point(70, 0);
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtMatKhau
             // 
@@ -226,7 +225,6 @@
             this.label1.Size = new System.Drawing.Size(470, 38);
             this.label1.TabIndex = 4;
             this.label1.Text = "ĐẠI HỌC BÁCH KHOA HÀ NỘI";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label6
             // 
@@ -240,7 +238,6 @@
             this.label6.Size = new System.Drawing.Size(263, 112);
             this.label6.TabIndex = 7;
             this.label6.Text = "HUST";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // btnSee
             // 
@@ -277,7 +274,6 @@
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(549, 594);
             this.panelLeft.TabIndex = 16;
-            this.panelLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLeft_Paint);
             // 
             // frmDangNhap
             // 

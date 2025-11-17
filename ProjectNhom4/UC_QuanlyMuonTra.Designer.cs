@@ -436,9 +436,9 @@
             this.lblHoten.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblHoten.Location = new System.Drawing.Point(18, 225);
             this.lblHoten.Name = "lblHoten";
-            this.lblHoten.Size = new System.Drawing.Size(84, 17);
+            this.lblHoten.Size = new System.Drawing.Size(87, 17);
             this.lblHoten.TabIndex = 20;
-            this.lblHoten.Text = "Mã Thủ Thư";
+            this.lblHoten.Text = "Tên Thủ Thư";
             // 
             // dtpHanTra
             // 

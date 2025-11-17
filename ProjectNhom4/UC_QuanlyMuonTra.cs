@@ -91,6 +91,8 @@ namespace ProjectNhom4
             comTruong.Items.Add("Trang_Thai_Muon");
             comTruong.SelectedIndex = 0; // Mặc định chọn "Ma_Phieu_Muon"
 
+           
+
         }
         private void dgvPhieuMuon_SelectionChanged(object sender, EventArgs e)
         {
@@ -335,6 +337,10 @@ namespace ProjectNhom4
                     cmbMaThuThu.DisplayMember = "Ten_Thu_Thu";
                     cmbMaThuThu.ValueMember = "Ma_Thu_Thu";
                     cmbMaThuThu.DropDownStyle = ComboBoxStyle.DropDownList;
+
+                    // 🔹 Chọn thủ thư đang đăng nhập
+                    cmbMaThuThu.SelectedValue = UserSession.MaThuThu;
+
 
                     // 🔹 Nạp dữ liệu KIEU_MUON
                     string sqlKieuMuon = "SELECT Ma_Kieu_Muon, Ten_Kieu_Muon FROM KIEU_MUON ORDER BY Ten_Kieu_Muon";

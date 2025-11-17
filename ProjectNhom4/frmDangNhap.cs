@@ -72,11 +72,15 @@ namespace ProjectNhom4
 
                 if (reader.Read())
                 {
+                    string maThuThu = reader["Ma_Thu_Thu"].ToString(); // Lấy mã thủ thư
                     string tenThuThu = reader["Ten_Thu_Thu"].ToString();
                     string quyen = reader["Quyen"].ToString();   // lấy quyền từ DB
 
+                    // --- Lưu vào UserSession ---
+                    UserSession.MaThuThu = maThuThu;
                     UserSession.TenNguoiDung = tenThuThu;
                     UserSession.Quyen = quyen;
+
 
                     MessageBox.Show("Đăng nhập thành công!\nXin chào " + tenThuThu,
                         "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
