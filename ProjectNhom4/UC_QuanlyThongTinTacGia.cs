@@ -393,5 +393,10 @@ namespace ProjectNhom4
             SetControlState("Editing"); // Chuyển sang trạng thái "Sửa"
             txtHoTen.Focus(); // Cho con trỏ vào ô Tên
         }
+
+        private void dgvTacGia_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -77,10 +77,13 @@ namespace ProjectNhom4
                         string tenThuThu = reader["Ten_Thu_Thu"].ToString();
                         string quyen = reader["Quyen"].ToString();   // lấy quyền từ DB
 
-                        // --- Lưu vào UserSession ---
-                        UserSession.MaThuThu = maThuThu;
-                        UserSession.TenNguoiDung = tenThuThu;
-                        UserSession.Quyen = quyen;
+                    UserSession.MaThuThu = reader["Ma_Thu_Thu"].ToString();
+                    UserSession.TenNguoiDung = tenThuThu;
+                    UserSession.Quyen = reader["Quyen"].ToString();
+                    UserSession.Email = reader["Email"].ToString();
+                    UserSession.MatKhau = reader["MatKhau"].ToString();
+                    UserSession.SDT = reader["SDT"].ToString();
+                    UserSession.AnhDaiDien = reader["AnhDaiDien"].ToString();
 
 
                         MessageBox.Show("Đăng nhập thành công!\nXin chào " + tenThuThu,
