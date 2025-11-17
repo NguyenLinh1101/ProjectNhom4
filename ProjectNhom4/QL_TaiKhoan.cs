@@ -55,10 +55,7 @@ namespace ProjectNhom4
                 dgvTaiKhoan.DataSource = dt;
 
                 // Thêm đoạn này để gán STT (ID hiển thị)
-                for (int i = 0; i < dgvTaiKhoan.Rows.Count; i++)
-                {
-                    dgvTaiKhoan.Rows[i].Cells["ID"].Value = i + 1;
-                }
+              
 
                 // (nếu cần đổi tiêu đề cột)
                 dgvTaiKhoan.Columns["TenDN"].HeaderText = "Tên đăng nhập";
