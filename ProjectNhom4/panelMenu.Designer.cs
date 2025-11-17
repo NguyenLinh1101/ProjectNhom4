@@ -376,7 +376,7 @@
             // 
             // btnProfile
             // 
-            this.btnProfile.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnProfile.BackColor = System.Drawing.Color.Transparent;
             this.btnProfile.BorderColor = System.Drawing.Color.White;
             this.btnProfile.CustomBorderColor = System.Drawing.Color.White;
@@ -388,7 +388,7 @@
             this.btnProfile.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnProfile.ForeColor = System.Drawing.Color.White;
             this.btnProfile.Image = global::ProjectNhom4.Properties.Resources.profile1;
-            this.btnProfile.Location = new System.Drawing.Point(1116, 3);
+            this.btnProfile.Location = new System.Drawing.Point(1166, 2);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnProfile.Size = new System.Drawing.Size(37, 36);
@@ -397,7 +397,8 @@
             // 
             // btnMaximize
             // 
-            this.btnMaximize.Location = new System.Drawing.Point(1235, 3);
+            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximize.Location = new System.Drawing.Point(1259, 3);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Size = new System.Drawing.Size(47, 35);
             this.btnMaximize.TabIndex = 4;
@@ -407,7 +408,8 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(1288, 3);
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.Location = new System.Drawing.Point(1312, 3);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(38, 35);
             this.btnClose.TabIndex = 3;
@@ -417,7 +419,8 @@
             // 
             // btnMinimize
             // 
-            this.btnMinimize.Location = new System.Drawing.Point(1188, 3);
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.Location = new System.Drawing.Point(1209, 4);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(41, 35);
             this.btnMinimize.TabIndex = 2;

@@ -313,8 +313,13 @@ WHERE pm.Ma_Phieu_Muon = @MaPM
         {
             try
             {
-                // Xóa TextBox và DateTimePicker
+                isAdding = true;  // Bật chế độ thêm mới
+
+                // Xóa TextBox
                 txtMaPhieuMuon.Text = "";
+                // Không cho sửa mã phiếu mượn
+                txtMaPhieuMuon.ReadOnly = true;
+                txtMaPhieuMuon.Enabled = false;
                 txtMaThe.Text = "";
                 txtMaThuThu.Text = "";
                 txtTrangThaiMuon.Text = "";
@@ -326,24 +331,17 @@ WHERE pm.Ma_Phieu_Muon = @MaPM
                 dtpNgayMuon.Value = DateTime.Now;
                 dtpHanTra.Value = DateTime.Now;
 
-                dtpNgayMuon.Value = DateTime.Now;
-                dtpHanTra.Value = DateTime.Now;
-
-                // Hiển thị rỗng cho Ngay_Thuc_Tra
                 dtpNgayThucTra.Format = DateTimePickerFormat.Custom;
                 dtpNgayThucTra.CustomFormat = " ";
 
-
-                // 🔹 Xóa dữ liệu trong dgvCTSach dựa trên DataSource
+                // Xóa chi tiết sách
                 if (dgvCTSach.DataSource != null)
                 {
                     DataTable dtCT = dgvCTSach.DataSource as DataTable;
-                    if (dtCT != null)
-                    {
-                        dtCT.Clear();  // chỉ xóa dữ liệu, giữ lại cột
-                    }
+                    if (dtCT != null) dtCT.Clear();
                 }
-                // --- Hiển thị ComboBox thay TextBox ---
+
+                // 🔹 HIỆN ComboBox + ẨN TextBox
                 cmbMaThuThu.Visible = true;
                 txtMaThuThu.Visible = false;
 
@@ -351,7 +349,7 @@ WHERE pm.Ma_Phieu_Muon = @MaPM
                 {
                     conn.Open();
 
-                    // 🔹 Nạp dữ liệu THU_THU
+                    // Nạp THU_THU
                     string sqlThuThu = "SELECT Ma_Thu_Thu, Ten_Thu_Thu FROM THU_THU ORDER BY Ten_Thu_Thu";
                     SqlDataAdapter daThuThu = new SqlDataAdapter(sqlThuThu, conn);
                     DataTable dtThuThu = new DataTable();
@@ -362,11 +360,13 @@ WHERE pm.Ma_Phieu_Muon = @MaPM
                     cmbMaThuThu.ValueMember = "Ma_Thu_Thu";
                     cmbMaThuThu.DropDownStyle = ComboBoxStyle.DropDownList;
 
-                    // 🔹 Chọn thủ thư đang đăng nhập
+                    // Tự chọn thủ thư đăng nhập
                     cmbMaThuThu.SelectedValue = UserSession.MaThuThu;
 
+                    // Khoá không cho sửa
+                    cmbMaThuThu.Enabled = false;
 
-                    // 🔹 Nạp dữ liệu KIEU_MUON
+                    // Nạp kiểu mượn
                     string sqlKieuMuon = "SELECT Ma_Kieu_Muon, Ten_Kieu_Muon FROM KIEU_MUON ORDER BY Ten_Kieu_Muon";
                     SqlDataAdapter daKieuMuon = new SqlDataAdapter(sqlKieuMuon, conn);
                     DataTable dtKieuMuon = new DataTable();
@@ -374,24 +374,21 @@ WHERE pm.Ma_Phieu_Muon = @MaPM
 
                     cmbMaKieuMuon.Visible = true;
                     txtMaKieuMuon.Visible = false;
-
                     cmbMaKieuMuon.DataSource = dtKieuMuon;
                     cmbMaKieuMuon.DisplayMember = "Ten_Kieu_Muon";
                     cmbMaKieuMuon.ValueMember = "Ma_Kieu_Muon";
-                    cmbMaKieuMuon.DropDownStyle = ComboBoxStyle.DropDownList;
                 }
-                // Focus vào txt đầu tiên
-                txtMaPhieuMuon.Focus();
 
-                addnewFlag = true;
-
-                MessageBox.Show("Đã sẵn sàng tạo phiếu mượn mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtMaThe.Focus();
+                MessageBox.Show("Đã sẵn sàng tạo phiếu mượn mới!",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi tạo mới: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi khi tạo mới: " + ex.Message);
             }
         }
+
 
 
         private void LoadComboTenSach()
