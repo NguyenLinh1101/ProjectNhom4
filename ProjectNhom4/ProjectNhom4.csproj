@@ -312,7 +312,6 @@
     <Compile Include="QuanlyDocGia.Designer.cs">
       <DependentUpon>QuanlyDocGia.cs</DependentUpon>
     </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
     <!-- UserControls -->
     <Compile Include="QLSach_Ribbon.cs">
       <SubType>UserControl</SubType>
@@ -652,8 +651,6 @@
     <Content Include="Resources\Ảnh chụp màn hình 2025-10-22 000119.png" />
     <Content Include="Resources\Ảnh chụp màn hình 2025-10-22 222354.png" />
     <Content Include="Resources\Ảnh chụp màn hình 2025-10-22 222446.png" />
-    <Content Include="SqlServerTypes\msvcr120.dll" />
-    <Content Include="SqlServerTypes\readme.htm" />
     <None Include="bin\Debug\ProjectNhom4.exe.config" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
@@ -676,20 +673,6 @@
       <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
     </None>
     <!-- Các Resources khác, không duplicate -->
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\SqlServerSpatial140.dll" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll" />
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />

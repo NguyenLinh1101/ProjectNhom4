@@ -708,7 +708,7 @@
             this.btnThem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnThem.HoverState.FillColor = System.Drawing.Color.White;
             this.btnThem.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnThem.Location = new System.Drawing.Point(767, 772);
+            this.btnThem.Location = new System.Drawing.Point(768, 772);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(108, 39);
             this.btnThem.TabIndex = 33;
@@ -731,7 +731,7 @@
             this.btnIn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnIn.HoverState.FillColor = System.Drawing.Color.White;
             this.btnIn.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnIn.Location = new System.Drawing.Point(1025, 772);
+            this.btnIn.Location = new System.Drawing.Point(1026, 772);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(108, 39);
             this.btnIn.TabIndex = 34;
@@ -754,7 +754,7 @@
             this.btnXoa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnXoa.HoverState.FillColor = System.Drawing.Color.White;
             this.btnXoa.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnXoa.Location = new System.Drawing.Point(896, 772);
+            this.btnXoa.Location = new System.Drawing.Point(897, 772);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(108, 39);
             this.btnXoa.TabIndex = 35;
@@ -777,7 +777,7 @@
             this.btnTaomoi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnTaomoi.HoverState.FillColor = System.Drawing.Color.White;
             this.btnTaomoi.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnTaomoi.Location = new System.Drawing.Point(631, 772);
+            this.btnTaomoi.Location = new System.Drawing.Point(632, 772);
             this.btnTaomoi.Name = "btnTaomoi";
             this.btnTaomoi.Size = new System.Drawing.Size(108, 39);
             this.btnTaomoi.TabIndex = 36;
@@ -800,7 +800,7 @@
             this.btnTraSach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnTraSach.HoverState.FillColor = System.Drawing.Color.White;
             this.btnTraSach.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnTraSach.Location = new System.Drawing.Point(1151, 756);
+            this.btnTraSach.Location = new System.Drawing.Point(1152, 756);
             this.btnTraSach.Name = "btnTraSach";
             this.btnTraSach.Size = new System.Drawing.Size(138, 55);
             this.btnTraSach.TabIndex = 37;
@@ -823,7 +823,7 @@
             this.btnFirst.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnFirst.HoverState.FillColor = System.Drawing.Color.White;
             this.btnFirst.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnFirst.Location = new System.Drawing.Point(80, 772);
+            this.btnFirst.Location = new System.Drawing.Point(81, 772);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(92, 39);
             this.btnFirst.TabIndex = 38;
@@ -846,7 +846,7 @@
             this.btnPrev.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnPrev.HoverState.FillColor = System.Drawing.Color.White;
             this.btnPrev.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnPrev.Location = new System.Drawing.Point(178, 772);
+            this.btnPrev.Location = new System.Drawing.Point(179, 772);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(91, 39);
             this.btnPrev.TabIndex = 39;
@@ -869,7 +869,7 @@
             this.btnNext.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnNext.HoverState.FillColor = System.Drawing.Color.White;
             this.btnNext.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnNext.Location = new System.Drawing.Point(275, 772);
+            this.btnNext.Location = new System.Drawing.Point(276, 772);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(91, 39);
             this.btnNext.TabIndex = 40;
@@ -892,7 +892,7 @@
             this.btnLast.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnLast.HoverState.FillColor = System.Drawing.Color.White;
             this.btnLast.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnLast.Location = new System.Drawing.Point(372, 772);
+            this.btnLast.Location = new System.Drawing.Point(373, 772);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(91, 39);
             this.btnLast.TabIndex = 41;
@@ -915,7 +915,7 @@
             this.btnFilter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnFilter.HoverState.FillColor = System.Drawing.Color.White;
             this.btnFilter.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnFilter.Location = new System.Drawing.Point(17, 131);
+            this.btnFilter.Location = new System.Drawing.Point(18, 131);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(102, 31);
             this.btnFilter.TabIndex = 43;
@@ -938,7 +938,7 @@
             this.btnRefresh.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnRefresh.HoverState.FillColor = System.Drawing.Color.White;
             this.btnRefresh.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnRefresh.Location = new System.Drawing.Point(194, 130);
+            this.btnRefresh.Location = new System.Drawing.Point(195, 130);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(116, 32);
             this.btnRefresh.TabIndex = 44;
@@ -972,7 +972,7 @@
             this.btnThemSach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnThemSach.HoverState.FillColor = System.Drawing.Color.White;
             this.btnThemSach.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnThemSach.Location = new System.Drawing.Point(1165, 395);
+            this.btnThemSach.Location = new System.Drawing.Point(1166, 395);
             this.btnThemSach.Name = "btnThemSach";
             this.btnThemSach.Size = new System.Drawing.Size(72, 43);
             this.btnThemSach.TabIndex = 45;
@@ -1013,7 +1013,7 @@
             this.btnXoaSach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnXoaSach.HoverState.FillColor = System.Drawing.Color.White;
             this.btnXoaSach.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnXoaSach.Location = new System.Drawing.Point(1165, 444);
+            this.btnXoaSach.Location = new System.Drawing.Point(1166, 444);
             this.btnXoaSach.Name = "btnXoaSach";
             this.btnXoaSach.Size = new System.Drawing.Size(72, 50);
             this.btnXoaSach.TabIndex = 47;
@@ -1040,6 +1040,7 @@
             // UC_QuanlyMuonTra
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.comGT);
             this.Controls.Add(this.btnXoaSach);
@@ -1065,7 +1066,7 @@
             this.Controls.Add(this.pnlTitle);
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Name = "UC_QuanlyMuonTra";
-            this.Size = new System.Drawing.Size(1308, 827);
+            this.Size = new System.Drawing.Size(1282, 801);
             this.Load += new System.EventHandler(this.UC_QuanlyMuonTra_Load);
             this.pnlTitle.ResumeLayout(false);
             this.pnlTitle.PerformLayout();

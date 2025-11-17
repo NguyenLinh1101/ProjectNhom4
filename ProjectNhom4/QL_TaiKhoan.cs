@@ -13,7 +13,7 @@ namespace ProjectNhom4
 {
     public partial class QL_TaiKhoan : UserControl
     {
-        SqlConnection conn = new SqlConnection("Data Source=LAPTOP-31TAL89T\\SQLEXPRESS03;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False");
+        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-ST1KSE3\\SQLEXPRESS;Initial Catalog=QL_THU_VIEN;Integrated Security=True");
         bool isAdding = false;
         bool isEditing = false; // thêm biến này để kiểm soát chế độ sửa
 

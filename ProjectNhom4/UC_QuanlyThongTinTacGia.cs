@@ -13,7 +13,7 @@ namespace ProjectNhom4
 {
     public partial class UC_QuanlyThongTinTacGia : UserControl
     {
-        string strCon = "Data Source=LAPTOP-31TAL89T\\SQLEXPRESS03;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False";
+        string strCon = "Data Source=DESKTOP-ST1KSE3\\SQLEXPRESS;Initial Catalog=QL_THU_VIEN;Integrated Security=True";
         SqlConnection con;
         SqlCommand cmd;
         SqlDataAdapter adapter;
@@ -227,6 +227,19 @@ namespace ProjectNhom4
 
             ShowData();
             SetControlState("Normal");
+            dgvTacGia.EnableHeadersVisualStyles = false;
+
+            dgvTacGia.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI", 11F, FontStyle.Bold);
+
+            dgvTacGia.DefaultCellStyle.Font =
+                new Font("Segoe UI", 10F, FontStyle.Regular);
+
+            foreach (DataGridViewColumn col in dgvTacGia.Columns)
+            {
+                col.DefaultCellStyle.Font =
+                    new Font("Segoe UI", 10F, FontStyle.Regular);
+            }
         }
 
         private void dgvTacGia_SelectionChanged(object sender, EventArgs e)
@@ -362,7 +375,7 @@ namespace ProjectNhom4
         {
             if (dv != null)
             {
-                string filter = string.Format("Ten_Tac_Gia LIKE '%{0}%' OR Quoc_Tich LIKE '%{0}%'", txtSearch.Text.Trim());
+                string filter = string.Format("Ten_Tac_Gia LIKE '%{0}%'", txtSearch.Text.Trim());
                 dv.RowFilter = filter;
             }
         }

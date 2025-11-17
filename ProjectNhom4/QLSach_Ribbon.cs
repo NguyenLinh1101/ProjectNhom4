@@ -16,11 +16,12 @@ namespace ProjectNhom4
         private Size originalSize;
         private bool originalSizeSaved = false;
         private Panel panelRoot;  // Panel gốc bên trong mỗi UC con
-
+        public Size BaseSize;
 
         public QLSach_Ribbon()
         {
             InitializeComponent();
+            BaseSize = this.Size;
         }
 
         private void LoadUserControlToPanel(UserControl uc)
@@ -43,24 +44,27 @@ namespace ProjectNhom4
 
         private void ScaleUC()
         {
-            if (panelRoot == null) return;
+            if (currentUC == null) return;
 
-            panelRoot.SuspendLayout();
+            currentUC.SuspendLayout();
 
-            panelRoot.Size = originalSize;
+            // Lấy kích thước gốc từ UC con
+            Size baseSize = (currentUC as dynamic).BaseSize;
 
-            float ratioX = (float)panelContainer.Width / originalSize.Width;
-            float ratioY = (float)panelContainer.Height / originalSize.Height;
+            // Reset về size thiết kế
+            currentUC.Size = baseSize;
 
-            float scale = Math.Min(ratioX, ratioY);
+            // Tính tỉ lệ scale
+            float ratioX = (float)panelContainer.ClientSize.Width / baseSize.Width;
+            float ratioY = (float)panelContainer.ClientSize.Height / baseSize.Height;
 
-            panelRoot.Scale(new SizeF(scale, scale));
+            // Scale theo hai chiều
+            currentUC.Scale(new SizeF(ratioX, ratioY));
+            currentUC.Dock = DockStyle.Fill;
+            currentUC.Left = 0;
+            currentUC.Top = 0;
 
-            // căn giữa UC theo panelRoot
-            panelRoot.Left = (panelContainer.Width - panelRoot.Width) / 2;
-            panelRoot.Top = (panelContainer.Height - panelRoot.Height) / 2;
-
-            panelRoot.ResumeLayout();
+            currentUC.ResumeLayout();
         }
 
         private void btnDanhMuc_Click(object sender, EventArgs e)
@@ -110,7 +114,7 @@ namespace ProjectNhom4
             timer1.Enabled = false;
 
             // Mỗi khi panelContainer thay đổi size → scale lại UC đang load
-            panelContainer.Resize += (s, e2) => ScaleUC();
+           panelContainer.Resize += (s, e2) => ScaleUC();
 
             dropDown_DanhMuc.Height = dropDown_DanhMuc.MinimumSize.Height;
             isCollapsed = true;

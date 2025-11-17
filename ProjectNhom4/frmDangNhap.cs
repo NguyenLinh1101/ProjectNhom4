@@ -13,7 +13,7 @@ namespace ProjectNhom4
 {
     public partial class frmDangNhap : Form
     {
-        SqlConnection conn = new SqlConnection("Data Source=LAPTOP-31TAL89T\\SQLEXPRESS03;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False");
+        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-ST1KSE3\\SQLEXPRESS;Initial Catalog=QL_THU_VIEN;Integrated Security=True");
 
         public frmDangNhap()
         {
@@ -72,20 +72,26 @@ namespace ProjectNhom4
 
                 if (reader.Read())
                 {
-                    string tenThuThu = reader["Ten_Thu_Thu"].ToString();
-                    string quyen = reader["Quyen"].ToString();   // lấy quyền từ DB
+                    {
+                        string maThuThu = reader["Ma_Thu_Thu"].ToString(); // Lấy mã thủ thư
+                        string tenThuThu = reader["Ten_Thu_Thu"].ToString();
+                        string quyen = reader["Quyen"].ToString();   // lấy quyền từ DB
 
-                    UserSession.TenNguoiDung = tenThuThu;
-                    UserSession.Quyen = quyen;
+                        // --- Lưu vào UserSession ---
+                        UserSession.MaThuThu = maThuThu;
+                        UserSession.TenNguoiDung = tenThuThu;
+                        UserSession.Quyen = quyen;
 
-                    MessageBox.Show("Đăng nhập thành công!\nXin chào " + tenThuThu,
+
+                        MessageBox.Show("Đăng nhập thành công!\nXin chào " + tenThuThu,
                         "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    this.Hide();
+                        this.Hide();
 
-                    frmMenu formMenu = new frmMenu();
-                    formMenu.FormClosed += (s, args) => Application.Exit();
-                    formMenu.Show();
+                        frmMenu formMenu = new frmMenu();
+                        formMenu.FormClosed += (s, args) => Application.Exit();
+                        formMenu.Show();
+                    }
                 }
                 else
                 {
