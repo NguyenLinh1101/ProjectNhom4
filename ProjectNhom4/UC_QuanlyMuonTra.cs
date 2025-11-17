@@ -16,7 +16,7 @@ namespace ProjectNhom4
     {
         // DataTable toàn cục cho dgvCTSach
         DataTable dtCTSach = new DataTable();
-
+        bool isAdding = false;
 
         // 🔹 Biến đánh dấu đang thêm mới
         private bool addnewFlag = false;
@@ -150,6 +150,14 @@ namespace ProjectNhom4
         {
             if (dgvDauSach.CurrentRow != null)
             {
+                isAdding = false;
+
+                cmbMaThuThu.Visible = false;
+                txtMaThuThu.Visible = true;
+
+                cmbMaKieuMuon.Visible = false;
+                txtMaKieuMuon.Visible = true;
+
                 DataGridViewRow row = dgvDauSach.CurrentRow;
                 string maPhieuMuon = row.Cells["Ma_Phieu_Muon"].Value?.ToString();
                 string maThe = row.Cells["Ma_The"].Value?.ToString();
@@ -157,7 +165,24 @@ namespace ProjectNhom4
                 // Gán dữ liệu cơ bản
                 txtMaPhieuMuon.Text = maPhieuMuon;
                 txtMaThe.Text = maThe;
-                txtMaThuThu.Text = row.Cells["Ma_Thu_thu"].Value?.ToString();
+
+                string maThuThu = row.Cells["Ma_Thu_thu"].Value?.ToString();
+
+                string tenThuThu = "";
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string sqlThuThu = "SELECT Ten_Thu_Thu FROM THU_THU WHERE Ma_Thu_Thu = @ma";
+                    using (SqlCommand cmd = new SqlCommand(sqlThuThu, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ma", maThuThu);
+                        object result = cmd.ExecuteScalar();
+                        if (result != null) tenThuThu = result.ToString();
+                    }
+                }
+
+                txtMaThuThu.Text = $"{maThuThu}-{tenThuThu}";
+
                 txtTrangThaiMuon.Text = row.Cells["Trang_Thai_Muon"].Value?.ToString();
 
                 DateTime ngayMuon, hanTra;
@@ -193,9 +218,9 @@ namespace ProjectNhom4
 
                         // 🔹 Lấy Ma_Doc_Gia + Ho_Ten từ THE_DOC_GIA + DOC_GIA
                         string sqlDocGia = @"SELECT tdg.Ma_Doc_Gia, dg.Ho_Ten 
-                                     FROM THE_DOC_GIA tdg
-                                     INNER JOIN DOC_GIA dg ON tdg.Ma_Doc_Gia = dg.Ma_Doc_Gia
-                                     WHERE tdg.Ma_The = @MaThe";
+                                 FROM THE_DOC_GIA tdg
+                                 INNER JOIN DOC_GIA dg ON tdg.Ma_Doc_Gia = dg.Ma_Doc_Gia
+                                 WHERE tdg.Ma_The = @MaThe";
 
                         using (SqlCommand cmdDG = new SqlCommand(sqlDocGia, conn))
                         {
@@ -212,9 +237,9 @@ namespace ProjectNhom4
 
                         // 🔹 Lấy Kiểu mượn + Tiền cọc
                         string sqlPM = @"SELECT km.Ten_Kieu_Muon, pm.Tien_Coc 
-                                 FROM PHIEU_MUON pm
-                                 INNER JOIN KIEU_MUON km ON pm.Ma_Kieu_Muon = km.Ma_Kieu_Muon
-                                 WHERE pm.Ma_Phieu_Muon = @MaPM";
+                             FROM PHIEU_MUON pm
+                             INNER JOIN KIEU_MUON km ON pm.Ma_Kieu_Muon = km.Ma_Kieu_Muon
+                             WHERE pm.Ma_Phieu_Muon = @MaPM";
 
 
                         using (SqlCommand cmdPM = new SqlCommand(sqlPM, conn))
@@ -234,13 +259,13 @@ namespace ProjectNhom4
                         {
                             connDS.Open();
                             string sqlDauSach = @"
-        SELECT ds.Ma_Dau_Sach, ds.Ten_Dau_Sach, ds.Nam_XB, ds.Gia_Bia, s.Trang_Thai_Sach_Muon
-    FROM PHIEU_MUON pm
-    INNER JOIN CT_PHIEU_MUON ctp ON pm.Ma_Phieu_Muon = ctp.Ma_Phieu_Muon
-    INNER JOIN SACH s ON ctp.Ma_Sach = s.Ma_Sach
-    INNER JOIN DAU_SACH ds ON s.Ma_Dau_Sach = ds.Ma_Dau_Sach
-    WHERE pm.Ma_Phieu_Muon = @MaPM
-    ";
+    SELECT ds.Ma_Dau_Sach, ds.Ten_Dau_Sach, ds.Nam_XB, ds.Gia_Bia, s.Trang_Thai_Sach_Muon
+FROM PHIEU_MUON pm
+INNER JOIN CT_PHIEU_MUON ctp ON pm.Ma_Phieu_Muon = ctp.Ma_Phieu_Muon
+INNER JOIN SACH s ON ctp.Ma_Sach = s.Ma_Sach
+INNER JOIN DAU_SACH ds ON s.Ma_Dau_Sach = ds.Ma_Dau_Sach
+WHERE pm.Ma_Phieu_Muon = @MaPM
+";
 
                             using (SqlCommand cmdDS = new SqlCommand(sqlDauSach, conn))
                             {
@@ -257,6 +282,7 @@ namespace ProjectNhom4
                 }
             }
         }
+
 
         private void comTruong_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1281,6 +1307,27 @@ WHERE PM.Ma_Phieu_Muon = @MaPhieuMuon
 
         private void lblHoten_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            isAdding = false; // Thoát chế độ tạo mới
+
+            // Ẩn ComboBox — Hiện TextBox
+            cmbMaThuThu.Visible = false;
+            txtMaThuThu.Visible = true;
+
+            cmbMaKieuMuon.Visible = false;
+            txtMaKieuMuon.Visible = true;
+
+            // Đưa DateTimePicker Thực Trả về chế độ mặc định nếu có
+            dtpNgayThucTra.Format = DateTimePickerFormat.Short;
+
+            // Load lại dữ liệu của dòng đang chọn
+            NapCT();
+
+            MessageBox.Show("Đã hủy tạo mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
     }
