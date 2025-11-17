@@ -16,8 +16,8 @@ namespace ProjectNhom4
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDangNhap()); // chạy form đăng nhập đầu tiên
-            //Application.Run(new frmMenu()); // chạy form menu chính đầu tiên
+            //Application.Run(new frmDangNhap()); // chạy form đăng nhập đầu tiên
+            Application.Run(new frmMenu()); // chạy form menu chính đầu tiên
         }
 
 

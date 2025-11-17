@@ -79,7 +79,7 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(80, 195);
+            this.splitContainer1.Location = new System.Drawing.Point(80, 159);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -91,7 +91,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.grpDauSach);
-            this.splitContainer1.Size = new System.Drawing.Size(1174, 504);
+            this.splitContainer1.Size = new System.Drawing.Size(1174, 542);
             this.splitContainer1.SplitterDistance = 598;
             this.splitContainer1.TabIndex = 10;
             // 
@@ -108,7 +108,7 @@
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox1.Location = new System.Drawing.Point(0, 0);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(598, 504);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(598, 542);
             this.guna2GroupBox1.TabIndex = 10;
             this.guna2GroupBox1.Text = "THÔNG TIN ĐẦU SÁCH";
             this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -165,7 +165,7 @@
             this.dgvThongTinDauSach.RowHeadersVisible = false;
             this.dgvThongTinDauSach.RowHeadersWidth = 51;
             this.dgvThongTinDauSach.RowTemplate.Height = 24;
-            this.dgvThongTinDauSach.Size = new System.Drawing.Size(598, 464);
+            this.dgvThongTinDauSach.Size = new System.Drawing.Size(598, 502);
             this.dgvThongTinDauSach.TabIndex = 0;
             this.dgvThongTinDauSach.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvThongTinDauSach.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -201,7 +201,7 @@
             this.grpDauSach.ForeColor = System.Drawing.Color.Black;
             this.grpDauSach.Location = new System.Drawing.Point(0, 0);
             this.grpDauSach.Name = "grpDauSach";
-            this.grpDauSach.Size = new System.Drawing.Size(572, 504);
+            this.grpDauSach.Size = new System.Drawing.Size(572, 542);
             this.grpDauSach.TabIndex = 9;
             this.grpDauSach.Text = "THÔNG TIN TÁC GIẢ";
             this.grpDauSach.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -236,7 +236,7 @@
             this.dgvThongTinTacGia.RowHeadersVisible = false;
             this.dgvThongTinTacGia.RowHeadersWidth = 51;
             this.dgvThongTinTacGia.RowTemplate.Height = 24;
-            this.dgvThongTinTacGia.Size = new System.Drawing.Size(572, 464);
+            this.dgvThongTinTacGia.Size = new System.Drawing.Size(572, 502);
             this.dgvThongTinTacGia.TabIndex = 0;
             this.dgvThongTinTacGia.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvThongTinTacGia.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -269,7 +269,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(80, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1174, 195);
+            this.panel4.Size = new System.Drawing.Size(1174, 159);
             this.panel4.TabIndex = 21;
             // 
             // txtSearch
@@ -292,7 +292,7 @@
             this.txtSearch.IconLeft = global::ProjectNhom4.Properties.Resources.search;
             this.txtSearch.IconLeftOffset = new System.Drawing.Point(20, 0);
             this.txtSearch.IconLeftSize = new System.Drawing.Size(25, 25);
-            this.txtSearch.Location = new System.Drawing.Point(113, 92);
+            this.txtSearch.Location = new System.Drawing.Point(113, 72);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(6);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -324,9 +324,9 @@
             this.panel3.Controls.Add(this.btnSua);
             this.panel3.Controls.Add(this.btnChitiet);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(80, 699);
+            this.panel3.Location = new System.Drawing.Point(80, 701);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1174, 84);
+            this.panel3.Size = new System.Drawing.Size(1174, 82);
             this.panel3.TabIndex = 20;
             // 
             // btnHuy

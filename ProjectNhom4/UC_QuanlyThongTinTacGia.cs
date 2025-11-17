@@ -20,10 +20,12 @@ namespace ProjectNhom4
         DataTable dt;
         DataView dv;
         bool isAdding = false;
+        public Size BaseSize;
         public UC_QuanlyThongTinTacGia()
         {
             InitializeComponent();
-           
+            BaseSize = this.Size;
+
         }
 
         private void lblDauSach_Click(object sender, EventArgs e)
