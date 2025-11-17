@@ -54,7 +54,6 @@ namespace ProjectNhom4
 
                 dgvTaiKhoan.DataSource = dt;
 
-                // Thêm đoạn này để gán STT (ID hiển thị)
               
 
                 // (nếu cần đổi tiêu đề cột)

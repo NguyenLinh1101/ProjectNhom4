@@ -47,10 +47,10 @@
             this.reportViewer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.reportViewer2.Location = new System.Drawing.Point(39, 310);
+            this.reportViewer2.Location = new System.Drawing.Point(42, 290);
             this.reportViewer2.Name = "reportViewer2";
             this.reportViewer2.ServerReport.BearerToken = null;
-            this.reportViewer2.Size = new System.Drawing.Size(1128, 349);
+            this.reportViewer2.Size = new System.Drawing.Size(1128, 369);
             this.reportViewer2.TabIndex = 0;
             this.reportViewer2.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             this.reportViewer2.Load += new System.EventHandler(this.reportViewer2_Load);
@@ -94,11 +94,11 @@
             this.dtpNgayKT.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dtpNgayKT.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpNgayKT.Location = new System.Drawing.Point(420, 203);
+            this.dtpNgayKT.Location = new System.Drawing.Point(423, 182);
             this.dtpNgayKT.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpNgayKT.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpNgayKT.Name = "dtpNgayKT";
-            this.dtpNgayKT.Size = new System.Drawing.Size(311, 68);
+            this.dtpNgayKT.Size = new System.Drawing.Size(311, 40);
             this.dtpNgayKT.TabIndex = 9;
             this.dtpNgayKT.Value = new System.DateTime(2025, 11, 8, 14, 25, 22, 488);
             // 
@@ -108,11 +108,11 @@
             this.dtpNgayBĐ.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dtpNgayBĐ.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpNgayBĐ.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpNgayBĐ.Location = new System.Drawing.Point(55, 203);
+            this.dtpNgayBĐ.Location = new System.Drawing.Point(58, 182);
             this.dtpNgayBĐ.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpNgayBĐ.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpNgayBĐ.Name = "dtpNgayBĐ";
-            this.dtpNgayBĐ.Size = new System.Drawing.Size(311, 68);
+            this.dtpNgayBĐ.Size = new System.Drawing.Size(311, 40);
             this.dtpNgayBĐ.TabIndex = 8;
             this.dtpNgayBĐ.Value = new System.DateTime(2025, 11, 8, 14, 25, 22, 488);
             // 
@@ -142,7 +142,7 @@
             this.btnXem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnXem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnXem.ForeColor = System.Drawing.Color.White;
-            this.btnXem.Location = new System.Drawing.Point(945, 249);
+            this.btnXem.Location = new System.Drawing.Point(945, 230);
             this.btnXem.Name = "btnXem";
             this.btnXem.Size = new System.Drawing.Size(222, 54);
             this.btnXem.TabIndex = 6;
@@ -156,7 +156,7 @@
             this.cboKieuMuon.Items.AddRange(new object[] {
             "Tại chỗ",
             "Mang về"});
-            this.cboKieuMuon.Location = new System.Drawing.Point(803, 187);
+            this.cboKieuMuon.Location = new System.Drawing.Point(806, 182);
             this.cboKieuMuon.Name = "cboKieuMuon";
             this.cboKieuMuon.Size = new System.Drawing.Size(198, 37);
             this.cboKieuMuon.TabIndex = 5;
@@ -167,7 +167,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(797, 152);
+            this.label8.Location = new System.Drawing.Point(800, 131);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(140, 32);
             this.label8.TabIndex = 4;
@@ -178,7 +178,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(414, 152);
+            this.label7.Location = new System.Drawing.Point(417, 131);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(123, 32);
             this.label7.TabIndex = 3;
@@ -189,7 +189,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(33, 152);
+            this.label6.Location = new System.Drawing.Point(36, 131);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(107, 32);
             this.label6.TabIndex = 2;

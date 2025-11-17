@@ -163,9 +163,10 @@ namespace ProjectNhom4
                 // Ẩn các chức năng chỉ dành cho ADMIN
                 btnQLTaiKhoan.Visible = false;
                 btnBaocao.Visible = false;
-                btnCaiDat.Visible = false;
-                pnlSubCaiDat.Visible = false;
+                //btnCaiDat.Visible = false;
+                //pnlSubCaiDat.Visible = false;
                 btnProfile.Visible = true;
+                btnBaocao.Visible = false;
             }
         }
 

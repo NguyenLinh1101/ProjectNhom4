@@ -408,60 +408,51 @@
             // 
             // TenDN
             // 
-            this.TenDN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.TenDN.DataPropertyName = "TenDN";
-            this.TenDN.FillWeight = 292.5516F;
+            this.TenDN.FillWeight = 233.984F;
             this.TenDN.HeaderText = "Tên đăng nhập";
             this.TenDN.MinimumWidth = 9;
             this.TenDN.Name = "TenDN";
             // 
             // Email
             // 
-            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Email.DataPropertyName = "Email";
-            this.Email.FillWeight = 230.3731F;
+            this.Email.FillWeight = 184.2534F;
             this.Email.HeaderText = "Email";
             this.Email.MinimumWidth = 9;
             this.Email.Name = "Email";
-            this.Email.Width = 88;
             // 
             // MatKhau
             // 
-            this.MatKhau.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.MatKhau.DataPropertyName = "MatKhau";
-            this.MatKhau.FillWeight = 182.1873F;
+            this.MatKhau.FillWeight = 145.7142F;
             this.MatKhau.HeaderText = "Mật khẩu";
             this.MatKhau.MinimumWidth = 9;
             this.MatKhau.Name = "MatKhau";
-            this.MatKhau.Width = 120;
             // 
             // MaThuThu
             // 
-            this.MaThuThu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.MaThuThu.DataPropertyName = "Ma_Thu_Thu";
-            this.MaThuThu.FillWeight = 144.8453F;
+            this.MaThuThu.FillWeight = 115.8479F;
             this.MaThuThu.HeaderText = "Mã thủ thư";
             this.MaThuThu.MinimumWidth = 9;
             this.MaThuThu.Name = "MaThuThu";
             // 
             // Quyen
             // 
-            this.Quyen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Quyen.DataPropertyName = "Quyen";
-            this.Quyen.FillWeight = 115.9066F;
+            this.Quyen.FillWeight = 92.70258F;
             this.Quyen.HeaderText = "Quyền";
             this.Quyen.MinimumWidth = 9;
             this.Quyen.Name = "Quyen";
             // 
             // sDTDataGridViewTextBoxColumn
             // 
-            this.sDTDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.sDTDataGridViewTextBoxColumn.DataPropertyName = "SDT";
-            this.sDTDataGridViewTextBoxColumn.FillWeight = 33.84468F;
+            this.sDTDataGridViewTextBoxColumn.FillWeight = 227.2065F;
             this.sDTDataGridViewTextBoxColumn.HeaderText = "SDT";
             this.sDTDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.sDTDataGridViewTextBoxColumn.Name = "sDTDataGridViewTextBoxColumn";
-            this.sDTDataGridViewTextBoxColumn.Width = 77;
             // 
             // QL_TaiKhoan
             // 

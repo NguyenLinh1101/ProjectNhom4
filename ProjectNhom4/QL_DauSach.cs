@@ -268,6 +268,8 @@ namespace ProjectNhom4
             btnSua.Text = "Lưu";
             btnHuy.Visible = true;
             txtTenDauSach.Focus();
+            MessageBox.Show("Đã sẵn sàng thêm bản ghi mới");
+
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -458,7 +460,7 @@ namespace ProjectNhom4
                         }
 
                         string message = addNewFlag ? "Thêm mới thành công!" : "Cập nhật thành công!";
-                        MessageBox.Show(message + "\nLưu ý: Bạn cần ấn Xem chi tiết để thêm tác giả.", "Thông báo");
+                       
                     }
                 }
                 catch (Exception ex)
@@ -658,6 +660,7 @@ namespace ProjectNhom4
 
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
+            MessageBox.Show("Đã hủy thao tác Thêm/Sửa");
         }
         private void CceTacGia_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
