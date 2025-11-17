@@ -700,10 +700,6 @@
     <Content Include="obj\Debug\ProjectNhom4.exe" />
     <Content Include="obj\Debug\ProjectNhom4.pdb" />
     <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
-    </None>
     <!-- Các Resources khác, không duplicate -->
   </ItemGroup>
   <ItemGroup>

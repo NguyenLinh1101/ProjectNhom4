@@ -351,7 +351,7 @@ WHERE pm.Ma_Phieu_Muon = @MaPM
                 {
                     conn.Open();
 
-                    // Nạp THU_THU
+                    // 🔹 Nạp dữ liệu THU_THU
                     string sqlThuThu = "SELECT Ma_Thu_Thu, Ten_Thu_Thu FROM THU_THU ORDER BY Ten_Thu_Thu";
                     SqlDataAdapter daThuThu = new SqlDataAdapter(sqlThuThu, conn);
                     DataTable dtThuThu = new DataTable();
@@ -361,6 +361,10 @@ WHERE pm.Ma_Phieu_Muon = @MaPM
                     cmbMaThuThu.DisplayMember = "Ten_Thu_Thu";
                     cmbMaThuThu.ValueMember = "Ma_Thu_Thu";
                     cmbMaThuThu.DropDownStyle = ComboBoxStyle.DropDownList;
+
+                    // 🔹 Chọn thủ thư đang đăng nhập
+                    cmbMaThuThu.SelectedValue = UserSession.MaThuThu;
+
 
                     // 🔹 Nạp dữ liệu KIEU_MUON
                     string sqlKieuMuon = "SELECT Ma_Kieu_Muon, Ten_Kieu_Muon FROM KIEU_MUON ORDER BY Ten_Kieu_Muon";
@@ -552,12 +556,31 @@ WHERE pm.Ma_Phieu_Muon = @MaPM
             // 1. Kiểm tra PHIẾU_MƯỢN còn "Chưa Trả"
             if (KiemTraMaTheDangMuonChuaTra(maThe))
             {
-                MessageBox.Show("Thẻ này đang có phiếu mượn chưa trả!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Thẻ này đang có phiếu mượn chưa trả!",
+                                "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtMaPhieuMuon.Text = "";
                 return;
             }
 
-            // Sinh Mã Phiếu Mượn mới
+            // 2. Kiểm tra có phiếu phạt "Chưa Nộp"
+            if (KiemTraMaTheCoPhieuPhatChuaNop(maThe))
+            {
+                MessageBox.Show("Thẻ này đang có phiếu phạt chưa nộp!",
+                                "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtMaPhieuMuon.Text = "";
+                return;
+            }
+
+            // 3. Kiểm tra thẻ có bị "Hết Hạn" không
+            if (KiemTraTheHetHan(maThe))
+            {
+                MessageBox.Show("Thẻ độc giả đã hết hạn, không thể lập phiếu mượn mới!",
+                                "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtMaPhieuMuon.Text = "";
+                return;
+            }
+
+            // Nếu pass cả 3 điều kiện → Sinh mã phiếu mượn
             txtMaPhieuMuon.Text = SinhMaPhieuMuonMoi();
             txtMaPhieuMuon.ReadOnly = true;
 
@@ -573,12 +596,51 @@ WHERE pm.Ma_Phieu_Muon = @MaPM
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string sql = "SELECT COUNT(*) FROM PHIEU_MUON WHERE Ma_The = @MaThe AND Trang_Thai_Muon = N'Chưa Trả'";
+                string sql = @"
+    SELECT COUNT(*) 
+    FROM PHIEU_MUON 
+    WHERE Ma_The = @MaThe 
+      AND Trang_Thai_Muon = N'Chưa Trả'";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@MaThe", maThe);
                 return (int)cmd.ExecuteScalar() > 0;
             }
         }
+        private bool KiemTraMaTheCoPhieuPhatChuaNop(string maThe)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string sql = @"
+    SELECT COUNT(*)
+    FROM CT_PHIEU_PHAT ct
+    INNER JOIN PHIEU_PHAT pp ON ct.Ma_Phieu_Phat = pp.Ma_Phieu_Phat
+    INNER JOIN PHIEU_MUON pm ON pp.Ma_Phieu_Muon = pm.Ma_Phieu_Muon
+    WHERE pm.Ma_The = @MaThe
+      AND ct.Trang_Thai_Phieu = N'Chưa Nộp'";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@MaThe", maThe);
+                return (int)cmd.ExecuteScalar() > 0;
+            }
+        }
+        private bool KiemTraTheHetHan(string maThe)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string sql = @"
+    SELECT COUNT(*)
+    FROM THE_DOC_GIA
+    WHERE Ma_The = @MaThe
+      AND Trang_Thai_The = N'Hết Hạn'";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@MaThe", maThe);
+                return (int)cmd.ExecuteScalar() > 0;
+            }
+        }
+
+
+
 
         private string SinhMaPhieuMuonMoi()
         {

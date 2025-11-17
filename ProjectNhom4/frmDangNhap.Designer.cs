@@ -256,7 +256,7 @@
             this.btnSee.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnSee.Size = new System.Drawing.Size(37, 38);
             this.btnSee.TabIndex = 15;
-            this.btnSee.Click += new System.EventHandler(this.btnSee_Click);
+           
             // 
             // panelLeft
             // 
