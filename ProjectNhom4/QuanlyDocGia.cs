@@ -642,5 +642,25 @@ namespace ProjectNhom4
         {
 
         }
+
+        private void dtpNgayHetHan_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMaTheMuon_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNgheNghiep_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpNgayCapThe_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

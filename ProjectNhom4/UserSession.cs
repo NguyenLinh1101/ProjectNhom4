@@ -8,9 +8,12 @@ namespace ProjectNhom4
 {
     internal class UserSession
     {
-        public static string MaThuThu { get; set; }       // Mã thủ thư
-        public static string TenNguoiDung { get; set; }   // Tên thủ thư
-        public static string Quyen { get; set; }          // Quyền (admin / thuthu)
-
+        public static string TenNguoiDung { get; set; }
+        public static string Quyen { get; set; }  // admin / thuthu
+        public static string MaThuThu { get; set; }
+        public static string Email { get; set; }
+        public static string MatKhau { get; set; }
+        public static string AnhDaiDien { get; set; }
+        public static string SDT { get; set; }
     }
 }

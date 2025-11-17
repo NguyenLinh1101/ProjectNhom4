@@ -20,10 +20,12 @@ namespace ProjectNhom4
         DataTable dt;
         DataView dv;
         bool isAdding = false;
+        public Size BaseSize;
         public UC_QuanlyThongTinTacGia()
         {
             InitializeComponent();
-           
+            BaseSize = this.Size;
+
         }
 
         private void lblDauSach_Click(object sender, EventArgs e)
@@ -227,6 +229,19 @@ namespace ProjectNhom4
 
             ShowData();
             SetControlState("Normal");
+            dgvTacGia.EnableHeadersVisualStyles = false;
+
+            dgvTacGia.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI", 11F, FontStyle.Bold);
+
+            dgvTacGia.DefaultCellStyle.Font =
+                new Font("Segoe UI", 10F, FontStyle.Regular);
+
+            foreach (DataGridViewColumn col in dgvTacGia.Columns)
+            {
+                col.DefaultCellStyle.Font =
+                    new Font("Segoe UI", 10F, FontStyle.Regular);
+            }
         }
 
         private void dgvTacGia_SelectionChanged(object sender, EventArgs e)
@@ -362,7 +377,7 @@ namespace ProjectNhom4
         {
             if (dv != null)
             {
-                string filter = string.Format("Ten_Tac_Gia LIKE '%{0}%' OR Quoc_Tich LIKE '%{0}%'", txtSearch.Text.Trim());
+                string filter = string.Format("Ten_Tac_Gia LIKE '%{0}%'", txtSearch.Text.Trim());
                 dv.RowFilter = filter;
             }
         }
@@ -377,6 +392,11 @@ namespace ProjectNhom4
             isAdding = false;
             SetControlState("Editing"); // Chuyển sang trạng thái "Sửa"
             txtHoTen.Focus(); // Cho con trỏ vào ô Tên
+        }
+
+        private void dgvTacGia_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -46,19 +46,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvTaiKhoan = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaThuThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maThuThuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenThuThuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenDNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.matKhauDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sDTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quyenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tHUTHUBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataThuvien2DataSet = new ProjectNhom4.dataThuvien2DataSet();
@@ -68,6 +55,12 @@
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.tHU_THUTableAdapter = new ProjectNhom4.dataThuvien2DataSetTableAdapters.THU_THUTableAdapter();
             this.panelRoot = new System.Windows.Forms.Panel();
+            this.TenDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaThuThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sDTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbTTTT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tHUTHUBindingSource)).BeginInit();
@@ -123,6 +116,7 @@
             this.cboQuyen.Name = "cboQuyen";
             this.cboQuyen.Size = new System.Drawing.Size(261, 54);
             this.cboQuyen.TabIndex = 14;
+            this.cboQuyen.SelectedIndexChanged += new System.EventHandler(this.cboQuyen_SelectedIndexChanged);
             // 
             // cboThuThu
             // 
@@ -139,6 +133,7 @@
             this.cboThuThu.Name = "cboThuThu";
             this.cboThuThu.Size = new System.Drawing.Size(261, 54);
             this.cboThuThu.TabIndex = 3;
+            this.cboThuThu.SelectedIndexChanged += new System.EventHandler(this.cboThuThu_SelectedIndexChanged);
             // 
             // txtMatKhau
             // 
@@ -257,6 +252,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.dgvTaiKhoan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTaiKhoan.AutoGenerateColumns = false;
+            this.dgvTaiKhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTaiKhoan.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvTaiKhoan.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -275,14 +271,7 @@
             this.MatKhau,
             this.MaThuThu,
             this.Quyen,
-            this.maThuThuDataGridViewTextBoxColumn,
-            this.tenThuThuDataGridViewTextBoxColumn,
-            this.tenDNDataGridViewTextBoxColumn,
-            this.matKhauDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.sDTDataGridViewTextBoxColumn,
-            this.quyenDataGridViewTextBoxColumn,
-            this.ID});
+            this.sDTDataGridViewTextBoxColumn});
             this.dgvTaiKhoan.DataSource = this.tHUTHUBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
@@ -294,7 +283,7 @@
             this.dgvTaiKhoan.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTaiKhoan.EnableHeadersVisualStyles = false;
             this.dgvTaiKhoan.GridColor = System.Drawing.Color.Black;
-            this.dgvTaiKhoan.Location = new System.Drawing.Point(50, 343);
+            this.dgvTaiKhoan.Location = new System.Drawing.Point(50, 352);
             this.dgvTaiKhoan.Name = "dgvTaiKhoan";
             this.dgvTaiKhoan.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -308,112 +297,9 @@
             this.dgvTaiKhoan.RowHeadersWidth = 72;
             this.dgvTaiKhoan.RowTemplate.Height = 28;
             this.dgvTaiKhoan.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvTaiKhoan.Size = new System.Drawing.Size(1334, 289);
+            this.dgvTaiKhoan.Size = new System.Drawing.Size(1099, 294);
             this.dgvTaiKhoan.TabIndex = 2;
             this.dgvTaiKhoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaiKhoan_CellContentClick);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 9;
-            this.ID.Name = "ID";
-            this.ID.Width = 284;
-            // 
-            // TenDN
-            // 
-            this.TenDN.DataPropertyName = "TenDN";
-            this.TenDN.HeaderText = "Tên đăng nhập";
-            this.TenDN.MinimumWidth = 9;
-            this.TenDN.Name = "TenDN";
-            this.TenDN.Width = 284;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.MinimumWidth = 9;
-            this.Email.Name = "Email";
-            this.Email.Width = 284;
-            // 
-            // MatKhau
-            // 
-            this.MatKhau.DataPropertyName = "MatKhau";
-            this.MatKhau.HeaderText = "Mật khẩu";
-            this.MatKhau.MinimumWidth = 9;
-            this.MatKhau.Name = "MatKhau";
-            this.MatKhau.Width = 284;
-            // 
-            // MaThuThu
-            // 
-            this.MaThuThu.DataPropertyName = "Ma_Thu_Thu";
-            this.MaThuThu.HeaderText = "Mã thủ thư";
-            this.MaThuThu.MinimumWidth = 9;
-            this.MaThuThu.Name = "MaThuThu";
-            this.MaThuThu.Width = 284;
-            // 
-            // Quyen
-            // 
-            this.Quyen.DataPropertyName = "Quyen";
-            this.Quyen.HeaderText = "Quyền";
-            this.Quyen.MinimumWidth = 9;
-            this.Quyen.Name = "Quyen";
-            this.Quyen.Width = 284;
-            // 
-            // maThuThuDataGridViewTextBoxColumn
-            // 
-            this.maThuThuDataGridViewTextBoxColumn.DataPropertyName = "Ma_Thu_Thu";
-            this.maThuThuDataGridViewTextBoxColumn.HeaderText = "Ma_Thu_Thu";
-            this.maThuThuDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.maThuThuDataGridViewTextBoxColumn.Name = "maThuThuDataGridViewTextBoxColumn";
-            this.maThuThuDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // tenThuThuDataGridViewTextBoxColumn
-            // 
-            this.tenThuThuDataGridViewTextBoxColumn.DataPropertyName = "Ten_Thu_Thu";
-            this.tenThuThuDataGridViewTextBoxColumn.HeaderText = "Ten_Thu_Thu";
-            this.tenThuThuDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.tenThuThuDataGridViewTextBoxColumn.Name = "tenThuThuDataGridViewTextBoxColumn";
-            this.tenThuThuDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // tenDNDataGridViewTextBoxColumn
-            // 
-            this.tenDNDataGridViewTextBoxColumn.DataPropertyName = "TenDN";
-            this.tenDNDataGridViewTextBoxColumn.HeaderText = "TenDN";
-            this.tenDNDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.tenDNDataGridViewTextBoxColumn.Name = "tenDNDataGridViewTextBoxColumn";
-            this.tenDNDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // matKhauDataGridViewTextBoxColumn
-            // 
-            this.matKhauDataGridViewTextBoxColumn.DataPropertyName = "MatKhau";
-            this.matKhauDataGridViewTextBoxColumn.HeaderText = "MatKhau";
-            this.matKhauDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.matKhauDataGridViewTextBoxColumn.Name = "matKhauDataGridViewTextBoxColumn";
-            this.matKhauDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // sDTDataGridViewTextBoxColumn
-            // 
-            this.sDTDataGridViewTextBoxColumn.DataPropertyName = "SDT";
-            this.sDTDataGridViewTextBoxColumn.HeaderText = "SDT";
-            this.sDTDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.sDTDataGridViewTextBoxColumn.Name = "sDTDataGridViewTextBoxColumn";
-            this.sDTDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // quyenDataGridViewTextBoxColumn
-            // 
-            this.quyenDataGridViewTextBoxColumn.DataPropertyName = "Quyen";
-            this.quyenDataGridViewTextBoxColumn.HeaderText = "Quyen";
-            this.quyenDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.quyenDataGridViewTextBoxColumn.Name = "quyenDataGridViewTextBoxColumn";
-            this.quyenDataGridViewTextBoxColumn.Width = 150;
             // 
             // tHUTHUBindingSource
             // 
@@ -504,6 +390,9 @@
             // 
             // panelRoot
             // 
+            this.panelRoot.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelRoot.Controls.Add(this.btnXoa);
             this.panelRoot.Controls.Add(this.btnSua);
             this.panelRoot.Controls.Add(this.btnThem);
@@ -511,12 +400,68 @@
             this.panelRoot.Controls.Add(this.dgvTaiKhoan);
             this.panelRoot.Controls.Add(this.grbTTTT);
             this.panelRoot.Controls.Add(this.lblTaiKhoan);
-            this.panelRoot.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelRoot.Location = new System.Drawing.Point(0, 0);
             this.panelRoot.Name = "panelRoot";
             this.panelRoot.Size = new System.Drawing.Size(1425, 788);
             this.panelRoot.TabIndex = 19;
             this.panelRoot.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRoot_Paint);
+            // 
+            // TenDN
+            // 
+            this.TenDN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TenDN.DataPropertyName = "TenDN";
+            this.TenDN.FillWeight = 292.5516F;
+            this.TenDN.HeaderText = "Tên đăng nhập";
+            this.TenDN.MinimumWidth = 9;
+            this.TenDN.Name = "TenDN";
+            // 
+            // Email
+            // 
+            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Email.DataPropertyName = "Email";
+            this.Email.FillWeight = 230.3731F;
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 9;
+            this.Email.Name = "Email";
+            this.Email.Width = 88;
+            // 
+            // MatKhau
+            // 
+            this.MatKhau.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.MatKhau.DataPropertyName = "MatKhau";
+            this.MatKhau.FillWeight = 182.1873F;
+            this.MatKhau.HeaderText = "Mật khẩu";
+            this.MatKhau.MinimumWidth = 9;
+            this.MatKhau.Name = "MatKhau";
+            this.MatKhau.Width = 120;
+            // 
+            // MaThuThu
+            // 
+            this.MaThuThu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MaThuThu.DataPropertyName = "Ma_Thu_Thu";
+            this.MaThuThu.FillWeight = 144.8453F;
+            this.MaThuThu.HeaderText = "Mã thủ thư";
+            this.MaThuThu.MinimumWidth = 9;
+            this.MaThuThu.Name = "MaThuThu";
+            // 
+            // Quyen
+            // 
+            this.Quyen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Quyen.DataPropertyName = "Quyen";
+            this.Quyen.FillWeight = 115.9066F;
+            this.Quyen.HeaderText = "Quyền";
+            this.Quyen.MinimumWidth = 9;
+            this.Quyen.Name = "Quyen";
+            // 
+            // sDTDataGridViewTextBoxColumn
+            // 
+            this.sDTDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.sDTDataGridViewTextBoxColumn.DataPropertyName = "SDT";
+            this.sDTDataGridViewTextBoxColumn.FillWeight = 33.84468F;
+            this.sDTDataGridViewTextBoxColumn.HeaderText = "SDT";
+            this.sDTDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.sDTDataGridViewTextBoxColumn.Name = "sDTDataGridViewTextBoxColumn";
+            this.sDTDataGridViewTextBoxColumn.Width = 77;
             // 
             // QL_TaiKhoan
             // 
@@ -563,19 +508,12 @@
         private dataThuvien2DataSet dataThuvien2DataSet;
         private System.Windows.Forms.BindingSource tHUTHUBindingSource;
         private dataThuvien2DataSetTableAdapters.THU_THUTableAdapter tHU_THUTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.Panel panelRoot;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDN;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn MatKhau;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaThuThu;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quyen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maThuThuDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenThuThuDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenDNDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn matKhauDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sDTDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quyenDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Panel panelRoot;
     }
 }

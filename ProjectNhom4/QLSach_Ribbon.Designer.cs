@@ -54,7 +54,7 @@
             this.panelQLSach.ForeColor = System.Drawing.Color.Black;
             this.panelQLSach.Location = new System.Drawing.Point(0, 0);
             this.panelQLSach.Name = "panelQLSach";
-            this.panelQLSach.Size = new System.Drawing.Size(1092, 123);
+            this.panelQLSach.Size = new System.Drawing.Size(1213, 120);
             this.panelQLSach.TabIndex = 0;
             this.panelQLSach.Paint += new System.Windows.Forms.PaintEventHandler(this.panelQLSach_Paint);
             // 
@@ -75,7 +75,7 @@
             this.btnCuonSach.Location = new System.Drawing.Point(406, 19);
             this.btnCuonSach.MaximumSize = new System.Drawing.Size(247, 90);
             this.btnCuonSach.Name = "btnCuonSach";
-            this.btnCuonSach.Size = new System.Drawing.Size(205, 90);
+            this.btnCuonSach.Size = new System.Drawing.Size(247, 90);
             this.btnCuonSach.TabIndex = 0;
             this.btnCuonSach.Text = "Cuốn sách";
             this.btnCuonSach.Click += new System.EventHandler(this.btnCuonSach_Click);
@@ -96,7 +96,7 @@
             this.btnDauSach.Location = new System.Drawing.Point(64, 19);
             this.btnDauSach.MaximumSize = new System.Drawing.Size(247, 90);
             this.btnDauSach.Name = "btnDauSach";
-            this.btnDauSach.Size = new System.Drawing.Size(205, 90);
+            this.btnDauSach.Size = new System.Drawing.Size(247, 90);
             this.btnDauSach.TabIndex = 0;
             this.btnDauSach.Text = "Đầu sách";
             this.btnDauSach.Click += new System.EventHandler(this.btnDauSach_Click);
@@ -182,9 +182,9 @@
             // 
             this.panelContainer.AutoScroll = true;
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(0, 123);
+            this.panelContainer.Location = new System.Drawing.Point(0, 120);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1092, 626);
+            this.panelContainer.Size = new System.Drawing.Size(1213, 629);
             this.panelContainer.TabIndex = 1;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelQLSach_contain_Paint);
             // 
@@ -201,7 +201,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1092, 749);
+            this.panel1.Size = new System.Drawing.Size(1213, 749);
             this.panel1.TabIndex = 4;
             // 
             // QLSach_Ribbon
@@ -209,7 +209,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.panel1);
             this.Name = "QLSach_Ribbon";
-            this.Size = new System.Drawing.Size(1092, 749);
+            this.Size = new System.Drawing.Size(1213, 749);
             this.panelQLSach.ResumeLayout(false);
             this.dropDown_DanhMuc.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

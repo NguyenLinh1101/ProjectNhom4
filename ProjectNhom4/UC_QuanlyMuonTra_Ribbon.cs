@@ -12,40 +12,78 @@ namespace ProjectNhom4
 {
     public partial class UC_QuanlyMuonTra_Ribbon : UserControl
     {
+        private UserControl currentUC;
+        private Size originalSize;
+        private bool originalSizeSaved = false;
+        private Panel panelRoot;  // Panel gốc bên trong mỗi UC con
         public UC_QuanlyMuonTra_Ribbon()
         {
             InitializeComponent();
         }
         private void LoadUserControlToPanel(UserControl uc)
         {
-            panelContainer.Controls.Clear(); // Xóa UC cũ nếu có
+            //panelContainer.Controls.Clear(); // Xóa UC cũ nếu có
 
-            // Lấy kích thước gốc của UC (khi thiết kế trong Design)
-            int originalWidth = uc.PreferredSize.Width > 0 ? uc.PreferredSize.Width : uc.Width;
-            int originalHeight = uc.PreferredSize.Height > 0 ? uc.PreferredSize.Height : uc.Height;
+            //// Lấy kích thước gốc của UC (khi thiết kế trong Design)
+            //int originalWidth = uc.PreferredSize.Width > 0 ? uc.PreferredSize.Width : uc.Width;
+            //int originalHeight = uc.PreferredSize.Height > 0 ? uc.PreferredSize.Height : uc.Height;
 
-            // Tính tỉ lệ scale dựa vào kích thước của panelContainer
-            float ratioX = (float)panelContainer.Width / originalWidth;
-            float ratioY = (float)panelContainer.Height / originalHeight;
+            //// Tính tỉ lệ scale dựa vào kích thước của panelContainer
+            //float ratioX = (float)panelContainer.Width / originalWidth;
+            //float ratioY = (float)panelContainer.Height / originalHeight;
 
-            // Chọn tỉ lệ nhỏ hơn để không méo
-            float scale = Math.Min(ratioX, ratioY);
+            //// Chọn tỉ lệ nhỏ hơn để không méo
+            //float scale = Math.Min(ratioX, ratioY);
 
-            // Áp dụng scale đều toàn bộ UC (thu nhỏ từ trong ra ngoài)
-            uc.AutoScaleMode = AutoScaleMode.None;
-            uc.SuspendLayout();
-            uc.Scale(new SizeF(scale, scale));
-            uc.ResumeLayout();
+            //// Áp dụng scale đều toàn bộ UC (thu nhỏ từ trong ra ngoài)
+            //uc.AutoScaleMode = AutoScaleMode.None;
+            //uc.SuspendLayout();
+            //uc.Scale(new SizeF(scale, scale));
+            //uc.ResumeLayout();
 
-            // Căn giữa UC trong panelContainer
-            uc.Left = (panelContainer.Width - uc.Width) / 2;
-            uc.Top = (panelContainer.Height - uc.Height) / 2;
+            //// Căn giữa UC trong panelContainer
+            //uc.Left = (panelContainer.Width - uc.Width) / 2;
+            //uc.Top = (panelContainer.Height - uc.Height) / 2;
 
-            // Thêm UC vào panel
+            //// Thêm UC vào panel
+            //panelContainer.Controls.Add(uc);
+            //uc.BringToFront();
+            panelContainer.Controls.Clear();
+            currentUC = uc;
+            panelRoot = uc.Controls["panelRoot"] as Panel; // Lấy panel gốc
+
+            if (!originalSizeSaved)
+            {
+                originalSize = uc.Size;
+                originalSizeSaved = true;
+            }
+
             panelContainer.Controls.Add(uc);
             uc.BringToFront();
-        }
 
+            ScaleUC();
+        }
+        private void ScaleUC()
+        {
+            if (panelRoot == null) return;
+
+            panelRoot.SuspendLayout();
+
+            panelRoot.Size = originalSize;
+
+            float ratioX = (float)panelContainer.Width / originalSize.Width;
+            float ratioY = (float)panelContainer.Height / originalSize.Height;
+
+            float scale = Math.Min(ratioX, ratioY);
+
+            panelRoot.Scale(new SizeF(scale, scale));
+
+            // căn giữa UC theo panelRoot
+            panelRoot.Left = (panelContainer.Width - panelRoot.Width) / 2;
+            panelRoot.Top = (panelContainer.Height - panelRoot.Height) / 2;
+
+            panelRoot.ResumeLayout();
+        }
         private void btnPhieuTra_Click(object sender, EventArgs e)
         {
 

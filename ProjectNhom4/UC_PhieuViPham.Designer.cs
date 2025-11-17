@@ -88,7 +88,7 @@
             this.pnlTitle.Location = new System.Drawing.Point(0, 0);
             this.pnlTitle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlTitle.Name = "pnlTitle";
-            this.pnlTitle.Size = new System.Drawing.Size(1472, 75);
+            this.pnlTitle.Size = new System.Drawing.Size(1317, 75);
             this.pnlTitle.TabIndex = 10;
             // 
             // lblDSPhieuPhat
@@ -129,14 +129,14 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPhieuViPham.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPhieuViPham.EnableHeadersVisualStyles = false;
-            this.dgvPhieuViPham.Location = new System.Drawing.Point(17, 184);
+            this.dgvPhieuViPham.Location = new System.Drawing.Point(17, 160);
             this.dgvPhieuViPham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvPhieuViPham.Name = "dgvPhieuViPham";
             this.dgvPhieuViPham.RowHeadersVisible = false;
             this.dgvPhieuViPham.RowHeadersWidth = 51;
             this.dgvPhieuViPham.RowTemplate.Height = 24;
             this.dgvPhieuViPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPhieuViPham.Size = new System.Drawing.Size(672, 358);
+            this.dgvPhieuViPham.Size = new System.Drawing.Size(547, 500);
             this.dgvPhieuViPham.TabIndex = 24;
             this.dgvPhieuViPham.SelectionChanged += new System.EventHandler(this.dgvPhieuViPham_SelectionChanged);
             // 
@@ -187,7 +187,7 @@
             this.cboTrangThai.Location = new System.Drawing.Point(17, 108);
             this.cboTrangThai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboTrangThai.Name = "cboTrangThai";
-            this.cboTrangThai.Size = new System.Drawing.Size(220, 36);
+            this.cboTrangThai.Size = new System.Drawing.Size(144, 36);
             this.cboTrangThai.TabIndex = 25;
             this.cboTrangThai.SelectedIndexChanged += new System.EventHandler(this.cboTrangThai_SelectedIndexChanged);
             // 
@@ -206,13 +206,13 @@
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTimKiem.IconLeft = global::ProjectNhom4.Properties.Resources.search;
-            this.txtTimKiem.Location = new System.Drawing.Point(252, 108);
+            this.txtTimKiem.Location = new System.Drawing.Point(183, 99);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtTimKiem.PlaceholderText = "Nhập tên độc giả tìm kiếm";
             this.txtTimKiem.SelectedText = "";
-            this.txtTimKiem.Size = new System.Drawing.Size(426, 45);
+            this.txtTimKiem.Size = new System.Drawing.Size(288, 45);
             this.txtTimKiem.TabIndex = 26;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
@@ -233,7 +233,7 @@
             this.btnThem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnThem.HoverState.FillColor = System.Drawing.Color.White;
             this.btnThem.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnThem.Location = new System.Drawing.Point(17, 685);
+            this.btnThem.Location = new System.Drawing.Point(3, 697);
             this.btnThem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(122, 49);
@@ -257,7 +257,7 @@
             this.btnSua.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnSua.HoverState.FillColor = System.Drawing.Color.White;
             this.btnSua.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnSua.Location = new System.Drawing.Point(145, 685);
+            this.btnSua.Location = new System.Drawing.Point(129, 697);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(122, 49);
@@ -281,7 +281,7 @@
             this.btnXoa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnXoa.HoverState.FillColor = System.Drawing.Color.White;
             this.btnXoa.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnXoa.Location = new System.Drawing.Point(273, 685);
+            this.btnXoa.Location = new System.Drawing.Point(257, 697);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(122, 49);
@@ -305,7 +305,7 @@
             this.btnLuu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnLuu.HoverState.FillColor = System.Drawing.Color.White;
             this.btnLuu.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnLuu.Location = new System.Drawing.Point(402, 685);
+            this.btnLuu.Location = new System.Drawing.Point(385, 697);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(122, 49);
@@ -329,7 +329,7 @@
             this.btnHuy.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnHuy.HoverState.FillColor = System.Drawing.Color.White;
             this.btnHuy.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnHuy.Location = new System.Drawing.Point(530, 685);
+            this.btnHuy.Location = new System.Drawing.Point(513, 697);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(122, 49);
@@ -356,11 +356,11 @@
             this.grpThongTinPhieuPhat.Controls.Add(this.txtMaPhieuMuon);
             this.grpThongTinPhieuPhat.Controls.Add(this.label2);
             this.grpThongTinPhieuPhat.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.grpThongTinPhieuPhat.Location = new System.Drawing.Point(706, 108);
+            this.grpThongTinPhieuPhat.Location = new System.Drawing.Point(582, 108);
             this.grpThongTinPhieuPhat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grpThongTinPhieuPhat.Name = "grpThongTinPhieuPhat";
             this.grpThongTinPhieuPhat.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grpThongTinPhieuPhat.Size = new System.Drawing.Size(728, 320);
+            this.grpThongTinPhieuPhat.Size = new System.Drawing.Size(728, 263);
             this.grpThongTinPhieuPhat.TabIndex = 33;
             this.grpThongTinPhieuPhat.TabStop = false;
             this.grpThongTinPhieuPhat.Text = "Thông tin phiếu phạt";
@@ -590,7 +590,7 @@
             this.grpChiTietViPham.Controls.Add(this.btnThemdong);
             this.grpChiTietViPham.Controls.Add(this.dgvChiTietViPham);
             this.grpChiTietViPham.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.grpChiTietViPham.Location = new System.Drawing.Point(706, 384);
+            this.grpChiTietViPham.Location = new System.Drawing.Point(582, 379);
             this.grpChiTietViPham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grpChiTietViPham.Name = "grpChiTietViPham";
             this.grpChiTietViPham.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -615,7 +615,7 @@
             this.btnXoadong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnXoadong.HoverState.FillColor = System.Drawing.Color.White;
             this.btnXoadong.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnXoadong.Location = new System.Drawing.Point(575, 205);
+            this.btnXoadong.Location = new System.Drawing.Point(581, 224);
             this.btnXoadong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnXoadong.Name = "btnXoadong";
             this.btnXoadong.Size = new System.Drawing.Size(147, 49);
@@ -639,7 +639,7 @@
             this.btnThemdong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnThemdong.HoverState.FillColor = System.Drawing.Color.White;
             this.btnThemdong.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnThemdong.Location = new System.Drawing.Point(422, 205);
+            this.btnThemdong.Location = new System.Drawing.Point(422, 224);
             this.btnThemdong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnThemdong.Name = "btnThemdong";
             this.btnThemdong.Size = new System.Drawing.Size(147, 49);
@@ -680,7 +680,7 @@
             this.dgvChiTietViPham.RowHeadersVisible = false;
             this.dgvChiTietViPham.RowHeadersWidth = 51;
             this.dgvChiTietViPham.RowTemplate.Height = 24;
-            this.dgvChiTietViPham.Size = new System.Drawing.Size(728, 128);
+            this.dgvChiTietViPham.Size = new System.Drawing.Size(728, 186);
             this.dgvChiTietViPham.TabIndex = 0;
             this.dgvChiTietViPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietViPham_CellContentClick);
             this.dgvChiTietViPham.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietViPham_CellValueChanged);
@@ -739,7 +739,7 @@
             this.btnXuatPhieu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnXuatPhieu.HoverState.FillColor = System.Drawing.Color.White;
             this.btnXuatPhieu.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnXuatPhieu.Location = new System.Drawing.Point(1236, 685);
+            this.btnXuatPhieu.Location = new System.Drawing.Point(1118, 697);
             this.btnXuatPhieu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnXuatPhieu.Name = "btnXuatPhieu";
             this.btnXuatPhieu.Size = new System.Drawing.Size(192, 49);
@@ -777,7 +777,7 @@
             this.Controls.Add(this.pnlTitle);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_PhieuViPham";
-            this.Size = new System.Drawing.Size(1472, 875);
+            this.Size = new System.Drawing.Size(1317, 875);
             this.Load += new System.EventHandler(this.UC_PhieuPhat_Load);
             this.pnlTitle.ResumeLayout(false);
             this.pnlTitle.PerformLayout();

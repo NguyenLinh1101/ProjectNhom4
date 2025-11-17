@@ -13,10 +13,11 @@ namespace ProjectNhom4
         DataTable dtDauSach;
         DataTable dtCuonSach;
         string selectedMaDauSach = "";
-
+        public Size BaseSize;
         public UC_QuanlyCuonSach()
         {
             InitializeComponent();
+            BaseSize = this.Size;
         }
 
         private void UC_QuanlyCuonSach_Load(object sender, EventArgs e)
@@ -25,6 +26,8 @@ namespace ProjectNhom4
             dgvCuonSach.DefaultCellStyle.Font = new Font(dgvCuonSach.Font, FontStyle.Regular);
 
             LoadDauSach();
+            
+
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -49,9 +52,7 @@ namespace ProjectNhom4
                     dgvDauSach.DataSource = dtDauSach;
                 }
 
-                dgvDauSach.Columns["Ma_Dau_Sach"].HeaderText = "Mã Đầu Sách";
-                dgvDauSach.Columns["Ten_Dau_Sach"].HeaderText = "Tên Đầu Sách";
-                dgvDauSach.Columns["Nam_XB"].HeaderText = "Năm Xuất Bản";
+                
             }
             catch (Exception ex)
             {
@@ -74,7 +75,7 @@ namespace ProjectNhom4
             {
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {
-                    string sql = "SELECT * FROM SACH WHERE Ma_Dau_Sach = @MaDauSach";
+                    string sql = "SELECT Ma_Sach, Ma_Dau_Sach, Tinh_Trang, Lib_Only, Mo_Ta FROM SACH WHERE Ma_Dau_Sach = @MaDauSach";
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@MaDauSach", maDauSach);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -83,15 +84,7 @@ namespace ProjectNhom4
                     dgvCuonSach.DataSource = dtCuonSach;
                 }
 
-                // Tự set header
-                if (dgvCuonSach.Columns.Count > 0)
-                {
-                    dgvCuonSach.Columns["Ma_Sach"].HeaderText = "Mã Sách";
-                    dgvCuonSach.Columns["Ma_Dau_Sach"].HeaderText = "Mã Đầu Sách";
-                    dgvCuonSach.Columns["Tinh_Trang"].HeaderText = "Tình Trạng";
-                    dgvCuonSach.Columns["Lib_Only"].HeaderText = "Đọc Tại Thư Viện";
-                    dgvCuonSach.Columns["Mo_Ta"].HeaderText = "Mô Tả";
-                }
+               
             }
             catch (Exception ex)
             {
@@ -227,6 +220,11 @@ namespace ProjectNhom4
         private void guna2CircleButton1_Click(object sender, EventArgs e)
         {
             LoadDauSach();
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

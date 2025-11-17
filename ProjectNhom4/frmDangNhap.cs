@@ -72,24 +72,26 @@ namespace ProjectNhom4
 
                 if (reader.Read())
                 {
-                    string maThuThu = reader["Ma_Thu_Thu"].ToString(); // Lấy mã thủ thư
                     string tenThuThu = reader["Ten_Thu_Thu"].ToString();
                     string quyen = reader["Quyen"].ToString();   // lấy quyền từ DB
 
-                    // --- Lưu vào UserSession ---
-                    UserSession.MaThuThu = maThuThu;
                     UserSession.TenNguoiDung = tenThuThu;
-                    UserSession.Quyen = quyen;
+                    UserSession.Quyen = reader["Quyen"].ToString();
+                    UserSession.Email = reader["Email"].ToString();
+                    UserSession.MatKhau = reader["MatKhau"].ToString();
+                    UserSession.SDT = reader["SDT"].ToString();
+                    UserSession.AnhDaiDien = reader["AnhDaiDien"].ToString();
 
 
                     MessageBox.Show("Đăng nhập thành công!\nXin chào " + tenThuThu,
                         "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    this.Hide();
+                        this.Hide();
 
-                    frmMenu formMenu = new frmMenu();
-                    formMenu.FormClosed += (s, args) => Application.Exit();
-                    formMenu.Show();
+                        frmMenu formMenu = new frmMenu();
+                        formMenu.FormClosed += (s, args) => Application.Exit();
+                        formMenu.Show();
+                    }
                 }
                 else
                 {

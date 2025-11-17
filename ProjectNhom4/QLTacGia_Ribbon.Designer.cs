@@ -47,7 +47,7 @@
             this.panelQLTacGia.ForeColor = System.Drawing.Color.Black;
             this.panelQLTacGia.Location = new System.Drawing.Point(0, 0);
             this.panelQLTacGia.Name = "panelQLTacGia";
-            this.panelQLTacGia.Size = new System.Drawing.Size(1316, 90);
+            this.panelQLTacGia.Size = new System.Drawing.Size(1316, 126);
             this.panelQLTacGia.TabIndex = 1;
             // 
             // btnTacGiaSach
@@ -62,7 +62,7 @@
             this.btnTacGiaSach.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.btnTacGiaSach.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnTacGiaSach.ForeColor = System.Drawing.Color.White;
-            this.btnTacGiaSach.Location = new System.Drawing.Point(674, 0);
+            this.btnTacGiaSach.Location = new System.Drawing.Point(692, 24);
             this.btnTacGiaSach.MaximumSize = new System.Drawing.Size(247, 90);
             this.btnTacGiaSach.Name = "btnTacGiaSach";
             this.btnTacGiaSach.Size = new System.Drawing.Size(247, 90);
@@ -81,7 +81,7 @@
             this.btnTacGia.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.btnTacGia.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnTacGia.ForeColor = System.Drawing.Color.White;
-            this.btnTacGia.Location = new System.Drawing.Point(306, 0);
+            this.btnTacGia.Location = new System.Drawing.Point(299, 24);
             this.btnTacGia.MaximumSize = new System.Drawing.Size(247, 90);
             this.btnTacGia.Name = "btnTacGia";
             this.btnTacGia.Size = new System.Drawing.Size(247, 90);
@@ -92,9 +92,9 @@
             // panelContainer
             // 
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(0, 90);
+            this.panelContainer.Location = new System.Drawing.Point(0, 126);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1316, 801);
+            this.panelContainer.Size = new System.Drawing.Size(1316, 765);
             this.panelContainer.TabIndex = 2;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
