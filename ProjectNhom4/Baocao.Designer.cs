@@ -54,6 +54,7 @@
             this.btnLVP = new Guna.UI2.WinForms.Guna2Button();
             this.chU_DETableAdapter1 = new ProjectNhom4.dataThuvien2DataSetTableAdapters.CHU_DETableAdapter();
             this.panelRoot = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,6 +68,7 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panelRoot.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -75,9 +77,9 @@
             this.flowLayoutPanel1.Controls.Add(this.btnSachHong);
             this.flowLayoutPanel1.Controls.Add(this.btnSachMat);
             this.flowLayoutPanel1.Controls.Add(this.btnSachmuon);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(50, 77);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(51, 128);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1307, 236);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1186, 211);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -89,15 +91,15 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1303, 78);
+            this.panel1.Size = new System.Drawing.Size(1303, 55);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ProjectNhom4.Properties.Resources.book;
-            this.pictureBox1.Location = new System.Drawing.Point(30, 17);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(67, 51);
+            this.pictureBox1.Size = new System.Drawing.Size(53, 51);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -107,7 +109,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 16.8F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.label2.Location = new System.Drawing.Point(491, 17);
+            this.label2.Location = new System.Drawing.Point(460, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(321, 46);
             this.label2.TabIndex = 0;
@@ -124,7 +126,7 @@
             this.btnSachHong.FillColor = System.Drawing.Color.White;
             this.btnSachHong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSachHong.ForeColor = System.Drawing.Color.Black;
-            this.btnSachHong.Location = new System.Drawing.Point(3, 87);
+            this.btnSachHong.Location = new System.Drawing.Point(3, 64);
             this.btnSachHong.Name = "btnSachHong";
             this.btnSachHong.Size = new System.Drawing.Size(1375, 39);
             this.btnSachHong.TabIndex = 1;
@@ -144,7 +146,7 @@
             this.btnSachMat.FillColor = System.Drawing.Color.White;
             this.btnSachMat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSachMat.ForeColor = System.Drawing.Color.Black;
-            this.btnSachMat.Location = new System.Drawing.Point(3, 132);
+            this.btnSachMat.Location = new System.Drawing.Point(3, 109);
             this.btnSachMat.Name = "btnSachMat";
             this.btnSachMat.Size = new System.Drawing.Size(1375, 39);
             this.btnSachMat.TabIndex = 2;
@@ -164,7 +166,7 @@
             this.btnSachmuon.FillColor = System.Drawing.Color.White;
             this.btnSachmuon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSachmuon.ForeColor = System.Drawing.Color.Black;
-            this.btnSachmuon.Location = new System.Drawing.Point(3, 177);
+            this.btnSachmuon.Location = new System.Drawing.Point(3, 154);
             this.btnSachmuon.Name = "btnSachmuon";
             this.btnSachmuon.Size = new System.Drawing.Size(1375, 43);
             this.btnSachmuon.TabIndex = 3;
@@ -177,9 +179,9 @@
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.label1.Location = new System.Drawing.Point(125, 0);
+            this.label1.Location = new System.Drawing.Point(51, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1064, 54);
+            this.label1.Size = new System.Drawing.Size(1186, 54);
             this.label1.TabIndex = 1;
             this.label1.Text = "DANH SÁCH BÁO CÁO";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -189,9 +191,9 @@
             // 
             this.flowLayoutPanel2.Controls.Add(this.panel2);
             this.flowLayoutPanel2.Controls.Add(this.btnDocGia);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(49, 319);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(51, 339);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1307, 162);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1186, 128);
             this.flowLayoutPanel2.TabIndex = 4;
             // 
             // panel2
@@ -203,15 +205,15 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1345, 83);
+            this.panel2.Size = new System.Drawing.Size(1303, 66);
             this.panel2.TabIndex = 0;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::ProjectNhom4.Properties.Resources.man_8661663;
-            this.pictureBox2.Location = new System.Drawing.Point(29, 8);
+            this.pictureBox2.Location = new System.Drawing.Point(16, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(67, 65);
+            this.pictureBox2.Size = new System.Drawing.Size(53, 55);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -239,7 +241,7 @@
             this.flowLayoutPanel2.SetFlowBreak(this.btnDocGia, true);
             this.btnDocGia.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnDocGia.ForeColor = System.Drawing.Color.Black;
-            this.btnDocGia.Location = new System.Drawing.Point(3, 92);
+            this.btnDocGia.Location = new System.Drawing.Point(3, 75);
             this.btnDocGia.Name = "btnDocGia";
             this.btnDocGia.Size = new System.Drawing.Size(1375, 47);
             this.btnDocGia.TabIndex = 4;
@@ -252,9 +254,9 @@
             // 
             this.flowLayoutPanel3.Controls.Add(this.panel3);
             this.flowLayoutPanel3.Controls.Add(this.btnSachquahan);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(49, 487);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(51, 473);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(1307, 145);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(1186, 128);
             this.flowLayoutPanel3.TabIndex = 5;
             // 
             // panel3
@@ -266,15 +268,15 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1304, 84);
+            this.panel3.Size = new System.Drawing.Size(1303, 66);
             this.panel3.TabIndex = 0;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::ProjectNhom4.Properties.Resources.employee_handbook;
-            this.pictureBox3.Location = new System.Drawing.Point(29, 18);
+            this.pictureBox3.Location = new System.Drawing.Point(16, 11);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(66, 55);
+            this.pictureBox3.Size = new System.Drawing.Size(53, 52);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
@@ -302,7 +304,7 @@
             this.flowLayoutPanel3.SetFlowBreak(this.btnSachquahan, true);
             this.btnSachquahan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSachquahan.ForeColor = System.Drawing.Color.Black;
-            this.btnSachquahan.Location = new System.Drawing.Point(3, 93);
+            this.btnSachquahan.Location = new System.Drawing.Point(3, 75);
             this.btnSachquahan.Name = "btnSachquahan";
             this.btnSachquahan.Size = new System.Drawing.Size(1375, 42);
             this.btnSachquahan.TabIndex = 4;
@@ -316,9 +318,9 @@
             this.flowLayoutPanel4.Controls.Add(this.panel4);
             this.flowLayoutPanel4.Controls.Add(this.btnDocGiaVP);
             this.flowLayoutPanel4.Controls.Add(this.btnLVP);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(49, 638);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(51, 607);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(1307, 182);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(1186, 163);
             this.flowLayoutPanel4.TabIndex = 6;
             // 
             // panel4
@@ -330,15 +332,15 @@
             this.panel4.Controls.Add(this.label5);
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1304, 82);
+            this.panel4.Size = new System.Drawing.Size(1303, 66);
             this.panel4.TabIndex = 0;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::ProjectNhom4.Properties.Resources.message_alert;
-            this.pictureBox4.Location = new System.Drawing.Point(26, 8);
+            this.pictureBox4.Location = new System.Drawing.Point(16, 8);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(66, 65);
+            this.pictureBox4.Size = new System.Drawing.Size(53, 55);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 1;
             this.pictureBox4.TabStop = false;
@@ -366,7 +368,7 @@
             this.flowLayoutPanel4.SetFlowBreak(this.btnDocGiaVP, true);
             this.btnDocGiaVP.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnDocGiaVP.ForeColor = System.Drawing.Color.Black;
-            this.btnDocGiaVP.Location = new System.Drawing.Point(3, 91);
+            this.btnDocGiaVP.Location = new System.Drawing.Point(3, 75);
             this.btnDocGiaVP.Name = "btnDocGiaVP";
             this.btnDocGiaVP.Size = new System.Drawing.Size(1375, 37);
             this.btnDocGiaVP.TabIndex = 4;
@@ -387,7 +389,7 @@
             this.flowLayoutPanel4.SetFlowBreak(this.btnLVP, true);
             this.btnLVP.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnLVP.ForeColor = System.Drawing.Color.Black;
-            this.btnLVP.Location = new System.Drawing.Point(3, 134);
+            this.btnLVP.Location = new System.Drawing.Point(3, 118);
             this.btnLVP.Name = "btnLVP";
             this.btnLVP.Size = new System.Drawing.Size(1375, 38);
             this.btnLVP.TabIndex = 5;
@@ -410,18 +412,27 @@
             this.panelRoot.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelRoot.Location = new System.Drawing.Point(0, 0);
             this.panelRoot.Name = "panelRoot";
-            this.panelRoot.Size = new System.Drawing.Size(1380, 849);
+            this.panelRoot.Size = new System.Drawing.Size(1380, 778);
             this.panelRoot.TabIndex = 7;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1380, 112);
+            this.panel5.TabIndex = 8;
             // 
             // Baocao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panelRoot);
             this.Name = "Baocao";
-            this.Size = new System.Drawing.Size(1380, 849);
+            this.Size = new System.Drawing.Size(1380, 778);
             this.Load += new System.EventHandler(this.Baocao_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -440,6 +451,7 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panelRoot.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -472,5 +484,6 @@
         private Guna.UI2.WinForms.Guna2Button btnLVP;
         private dataThuvien2DataSetTableAdapters.CHU_DETableAdapter chU_DETableAdapter1;
         private System.Windows.Forms.Panel panelRoot;
+        private System.Windows.Forms.Panel panel5;
     }
 }

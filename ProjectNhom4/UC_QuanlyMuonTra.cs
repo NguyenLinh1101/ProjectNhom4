@@ -1264,7 +1264,24 @@ WHERE PM.Ma_Phieu_Muon = @MaPhieuMuon
             return ds;
         }
 
+        private void comGT_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
 
+        private void txtMaKieuMuon_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMaThuThu_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblHoten_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

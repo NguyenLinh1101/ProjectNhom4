@@ -46,7 +46,7 @@
             this.panelRibbon.Location = new System.Drawing.Point(0, 0);
             this.panelRibbon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelRibbon.Name = "panelRibbon";
-            this.panelRibbon.Size = new System.Drawing.Size(1317, 112);
+            this.panelRibbon.Size = new System.Drawing.Size(1317, 120);
             this.panelRibbon.TabIndex = 4;
             this.panelRibbon.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRibbon_Paint);
             // 
@@ -99,10 +99,10 @@
             // panelContainer
             // 
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(0, 112);
+            this.panelContainer.Location = new System.Drawing.Point(0, 120);
             this.panelContainer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1317, 874);
+            this.panelContainer.Size = new System.Drawing.Size(1317, 866);
             this.panelContainer.TabIndex = 5;
             // 
             // UC_QuanlyMuonTra_Ribbon
