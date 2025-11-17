@@ -603,6 +603,21 @@ namespace ProjectNhom4
             }
         }
 
+        private string TinhTrangTrangThai(DateTime ngayMuon, DateTime hanTra, DateTime? ngayThucTra)
+        {
+            // So sánh theo ngày (bỏ phần giờ) nếu bạn muốn chỉ xét ngày
+            DateTime now = DateTime.Now.Date;
+            DateTime nm = ngayMuon.Date;
+            DateTime ht = hanTra.Date;
+
+            if (ngayThucTra.HasValue)
+                return "Đã Trả";
+            if (nm <= now && now <= ht)
+                return "Đang Mượn";
+            // Nếu hạn trả trước ngày mượn thì coi là "Chưa Trả" (hoặc bạn muốn cảnh báo dữ liệu)
+            return "Chưa Trả";
+        }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             try
@@ -652,9 +667,12 @@ namespace ProjectNhom4
 
                         if (addnewFlag) // 🔹 Thêm mới phiếu mượn
                         {
+                            // tính trạng thái trước khi insert
+                            string trangThaiInsert = TinhTrangTrangThai(ngayMuon, hanTra, ngayThucTra);
+
                             string sqlPM = @"
-                    INSERT INTO PHIEU_MUON (Ma_Phieu_Muon, Ma_The, Ma_Kieu_Muon, Ma_Thu_Thu, Ngay_Muon, Han_Tra, Ngay_Thuc_Tra, Tien_Coc, Trang_Thai_Muon)
-                    VALUES (@MaPM, @MaThe, @MaKieuMuon, @MaThuThu, @NgayMuon, @HanTra, @NgayThucTra, @TienCoc, N'Đang Mượn')";
+    INSERT INTO PHIEU_MUON (Ma_Phieu_Muon, Ma_The, Ma_Kieu_Muon, Ma_Thu_Thu, Ngay_Muon, Han_Tra, Ngay_Thuc_Tra, Tien_Coc, Trang_Thai_Muon)
+    VALUES (@MaPM, @MaThe, @MaKieuMuon, @MaThuThu, @NgayMuon, @HanTra, @NgayThucTra, @TienCoc, @TrangThai)";
 
                             using (SqlCommand cmdPM = new SqlCommand(sqlPM, conn, trans))
                             {
@@ -664,26 +682,33 @@ namespace ProjectNhom4
                                 cmdPM.Parameters.AddWithValue("@MaThuThu", maThuThu);
                                 cmdPM.Parameters.AddWithValue("@NgayMuon", ngayMuon);
                                 cmdPM.Parameters.AddWithValue("@HanTra", hanTra);
-                                cmdPM.Parameters.AddWithValue("@TienCoc", tienCoc);
+                                // Ngày thực trả có thể null
                                 if (ngayThucTra.HasValue)
                                     cmdPM.Parameters.AddWithValue("@NgayThucTra", ngayThucTra.Value);
                                 else
                                     cmdPM.Parameters.AddWithValue("@NgayThucTra", DBNull.Value);
+
+                                cmdPM.Parameters.AddWithValue("@TienCoc", tienCoc);
+                                cmdPM.Parameters.AddWithValue("@TrangThai", trangThaiInsert);
                                 cmdPM.ExecuteNonQuery();
                             }
                         }
+
                         else // 🔹 Cập nhật phiếu mượn đã tồn tại
                         {
                             string sqlUpdatePM = @"
-                        UPDATE PHIEU_MUON
-                        SET Ma_Kieu_Muon = @MaKieuMuon,
-                            Ma_Thu_Thu = @MaThuThu,
-                            Ngay_Muon = @NgayMuon,
-                            Han_Tra = @HanTra,
-                            Ngay_Thuc_Tra = @NgayThucTra,
-                            Tien_Coc = @TienCoc,
-                            Trang_Thai_Muon = @TrangThai
-                        WHERE Ma_Phieu_Muon = @MaPM";
+UPDATE PHIEU_MUON
+SET Ma_Kieu_Muon = @MaKieuMuon,
+    Ma_Thu_Thu = @MaThuThu,
+    Ngay_Muon = @NgayMuon,
+    Han_Tra = @HanTra,
+    Ngay_Thuc_Tra = @NgayThucTra,
+    Tien_Coc = @TienCoc,
+    Trang_Thai_Muon = @TrangThai
+WHERE Ma_Phieu_Muon = @MaPM";
+
+                            // trước khi tạo cmd tính lại trạng thái
+                            string trangThaiUpdate = TinhTrangTrangThai(ngayMuon, hanTra, ngayThucTra);
 
                             using (SqlCommand cmd = new SqlCommand(sqlUpdatePM, conn, trans))
                             {
@@ -696,7 +721,7 @@ namespace ProjectNhom4
                                 else
                                     cmd.Parameters.AddWithValue("@NgayThucTra", DBNull.Value);
                                 cmd.Parameters.AddWithValue("@TienCoc", tienCoc);
-                                cmd.Parameters.AddWithValue("@TrangThai", txtTrangThaiMuon.Text.Trim());
+                                cmd.Parameters.AddWithValue("@TrangThai", trangThaiUpdate);
                                 cmd.Parameters.AddWithValue("@MaPM", maPM);
                                 cmd.ExecuteNonQuery();
                             }
