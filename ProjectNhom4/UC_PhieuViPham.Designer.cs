@@ -67,13 +67,13 @@
             this.btnXoadong = new Guna.UI2.WinForms.Guna2Button();
             this.btnThemdong = new Guna.UI2.WinForms.Guna2Button();
             this.dgvChiTietViPham = new System.Windows.Forms.DataGridView();
-            this.btnXuatPhieu = new Guna.UI2.WinForms.Guna2Button();
-            this.lblTrangthai = new System.Windows.Forms.Label();
             this.Ma_Sach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ma_Vi_Pham = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ten_Sach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ly_Do = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Tien_Phat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnXuatPhieu = new Guna.UI2.WinForms.Guna2Button();
+            this.lblTrangthai = new System.Windows.Forms.Label();
             this.pnlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuViPham)).BeginInit();
             this.grpThongTinPhieuPhat.SuspendLayout();
@@ -383,7 +383,7 @@
             this.cboTrangthainopphat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboTrangthainopphat.Name = "cboTrangthainopphat";
             this.cboTrangthainopphat.Size = new System.Drawing.Size(204, 29);
-            this.cboTrangthainopphat.TabIndex = 36;
+            this.cboTrangthainopphat.TabIndex = 1;
             this.cboTrangthainopphat.SelectedIndexChanged += new System.EventHandler(this.cboTrangthainopphat_SelectedIndexChanged);
             // 
             // txtTongTienPhat
@@ -403,7 +403,7 @@
             this.txtTongTienPhat.PlaceholderText = "";
             this.txtTongTienPhat.SelectedText = "";
             this.txtTongTienPhat.Size = new System.Drawing.Size(204, 44);
-            this.txtTongTienPhat.TabIndex = 35;
+            this.txtTongTienPhat.TabIndex = 2;
             this.txtTongTienPhat.TextChanged += new System.EventHandler(this.txtTongTienPhat_TextChanged);
             // 
             // label9
@@ -571,7 +571,7 @@
             this.txtMaPhieuMuon.PlaceholderText = "";
             this.txtMaPhieuMuon.SelectedText = "";
             this.txtMaPhieuMuon.Size = new System.Drawing.Size(166, 44);
-            this.txtMaPhieuMuon.TabIndex = 2;
+            this.txtMaPhieuMuon.TabIndex = 0;
             this.txtMaPhieuMuon.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMaPhieuMuon_KeyDown);
             // 
             // label2
@@ -686,41 +686,6 @@
             this.dgvChiTietViPham.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietViPham_CellValueChanged);
             this.dgvChiTietViPham.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvChiTietViPham_DataError);
             // 
-            // btnXuatPhieu
-            // 
-            this.btnXuatPhieu.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnXuatPhieu.BorderColor = System.Drawing.Color.Transparent;
-            this.btnXuatPhieu.BorderThickness = 2;
-            this.btnXuatPhieu.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnXuatPhieu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnXuatPhieu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnXuatPhieu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnXuatPhieu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXuatPhieu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.btnXuatPhieu.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuatPhieu.ForeColor = System.Drawing.Color.White;
-            this.btnXuatPhieu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnXuatPhieu.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnXuatPhieu.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnXuatPhieu.Location = new System.Drawing.Point(1236, 685);
-            this.btnXuatPhieu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnXuatPhieu.Name = "btnXuatPhieu";
-            this.btnXuatPhieu.Size = new System.Drawing.Size(192, 49);
-            this.btnXuatPhieu.TabIndex = 37;
-            this.btnXuatPhieu.Text = "Xuất Phiếu";
-            this.btnXuatPhieu.Click += new System.EventHandler(this.btnXuatPhieu_Click);
-            // 
-            // lblTrangthai
-            // 
-            this.lblTrangthai.AutoSize = true;
-            this.lblTrangthai.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTrangthai.Location = new System.Drawing.Point(12, 79);
-            this.lblTrangthai.Name = "lblTrangthai";
-            this.lblTrangthai.Size = new System.Drawing.Size(89, 25);
-            this.lblTrangthai.TabIndex = 32;
-            this.lblTrangthai.Text = "Trạng thái";
-            this.lblTrangthai.Click += new System.EventHandler(this.lblLoc_Click);
-            // 
             // Ma_Sach
             // 
             this.Ma_Sach.DataPropertyName = "Ma_Sach";
@@ -757,6 +722,41 @@
             this.Tien_Phat.HeaderText = "Tiền phạt";
             this.Tien_Phat.MinimumWidth = 6;
             this.Tien_Phat.Name = "Tien_Phat";
+            // 
+            // btnXuatPhieu
+            // 
+            this.btnXuatPhieu.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnXuatPhieu.BorderColor = System.Drawing.Color.Transparent;
+            this.btnXuatPhieu.BorderThickness = 2;
+            this.btnXuatPhieu.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnXuatPhieu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXuatPhieu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXuatPhieu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXuatPhieu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXuatPhieu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.btnXuatPhieu.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuatPhieu.ForeColor = System.Drawing.Color.White;
+            this.btnXuatPhieu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnXuatPhieu.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnXuatPhieu.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnXuatPhieu.Location = new System.Drawing.Point(1236, 685);
+            this.btnXuatPhieu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnXuatPhieu.Name = "btnXuatPhieu";
+            this.btnXuatPhieu.Size = new System.Drawing.Size(192, 49);
+            this.btnXuatPhieu.TabIndex = 37;
+            this.btnXuatPhieu.Text = "Xuất Phiếu";
+            this.btnXuatPhieu.Click += new System.EventHandler(this.btnXuatPhieu_Click);
+            // 
+            // lblTrangthai
+            // 
+            this.lblTrangthai.AutoSize = true;
+            this.lblTrangthai.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTrangthai.Location = new System.Drawing.Point(12, 79);
+            this.lblTrangthai.Name = "lblTrangthai";
+            this.lblTrangthai.Size = new System.Drawing.Size(89, 25);
+            this.lblTrangthai.TabIndex = 32;
+            this.lblTrangthai.Text = "Trạng thái";
+            this.lblTrangthai.Click += new System.EventHandler(this.lblLoc_Click);
             // 
             // UC_PhieuViPham
             // 

@@ -160,7 +160,7 @@
             this.txtSDT.PlaceholderText = "";
             this.txtSDT.SelectedText = "";
             this.txtSDT.Size = new System.Drawing.Size(193, 49);
-            this.txtSDT.TabIndex = 21;
+            this.txtSDT.TabIndex = 3;
             this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             this.txtSDT.Leave += new System.EventHandler(this.txtSDT_Leave);
             // 
@@ -215,7 +215,7 @@
             this.txtNgheNghiep.PlaceholderText = "";
             this.txtNgheNghiep.SelectedText = "";
             this.txtNgheNghiep.Size = new System.Drawing.Size(193, 49);
-            this.txtNgheNghiep.TabIndex = 18;
+            this.txtNgheNghiep.TabIndex = 4;
             // 
             // dtpNgayHetHan
             // 

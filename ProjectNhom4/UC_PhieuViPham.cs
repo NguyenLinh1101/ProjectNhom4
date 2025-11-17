@@ -780,22 +780,6 @@ VALUES(@MaPhieuPhat, @MaSach, @MaViPham, @LyDo, @TienPhat, @TrangThaiChiTiet)";
         private void dgvChiTietViPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
-            // Logic khi click vào danh sách Phiếu Phạt
-            if (e.RowIndex >= 0)
-            {
-                object maPPValue = dgvPhieuViPham.Rows[e.RowIndex].Cells["Ma_Phieu_Phat"].Value;
-                if (maPPValue == null) return;
-                string maPP = maPPValue.ToString();
-
-                NapThongTinPhieuPhat(maPP);
-                LoadChiTietViPham(maPP);
-
-                isAdding = false;
-                isEditing = false;
-                btnLuu.Enabled = false;
-                txtMaPhieuPhat.ReadOnly = true;
-            }
-
         }
         // 1) Hàm lấy tên sách an toàn
         private string LayTenSach(string maSach)
@@ -844,7 +828,18 @@ VALUES(@MaPhieuPhat, @MaSach, @MaViPham, @LyDo, @TienPhat, @TrangThaiChiTiet)";
                 return;
             }
 
-            // SỬA: Xóa trong DataGridView sẽ tự động xóa trong DataTable
+            // HỘP THOẠI XÁC NHẬN XÓA
+            DialogResult dr = MessageBox.Show(
+                "Bạn có chắc chắn muốn xóa dòng đã chọn không?",
+                "Xác nhận xóa",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (dr == DialogResult.No)
+                return; // Người dùng chọn KHÔNG → dừng lại
+
+
+            // Xóa dòng
             foreach (DataGridViewRow row in dgvChiTietViPham.SelectedRows)
             {
                 if (!row.IsNewRow)
@@ -853,7 +848,8 @@ VALUES(@MaPhieuPhat, @MaSach, @MaViPham, @LyDo, @TienPhat, @TrangThaiChiTiet)";
                 }
             }
 
-            // ĐÃ XÓA DÒNG dtChiTiet.AcceptChanges();
+            // Sau khi xóa
+            // dtChiTiet.AcceptChanges();  // nếu bạn quản lý bằng DataTable thì bật dòng này
 
             TinhTongTienPhat();
         }

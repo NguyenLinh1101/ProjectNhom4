@@ -141,7 +141,7 @@
             this.btnTrangChu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnTrangChu.Name = "btnTrangChu";
             this.btnTrangChu.Size = new System.Drawing.Size(206, 50);
-            this.btnTrangChu.TabIndex = 2;
+            this.btnTrangChu.TabIndex = 0;
             this.btnTrangChu.Text = "Trang chủ";
             this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click_1);
             // 
@@ -161,7 +161,7 @@
             this.btnqlsach.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnqlsach.Name = "btnqlsach";
             this.btnqlsach.Size = new System.Drawing.Size(206, 50);
-            this.btnqlsach.TabIndex = 3;
+            this.btnqlsach.TabIndex = 1;
             this.btnqlsach.Text = "Quản lý sách ";
             this.btnqlsach.Click += new System.EventHandler(this.btnqlsach_Click_1);
             // 
@@ -181,7 +181,7 @@
             this.btnqltacgia.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnqltacgia.Name = "btnqltacgia";
             this.btnqltacgia.Size = new System.Drawing.Size(206, 50);
-            this.btnqltacgia.TabIndex = 4;
+            this.btnqltacgia.TabIndex = 2;
             this.btnqltacgia.Text = "Quản lý tác giả";
             this.btnqltacgia.Click += new System.EventHandler(this.btnqltacgia_Click_1);
             // 
@@ -201,7 +201,7 @@
             this.btnqldocgia.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnqldocgia.Name = "btnqldocgia";
             this.btnqldocgia.Size = new System.Drawing.Size(206, 50);
-            this.btnqldocgia.TabIndex = 5;
+            this.btnqldocgia.TabIndex = 3;
             this.btnqldocgia.Text = "Quản lý độc giả";
             this.btnqldocgia.Click += new System.EventHandler(this.btnqldocgia_Click);
             // 
@@ -221,7 +221,7 @@
             this.btnqlmuontra.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnqlmuontra.Name = "btnqlmuontra";
             this.btnqlmuontra.Size = new System.Drawing.Size(206, 50);
-            this.btnqlmuontra.TabIndex = 6;
+            this.btnqlmuontra.TabIndex = 4;
             this.btnqlmuontra.Text = "Quản lý mượn trả";
             this.btnqlmuontra.Click += new System.EventHandler(this.btnqlmuontra_Click);
             // 
@@ -241,7 +241,7 @@
             this.btnBaocao.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnBaocao.Name = "btnBaocao";
             this.btnBaocao.Size = new System.Drawing.Size(206, 50);
-            this.btnBaocao.TabIndex = 7;
+            this.btnBaocao.TabIndex = 5;
             this.btnBaocao.Text = "Báo cáo";
             this.btnBaocao.Click += new System.EventHandler(this.btnBaocao_Click_1);
             // 
@@ -272,7 +272,7 @@
             this.btnCaiDat.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCaiDat.Name = "btnCaiDat";
             this.btnCaiDat.Size = new System.Drawing.Size(206, 50);
-            this.btnCaiDat.TabIndex = 8;
+            this.btnCaiDat.TabIndex = 6;
             this.btnCaiDat.Text = "Cài đặt ▼";
             this.btnCaiDat.Click += new System.EventHandler(this.btnCaiDat_Click);
             // 
@@ -302,7 +302,7 @@
             this.btnHuongDan.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnHuongDan.Name = "btnHuongDan";
             this.btnHuongDan.Size = new System.Drawing.Size(206, 45);
-            this.btnHuongDan.TabIndex = 10;
+            this.btnHuongDan.TabIndex = 7;
             this.btnHuongDan.Text = "Hướng dẫn sử dụng";
             this.btnHuongDan.Click += new System.EventHandler(this.btnHuongDan_Click);
             // 
@@ -321,7 +321,7 @@
             this.btnQLTaiKhoan.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnQLTaiKhoan.Name = "btnQLTaiKhoan";
             this.btnQLTaiKhoan.Size = new System.Drawing.Size(206, 45);
-            this.btnQLTaiKhoan.TabIndex = 9;
+            this.btnQLTaiKhoan.TabIndex = 8;
             this.btnQLTaiKhoan.Text = "Quản lý tài khoản";
             this.btnQLTaiKhoan.Click += new System.EventHandler(this.btnQLTaiKhoan_Click_1);
             // 
@@ -343,7 +343,7 @@
             this.btnDangXuat.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.Size = new System.Drawing.Size(206, 50);
-            this.btnDangXuat.TabIndex = 11;
+            this.btnDangXuat.TabIndex = 9;
             this.btnDangXuat.Text = "Đăng xuất";
             this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click_1);
             // 
