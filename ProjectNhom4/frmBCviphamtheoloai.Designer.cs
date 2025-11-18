@@ -44,6 +44,7 @@
             // 
             // panel1
             // 
+            this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.btnXem);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.reportViewer1);
@@ -209,6 +210,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1385, 885);
             this.Controls.Add(this.panel1);
             this.Name = "frmBCviphamtheoloai";

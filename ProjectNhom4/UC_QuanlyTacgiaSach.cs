@@ -13,7 +13,7 @@ namespace ProjectNhom4
 {
     public partial class UC_QuanlyTacgiaSach : UserControl
     {
-        string strConnectionString = "Data Source=DESKTOP-ST1KSE3\\SQLEXPRESS;Initial Catalog=QL_THU_VIEN;Integrated Security=True";
+        string strConnectionString = "Data Source=LAPTOP-31TAL89T\\SQLEXPRESS03;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False";
         public UC_QuanlyTacgiaSach()
         {
             InitializeComponent();
@@ -249,5 +249,10 @@ namespace ProjectNhom4
             }
 
         }
-   }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

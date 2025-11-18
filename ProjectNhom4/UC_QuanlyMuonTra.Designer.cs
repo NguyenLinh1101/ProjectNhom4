@@ -93,8 +93,8 @@
             this.btnXoaSach = new Guna.UI2.WinForms.Guna2Button();
             this.comGT = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelRoot = new System.Windows.Forms.Panel();
             this.btnHuy = new Guna.UI2.WinForms.Guna2Button();
+            this.panelRoot = new System.Windows.Forms.Panel();
             this.pnlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDauSach)).BeginInit();
             this.grbThongTinPhieuMuon.SuspendLayout();
@@ -123,6 +123,7 @@
             this.lblqlymuontra.TabIndex = 7;
             this.lblqlymuontra.Text = "QUẢN LÝ MƯỢN - TRẢ";
             this.lblqlymuontra.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblqlymuontra.Click += new System.EventHandler(this.lblqlymuontra_Click);
             // 
             // comTruong
             // 
@@ -1067,26 +1068,6 @@
             this.panel1.Size = new System.Drawing.Size(1176, 92);
             this.panel1.TabIndex = 50;
             // 
-            // panelRoot
-            // 
-            this.panelRoot.Controls.Add(this.dgvDauSach);
-            this.panelRoot.Controls.Add(this.comTruong);
-            this.panelRoot.Controls.Add(this.label1);
-            this.panelRoot.Controls.Add(this.grbThongTinPhieuMuon);
-            this.panelRoot.Controls.Add(this.comGT);
-            this.panelRoot.Controls.Add(this.btnXoaSach);
-            this.panelRoot.Controls.Add(this.comboTenSach);
-            this.panelRoot.Controls.Add(this.btnThemSach);
-            this.panelRoot.Controls.Add(this.label7);
-            this.panelRoot.Controls.Add(this.btnRefresh);
-            this.panelRoot.Controls.Add(this.btnFilter);
-            this.panelRoot.Controls.Add(this.grbCTSachmuon);
-            this.panelRoot.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelRoot.Location = new System.Drawing.Point(0, 54);
-            this.panelRoot.Name = "panelRoot";
-            this.panelRoot.Size = new System.Drawing.Size(1176, 555);
-            this.panelRoot.TabIndex = 51;
-            // 
             // btnHuy
             // 
             this.btnHuy.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -1109,6 +1090,28 @@
             this.btnHuy.TabIndex = 42;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
+            // panelRoot
+            // 
+            this.panelRoot.AutoScroll = true;
+            this.panelRoot.Controls.Add(this.dgvDauSach);
+            this.panelRoot.Controls.Add(this.comTruong);
+            this.panelRoot.Controls.Add(this.label1);
+            this.panelRoot.Controls.Add(this.grbThongTinPhieuMuon);
+            this.panelRoot.Controls.Add(this.comGT);
+            this.panelRoot.Controls.Add(this.btnXoaSach);
+            this.panelRoot.Controls.Add(this.comboTenSach);
+            this.panelRoot.Controls.Add(this.btnThemSach);
+            this.panelRoot.Controls.Add(this.label7);
+            this.panelRoot.Controls.Add(this.btnRefresh);
+            this.panelRoot.Controls.Add(this.btnFilter);
+            this.panelRoot.Controls.Add(this.grbCTSachmuon);
+            this.panelRoot.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelRoot.Location = new System.Drawing.Point(0, 54);
+            this.panelRoot.Name = "panelRoot";
+            this.panelRoot.Size = new System.Drawing.Size(1176, 555);
+            this.panelRoot.TabIndex = 51;
+            this.panelRoot.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRoot_Paint);
             // 
             // UC_QuanlyMuonTra
             // 

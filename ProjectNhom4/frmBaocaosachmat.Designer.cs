@@ -54,6 +54,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "BÁO CÁO SÁCH MẤT";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // reportViewer1
             // 
@@ -69,6 +70,7 @@
             // 
             // panel1
             // 
+            this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnXem);
             this.panel1.Controls.Add(this.cboKieuMuon);
@@ -203,6 +205,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1385, 885);
             this.Controls.Add(this.panel1);
             this.Name = "frmBaocaosachmat";

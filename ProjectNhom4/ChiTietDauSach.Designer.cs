@@ -33,6 +33,7 @@
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.lblChiTietDauSach = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTen_Tac_Gia = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.txtChuDe = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtLoaiSach = new Guna.UI2.WinForms.Guna2TextBox();
@@ -40,6 +41,7 @@
             this.txtSoTrang = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtGiaBia = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtNamXuatBan = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtTenDauSach = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtMaDauSach = new Guna.UI2.WinForms.Guna2TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -50,8 +52,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtTenDauSach = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtTen_Tac_Gia = new Guna.UI2.WinForms.Guna2TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +72,7 @@
             this.lblChiTietDauSach.Size = new System.Drawing.Size(323, 45);
             this.lblChiTietDauSach.TabIndex = 0;
             this.lblChiTietDauSach.Text = "CHI TIẾT ĐẦU SÁCH";
+            this.lblChiTietDauSach.Click += new System.EventHandler(this.lblChiTietDauSach_Click);
             // 
             // groupBox1
             // 
@@ -101,6 +102,27 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // txtTen_Tac_Gia
+            // 
+            this.txtTen_Tac_Gia.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTen_Tac_Gia.DefaultText = "";
+            this.txtTen_Tac_Gia.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTen_Tac_Gia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTen_Tac_Gia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTen_Tac_Gia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTen_Tac_Gia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTen_Tac_Gia.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTen_Tac_Gia.ForeColor = System.Drawing.Color.Black;
+            this.txtTen_Tac_Gia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTen_Tac_Gia.Location = new System.Drawing.Point(215, 194);
+            this.txtTen_Tac_Gia.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtTen_Tac_Gia.Name = "txtTen_Tac_Gia";
+            this.txtTen_Tac_Gia.PlaceholderText = "";
+            this.txtTen_Tac_Gia.ReadOnly = true;
+            this.txtTen_Tac_Gia.SelectedText = "";
+            this.txtTen_Tac_Gia.Size = new System.Drawing.Size(528, 60);
+            this.txtTen_Tac_Gia.TabIndex = 15;
             // 
             // btnClose
             // 
@@ -244,6 +266,27 @@
             this.txtNamXuatBan.Size = new System.Drawing.Size(528, 60);
             this.txtNamXuatBan.TabIndex = 3;
             // 
+            // txtTenDauSach
+            // 
+            this.txtTenDauSach.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTenDauSach.DefaultText = "";
+            this.txtTenDauSach.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTenDauSach.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTenDauSach.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenDauSach.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenDauSach.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenDauSach.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTenDauSach.ForeColor = System.Drawing.Color.Black;
+            this.txtTenDauSach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenDauSach.Location = new System.Drawing.Point(215, 110);
+            this.txtTenDauSach.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtTenDauSach.Name = "txtTenDauSach";
+            this.txtTenDauSach.PlaceholderText = "";
+            this.txtTenDauSach.ReadOnly = true;
+            this.txtTenDauSach.SelectedText = "";
+            this.txtTenDauSach.Size = new System.Drawing.Size(528, 60);
+            this.txtTenDauSach.TabIndex = 1;
+            // 
             // txtMaDauSach
             // 
             this.txtMaDauSach.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -355,52 +398,11 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã đầu sách";
             // 
-            // txtTenDauSach
-            // 
-            this.txtTenDauSach.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTenDauSach.DefaultText = "";
-            this.txtTenDauSach.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTenDauSach.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTenDauSach.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTenDauSach.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTenDauSach.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenDauSach.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTenDauSach.ForeColor = System.Drawing.Color.Black;
-            this.txtTenDauSach.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenDauSach.Location = new System.Drawing.Point(215, 110);
-            this.txtTenDauSach.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtTenDauSach.Name = "txtTenDauSach";
-            this.txtTenDauSach.PlaceholderText = "";
-            this.txtTenDauSach.ReadOnly = true;
-            this.txtTenDauSach.SelectedText = "";
-            this.txtTenDauSach.Size = new System.Drawing.Size(528, 60);
-            this.txtTenDauSach.TabIndex = 1;
-            // 
-            // txtTen_Tac_Gia
-            // 
-            this.txtTen_Tac_Gia.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTen_Tac_Gia.DefaultText = "";
-            this.txtTen_Tac_Gia.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTen_Tac_Gia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTen_Tac_Gia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTen_Tac_Gia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTen_Tac_Gia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTen_Tac_Gia.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTen_Tac_Gia.ForeColor = System.Drawing.Color.Black;
-            this.txtTen_Tac_Gia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTen_Tac_Gia.Location = new System.Drawing.Point(215, 194);
-            this.txtTen_Tac_Gia.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtTen_Tac_Gia.Name = "txtTen_Tac_Gia";
-            this.txtTen_Tac_Gia.PlaceholderText = "";
-            this.txtTen_Tac_Gia.ReadOnly = true;
-            this.txtTen_Tac_Gia.SelectedText = "";
-            this.txtTen_Tac_Gia.Size = new System.Drawing.Size(528, 60);
-            this.txtTen_Tac_Gia.TabIndex = 15;
-            // 
             // ChiTietDauSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1524, 704);
             this.Controls.Add(this.groupBox1);

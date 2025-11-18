@@ -13,7 +13,7 @@ namespace ProjectNhom4
 {
     public partial class ChiTietDauSach : Form
     {
-        string strCon = "Data Source=DESKTOP-ST1KSE3\\SQLEXPRESS;Initial Catalog=QL_THU_VIEN;Integrated Security=True";
+        string strCon = "Data Source=LAPTOP-31TAL89T\\SQLEXPRESS03;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False";
 
         string maDauSach;
         bool isEditing = false;
@@ -131,6 +131,11 @@ namespace ProjectNhom4
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblChiTietDauSach_Click(object sender, EventArgs e)
         {
 
         }

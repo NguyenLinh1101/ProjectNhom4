@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelMenu = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnBackup = new Guna.UI2.WinForms.Guna2Button();
             this.panelLogo = new Guna.UI2.WinForms.Guna2Panel();
             this.picLogo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.panelBottom = new System.Windows.Forms.Panel();
             this.lblTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnBackup = new Guna.UI2.WinForms.Guna2Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -90,6 +90,28 @@
             this.panelMenu.Size = new System.Drawing.Size(291, 781);
             this.panelMenu.TabIndex = 2;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
+            // 
+            // btnBackup
+            // 
+            this.btnBackup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBackup.BorderRadius = 8;
+            this.btnBackup.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBackup.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBackup.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBackup.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBackup.FillColor = System.Drawing.Color.White;
+            this.btnBackup.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnBackup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnBackup.Image = global::ProjectNhom4.Properties.Resources.analytics;
+            this.btnBackup.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBackup.Location = new System.Drawing.Point(22, 669);
+            this.btnBackup.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnBackup.Name = "btnBackup";
+            this.btnBackup.Size = new System.Drawing.Size(206, 50);
+            this.btnBackup.TabIndex = 14;
+            this.btnBackup.Text = "Sao lưu";
+            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
             // 
             // panelLogo
             // 
@@ -353,6 +375,7 @@
             // panelContainer
             // 
             this.panelContainer.AutoRoundedCorners = true;
+            this.panelContainer.AutoScroll = true;
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(291, 40);
             this.panelContainer.Margin = new System.Windows.Forms.Padding(0);
@@ -466,28 +489,6 @@
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // btnBackup
-            // 
-            this.btnBackup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBackup.BorderRadius = 8;
-            this.btnBackup.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnBackup.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnBackup.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnBackup.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnBackup.FillColor = System.Drawing.Color.White;
-            this.btnBackup.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnBackup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnBackup.Image = global::ProjectNhom4.Properties.Resources.analytics;
-            this.btnBackup.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnBackup.Location = new System.Drawing.Point(22, 669);
-            this.btnBackup.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnBackup.Name = "btnBackup";
-            this.btnBackup.Size = new System.Drawing.Size(206, 50);
-            this.btnBackup.TabIndex = 14;
-            this.btnBackup.Text = "Sao lưu";
-            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
             // 
             // frmMenu
             // 

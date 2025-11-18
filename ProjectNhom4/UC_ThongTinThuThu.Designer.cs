@@ -30,6 +30,7 @@
         {
             this.lblQLDG = new System.Windows.Forms.Label();
             this.grbTTDG = new System.Windows.Forms.GroupBox();
+            this.txtTenTT = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSDT = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -59,7 +60,6 @@
             this.panelBottom = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.txtTenTT = new Guna.UI2.WinForms.Guna2TextBox();
             this.grbTTDG.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picThuThu)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -110,6 +110,27 @@
             this.grbTTDG.TabStop = false;
             this.grbTTDG.Text = "Thông Tin Thủ Thư";
             this.grbTTDG.Enter += new System.EventHandler(this.grbTTDG_Enter);
+            // 
+            // txtTenTT
+            // 
+            this.txtTenTT.AutoScroll = true;
+            this.txtTenTT.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTenTT.DefaultText = "";
+            this.txtTenTT.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTenTT.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTenTT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenTT.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenTT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenTT.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTenTT.ForeColor = System.Drawing.Color.Black;
+            this.txtTenTT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenTT.Location = new System.Drawing.Point(816, 39);
+            this.txtTenTT.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtTenTT.Name = "txtTenTT";
+            this.txtTenTT.PlaceholderText = "";
+            this.txtTenTT.SelectedText = "";
+            this.txtTenTT.Size = new System.Drawing.Size(261, 49);
+            this.txtTenTT.TabIndex = 26;
             // 
             // txtSDT
             // 
@@ -595,31 +616,11 @@
             this.guna2Button1.Text = "Lưu";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // txtTenTT
-            // 
-            this.txtTenTT.AutoScroll = true;
-            this.txtTenTT.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTenTT.DefaultText = "";
-            this.txtTenTT.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTenTT.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTenTT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTenTT.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTenTT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenTT.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTenTT.ForeColor = System.Drawing.Color.Black;
-            this.txtTenTT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenTT.Location = new System.Drawing.Point(816, 39);
-            this.txtTenTT.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtTenTT.Name = "txtTenTT";
-            this.txtTenTT.PlaceholderText = "";
-            this.txtTenTT.SelectedText = "";
-            this.txtTenTT.Size = new System.Drawing.Size(261, 49);
-            this.txtTenTT.TabIndex = 26;
-            // 
             // UC_ThongTinThuThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.Controls.Add(this.panelBottom);
             this.Controls.Add(this.grbDMK);
             this.Controls.Add(this.guna2Panel1);

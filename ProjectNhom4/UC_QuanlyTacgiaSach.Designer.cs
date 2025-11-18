@@ -61,6 +61,7 @@
             // 
             // panel1
             // 
+            this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.splitContainer1);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
@@ -311,6 +312,7 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "QUẢN LÝ TÁC GIẢ SÁCH";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel3
             // 
@@ -342,6 +344,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.Controls.Add(this.panel1);
             this.Name = "UC_QuanlyTacgiaSach";
             this.Size = new System.Drawing.Size(1334, 727);

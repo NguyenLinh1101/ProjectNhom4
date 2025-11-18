@@ -67,9 +67,11 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "BÁO CÁO SÁCH HỎNG";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // panel2
             // 
+            this.panel2.AutoScroll = true;
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel2.Controls.Add(this.dtpNgayKT);
             this.panel2.Controls.Add(this.dtpNgayBĐ);
@@ -197,6 +199,7 @@
             // 
             // Baocaosachhong
             // 
+            this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1235, 763);
             this.Controls.Add(this.panel2);
