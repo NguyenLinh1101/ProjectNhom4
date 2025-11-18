@@ -46,6 +46,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvTaiKhoan = new System.Windows.Forms.DataGridView();
+            this.TenDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ma_Thu_Thu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sDTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tHUTHUBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataThuvien2DataSet = new ProjectNhom4.dataThuvien2DataSet();
@@ -55,12 +61,6 @@
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.tHU_THUTableAdapter = new ProjectNhom4.dataThuvien2DataSetTableAdapters.THU_THUTableAdapter();
             this.panelRoot = new System.Windows.Forms.Panel();
-            this.TenDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaThuThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sDTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbTTTT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tHUTHUBindingSource)).BeginInit();
@@ -269,7 +269,7 @@
             this.TenDN,
             this.Email,
             this.MatKhau,
-            this.MaThuThu,
+            this.Ma_Thu_Thu,
             this.Quyen,
             this.sDTDataGridViewTextBoxColumn});
             this.dgvTaiKhoan.DataSource = this.tHUTHUBindingSource;
@@ -299,7 +299,56 @@
             this.dgvTaiKhoan.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvTaiKhoan.Size = new System.Drawing.Size(1099, 294);
             this.dgvTaiKhoan.TabIndex = 2;
+            this.dgvTaiKhoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaiKhoan_CellContentClick);
             this.dgvTaiKhoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaiKhoan_CellContentClick);
+            // 
+            // TenDN
+            // 
+            this.TenDN.DataPropertyName = "TenDN";
+            this.TenDN.FillWeight = 233.984F;
+            this.TenDN.HeaderText = "Tên đăng nhập";
+            this.TenDN.MinimumWidth = 9;
+            this.TenDN.Name = "TenDN";
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.FillWeight = 184.2534F;
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 9;
+            this.Email.Name = "Email";
+            // 
+            // MatKhau
+            // 
+            this.MatKhau.DataPropertyName = "MatKhau";
+            this.MatKhau.FillWeight = 145.7142F;
+            this.MatKhau.HeaderText = "Mật khẩu";
+            this.MatKhau.MinimumWidth = 9;
+            this.MatKhau.Name = "MatKhau";
+            // 
+            // Ma_Thu_Thu
+            // 
+            this.Ma_Thu_Thu.DataPropertyName = "Ma_Thu_Thu";
+            this.Ma_Thu_Thu.FillWeight = 115.8479F;
+            this.Ma_Thu_Thu.HeaderText = "Mã thủ thư";
+            this.Ma_Thu_Thu.MinimumWidth = 9;
+            this.Ma_Thu_Thu.Name = "Ma_Thu_Thu";
+            // 
+            // Quyen
+            // 
+            this.Quyen.DataPropertyName = "Quyen";
+            this.Quyen.FillWeight = 92.70258F;
+            this.Quyen.HeaderText = "Quyền";
+            this.Quyen.MinimumWidth = 9;
+            this.Quyen.Name = "Quyen";
+            // 
+            // sDTDataGridViewTextBoxColumn
+            // 
+            this.sDTDataGridViewTextBoxColumn.DataPropertyName = "SDT";
+            this.sDTDataGridViewTextBoxColumn.FillWeight = 227.2065F;
+            this.sDTDataGridViewTextBoxColumn.HeaderText = "SDT";
+            this.sDTDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.sDTDataGridViewTextBoxColumn.Name = "sDTDataGridViewTextBoxColumn";
             // 
             // tHUTHUBindingSource
             // 
@@ -406,54 +455,6 @@
             this.panelRoot.TabIndex = 19;
             this.panelRoot.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRoot_Paint);
             // 
-            // TenDN
-            // 
-            this.TenDN.DataPropertyName = "TenDN";
-            this.TenDN.FillWeight = 233.984F;
-            this.TenDN.HeaderText = "Tên đăng nhập";
-            this.TenDN.MinimumWidth = 9;
-            this.TenDN.Name = "TenDN";
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.FillWeight = 184.2534F;
-            this.Email.HeaderText = "Email";
-            this.Email.MinimumWidth = 9;
-            this.Email.Name = "Email";
-            // 
-            // MatKhau
-            // 
-            this.MatKhau.DataPropertyName = "MatKhau";
-            this.MatKhau.FillWeight = 145.7142F;
-            this.MatKhau.HeaderText = "Mật khẩu";
-            this.MatKhau.MinimumWidth = 9;
-            this.MatKhau.Name = "MatKhau";
-            // 
-            // MaThuThu
-            // 
-            this.MaThuThu.DataPropertyName = "Ma_Thu_Thu";
-            this.MaThuThu.FillWeight = 115.8479F;
-            this.MaThuThu.HeaderText = "Mã thủ thư";
-            this.MaThuThu.MinimumWidth = 9;
-            this.MaThuThu.Name = "MaThuThu";
-            // 
-            // Quyen
-            // 
-            this.Quyen.DataPropertyName = "Quyen";
-            this.Quyen.FillWeight = 92.70258F;
-            this.Quyen.HeaderText = "Quyền";
-            this.Quyen.MinimumWidth = 9;
-            this.Quyen.Name = "Quyen";
-            // 
-            // sDTDataGridViewTextBoxColumn
-            // 
-            this.sDTDataGridViewTextBoxColumn.DataPropertyName = "SDT";
-            this.sDTDataGridViewTextBoxColumn.FillWeight = 227.2065F;
-            this.sDTDataGridViewTextBoxColumn.HeaderText = "SDT";
-            this.sDTDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.sDTDataGridViewTextBoxColumn.Name = "sDTDataGridViewTextBoxColumn";
-            // 
             // QL_TaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -503,7 +504,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDN;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn MatKhau;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaThuThu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ma_Thu_Thu;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quyen;
         private System.Windows.Forms.DataGridViewTextBoxColumn sDTDataGridViewTextBoxColumn;
     }
