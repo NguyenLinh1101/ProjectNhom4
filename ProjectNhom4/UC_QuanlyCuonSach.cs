@@ -14,6 +14,7 @@ namespace ProjectNhom4
         DataTable dtCuonSach;
         string selectedMaDauSach = "";
         public Size BaseSize;
+
         public UC_QuanlyCuonSach()
         {
             InitializeComponent();
@@ -32,12 +33,20 @@ namespace ProjectNhom4
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            if (dtDauSach != null)
+            if (dtDauSach == null) return;
+
+            var rows = dtDauSach.Select($"Ten_Dau_Sach LIKE '%{txtSearch.Text}%'");
+
+            if (rows.Length > 0)
             {
-                dgvDauSach.DataSource = dtDauSach.Select($"Ten_Dau_Sach LIKE '%{txtSearch.Text}%'").CopyToDataTable();
+                dgvDauSach.DataSource = rows.CopyToDataTable();
+            }
+            else
+            {
+                // Trả về một bảng rỗng nhưng vẫn giữ cấu trúc
+                dgvDauSach.DataSource = dtDauSach.Clone();
             }
         }
-
         private void LoadDauSach()
         {
             try
@@ -95,42 +104,21 @@ namespace ProjectNhom4
         // Thêm 1 cuốn sách
         private void btnThem_Click(object sender, EventArgs e)
         {
-            try
+            if (dgvDauSach.CurrentRow == null)
             {
-                string maSachMoi;
-                using (SqlConnection conn = new SqlConnection(connStr))
-                {
-                    conn.Open();
-
-                    // Lấy giá trị max hiện tại để tạo mã mới
-                    SqlCommand cmdMax = new SqlCommand("SELECT MAX(Ma_Sach) FROM SACH", conn);
-                    var result = cmdMax.ExecuteScalar();
-                    if (result != DBNull.Value)
-                    {
-                        int maxId = int.Parse(result.ToString().Substring(1)); // bỏ chữ S
-                        maSachMoi = "S" + (maxId + 1).ToString("D3"); // S001, S002,...
-                    }
-                    else
-                    {
-                        maSachMoi = "S001";
-                    }
-
-                    // INSERT dữ liệu mới
-                    string sqlInsert = "INSERT INTO SACH (Ma_Sach, Ma_Dau_Sach, Tinh_Trang, Lib_Only, Mo_Ta) VALUES (@MaSach, @MaDauSach, @TinhTrang, @LibOnly, @MoTa)";
-                    SqlCommand cmdInsert = new SqlCommand(sqlInsert, conn);
-                    cmdInsert.Parameters.AddWithValue("@MaSach", maSachMoi);
-                    cmdInsert.Parameters.AddWithValue("@MaDauSach", selectedMaDauSach);
-                    cmdInsert.Parameters.AddWithValue("@TinhTrang", "Mới");
-                    cmdInsert.Parameters.AddWithValue("@LibOnly", false);
-                    cmdInsert.Parameters.AddWithValue("@MoTa", "");
-                    cmdInsert.ExecuteNonQuery();
-                }
-
-                LoadCuonSach(selectedMaDauSach);
+                MessageBox.Show("Vui lòng chọn một đầu sách trước khi thêm!");
+                return;
             }
-            catch (Exception ex)
+
+            string maDauSach = dgvDauSach.CurrentRow.Cells["Ma_Dau_Sach"].Value.ToString();
+
+            frmCuonSach f = new frmCuonSach();
+            f.IsEditMode = false;
+            f.MaDauSach = maDauSach;
+
+            if (f.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Lỗi thêm cuốn sách: " + ex.Message);
+                LoadCuonSachTheoDauSach(maDauSach); // Hàm load lại dgvCuonSach
             }
         }
 
@@ -145,7 +133,7 @@ namespace ProjectNhom4
             }
 
             string maSach = dgvCuonSach.CurrentRow.Cells["Ma_Sach"].Value.ToString();
-            string maDauSach = dgvCuonSach.CurrentRow.Cells["Ma_Dau_Sach"].Value.ToString();
+            string maDauSach = dgvCuonSach.CurrentRow.Cells["Ma_Dau_Sach1"].Value.ToString();
 
             frmCuonSach f = new frmCuonSach();
             f.IsEditMode = true;
@@ -173,25 +161,51 @@ namespace ProjectNhom4
         // Xóa cuốn sách
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (dgvCuonSach.CurrentRow == null) return;
+            if (dgvCuonSach.CurrentRow == null)
+            {
+                MessageBox.Show("Vui lòng chọn cuốn sách cần xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn xóa cuốn sách này không?",
+                                              "Thông báo",
+                                              MessageBoxButtons.YesNo,
+                                              MessageBoxIcon.Question);
+            if (dr != DialogResult.Yes) return;
 
             try
             {
-                string maSach = dgvCuonSach.CurrentRow.Cells["Ma_Sach"].Value.ToString();
-                string sql = "DELETE FROM SACH WHERE Ma_Sach=@MaSach";
+                string sql = "DELETE FROM SACH WHERE Ma_Sach = @MaSach";
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@MaSach", maSach);
-                    cmd.ExecuteNonQuery();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MaSach", dgvCuonSach.CurrentRow.Cells["Ma_Sach"].Value.ToString());
+                        cmd.ExecuteNonQuery();
+                    }
                 }
 
+                MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadCuonSach(selectedMaDauSach);
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 547) // lỗi khóa ngoại
+                {
+                    MessageBox.Show("Không thể xóa vì cuốn sách này đang được tham chiếu ở bảng khác.",
+                                    "Lỗi ràng buộc",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi SQL: " + ex.Message);
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi xóa cuốn sách: " + ex.Message);
+                MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
 
@@ -223,6 +237,11 @@ namespace ProjectNhom4
         }
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gnlPanelHeader_Paint(object sender, PaintEventArgs e)
         {
 
         }

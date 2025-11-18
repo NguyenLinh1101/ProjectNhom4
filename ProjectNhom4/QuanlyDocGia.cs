@@ -228,6 +228,7 @@ namespace ProjectNhom4
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Khi thêm độc giả mới, hệ thống sẽ tự động tạo mã độc giả và mã thẻ.\nVui lòng điền đầy đủ thông tin và chọn ảnh (nếu có).", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             isAdding = true; // Báo cho chương trình biết là đang Thêm
             ClearForm();     // Gọi hàm ClearForm() (đã sửa ở trên)
 
@@ -268,9 +269,47 @@ namespace ProjectNhom4
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            
             if (string.IsNullOrWhiteSpace(txtMaDocGia.Text) || string.IsNullOrWhiteSpace(txtHoTen.Text))
             {
                 MessageBox.Show("Mã độc giả và Họ tên không được để trống.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtMaDocGia.Text) ||
+        string.IsNullOrWhiteSpace(txtHoTen.Text))
+            {
+                MessageBox.Show("Mã độc giả và Họ tên không được để trống.",
+                    "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // ========= KIỂM TRA EMAIL =========
+            string email = txtEmail.Text.Trim();
+            if (!string.IsNullOrEmpty(email))
+            {
+                // Regex kiểm tra email theo chuẩn
+                var emailRegex = new System.Text.RegularExpressions.Regex(
+                    @"^[^@\s]+@[^@\s]+\.[^@\s]+$"
+                );
+
+                if (!emailRegex.IsMatch(email))
+                {
+                    MessageBox.Show("Email không hợp lệ!",
+                        "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+
+            // ========= KIỂM TRA SỐ ĐIỆN THOẠI =========
+            string phone = txtSDT.Text.Trim();
+
+            // Số VN: 9–11 số (có thể dùng regex nâng cao)
+            var phoneRegex = new System.Text.RegularExpressions.Regex(@"^[0-9]{10}$");
+
+            if (!phoneRegex.IsMatch(phone))
+            {
+                MessageBox.Show("Số điện thoại không hợp lệ! (SĐT phải có 10 chữ số)",
+                    "Lỗi dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -389,6 +428,7 @@ namespace ProjectNhom4
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Chỉnh sửa thông tin độc giả. Vui lòng cập nhật thông tin và nhấn Lưu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             if (string.IsNullOrEmpty(selectedMa_Doc_Gia))
             {
                 MessageBox.Show("Chưa chọn độc giả để sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
