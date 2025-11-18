@@ -313,7 +313,7 @@ WHERE pm.Ma_Phieu_Muon = @MaPM
         {
             try
             {
-                isAdding = true;  // Bật chế độ thêm mới
+                addnewFlag = true;
 
                 // Xóa TextBox
                 txtMaPhieuMuon.Text = "";
