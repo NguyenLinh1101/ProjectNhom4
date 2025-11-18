@@ -37,7 +37,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1252, 666);
+            this.reportViewer1.Size = new System.Drawing.Size(1352, 781);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
@@ -45,9 +45,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1252, 666);
+            this.ClientSize = new System.Drawing.Size(1352, 781);
             this.Controls.Add(this.reportViewer1);
             this.Name = "XuatPhieuPhat";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "XuatPhieuPhat";
             this.Load += new System.EventHandler(this.XuatPhieuPhat_Load);
             this.ResumeLayout(false);
