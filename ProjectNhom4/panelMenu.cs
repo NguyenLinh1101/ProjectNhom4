@@ -196,7 +196,7 @@ namespace ProjectNhom4
 
         private void btnHuongDan_Click(object sender, EventArgs e)
         {
-            string filePath = @"E:\BTL4\HDSD.pdf";
+            string filePath = @"D:\PTUD2025\BTL\ProjectNhom4\HDSD.pdf";
 
             if (System.IO.File.Exists(filePath))
             {
@@ -263,7 +263,7 @@ namespace ProjectNhom4
                 }
 
                 // Kết nối đến master để backup
-                string connectionString = @"Data Source=DESKTOP-ST1KSE3\SQLEXPRESS;Initial Catalog=QL_THU_VIEN;Integrated Security=True";
+                string connectionString = "Data Source=LAPTOP-31TAL89T\\SQLEXPRESS03;Initial Catalog=dataThuvien2;Integrated Security=True;Encrypt=False";
 
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
