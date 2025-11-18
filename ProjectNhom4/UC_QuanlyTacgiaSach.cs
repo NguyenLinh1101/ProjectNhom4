@@ -212,10 +212,6 @@ namespace ProjectNhom4
             // Lưu dữ liệu gốc để có thể hủy bỏ
             originalData = ((DataTable)dgvThongTinTacGia.DataSource).Copy();
             dgvThongTinTacGia.ReadOnly = false;
-            btnSua.Enabled = false;
-            btnHuy.Enabled = true;
-            btnXoa.Enabled = false;
-            btnLuu.Enabled = true;
 
         }
 
@@ -250,10 +246,6 @@ namespace ProjectNhom4
                 dgvThongTinTacGia.DataSource = originalData;
                 isEditing = false;
                 dgvThongTinTacGia.ReadOnly = true;
-                btnSua.Enabled = true;
-                btnHuy.Enabled = false;
-                btnXoa.Enabled = true;
-                btnLuu.Enabled = false;
             }
 
         }
