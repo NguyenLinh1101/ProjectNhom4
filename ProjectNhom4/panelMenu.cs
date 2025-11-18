@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Diagnostics;
 using System.Drawing;
@@ -237,6 +238,53 @@ namespace ProjectNhom4
         private void btnProfile_Click(object sender, EventArgs e)
         {
             LoadUserControl (new UC_ThongTinThuThu());
+        }
+
+        private void btnBackup_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Hộp thoại chọn nơi lưu file .bak
+                SaveFileDialog save = new SaveFileDialog();
+                save.Filter = "Backup files (*.bak)|*.bak";
+                save.Title = "Chọn nơi lưu file Backup";
+                save.FileName = "QL_Thu_Vien" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".bak";
+
+                if (save.ShowDialog() != DialogResult.OK)
+                    return; // thoát nếu chưa chọn file
+
+                string filePath = save.FileName;
+
+                // Tạo thư mục nếu chưa có
+                string folder = Path.GetDirectoryName(filePath);
+                if (!Directory.Exists(folder))
+                {
+                    Directory.CreateDirectory(folder);
+                }
+
+                // Kết nối đến master để backup
+                string connectionString = @"Data Source=DESKTOP-ST1KSE3\SQLEXPRESS;Initial Catalog=QL_THU_VIEN;Integrated Security=True";
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    string query = $@"
+                BACKUP DATABASE QL_Thu_Vien 
+                TO DISK = '{filePath}' 
+                WITH INIT, SKIP, STATS = 10
+            ";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+
+                MessageBox.Show("Backup dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Backup thất bại!\n\nLỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

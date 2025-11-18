@@ -55,6 +55,7 @@
             this.panelBottom = new System.Windows.Forms.Panel();
             this.lblTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnBackup = new Guna.UI2.WinForms.Guna2Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -68,6 +69,7 @@
             this.panelMenu.AutoScroll = true;
             this.panelMenu.AutoScrollMinSize = new System.Drawing.Size(0, 291);
             this.panelMenu.AutoSize = true;
+            this.panelMenu.Controls.Add(this.btnBackup);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Controls.Add(this.btnTrangChu);
             this.panelMenu.Controls.Add(this.btnqlsach);
@@ -340,7 +342,7 @@
             this.btnDangXuat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.btnDangXuat.Image = global::ProjectNhom4.Properties.Resources.analytics;
             this.btnDangXuat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDangXuat.Location = new System.Drawing.Point(22, 672);
+            this.btnDangXuat.Location = new System.Drawing.Point(22, 725);
             this.btnDangXuat.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.Size = new System.Drawing.Size(206, 50);
@@ -465,6 +467,28 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnBackup
+            // 
+            this.btnBackup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBackup.BorderRadius = 8;
+            this.btnBackup.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBackup.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBackup.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBackup.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBackup.FillColor = System.Drawing.Color.White;
+            this.btnBackup.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnBackup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnBackup.Image = global::ProjectNhom4.Properties.Resources.analytics;
+            this.btnBackup.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBackup.Location = new System.Drawing.Point(22, 669);
+            this.btnBackup.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnBackup.Name = "btnBackup";
+            this.btnBackup.Size = new System.Drawing.Size(206, 50);
+            this.btnBackup.TabIndex = 14;
+            this.btnBackup.Text = "Sao lưu";
+            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
@@ -527,5 +551,6 @@
         private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Button btnClose;
         private Guna.UI2.WinForms.Guna2CircleButton btnProfile;
+        private Guna.UI2.WinForms.Guna2Button btnBackup;
     }
 }
