@@ -57,7 +57,7 @@ namespace ProjectNhom4
             isLoadingData = false;
             dtpNgayLapPhieu.Value = DateTime.Now;
             txtTongTienPhat.Text = "0 VNĐ";
-
+            dgvChiTietViPham.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvChiTietViPham.AutoGenerateColumns = false;
             dgvChiTietViPham.DataSource = dtChiTiet;
             this.dgvChiTietViPham.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvChiTietViPham_CurrentCellDirtyStateChanged);
@@ -816,7 +816,7 @@ VALUES(@MaPhieuPhat, @MaSach, @MaViPham, @LyDo, @TienPhat, @TrangThaiChiTiet)";
 
         private void btnXoadong_Click(object sender, EventArgs e)
         {
-            if (dgvChiTietViPham.SelectedRows.Count == 0)
+            if (dgvChiTietViPham.CurrentRow == null)
             {
                 MessageBox.Show("Vui lòng chọn dòng cần xóa.");
                 return;

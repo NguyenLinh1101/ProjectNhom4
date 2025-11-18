@@ -116,7 +116,7 @@ namespace ProjectNhom4
                 using (con = new SqlConnection(strCon))
                 {
                     con.Open();
-                    string sql = $"SELECT * FROM {tableName}";
+                    string sql = $"SELECT * FROM {tableName} ORDER BY {TenMa} ASC";
                     adapter = new SqlDataAdapter(sql, con);
                     DataTable dtCbo = new DataTable();
                     adapter.Fill(dtCbo);
