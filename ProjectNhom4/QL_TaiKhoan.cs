@@ -61,7 +61,7 @@ namespace ProjectNhom4
                 dgvTaiKhoan.Columns["TenDN"].HeaderText = "Tên đăng nhập";
                 dgvTaiKhoan.Columns["Email"].HeaderText = "Email";
                 dgvTaiKhoan.Columns["MatKhau"].HeaderText = "Mật khẩu";
-                dgvTaiKhoan.Columns["MaThuThu"].HeaderText = "Mã thủ thư";
+                dgvTaiKhoan.Columns["Ma_Thu_Thu"].HeaderText = "Mã thủ thư"; //đổi
                 dgvTaiKhoan.Columns["Quyen"].HeaderText = "Quyền";
             }
             catch (Exception ex)
@@ -71,20 +71,7 @@ namespace ProjectNhom4
         }
 
         // 🔹 Khi chọn dòng trong DataGridView -> hiển thị lên textbox
-        private void dgvTaiKhoan_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dgvTaiKhoan.Rows[e.RowIndex];
-
-                // Cập nhật các textbox và combobox tương ứng
-                cboThuThu.Text = row.Cells["Ten_Thu_Thu"].Value.ToString();
-                txtTenDN.Text = row.Cells["TenDN"].Value.ToString();
-                txtMatKhau.Text = row.Cells["MatKhau"].Value.ToString();
-                txtEmail.Text = row.Cells["Email"].Value.ToString();
-                cboQuyen.Text = row.Cells["Quyen"].Value.ToString();
-            }
-        }
+        //BỎ CODE DOẠN NÀY ĐI
 
         // 🔹 Load dữ liệu lên ComboBox Quyen
         void LoadQuyen()

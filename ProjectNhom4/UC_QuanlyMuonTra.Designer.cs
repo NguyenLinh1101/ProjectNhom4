@@ -1092,6 +1092,7 @@
             // 
             // panelRoot
             // 
+            this.panelRoot.AutoScroll = true;
             this.panelRoot.Controls.Add(this.dgvDauSach);
             this.panelRoot.Controls.Add(this.comTruong);
             this.panelRoot.Controls.Add(this.label1);
